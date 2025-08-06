@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class WpService {
-  private baseUrl = 'http://localhost/learningapi/wp-json/wp/v2';
+  private baseUrl = 'https://kennyweiss.net/cms/wp-json/wp/v2';
 
   constructor(private http: HttpClient) {}
 

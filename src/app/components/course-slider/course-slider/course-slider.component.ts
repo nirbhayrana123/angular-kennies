@@ -4,11 +4,12 @@ import { isPlatformBrowser, CommonModule } from '@angular/common';
 
 import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-course-slider',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './course-slider.component.html',
   styleUrl: './course-slider.component.css'
 })

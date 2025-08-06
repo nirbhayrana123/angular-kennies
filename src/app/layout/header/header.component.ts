@@ -10,6 +10,17 @@ import { filter } from 'rxjs/operators';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
+
+
+isMenuOpen: boolean = false;
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+
+
+
 bgcolor = false;
 isHomeOrBlog = false;
   @HostListener('window:scroll', [])

@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-book-session',
   standalone: true,
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './book-session.component.html',
   styleUrls: ['./book-session.component.css']   
 })

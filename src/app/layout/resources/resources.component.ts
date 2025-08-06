@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-resources',
   standalone: true,
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './resources.component.html',
   styleUrl: './resources.component.css'
 })

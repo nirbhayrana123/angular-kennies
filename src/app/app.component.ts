@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 
@@ -12,4 +12,18 @@ import { FooterComponent } from './layout/footer/footer.component';
 })
 export class AppComponent {
   title = 'angular-headless-wp';
+
+
+
+
+  constructor(private router: Router) {
+    // Scroll to top on route change
+    this.router.events.subscribe((event: any) => {
+      if (event.constructor.name === 'NavigationEnd') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+  }
+
+
 }

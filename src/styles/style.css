@@ -49,11 +49,11 @@ h4 {
 
 /*******header -color *********/
 
-header.header.blacktext .navmenu a.active,header.header.blacktext .navmenu li.active > span  {
+header.header.blacktext .navmenu a.active,header.header.blacktext .navmenu li.active > span,header.header.blacktext .navmenu li.active > i  {
   color: #981a34;   
    
 }
-  
+
 .header.bgcolor .flexsocial.whitei i {
     color: #000000!important;
 }
@@ -94,6 +94,9 @@ header.header.blacktext  ul.navmenu a ,header.header.blacktext  ul.navmenu span,
 
 .header.bgcolor .topbar button.menu-toggle i {
     color: #000;
+}
+header.header.blacktext.homenav ul.navmenu li ul.doropmenu li a {
+    color: #000000;
 }
 /*******header -color *********/
 

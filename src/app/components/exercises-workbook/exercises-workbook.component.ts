@@ -24,6 +24,7 @@ export class ExercisesWorkbookComponent implements AfterViewInit {
     this.isBrowser = isPlatformBrowser(platformId);
   }
 
+  
   @HostListener('window:scroll', [])
   onWindowScroll() {
     if (!this.isBrowser) return;

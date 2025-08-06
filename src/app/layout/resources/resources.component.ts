@@ -11,10 +11,10 @@ import { Title, Meta } from '@angular/platform-browser';
 export class ResourcesComponent {
 
 constructor(private titleService: Title, private metaService: Meta) {
-    this.titleService.setTitle('books');
+    this.titleService.setTitle('Resources | Emotional Authenticity Coach | Emotion Coaching');
     this.metaService.updateTag({
       name: 'description',
-      content: 'This journey to Emotional Authenticity is for those who have looked everywhere and are desperate for a solution. If that&#039;s you, you&#039;re ready. Best Emotional Authenticity coach.',
+      content: 'The Greatness Movement helps you understand “why” things aren’t working, but more importantly, “how” to change them.',
     });
   }
 

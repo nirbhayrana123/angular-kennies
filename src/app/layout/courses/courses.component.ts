@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-courses',
   standalone: true,
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './courses.component.html',
   styleUrl: './courses.component.css'
 })

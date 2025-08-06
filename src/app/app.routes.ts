@@ -80,5 +80,12 @@ export const routes: Routes = [
   loadComponent: () =>
     import('./layout/childhood-trauma/childhood-trauma.component').then(m => m.ChildhoodTraumaComponent)
 },
+{
+  path: 'courses-details',
+  loadComponent: () =>
+    import('./layout/courses-details/courses-details/courses-details.component').then(m => m.CoursesDetailsComponent)
+},
+
+
 
 ];

@@ -1,4 +1,4 @@
-@import url('@fortawesome/fontawesome-free/css/all.min.css');
+ 
 
 
 
@@ -47,8 +47,8 @@ h4 {
     font-weight: 700;
 }
 
-a.active-nav,
-a.active-nav i {
+.navmenu a.active,
+a.active i {
     color: #991a34 !important;
 }
 
@@ -1125,6 +1125,8 @@ ul.doterd li {
     color: #BBA056;
     font-size: 0.9em;
     cursor: pointer;
+    border: none;
+    background-color: transparent;
 }
 
 .vertyvery-contents.expanded {

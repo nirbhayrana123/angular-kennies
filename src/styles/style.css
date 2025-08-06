@@ -6462,6 +6462,19 @@ a.button.border-only {
         order: 2;
     }
 
+
+
+header.header.blacktext.homenav,
+header.header.blacktext.homenav .flexsocial.whitei i,
+header.header.blacktext.homenav i,
+header.header.blacktext.homenav ul.navmenu li span, 
+header.header.blacktext.homenav ul.navmenu li i, 
+header.header.blacktext.homenav ul.navmenu li a {
+    color: #000;
+}
+
+
+
 }
 
 

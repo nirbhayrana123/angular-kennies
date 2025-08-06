@@ -1,0 +1,183 @@
+<!-- src/app/posts/posts.component.html
+<div *ngFor="let post of posts">
+  <h2 [innerHTML]="post.title.rendered"></h2>
+  <div [innerHTML]="post.excerpt.rendered"></div>
+</div> -->
+
+<div class="blog">
+  <main class="pt-1">
+
+        <section class="blog-section">
+            <div class="container">
+                <div class="flex-row" data-aos="fade-up" data-aos-duration="1500">
+                    <h5 class="tag-line">Our Blog</h5>
+                    <h3>Latest from the Blog</h3>
+                </div>
+                <div class="flex-blog">
+                    <div class="newblog-post">
+                          <div *ngFor="let post of posts">                        
+                        <div class="news-block-two">
+                            <div class="inner-box">
+                                <div class="image">
+                                    <a [routerLink]="['/post', post.id]"><img class="transition-500ms"
+                                            src="images/Have-You-Experienced.webp" alt=""></a>
+                                </div>
+                                <div class="lower-content">
+                                    <div class="category">Business</div>
+                                    <div class="author-box">
+                                        <div class="box-inner">
+                                            <div class="author-image">
+                                                <img src="images/16.jpeg" alt="">
+                                            </div>
+                                            by <span [innerHTML]="post._embedded?.author[0]?.name"></span>
+
+                                        </div>
+                                    </div>
+                                    <a [routerLink]="['/post', post.id]"> 
+                                         <h3 [innerHTML]="post.title.rendered"></h3>
+                                    </a>
+                                    <div class="text">
+                                       <div [innerHTML]="post.excerpt.rendered"></div>
+                                    </div>
+                                    <ul class="post-meta">
+                                        <li><span class="icon fa fa-calendar"></span>24th March 2022</li>
+                                        <div class="buttonsser">
+                                            <a routerLink="/courses" routerLinkActive="active"> See All Courses</a>
+                                            <a routerLink="/book-session" routerLinkActive="active"> Book a Session  with kenny Weiss</a>
+                                        </div>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div> 
+                    </div> 
+                    </div>
+                    <div class="blog-rightside"> 
+                        <aside class="sidebar sticky-top"> 
+                            <div class="sidebar-widget-two about-widget">
+                                <div class="widget-content">
+                                    <div class="sidebar-title-two">
+                                        <h4> About Me </h4>
+                                    </div>
+                                    <div class="image">
+                                        <img src="images/16.jpeg" alt="">
+                                    </div>
+                                    <div class="lower-content">
+                                        <h6>kenny Weiss</h6>
+                                        <div class="text">
+                                            <p>Kenny Weiss believes if he is going to teach it, he must first live it
+                                                and learn from it.</p>
+                                        </div>
+                                        <ul class="social-box">
+                                            <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                                            <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                            <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sidebar-widget-two about-widget">
+                                <div class="widget-content">
+                                    <div class="sidebar-title-two">
+                                        <h5>Search Here</h5>
+                                    </div>
+
+                                    <!-- Search -->
+                                    <div class="sidebar-widget search-box">
+                                        <form method="post" action="contact.html">
+                                            <div class="form-group">
+                                                <input type="search" name="search-field" value=""
+                                                    placeholder="Search your keyword..." required="">
+                                                <button type="submit"><span class="icon fa fa-search"></span></button>
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="sidebar-widget-two popular-posts">
+                                <div class="widget-content">
+                                    <!-- Sidebar Title -->
+                                    <div class="sidebar-title-two">
+                                        <h5>Popular Feeds</h5>
+                                    </div>
+
+                                    <article class="post">
+                                        <figure class="post-thumb"><img src="images/Have-You-Experienced.webp" alt=""><a
+                                                href="#" class="overlay-box"><span class="icon fa fa-link"></span></a>
+                                        </figure>
+                                        <div class="contentrifgty">
+                                            <div class="text"><a href="#">In today’s Best Day Blog article...</a>
+                                            </div>
+                                            <div class="post-info">24th March 2022</div>
+                                        </div>
+                                    </article>
+
+                                    <article class="post">
+                                        <figure class="post-thumb"><img src="images/codependency.webp" alt=""><a
+                                                href="#" class="overlay-box"><span class="icon fa fa-link"></span></a>
+                                        </figure>
+                                        <div class="contentrifgty">
+                                            <div class="text"><a href="#">The Two Types Of Codependents</a>
+                                            </div>
+                                            <div class="post-info">24th March 2022</div>
+                                        </div>
+                                    </article>
+
+                                    <article class="post">
+                                        <figure class="post-thumb"><img src="images/How-to-Keep.webp" alt=""><a href="#"
+                                                class="overlay-box"><span class="icon fa fa-link"></span></a>
+                                        </figure>
+                                        <div class="contentrifgty">
+                                            <div class="text"><a href="#">How To Keep Your Boundaries In 3 Simple
+                                                    Steps</a>
+                                            </div>
+                                            <div class="post-info">24th March 2022</div>
+                                        </div>
+                                    </article>
+                                    <article class="post">
+                                        <figure class="post-thumb"><img src="images/Have-You-Experienced.webp" alt=""><a
+                                                href="#" class="overlay-box"><span class="icon fa fa-link"></span></a>
+                                        </figure>
+                                        <div class="contentrifgty">
+                                            <div class="text"><a href="#">In today’s Best Day Blog article...</a>
+                                            </div>
+                                            <div class="post-info">24th March 2022</div>
+                                        </div>
+                                    </article>
+
+                                </div>
+                            </div>
+
+                            <div class="sidebar-widget-two add-widget">
+                                <div class="widget-content">
+                                    <div class="sidebar-title-two">
+                                        <h5>Sponsor Adds</h5>
+                                    </div>
+                                    <div class="add-image">
+                                        <img src="images/add.jpeg" alt="">
+                                        <div class="add-size">270x240</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </aside>
+
+
+
+
+
+
+
+
+
+                    </div>
+                </div>
+
+
+
+            </div>
+        </section>
+ 
+    </main>
+ 

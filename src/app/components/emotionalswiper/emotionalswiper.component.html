@@ -1,0 +1,20 @@
+<div class="swiper emotional-swiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide" *ngFor="let item of slides">
+      <div class="wellness-col bb-1">
+        <div class="childhoodimg">
+          <img [src]="item.image" [alt]="item.title" />
+        </div>
+        <div class="trauma">
+          <h4>{{ item.title }}</h4>
+          <p>{{ item.description }}</p>
+          <a class="more-link button" [href]="item.link">Read more</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="swiper-pagination"></div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+</div>
+

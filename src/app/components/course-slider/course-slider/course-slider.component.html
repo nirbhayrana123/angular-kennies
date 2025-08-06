@@ -1,0 +1,52 @@
+<div class="swiper mySwiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide" *ngFor="let course of courses">
+      <div class="card">
+        <div class="card-img">
+          <a [href]="course.link">
+            <img [src]="course.image" alt="Course" class="preview" />
+          </a>
+        </div>
+
+        <div class="card-body">
+          <div class="rbt-card-top">
+            <div class="stars">
+              <ul>
+                <li><i class="fa-solid fa-star"></i></li>
+                <li><i class="fa-solid fa-star"></i></li>
+                <li><i class="fa-solid fa-star"></i></li>
+                <li><i class="fa-solid fa-star"></i></li>
+                <li><i class="fa-solid fa-star"></i></li>
+              </ul>
+              <span>(15 Reviews)</span>
+            </div>
+          </div>
+          <h4>{{ course.title }}</h4>
+          <p>{{ course.description }}</p>
+          <div class="info">
+            <div><i class="fa-solid fa-book"></i>{{ course.lessons }} Lessons</div>
+            <div><i class="fa-solid fa-user-tie"></i>{{ course.students }} Students</div>
+          </div>
+          <div class="author">
+            <img src="./images/course.jpeg" alt="Author">
+            <div class="author-info">Course • By Kenny Weiss</div>
+          </div>
+          <div class="price-row">
+            <div class="price">
+              <span class="current-price">{{ course.price }}</span>
+              <span class="original-price">{{ course.originalPrice }}</span>
+            </div>
+            <a [href]="course.link" class="button">
+              Learn More <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-pagination"></div>
+</div>
+

@@ -1,5 +1,7 @@
 import { Component, HostListener  } from '@angular/core';
-import { RouterModule } from '@angular/router'; // 
+import { RouterModule,  Router, NavigationEnd } from '@angular/router'; // 
+import { filter } from 'rxjs/operators';
+
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -9,9 +11,18 @@ import { RouterModule } from '@angular/router'; //
 })
 export class HeaderComponent {
 bgcolor = false;
+isHomeOrBlog = false;
   @HostListener('window:scroll', [])
   onWindowScroll() {
     const scrollY = window.scrollY || document.documentElement.scrollTop;
     this.bgcolor = scrollY > 100;
+  }
+  constructor(private router: Router) {
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe((event: any) => {
+      const url = event.urlAfterRedirects;
+      this.isHomeOrBlog = url === '/';
+    });
   }
 }

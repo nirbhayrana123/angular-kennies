@@ -4,7 +4,7 @@
     <div class="swiper-slide" *ngFor="let course of courses">
       <div class="card">
         <div class="card-img">
-          <a [href]="course.link">
+          <a [routerLink]="course.link">
             <img [src]="course.image" alt="Course" class="preview" />
           </a>
         </div>
@@ -37,7 +37,7 @@
               <span class="current-price">{{ course.price }}</span>
               <span class="original-price">{{ course.originalPrice }}</span>
             </div>
-            <a [href]="course.link" class="button">
+            <a [routerLink]="course.link" class="button">
               Learn More <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
             </a>
           </div>

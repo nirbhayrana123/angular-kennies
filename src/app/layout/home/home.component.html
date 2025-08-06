@@ -39,7 +39,7 @@
                         books, attending therapy, listening to the podcasts, journaling… and still, the same patterns
                         come up. Whether it’s anxiety, feeling not good enough, avoiding people, anger outbursts, or
                         always second-guessing yourself.</p>
-                    <div id="readMoreBox" class="vertyvery-contents">
+                    <div [class.expanded]="isExpanded" id="readMoreBox" class="vertyvery-contents">
                         <p>Here’s what most people don’t realize:<br>
                             The final unsolved piece isn’t in the latest strategy — it’s often buried in your childhood
                             experiences.
@@ -155,7 +155,8 @@
 
 
                     </div>
-                    <a href="#top0" class="read-more-btn" id="toggleBtn">Read More..</a>
+                    
+                    <button (click)="toggleContent()"  class="read-more-btn" id="toggleBtn">  {{ isExpanded ? 'Read Less' : 'Read More..' }}</button>
                     <img class="form-bac" src="images/form-bac.png">
                 </div>
             </div>
@@ -163,7 +164,7 @@
         </section>
 
         <section class="aboutus">
-            <div class="bg-about"></div>
+            <div class="bg-about"t></div>
             <div class="container">
                 <div class="about-row">
                     <!-- Left Side -->

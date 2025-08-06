@@ -48,14 +48,17 @@ h4 {
 }
 
 /*******header -color *********/
+header.header.blacktext.homenav ul.navmenu li  a.active {
+    color: #fff;
+}
 
 header.header.blacktext .navmenu a.active,header.header.blacktext .navmenu li.active > span,header.header.blacktext .navmenu li.active > i  {
-  color: #981a34;   
+  color: rgb(187, 160, 86)!important;   
    
 }
 
-.header.bgcolor .flexsocial.whitei i {
-    color: #000000!important;
+.header.bgcolor .flexsocial.whitei i ,header.header.blacktext.homenav.bgcolor .flexsocial.whitei i {
+    color: #000000;
 }
 .flexsocial.whitei i {
     color: #000000;

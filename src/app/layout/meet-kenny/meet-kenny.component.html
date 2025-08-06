@@ -1,4 +1,5 @@
-  <section id="top0" class="kanny-content">
+  <main class="pt-1 pt-4">
+ <section id="top0" class="kanny-content">
             <div class="container">
                 <div class="contentallkanny">
                     <img class="form-bac" src="images/form-bac.png">
@@ -13,7 +14,7 @@
                         right to feel anything. So I did what many of us do: I shut it down. I buried it.</p>
                     <p>I dropped who I was to become what everyone else needed—quiet, helpful, invisible when necessary.
                     </p>
-                    <div class="kanneylessloren" id="kannypagecontent">
+                    <div class="kanneylessloren"  id="kannypagecontent" [class.kannyhideshow]="isExpanded">
                         <br>
                         <br>
                         <h4>I became the emotional parent.</h4>
@@ -141,7 +142,7 @@
                     </div>
 
 
-                    <a href="#top0" class="read-more-btn" id="toggleBtnkanny">Read More..</a>
+                    <button   class="read-more-btn"   id="toggleBtnkanny" (click)="toggleKannyContent()"  >{{ isExpanded ? 'Read Less' : 'Read More..' }}</button>
 
 
                 </div>
@@ -431,229 +432,7 @@
             </div>
             <div class="container">
 
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-
-                        <div class="swiper-slide">
-                            <div class="card">
-                                <div class="card-img">
-                                    <a href="courses.html">
-                                        <img src="./images/price-change1.jpeg" alt="Course" class="preview" />
-                                        <div class="rbt-badge-3 bg-white">
-                                            <span>-50%</span>
-                                            <span>Off</span>
-                                        </div>
-                                    </a>
-                                </div>
-
-                                <div class="card-body">
-                                    <div class="rbt-card-top">
-                                        <div class="stars">
-
-                                            <ul>
-                                                <li><i class="fa-solid fa-star"></i></li>
-                                                <li><i class="fa-solid fa-star"></i></li>
-                                                <li><i class="fa-solid fa-star"></i></li>
-                                                <li><i class="fa-solid fa-star"></i></li>
-                                                <li><i class="fa-solid fa-star"></i></li>
-                                            </ul> <span>(15 Reviews)</span>
-                                        </div>
-                                        <div class="bookmark">
-                                            <a href="#"><i class="fa-solid fa-bookmark"></i></a>
-                                        </div>
-                                    </div>
-                                    <h4>Begin Your Journey To Emotional Authenticity</h4>
-                                    <p>Learn the first, foundational steps in developing Emotional Authenticity</p>
-                                    <div class="info">
-                                        <div><i class="fa-solid fa-book"></i>12 Lessons</div>
-                                        <div><i class="fa-solid fa-user-tie"></i>50 Students</div>
-                                    </div>
-                                    <div class="author">
-                                        <img src="./images/author-4.jpeg" alt="Author">
-                                        <div class="author-info">Course • By Kenny Weiss </div>
-                                    </div>
-                                    <div class="price-row">
-                                        <div class="price">
-                                            <span class="current-price">$29.77</span>
-                                            <span class="original-price">$120</span>
-                                        </div>
-                                        <a href="courses.html" class="button">
-                                            Learn More <span class="arrow"><i
-                                                    class="fa-solid fa-arrow-right"></i></span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="card">
-                                <div class="card-img">
-                                    <a href="courses.html">
-                                        <img src="./images/price-change2.png" alt="Course" class="preview" />
-                                        <div class="rbt-badge-3 bg-white">
-                                            <span>-50%</span>
-                                            <span>Off</span>
-                                        </div>
-                                    </a>
-                                </div>
-
-                                <div class="card-body">
-                                    <div class="rbt-card-top">
-                                        <div class="stars">
-
-                                            <ul>
-                                                <li><i class="fa-solid fa-star"></i></li>
-                                                <li><i class="fa-solid fa-star"></i></li>
-                                                <li><i class="fa-solid fa-star"></i></li>
-                                                <li><i class="fa-solid fa-star"></i></li>
-                                                <li><i class="fa-solid fa-star"></i></li>
-                                            </ul> <span>(15 Reviews)</span>
-                                        </div>
-                                        <div class="bookmark">
-                                            <a href="#"><i class="fa-solid fa-bookmark"></i></a>
-                                        </div>
-                                    </div>
-                                    <h4>The Complete Emotional Authenticity Method (one-time Purchase)</h4>
-                                    <p>Overcome your Worst Day Cycle and reclaim your authentic self with Emotional
-                                        Authenticity</p>
-                                    <div class="info">
-                                        <div><i class="fa-solid fa-book"></i>12 Lessons</div>
-                                        <div><i class="fa-solid fa-user-tie"></i>50 Students</div>
-                                    </div>
-                                    <div class="author">
-                                        <img src="./images/author-4.jpeg" alt="Author">
-                                        <div class="author-info">Course • By Kenny Weiss </div>
-                                    </div>
-                                    <div class="price-row">
-                                        <div class="price">
-                                            <span class="current-price">$747</span>
-                                            <span class="original-price">$120</span>
-                                        </div>
-                                        <a href="courses.html" class="button">
-                                            Learn More <span class="arrow"><i
-                                                    class="fa-solid fa-arrow-right"></i></span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="card">
-                                <div class="card-img">
-                                    <a href="courses.html">
-                                        <img src="./images/price-change3.png" alt="Course" class="preview" />
-                                        <div class="rbt-badge-3 bg-white">
-                                            <span>-50%</span>
-                                            <span>Off</span>
-                                        </div>
-                                    </a>
-                                </div>
-
-                                <div class="card-body">
-                                    <div class="rbt-card-top">
-                                        <div class="stars">
-
-                                            <ul>
-                                                <li><i class="fa-solid fa-star"></i></li>
-                                                <li><i class="fa-solid fa-star"></i></li>
-                                                <li><i class="fa-solid fa-star"></i></li>
-                                                <li><i class="fa-solid fa-star"></i></li>
-                                                <li><i class="fa-solid fa-star"></i></li>
-                                            </ul> <span>(15 Reviews)</span>
-                                        </div>
-                                        <div class="bookmark">
-                                            <a href="#"><i class="fa-solid fa-bookmark"></i></a>
-                                        </div>
-                                    </div>
-                                    <h4>The Complete Emotional Authenticity Method Subscription</h4>
-                                    <p>Overcome your Worst Day Cycle and reclaim your authentic self with Emotional
-                                        Authenticity</p>
-                                    <div class="info">
-                                        <div><i class="fa-solid fa-book"></i>12 Lessons</div>
-                                        <div><i class="fa-solid fa-user-tie"></i>50 Students</div>
-                                    </div>
-
-                                    <div class="author">
-                                        <img src="./images/author-4.jpeg" alt="Author">
-                                        <div class="author-info">Course • By Kenny Weiss </div>
-                                    </div>
-                                    <div class="price-row">
-                                        <div class="price">
-                                            <span class="current-price">$77/month</span>
-                                            <span class="original-price">$120</span>
-                                        </div>
-                                        <a href="courses.html" class="button">
-                                            Learn More <span class="arrow"><i
-                                                    class="fa-solid fa-arrow-right"></i></span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="card">
-                                <div class="card-img">
-                                    <a href="courses.html">
-                                        <img src="./images/price-change1.jpeg" alt="Course" class="preview" />
-                                        <div class="rbt-badge-3 bg-white">
-                                            <span>-50%</span>
-                                            <span>Off</span>
-                                        </div>
-                                    </a>
-                                </div>
-
-                                <div class="card-body">
-                                    <div class="rbt-card-top">
-                                        <div class="stars">
-
-                                            <ul>
-                                                <li><i class="fa-solid fa-star"></i></li>
-                                                <li><i class="fa-solid fa-star"></i></li>
-                                                <li><i class="fa-solid fa-star"></i></li>
-                                                <li><i class="fa-solid fa-star"></i></li>
-                                                <li><i class="fa-solid fa-star"></i></li>
-                                            </ul> <span>(15 Reviews)</span>
-                                        </div>
-                                        <div class="bookmark">
-                                            <a href="#"><i class="fa-solid fa-bookmark"></i></a>
-                                        </div>
-                                    </div>
-                                    <h4>Begin Your Journey To Emotional Authenticity</h4>
-                                    <p>Learn the first, foundational steps in developing Emotional Authenticity</p>
-                                    <div class="info">
-                                        <div><i class="fa-solid fa-book"></i>12 Lessons</div>
-                                        <div><i class="fa-solid fa-user-tie"></i>50 Students</div>
-                                    </div>
-                                    <div class="author">
-                                        <img src="./images/author-4.jpeg" alt="Author">
-                                        <div class="author-info">Course • By Kenny Weiss </div>
-                                    </div>
-                                    <div class="price-row">
-                                        <div class="price">
-                                            <span class="current-price">$29.77</span>
-                                            <span class="original-price">$120</span>
-                                        </div>
-                                        <a href="courses.html" class="button">
-                                            Learn More <span class="arrow"><i
-                                                    class="fa-solid fa-arrow-right"></i></span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <!-- Navigation buttons -->
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-
-                    <!-- Pagination dots -->
-                    <div class="swiper-pagination"></div>
-                </div>
+                <app-course-slider/>
 
             </div>
 
@@ -989,3 +768,4 @@
             </div>
 
         </section>
+        </main>

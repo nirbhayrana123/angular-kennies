@@ -14,6 +14,13 @@ import { CourseSliderComponent } from '../../components/course-slider/course-sli
 })
 export class HomeComponent {
 
+ isExpanded = false;
+
+  toggleContent() {
+    this.isExpanded = !this.isExpanded;
+  }
+
+
 constructor(private titleService: Title, private metaService: Meta) {
     this.titleService.setTitle('Home - My Awesome Website');
     this.metaService.updateTag({

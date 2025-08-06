@@ -73,6 +73,12 @@ export const routes: Routes = [
   path: 'post/:id',
   loadComponent: () =>
     import('./layout/blog/blog-details/blog-details.component').then(m => m.BlogDetailsComponent)
-} 
+} ,
+
+ {
+  path: 'childhood-trauma',
+  loadComponent: () =>
+    import('./layout/childhood-trauma/childhood-trauma.component').then(m => m.ChildhoodTraumaComponent)
+},
 
 ];

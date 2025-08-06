@@ -2,11 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 import { CourseSliderComponent } from '../../components/course-slider/course-slider/course-slider.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-meet-kenny',
   standalone: true,
-  imports: [CommonModule,CourseSliderComponent],
+  imports: [CommonModule,CourseSliderComponent, RouterModule ],
   templateUrl: './meet-kenny.component.html',
   styleUrl: './meet-kenny.component.css'
 })

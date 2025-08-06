@@ -1,16 +1,14 @@
 @import "aos/dist/aos.css";
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-
-
+ 
 * {
     margin: 0;
     padding: 0;
 }
 
 body {
-    font-family: "Montserrat", sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 18px;
     font-weight: 400;
     line-height: 22px;
@@ -48,6 +46,59 @@ h4 {
     font-size: 1.2em;
     font-weight: 700;
 }
+
+/*******header -color *********/
+
+header.header.blacktext .navmenu a.active,header.header.blacktext .navmenu li.active > span,header.header.blacktext .navmenu li.active > i  {
+  color: #981a34;   
+   
+}
+
+.header.bgcolor .flexsocial.whitei i {
+    color: #000000!important;
+}
+.flexsocial.whitei i {
+    color: #000000;
+}
+
+header.header.blacktext.homenav a.logo-brand img { filter: brightness(0) invert(1); }
+
+header.header.blacktext.homenav,
+header.header.blacktext.homenav .flexsocial.whitei i,
+header.header.blacktext.homenav i,
+header.header.blacktext.homenav ul.navmenu li span, 
+header.header.blacktext.homenav ul.navmenu li i, 
+header.header.blacktext.homenav ul.navmenu li a {
+    color: #ffffff;
+}
+ 
+header.header.blacktext.homenav.bgcolor a.logo-brand img  {  filter: brightness(0) saturate(100%); }
+
+header.header.blacktext.homenav.bgcolor  ul.navmenu a ,header.header.blacktext.homenav.bgcolor  ul.navmenu span,header.header.blacktext.homenav.bgcolor  ul.navmenu i  { 
+    color: #000; 
+}
+header.header.blacktext.bgcolor  ul.navmenu a ,header.header.blacktext.bgcolor  ul.navmenu span,header.header.blacktext.bgcolor  ul.navmenu i  { 
+    color: #000; 
+}
+header.header.blacktext  ul.navmenu a ,header.header.blacktext  ul.navmenu span,header.header.blacktext  ul.navmenu i  { 
+    color: #000; 
+}
+
+ 
+.header.bgcolor {
+    top: 0;
+    background-color: #FFFFFF;
+    box-shadow: 0px -2px 15px 0px #0000001c;
+    animation: fadeSlideDown 0.5s ease-out;
+}
+
+.header.bgcolor .topbar button.menu-toggle i {
+    color: #000;
+}
+header.header.blacktext.homenav ul.navmenu li ul.doropmenu li a {
+    color: #000000;
+}
+/*******header -color *********/
 
 
 .mentor-section {
@@ -138,26 +189,12 @@ a.button.mt3 {
 .audible-button:hover {
     background-color: #f5f5f5;
 }
-
-.navmenu a.active,.navmenu li.active > span  {
-  color: #981a34!important;   
-   
-}
  
-
 
 header.header.blacktext a.logo-brand img {
     filter: brightness(0) saturate(100%);
 }
-
-.flexsocial.whitei i {
-    color: #ffffff;
-}
-
-.header.bgcolor .flexsocial.whitei i {
-    color: #000000;
-}
-
+ 
 .st-row i.fa-solid.fa-star {
     color: #ffbc00;
 }
@@ -223,9 +260,7 @@ h4.price2 {
     font-size: 1.7em;
 }
 
-.header.bgcolor ul.navmenu a {
-    color: #000000;
-}
+
 
 header.header.bg .nav a:hover {
     color: #BBA056;
@@ -252,9 +287,7 @@ header.header.bg .nav a:hover {
     color: #000000;
 }
 
-
-
-
+ 
 .white {
     color: #fff;
 }
@@ -293,12 +326,9 @@ a.logo-brand {
     padding: 0 20px;
     box-sizing: border-box;
 }
+  
 
-header.header.blacktext,
-header.header.blacktext i,
-header.header.blacktext ul.navmenu li a {
-    color: #000;
-}
+
 
 @media (max-width: 1300px) {
     .container {
@@ -338,9 +368,7 @@ a.logo-brand img {
     filter: brightness(0) invert(1);
 }
 
-.header.bgcolor img {
-    filter: brightness(0) saturate(100%);
-}
+
 
 .iframe-row {
     width: 100%;
@@ -418,12 +446,7 @@ button.menu-toggle {
 }
 
 /*********************/
-.header.bgcolor {
-    top: 0;
-    background-color: #FFFFFF;
-    box-shadow: 0px -2px 15px 0px #0000001c;
-    animation: fadeSlideDown 0.5s ease-out;
-}
+
 
 @keyframes fadeSlideDown {
     0% {
@@ -6391,9 +6414,7 @@ a.button.border-only {
         color: #000;
     }
 
-    .header.bgcolor .topbar button.menu-toggle i {
-        color: #000;
-    }
+
 
     .navbars.openmenu .logo img {
         filter: brightness(0) saturate(100%);

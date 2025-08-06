@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { Router, RouterOutlet } from '@angular/router';
+import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
-
+import { filter } from 'rxjs';
+import * as AOS from 'aos';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -16,14 +17,19 @@ export class AppComponent {
 
 
 
-  constructor(private router: Router) {
-    // Scroll to top on route change
-    this.router.events.subscribe((event: any) => {
-      if (event.constructor.name === 'NavigationEnd') {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
-    });
+    constructor(private router: Router) {
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' }); // ✅ Scroll to top
+      });
+      AOS.refresh();
   }
 
+
+   ngAfterViewInit(): void { 
+      AOS.init(); 
+    }
+  
 
 }

@@ -1,6 +1,6 @@
 <header id="headerbg" class="header blacktext" [class.bgcolor]="bgcolor" [class.homenav]="isHomeOrBlog">
     <div class="container">
-        <div class="navbars" id="nav-menu">
+        <div class="navbars" [class.openmenu]="isMenuOpen" id="nav-menu">
             <div class="topbar">
                 <div class="logo">
                     <a routerLink="/" class="logo-brand">
@@ -19,7 +19,7 @@
                     </div>
                 </div>
 
-                <button class="menu-toggle" id="menu-toggle">
+                <button class="menu-toggle" (click)="toggleMenu()" id="menu-toggle">
                     <i class="open fa-solid fa-bars"></i>
                     <i class="close fa-solid fa-xmark"></i>
                 </button>
@@ -52,8 +52,8 @@
                 </li>
 
                 <li><a routerLink="/contact" routerLinkActive="active"
-                        [routerLinkActiveOptions]="{ exact: true }">Contact</a></li>
-
+                        [routerLinkActiveOptions]="{ exact: true }">Contact</a></li> 
+                        
                 <li><a routerLink="/book-session" class="contact-nav">Book a Session</a></li>
             </ul>
 

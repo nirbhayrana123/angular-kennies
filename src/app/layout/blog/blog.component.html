@@ -19,15 +19,16 @@
                         <div class="news-block-two">
                             <div class="inner-box">
                                 <div class="image">
-                                    <a [routerLink]="['/post', post.id]"><img class="transition-500ms"
-                                            src="images/Have-You-Experienced.webp" alt=""></a>
+                                    <a [routerLink]="['/post', post.id]">
+                                        <img *ngIf="post.featuredImage" [src]="post.featuredImage" alt="Post Image" />
+                                    </a>
                                 </div>
                                 <div class="lower-content">
                                     <div class="category">Business</div>
                                     <div class="author-box">
                                         <div class="box-inner">
                                             <div class="author-image">
-                                                <img src="images/16.jpeg" alt="">
+                                                <img src="images/16.jpeg" alt=""> 
                                             </div>
                                             by <span [innerHTML]="post._embedded?.author[0]?.name"></span>
 

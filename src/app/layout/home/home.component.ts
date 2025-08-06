@@ -15,12 +15,11 @@ import { CourseSliderComponent } from '../../components/course-slider/course-sli
 export class HomeComponent {
 
 constructor(private titleService: Title, private metaService: Meta) {
-    this.titleService.setTitle('Home - My Awesome Website');
+    this.titleService.setTitle('Journey to Emotional Authenticity | Emotional Authenticity Coach');
     this.metaService.updateTag({
       name: 'description',
-      content: 'Welcome to the homepage of My Awesome Website. Explore our features and content.',
+      content: 'This journey to Emotional Authenticity is for those who have looked everywhere and are desperate for a solution. If that&#039;s you, you&#039;re ready. Best Emotional Authenticity coach.',
     });
   }
-
 
 }

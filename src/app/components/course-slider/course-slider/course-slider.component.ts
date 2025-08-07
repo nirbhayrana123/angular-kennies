@@ -36,7 +36,7 @@ export class CourseSliderComponent implements AfterViewInit {
       originalPrice: '$120',
       lessons: 12,
       students: 50,
-      link: 'courses.html'
+      link: '/courses'
     },
     {
       title: 'The Complete Emotional Authenticity Method Subscription',

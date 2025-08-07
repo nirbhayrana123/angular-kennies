@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
+
 
 @Component({
   selector: 'app-feelings-wheel',
   standalone: true,
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './feelings-wheel.component.html',
   styleUrls: ['./feelings-wheel.component.css']
 })

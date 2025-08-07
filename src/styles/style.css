@@ -215,9 +215,14 @@ header.header.blacktext a.logo-brand img {
 .st-row i.fa-solid.fa-star {
     color: #ffbc00;
 }
-
-main.pt-1 {
-    padding-top: 90px;
+main.mt.pt-4 {
+    padding-top: 140px;
+}
+main.mt.pt-4 {
+    padding-top: 100px;
+}
+main.mt {
+    padding-top: 81px;
 }
 
 img.form-bac {
@@ -4618,13 +4623,6 @@ span.bolder {
     position: relative;
 }
 
-main.pt-1.pt-4 {
-    padding-top: 145px;
-}
-
-main.pt-1.p1-2 {
-    padding-top: 120px;
-}
 
 .news-block-two .inner-box .post-meta li {
     position: relative;
@@ -4632,8 +4630,7 @@ main.pt-1.p1-2 {
     line-height: 1.2em;
     display: inline-block;
     font-size: 0.8rem;
-    font-family: "Poppins", sans-serif;
-    /* border-right: 1px solid #cfcfcf; */
+    font-family: "Poppins", sans-serif; 
     padding-left: 25px;
     margin-right: 20px;
     padding-right: 20px;
@@ -6533,7 +6530,9 @@ header.header.blacktext.homenav ul.navmenu li a {
         height: auto;
     }
 
-
+main.mt {
+    padding-top: 70px;
+}
 
     .flexchuse {
         flex-wrap: wrap;
@@ -7214,9 +7213,6 @@ header.header.blacktext.homenav ul.navmenu li a {
         gap: 50px;
     }
 
-    main.pt-1.pt68px {
-        padding-top: 68px;
-    }
 
     .healing-inner-pages.height-7 {
         background-position: -240px 0;

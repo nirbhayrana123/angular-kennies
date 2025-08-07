@@ -169,25 +169,30 @@
                                 </div>
                                 <form *ngIf="!formSuccess" #contactForm="ngForm" (ngSubmit)="submitFormresource()">
 
-                                    <div class="row">
-                                        <input type="text" placeholder="First Name" name="name"
-                                            [(ngModel)]="formData.name" required #name="ngModel" />
-                                        <div *ngIf="(formSubmitted || name.touched) && name.invalid" class="error">First
-                                            Name is required</div>
-                                    </div>
-
-                                    <div class="row my-2">
-                                        <input type="email" placeholder="E-mail Address" name="email"
-                                            [(ngModel)]="formData.email" required email #email="ngModel" />
-                                        <div *ngIf="(formSubmitted || email.touched) && email.invalid" class="error">
-                                            A valid Email is required
+                                     <div class="flexfield"> 
+                                        <div class="group-form-field">
+                                            <label>First Name<span>*</span> </label>
+                                            <input type="text" placeholder="First Name"  class="customefields" name="name"
+                                                [(ngModel)]="formData.name" required #name="ngModel" />
+                                            <div *ngIf="(formSubmitted || name.touched) && name.invalid" class="error">
+                                                First Name is required</div>
                                         </div>
 
+                                        <div class="group-form-field">
+                                            <label>Email<span>*</span> </label>
+                                            <input type="email" placeholder="E-mail Address"  class="customefields" name="email"
+                                                [(ngModel)]="formData.email" required email #email="ngModel" />
+                                            <div *ngIf="(formSubmitted || email.touched) && email.invalid"
+                                                class="error">
+                                                A valid Email is required
+                                            </div>
 
-                                    </div>
 
-
-                                    <button class="button" type="submit">Send Message</button>
+                                        </div>
+                                       </div>
+                                       <div class="submitebut">
+                                        <button class="button" type="submit">Send Message</button>
+                                        </div>
                                 </form>
                             </div>
                         </div>
@@ -219,7 +224,7 @@
 
                                     <form *ngIf="!formSuccessconfidence" #contactForm="ngForm"
                                         (ngSubmit)="submitFormCodependence()">
- <div class="flexfield"> 
+                                   <div class="flexfield"> 
                                         <div class="group-form-field">
                                             <label>First Name<span>*</span> </label>
                                             <input type="text" placeholder="First Name"  class="customefields" name="name"
@@ -239,7 +244,7 @@
 
 
                                         </div>
-</div>
+                                       </div>
                                        <div class="submitebut">
                                         <button class="button" type="submit">Send Message</button>
                                         </div>

@@ -1,74 +1,88 @@
- <main class="pt-1">
+ <main class="mt">
         <div class="contactsection">
             <div class="container">
                 <div class="contact-into" >
                     <h5 class="tag-line">Contact us</h5>
                     <h3>Let’s Make Something <br>Great Together</h3>
                 </div>
-                <div class="contactflexform">
-                    <div class="leftcontactimg">
-                        <img src="images/others-img2.png" loading="lazy" alt="">
-                    </div>
 
-                    <div class="form">
+                <div class="form">
+                        <!-- ✅ Success message -->
+                        <div *ngIf="formSuccess" class="success-message">
+                        Thank you! Your message has been sent successfully.
+                        </div>
+                    <form *ngIf="!formSuccess" #contactForm="ngForm"(ngSubmit)="submitForm(contactForm)"> 
+
                         <div class="row">
-                            <input type="text" placeholder="First Name" />
-                            <input type="text" placeholder="Last Name" />
+                            <input type="text" placeholder="First Name" name="name" [(ngModel)]="formData.name" required
+                                #name="ngModel" />
+                            <div *ngIf="(formSubmitted || name.touched) && name.invalid" class="error">First Name is required</div>
+
+
+                            <input type="text" placeholder="Last Name" name="lastname"
+                                [(ngModel)]="formData.lastname" />
                         </div>
 
                         <div class="row my-2">
-                            <input type="email" placeholder="E-mail Address" />
-                            <input type="tel" placeholder="Phone Number" />
+                            <input type="email" placeholder="E-mail Address" name="email" [(ngModel)]="formData.email"
+                                required email #email="ngModel" />
+                            <div *ngIf="(formSubmitted || email.touched) && email.invalid" class="error">
+                                A valid Email is required
+                            </div>
+
+                            <input type="tel" placeholder="Phone Number" name="phone" [(ngModel)]="formData.phone" />
                         </div>
 
                         <div class="row">
-                            <textarea rows="5" placeholder="Message"></textarea>
+                            <textarea rows="5" placeholder="Message" name="message"
+                                [(ngModel)]="formData.message"></textarea>
                         </div>
- 
-                        <button class="button">Send Message</button>
-                    </div>
-                </div>
 
-                <div class="contact-boxesflex">
-                    <div class="contacts-box">
-                        <div class="iconcontact">
-                            <i class="fa-solid fa-envelope"></i>
-                        </div>
-                        <div class="contact-content">
-                            <h4>Email</h4>
-                            <a href="#">kw&#64;kennyweiss.net</a>
-                        </div>
-                    </div>
+                        <button class="button" type="submit">Send Message</button>
+                    </form>
 
-                    <div class="contacts-box">
-                        <div class="iconcontact">
-                            <i class="fa-solid fa-phone"></i>
-                        </div>
-                        <div class="contact-content">
-                            <h4>Phone</h4> 
-                        </div>
-                    </div>
-                    <div class="contacts-box">
-                        <div class="iconcontact">
-                            <i class="fa-solid fa-location-dot"></i>
-                        </div>
-                        <div class="contact-content">
-                            <h4>Schedule</h4>
-                            <p>Sunday-Fri: 9 AM – 6 PM</p>
-                        </div>
-                    </div>
-
-
-                </div>
-                <div class="map">
-                    <iframe src="https://www.google.com/maps?q=New+York,+USA&output=embed" allowfullscreen
-                        loading="lazy"></iframe>
                 </div>
             </div>
 
+            <div class="contact-boxesflex">
+                <div class="contacts-box">
+                    <div class="iconcontact">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div class="contact-content">
+                        <h4>Email</h4>
+                        <a href="#">kw&#64;kennyweiss.net</a>
+                    </div>
+                </div>
+
+                <div class="contacts-box">
+                    <div class="iconcontact">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <div class="contact-content">
+                        <h4>Phone</h4>
+                    </div>
+                </div>
+                <div class="contacts-box">
+                    <div class="iconcontact">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div class="contact-content">
+                        <h4>Schedule</h4>
+                        <p>Sunday-Fri: 9 AM – 6 PM</p>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="map">
+                <iframe src="https://www.google.com/maps?q=New+York,+USA&output=embed" allowfullscreen
+                    loading="lazy"></iframe>
+            </div>
         </div>
 
 
-        
 
-    </main>
+
+
+</main>

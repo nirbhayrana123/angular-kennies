@@ -1,4 +1,4 @@
-<main class="pt-1">
+<main class="mt">
         <section class="resourcesmain-section">
             <div class="container">
                 <div class="resourcsertymain">
@@ -18,7 +18,7 @@
                             authentic selves.</p><br>
                         <p>The mission of The Greatness Movement is to not just understand “why” things aren’t working,
                             but more importantly to understand “how” to change them and break the <a
-                                href="worst-day-cycle.html"> Worst Day Cycle.</a></p><br>
+                                routerLink="/worst-day-cycle"> Worst Day Cycle.</a></p><br>
 
                         <p>Kenny has a unique ability to see what everyone else has missed. He imparts immediate, deep
                             wisdom which generates innovative, transformative solutions to achieve rapid results while
@@ -38,8 +38,8 @@
                             these new skills and tools.</p>
 
                         <div class="button-row">
-                            <a class=" button" routerLink="/courses-details">Begin Here</a>
-                            <a class="button" routerLink="/courses-details">Start Your Journey</a>
+                            <a class=" button" routerLink="/courses" target="">Begin Here</a>
+                            <a class="button" href="https://direct.me/kennyweiss" target="_blank">Start Your Journey</a>
                         </div>
 
                     </div>
@@ -164,19 +164,31 @@
                                 </div>
 
                                 <div class="mainformfield">
-                                    <div class="flexfield">
-                                        <div class="group-form-field">
-                                            <label>First Name<span>*</span> </label>
-                                            <input type="text" class="customefields">
-                                        </div>
-                                        <div class="group-form-field">
-                                            <label>Email<span>*</span> </label>
-                                            <input type="text" class="customefields">
-                                        </div>
-                                    </div>
-                                    <div class="submitebut">
-                                        <button class="button">Submit</button>
-                                    </div>
+                                            <!-- ✅ Success message -->
+                        <div *ngIf="formSuccess" class="success-message">
+                        Thank you! Your message has been sent successfully.
+                        </div>
+                    <form *ngIf="!formSuccess" #contactForm="ngForm" (ngSubmit)="submitFormresource()">
+
+                        <div class="row">
+                            <input type="text" placeholder="First Name" name="name" [(ngModel)]="formData.name" required
+                                #name="ngModel" />
+                            <div *ngIf="(formSubmitted || name.touched) && name.invalid" class="error">First Name is required</div>
+                        </div>
+
+                        <div class="row my-2">
+                            <input type="email" placeholder="E-mail Address" name="email" [(ngModel)]="formData.email"
+                                required email #email="ngModel" />
+                            <div *ngIf="(formSubmitted || email.touched) && email.invalid" class="error">
+                                A valid Email is required
+                            </div>
+
+                            
+                        </div>
+ 
+
+                        <button class="button" type="submit">Send Message</button>
+                    </form>
                                 </div>
                             </div>
                         </div>
@@ -208,9 +220,37 @@
                                             <label>Email<span>*</span> </label>
                                             <input type="text" class="customefields">
                                         </div>
+                                                            <!-- ✅ Success message -->
+                        <div *ngIf="formSuccessconfidence" class="success-message">
+                        Thank you! Your message has been sent successfully.
+                        </div>
+
+<form *ngIf="!formSuccessconfidence" #contactForm="ngForm" (ngSubmit)="submitFormCodependence()">
+
+                        <div class="row">
+                            <input type="text" placeholder="First Name" name="name" [(ngModel)]="formData.name" required
+                                #name="ngModel" />
+                            <div *ngIf="(formSubmitted || name.touched) && name.invalid" class="error">First Name is required</div>
+                        </div>
+
+                        <div class="row my-2">
+                            <input type="email" placeholder="E-mail Address" name="email" [(ngModel)]="formData.email"
+                                required email #email="ngModel" />
+                            <div *ngIf="(formSubmitted || email.touched) && email.invalid" class="error">
+                                A valid Email is required
+                            </div>
+
+                            
+                        </div>
+ 
+
+                        <button class="button" type="submit">Send Message</button>
+                    </form>
+
+
                                     </div>
                                     <div class="submitebut">
-                                        <button class="button">Submit</button>
+                                        <button class="button whitebt">Submit</button>
                                     </div>
                                 </div>
                             </div>
@@ -240,7 +280,7 @@
                                         </div>
                                     </div>
                                     <div class="submitebut">
-                                        <button class="button">Submit</button>
+                                        <button class="button whitebt">Submit</button>
                                     </div>
                                 </div>
                             </div>
@@ -276,7 +316,7 @@
                                         </div>
                                     </div>
                                     <div class="submitebut">
-                                        <button class="button">Submit</button>
+                                        <button class="button whitebt">Submit</button>
                                     </div>
                                 </div>
                             </div>
@@ -308,7 +348,7 @@
                                         </div>
                                     </div>
                                     <div class="submitebut">
-                                        <button class="button">Submit</button>
+                                        <button class="button whitebt">Submit</button>
                                     </div>
                                 </div>
                             </div>
@@ -343,7 +383,7 @@
                                         </div>
                                     </div>
                                     <div class="submitebut">
-                                        <button class="button">Submit</button>
+                                        <button class="button whitebt">Submit</button>
                                     </div>
                                 </div>
                             </div>

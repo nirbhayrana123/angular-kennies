@@ -13,10 +13,7 @@ import * as AOS from 'aos';
 })
 export class AppComponent {
   title = 'angular-headless-wp';
-
-
-
-
+  
     constructor(private router: Router) {
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))

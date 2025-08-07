@@ -1,7 +1,7 @@
 @import "aos/dist/aos.css";
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
- 
+
 * {
     margin: 0;
     padding: 0;
@@ -48,43 +48,58 @@ h4 {
 }
 
 /*******header -color *********/
-
-header.header.blacktext .navmenu a.active,header.header.blacktext .navmenu li.active > span,header.header.blacktext .navmenu li.active > i  {
-  color: #981a34;   
-   
+header.header.blacktext.homenav ul.navmenu li a.active {
+    color: #fff;
 }
 
-.header.bgcolor .flexsocial.whitei i {
-    color: #000000!important;
+header.header.blacktext .navmenu a.active, 
+header.header.blacktext .navmenu li.active>i,
+header.header.blacktext .navmenu li.active>a  {
+    color: rgb(187, 160, 86) !important;
+
 }
+
+.header.bgcolor .flexsocial.whitei i,
+header.header.blacktext.homenav.bgcolor .flexsocial.whitei i {
+    color: #000000;
+}
+
 .flexsocial.whitei i {
     color: #000000;
 }
 
-header.header.blacktext.homenav a.logo-brand img { filter: brightness(0) invert(1); }
+header.header.blacktext.homenav a.logo-brand img {
+    filter: brightness(0) invert(1);
+}
 
 header.header.blacktext.homenav,
 header.header.blacktext.homenav .flexsocial.whitei i,
 header.header.blacktext.homenav i,
-header.header.blacktext.homenav ul.navmenu li span, 
-header.header.blacktext.homenav ul.navmenu li i, 
+header.header.blacktext.homenav ul.navmenu li i,
 header.header.blacktext.homenav ul.navmenu li a {
     color: #ffffff;
 }
- 
-header.header.blacktext.homenav.bgcolor a.logo-brand img  {  filter: brightness(0) saturate(100%); }
 
-header.header.blacktext.homenav.bgcolor  ul.navmenu a ,header.header.blacktext.homenav.bgcolor  ul.navmenu span,header.header.blacktext.homenav.bgcolor  ul.navmenu i  { 
-    color: #000; 
-}
-header.header.blacktext.bgcolor  ul.navmenu a ,header.header.blacktext.bgcolor  ul.navmenu span,header.header.blacktext.bgcolor  ul.navmenu i  { 
-    color: #000; 
-}
-header.header.blacktext  ul.navmenu a ,header.header.blacktext  ul.navmenu span,header.header.blacktext  ul.navmenu i  { 
-    color: #000; 
+header.header.blacktext.homenav.bgcolor a.logo-brand img {
+    filter: brightness(0) saturate(100%);
 }
 
- 
+header.header.blacktext.homenav.bgcolor ul.navmenu a,
+header.header.blacktext.homenav.bgcolor ul.navmenu i {
+    color: #000;
+}
+
+header.header.blacktext.bgcolor ul.navmenu a,
+header.header.blacktext.bgcolor ul.navmenu i {
+    color: #000;
+}
+
+header.header.blacktext ul.navmenu a,
+header.header.blacktext ul.navmenu i {
+    color: #000;
+}
+
+
 .header.bgcolor {
     top: 0;
     background-color: #FFFFFF;
@@ -95,9 +110,11 @@ header.header.blacktext  ul.navmenu a ,header.header.blacktext  ul.navmenu span,
 .header.bgcolor .topbar button.menu-toggle i {
     color: #000;
 }
+
 header.header.blacktext.homenav ul.navmenu li ul.doropmenu li a {
     color: #000000;
 }
+
 /*******header -color *********/
 
 
@@ -189,18 +206,23 @@ a.button.mt3 {
 .audible-button:hover {
     background-color: #f5f5f5;
 }
- 
+
 
 header.header.blacktext a.logo-brand img {
     filter: brightness(0) saturate(100%);
 }
- 
+
 .st-row i.fa-solid.fa-star {
     color: #ffbc00;
 }
-
-main.pt-1 {
-    padding-top: 90px;
+main.mt.pt-4 {
+    padding-top: 140px;
+}
+main.mt.pt-4 {
+    padding-top: 100px;
+}
+main.mt {
+    padding-top: 81px;
 }
 
 img.form-bac {
@@ -213,12 +235,14 @@ img.form-bac {
     height: 100%;
 }
 
-ul.navmenu li a, ul.navmenu li span, ul.navmenu li i {
+ul.navmenu li a,
+ul.navmenu li span,
+ul.navmenu li i {
     font-size: 0.8em;
     cursor: pointer;
 }
 
- 
+
 .doropmenu li:hover {
     padding-left: 20px;
 }
@@ -287,7 +311,7 @@ header.header.bg .nav a:hover {
     color: #000000;
 }
 
- 
+
 .white {
     color: #fff;
 }
@@ -319,28 +343,25 @@ a.logo-brand {
 }
 
 .container {
-    max-width: 1380px;
-    /* max-width: 1270px; */
+    max-width: 1380px; 
     width: 100%;
     margin: 0 auto;
     padding: 0 20px;
     box-sizing: border-box;
 }
-  
+
 
 
 
 @media (max-width: 1300px) {
     .container {
-        max-width: 1170px;
-        padding: 0px 20px;
+        max-width: 1170px; 
     }
 }
 
 @media (max-width: 1024px) {
     .container {
-        max-width: 900px;
-        padding: 0px 20px;
+        max-width: 900px; 
     }
 }
 
@@ -391,12 +412,12 @@ a.sociallink {
 .audio-player iframe {
     height: 100px !important;
 }
- 
+
 header.header {
     width: 100%;
     position: fixed;
     z-index: 999;
-    padding: 15px 0; 
+    padding: 15px 0;
 }
 
 
@@ -2189,8 +2210,7 @@ h5.info-title {
     border-radius: 12px;
     padding: 20px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    display: flex
-;
+    display: flex;
     align-items: center;
     justify-content: left;
     height: 58px;
@@ -2200,8 +2220,7 @@ h5.info-title {
 .industry-card .icon {
     position: absolute;
     left: 0;
-    display: flex
-;
+    display: flex;
     align-items: center;
     justify-content: center;
     width: 60px;
@@ -2233,10 +2252,12 @@ h5.info-title {
     position: absolute;
     right: 20px;
 }
+
 .industry-card a:hover {
-    color: #ffffff; 
+    color: #ffffff;
     background-color: #512570c5;
 }
+
 .your-journey-Self-love {
     position: relative;
     align-items: start;
@@ -2338,8 +2359,7 @@ section.Self-love.faqbg {
     background-color: #0000002e;
     text-align: center;
     flex-direction: column;
-    display: flex
-;
+    display: flex;
     align-items: center;
     justify-content: center;
 }
@@ -2406,10 +2426,12 @@ section.Self-love.faqbg {
 .contact-box a.button.blockbutton {
     display: block;
 }
+
 .contact-box {
     text-align: center;
     margin-bottom: 10px;
 }
+
 .post-meta {
     display: flex;
     align-items: center;
@@ -2512,8 +2534,7 @@ a.buttobooksec {
 .question {
     font-size: 1.1rem;
     position: relative;
-    display: flex
-;
+    display: flex;
     align-items: center;
     cursor: pointer;
     color: #282727;
@@ -2532,7 +2553,7 @@ a.buttobooksec {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Font Awesome 6 Free';
+    font-family: 'Font Awesome 7 Free';
     font-weight: 900;
     transform: rotate(90deg);
 }
@@ -2864,14 +2885,14 @@ iframe {
     padding: 8px;
     border-radius: 50px;
     top: 40%;
-    width: 50px!important;
-    height: 50px!important;
+    width: 50px !important;
+    height: 50px !important;
     border: 2px solid #BBA056;
 }
 
 .swiper-button-prev::after,
 .swiper-button-next::after {
-    font-size: 17px!important;
+    font-size: 17px !important;
     color: #BBA056;
     font-weight: 900;
 }
@@ -3163,9 +3184,10 @@ section.self-development::after {
     z-index: 0;
 }
 
-section.self-development.bg2::after { 
-    background-color: rgb(0 23 15 / 38%); 
+section.self-development.bg2::after {
+    background-color: rgb(0 23 15 / 38%);
 }
+
 section.self-development.bg2 {
     margin-top: 40px;
 }
@@ -3542,7 +3564,7 @@ ul.covered-list li {
 .event-details-right {
     position: relative;
     padding-top: 70px;
-} 
+}
 
 section.section-panel {
     padding: 60px 0;
@@ -4598,13 +4620,6 @@ span.bolder {
     position: relative;
 }
 
-main.pt-1.pt-4 {
-    padding-top: 145px;
-}
-
-main.pt-1.p1-2 {
-    padding-top: 120px;
-}
 
 .news-block-two .inner-box .post-meta li {
     position: relative;
@@ -4612,8 +4627,7 @@ main.pt-1.p1-2 {
     line-height: 1.2em;
     display: inline-block;
     font-size: 0.8rem;
-    font-family: "Poppins", sans-serif;
-    /* border-right: 1px solid #cfcfcf; */
+    font-family: "Poppins", sans-serif; 
     padding-left: 25px;
     margin-right: 20px;
     padding-right: 20px;
@@ -5356,9 +5370,11 @@ section.sourses-section .right-content h3 {
     flex: 1;
     min-width: 300px;
 }
+
 .right {
     position: relative;
 }
+
 .description {
     margin-bottom: 24px;
 }
@@ -5394,8 +5410,7 @@ section.sourses-section .right-content h3 {
 
 .feature-icon {
     background-color: #51257057;
-    display: flex
-;
+    display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -6280,7 +6295,7 @@ a.button.border-only {
         gap: 20px;
     }
 
-    ul.navmenu li a {
+    ul.navmenu li a, ul.navmenu li i {
         font-size: 0.7em;
     }
 
@@ -6379,10 +6394,15 @@ a.button.border-only {
         align-items: center;
         justify-content: center;
     }
-
+.homenav button.menu-toggle i.open.fa-solid.fa-bars {
+    color: #fff;
+}
+.homenav.bgcolor button.menu-toggle i.open.fa-solid.fa-bars {
+    color: #000000;
+}
     button.menu-toggle i {
         font-size: 40px;
-        color: #ffffff;
+        color: #000000;
         transition: 0.5s;
         position: absolute;
     }
@@ -6391,15 +6411,29 @@ a.button.border-only {
         color: #000;
         scale: 0;
     }
-
+.header.bgcolor {  
+    animation:inherit;
+}
     .navbars.openmenu i.open {
         scale: 0;
     }
 
     .navbars.openmenu i.close {
         scale: 1.1;
+        color: #000 !important;
     }
 
+      .navbars.openmenu ul.navmenu li a.contact-nav {
+        color: #ffffff !important;
+    }
+
+    .navbars.openmenu ul.navmenu li a,
+    .navbars.openmenu i {
+        color: #000 !important;
+    }
+.navbars.openmenu img {
+    filter: brightness(0) saturate(100%) !important;
+}
 
     .topbar {
         display: flex;
@@ -6459,6 +6493,19 @@ a.button.border-only {
         order: 2;
     }
 
+
+
+header.header.blacktext.homenav,
+header.header.blacktext.homenav .flexsocial.whitei i,
+header.header.blacktext.homenav i,
+header.header.blacktext.homenav ul.navmenu li span, 
+header.header.blacktext.homenav ul.navmenu li i, 
+header.header.blacktext.homenav ul.navmenu li a {
+    color: #000;
+}
+
+
+
 }
 
 
@@ -6485,7 +6532,9 @@ a.button.border-only {
         height: auto;
     }
 
-
+main.mt {
+    padding-top: 70px;
+}
 
     .flexchuse {
         flex-wrap: wrap;
@@ -6537,7 +6586,7 @@ a.button.border-only {
         padding: 50px 5%;
     }
 
-  .flex-who-we-are {
+    .flex-who-we-are {
         gap: 205px;
     }
 
@@ -6679,7 +6728,7 @@ a.button.border-only {
         font-size: 2em;
     }
 
-    ul.navmenu li a {
+    ul.navmenu li a,ul.navmenu li i  {
         font-size: 1.3em;
         font-weight: 600;
     }
@@ -6868,13 +6917,14 @@ a.button.border-only {
         bottom: -40px;
     }
 
-.video-boxes.mt22{
+    .video-boxes.mt22 {
         width: 195px;
         border: 6px solid #fff;
         bottom: -140px;
     }
-.flex-who-we-are {
-        gap: 170px;
+
+    .flex-who-we-are {
+        gap: 70px;
     }
 
     .button {
@@ -6956,7 +7006,7 @@ a.button.border-only {
     }
 
     .book-row {
-        padding: 40px 0;
+        padding: 0px 0;
     }
 
     a.logo-brand {
@@ -7040,10 +7090,10 @@ a.button.border-only {
     }
 
     .img-box .image-2 {
-        width: 300px;
-        height: 300px;
-        max-width: 300px;
-        max-height: 300px;
+       width: 100%;
+        height: auto;
+        max-width: 100%;
+        max-height: max-content;
     }
 
     .audio-podcast {
@@ -7085,6 +7135,9 @@ a.button.border-only {
     .video-sec {
         height: 400px;
     }
+.wordsendsicyel { 
+    padding: 40px 0px;
+}
 
 
     .vertyvery-box {
@@ -7111,7 +7164,7 @@ a.button.border-only {
     }
 
     .blog-section {
-        padding: 60px 0px;
+        padding: 40px 0px;
     }
 
     .mentor-content {
@@ -7165,9 +7218,6 @@ a.button.border-only {
         gap: 50px;
     }
 
-    main.pt-1.pt68px {
-        padding-top: 68px;
-    }
 
     .healing-inner-pages.height-7 {
         background-position: -240px 0;
@@ -7239,14 +7289,44 @@ a.button.border-only {
         text-align: center;
     }
 
-   .industry-card .icon {
+    .industry-card .icon {
         border-radius: 100%;
         width: 65px;
         height: 65px;
     }
 
+section.book-section.page {
+    padding: 40px 0;
+}
+section.banner {
+    height: auto;  
+    width: 100%;
+    margin: 0 auto; 
+    padding: 75px 0px;
+}
+main.pt-1.pt-4 {
+    padding-top: 70px;
+}
+main.pt-1 {
+    padding-top: 70px;
+}
+.contactsection {
+    padding: 40px 0; 
+}
+section.resourcesmain-section {
+    padding: 40px 0px;
+}
+section.self-development.bg2 {
+    margin-top: 0;
+}
+section.self-development {
+    min-height: auto;
+}
 
-
+.videosectionleft
+ {
+    padding-bottom: 0;
+}
 
 
 
@@ -7330,4 +7410,15 @@ a.button.border-only {
         font-size: 2em;
         margin-bottom: 10px;
     }
+.price-row {
+    flex-wrap: wrap;
+} 
+.price-row a.button { 
+    width: 100%;
+}
+
+
+
+
+
 }

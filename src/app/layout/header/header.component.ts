@@ -34,6 +34,17 @@ isHomeOrBlog = false;
     ).subscribe((event: any) => {
       const url = event.urlAfterRedirects;
       this.isHomeOrBlog = url === '/';
-    });
+
+      if (window.innerWidth <= 1200) {
+      this.isMenuOpen = false;
+    }
+    }); 
+
   }
+
+
+
+ 
+
+
 }

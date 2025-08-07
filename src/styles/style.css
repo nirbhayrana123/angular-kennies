@@ -338,8 +338,7 @@ a.logo-brand {
 }
 
 .container {
-    max-width: 1380px;
-    /* max-width: 1270px; */
+    max-width: 1380px; 
     width: 100%;
     margin: 0 auto;
     padding: 0 20px;
@@ -351,15 +350,13 @@ a.logo-brand {
 
 @media (max-width: 1300px) {
     .container {
-        max-width: 1170px;
-        padding: 0px 20px;
+        max-width: 1170px; 
     }
 }
 
 @media (max-width: 1024px) {
     .container {
-        max-width: 900px;
-        padding: 0px 20px;
+        max-width: 900px; 
     }
 }
 
@@ -6923,7 +6920,7 @@ header.header.blacktext.homenav ul.navmenu li a {
     }
 
     .flex-who-we-are {
-        gap: 170px;
+        gap: 70px;
     }
 
     .button {
@@ -7005,7 +7002,7 @@ header.header.blacktext.homenav ul.navmenu li a {
     }
 
     .book-row {
-        padding: 40px 0;
+        padding: 0px 0;
     }
 
     a.logo-brand {
@@ -7089,10 +7086,10 @@ header.header.blacktext.homenav ul.navmenu li a {
     }
 
     .img-box .image-2 {
-        width: 300px;
-        height: 300px;
-        max-width: 300px;
-        max-height: 300px;
+       width: 100%;
+        height: auto;
+        max-width: 100%;
+        max-height: max-content;
     }
 
     .audio-podcast {
@@ -7134,6 +7131,9 @@ header.header.blacktext.homenav ul.navmenu li a {
     .video-sec {
         height: 400px;
     }
+.wordsendsicyel { 
+    padding: 40px 0px;
+}
 
 
     .vertyvery-box {
@@ -7160,7 +7160,7 @@ header.header.blacktext.homenav ul.navmenu li a {
     }
 
     .blog-section {
-        padding: 60px 0px;
+        padding: 40px 0px;
     }
 
     .mentor-content {
@@ -7294,8 +7294,38 @@ header.header.blacktext.homenav ul.navmenu li a {
         height: 65px;
     }
 
+section.book-section.page {
+    padding: 40px 0;
+}
+section.banner {
+    height: auto;  
+    width: 100%;
+    margin: 0 auto; 
+    padding: 75px 0px;
+}
+main.pt-1.pt-4 {
+    padding-top: 70px;
+}
+main.pt-1 {
+    padding-top: 70px;
+}
+.contactsection {
+    padding: 40px 0; 
+}
+section.resourcesmain-section {
+    padding: 40px 0px;
+}
+section.self-development.bg2 {
+    margin-top: 0;
+}
+section.self-development {
+    min-height: auto;
+}
 
-
+.videosectionleft
+ {
+    padding-bottom: 0;
+}
 
 
 
@@ -7379,4 +7409,15 @@ header.header.blacktext.homenav ul.navmenu li a {
         font-size: 2em;
         margin-bottom: 10px;
     }
+.price-row {
+    flex-wrap: wrap;
+} 
+.price-row a.button { 
+    width: 100%;
+}
+
+
+
+
+
 }

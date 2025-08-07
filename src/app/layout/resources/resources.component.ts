@@ -21,6 +21,8 @@ formData = {
 formSuccess = false;
 formSuccessconfidence = false;
 formSubmitted = false; 
+formSuccessboundaries = false;
+
 
 constructor(private titleService: Title, private metaService: Meta,  private wpService: WpService) {
     this.titleService.setTitle('Resources | Emotional Authenticity Coach | Emotion Coaching');
@@ -77,5 +79,28 @@ constructor(private titleService: Title, private metaService: Meta,  private wpS
     });
   }
 
+  submitFormBoundaries() {
+     this.formSubmitted = true;
+      if (!this.formData.name || !this.formData.email) {
+    //alert('Please fill in all required fields.');
+    return;
+  }
+    this.wpService.sendFormboundaries(this.formData).subscribe({
+      next: (res) => {
+        console.log('✅ Success:', res);
+         this.formSuccessboundaries = true; 
+        // alert('Message sent successfully!');
+        this.formData = {
+          name: '',  
+          email: '', 
+        };
+        this.formSubmitted = false;
+      },
+      error: (err) => {
+        console.error('❌ Error:', err);
+        alert('Failed to send message. Please try again.');
+      }
+    });
+  }
 
 }

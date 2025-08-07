@@ -6394,7 +6394,12 @@ a.button.border-only {
         align-items: center;
         justify-content: center;
     }
-
+.homenav button.menu-toggle i.open.fa-solid.fa-bars {
+    color: #fff;
+}
+.homenav.bgcolor button.menu-toggle i.open.fa-solid.fa-bars {
+    color: #000000;
+}
     button.menu-toggle i {
         font-size: 40px;
         color: #000000;

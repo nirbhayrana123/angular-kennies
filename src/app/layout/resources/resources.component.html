@@ -302,20 +302,38 @@
                                     your email address and receive your download.</p>
                             </div>
 
-                            <div class="mainformfield">
-                                <div class="flexfield">
-                                    <div class="group-form-field">
-                                        <label>First Name<span>*</span> </label>
-                                        <input type="text" class="customefields">
-                                    </div>
-                                    <div class="group-form-field">
-                                        <label>Email<span>*</span> </label>
-                                        <input type="text" class="customefields">
-                                    </div>
+                           <div class="mainformfield">
+                                <!-- ✅ Success message -->
+                                <div *ngIf="formSuccessconquerconfrontation" class="success-message">
+                                    Thank you! Your message has been sent successfully.
                                 </div>
-                                <div class="submitebut">
-                                    <button class="button whitebt">Submit</button>
-                                </div>
+                                <form *ngIf="!formSuccessconquerconfrontation" #contactForm="ngForm" (ngSubmit)="submitFormConquerConfrontation()">
+
+                                     <div class="flexfield"> 
+                                        <div class="group-form-field">
+                                            <label>First Name<span>*</span> </label>
+                                            <input type="text" placeholder="First Name"  class="customefields" name="name"
+                                                [(ngModel)]="formData.name" required #name="ngModel" />
+                                            <div *ngIf="(formSubmitted || name.touched) && name.invalid" class="error">
+                                                First Name is required</div>
+                                        </div>
+
+                                        <div class="group-form-field">
+                                            <label>Email<span>*</span> </label>
+                                            <input type="email" placeholder="E-mail Address"  class="customefields" name="email"
+                                                [(ngModel)]="formData.email" required email #email="ngModel" />
+                                            <div *ngIf="(formSubmitted || email.touched) && email.invalid"
+                                                class="error">
+                                                A valid Email is required
+                                            </div>
+
+
+                                        </div>
+                                       </div>
+                                       <div class="submitebut">
+                                        <button class="button" type="submit">Send Message</button>
+                                        </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -334,20 +352,38 @@
                                     Input your email address to be redirected to the download.</p>
                             </div>
 
-                            <div class="mainformfield">
-                                <div class="flexfield">
-                                    <div class="group-form-field">
-                                        <label>First Name<span>*</span> </label>
-                                        <input type="text" class="customefields">
-                                    </div>
-                                    <div class="group-form-field">
-                                        <label>Email<span>*</span> </label>
-                                        <input type="text" class="customefields">
-                                    </div>
+                             <div class="mainformfield">
+                                <!-- ✅ Success message -->
+                                <div *ngIf="formSuccess" class="success-message">
+                                    Thank you! Your message has been sent successfully.
                                 </div>
-                                <div class="submitebut">
-                                    <button class="button whitebt">Submit</button>
-                                </div>
+                                <form *ngIf="!formSuccess" #contactForm="ngForm" (ngSubmit)="submitFormresource()">
+
+                                     <div class="flexfield"> 
+                                        <div class="group-form-field">
+                                            <label>First Name<span>*</span> </label>
+                                            <input type="text" placeholder="First Name"  class="customefields" name="name"
+                                                [(ngModel)]="formData.name" required #name="ngModel" />
+                                            <div *ngIf="(formSubmitted || name.touched) && name.invalid" class="error">
+                                                First Name is required</div>
+                                        </div>
+
+                                        <div class="group-form-field">
+                                            <label>Email<span>*</span> </label>
+                                            <input type="email" placeholder="E-mail Address"  class="customefields" name="email"
+                                                [(ngModel)]="formData.email" required email #email="ngModel" />
+                                            <div *ngIf="(formSubmitted || email.touched) && email.invalid"
+                                                class="error">
+                                                A valid Email is required
+                                            </div>
+
+
+                                        </div>
+                                       </div>
+                                       <div class="submitebut">
+                                        <button class="button" type="submit">Send Message</button>
+                                        </div>
+                                </form>
                             </div>
                         </div>
                     </div>

@@ -32,6 +32,10 @@ constructor(private titleService: Title, private metaService: Meta,  private wpS
 
   submitFormresource() {
      this.formSubmitted = true;
+      if (!this.formData.name || !this.formData.email) {
+    //alert('Please fill in all required fields.');
+    return;
+  }
     this.wpService.sendFormRejected(this.formData).subscribe({
       next: (res) => {
         console.log('✅ Success:', res);

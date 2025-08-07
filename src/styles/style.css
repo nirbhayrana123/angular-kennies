@@ -114,7 +114,9 @@ header.header.blacktext ul.navmenu i {
 header.header.blacktext.homenav ul.navmenu li ul.doropmenu li a {
     color: #000000;
 }
-
+.error {
+    color: #ff0000;
+}
 /*******header -color *********/
 
 

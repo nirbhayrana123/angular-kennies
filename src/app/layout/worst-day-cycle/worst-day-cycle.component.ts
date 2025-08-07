@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-worst-day-cycle',
   standalone: true,
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './worst-day-cycle.component.html',
   styleUrls: ['./worst-day-cycle.component.css']   
 })

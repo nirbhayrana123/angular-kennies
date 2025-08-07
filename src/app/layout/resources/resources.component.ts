@@ -19,6 +19,7 @@ formData = {
     email: '', 
   };
 formSuccess = false;
+formSuccessconfidence = false;
 formSubmitted = false; 
 
 constructor(private titleService: Title, private metaService: Meta,  private wpService: WpService) {
@@ -48,7 +49,25 @@ constructor(private titleService: Title, private metaService: Meta,  private wpS
       }
     });
   }
-
+  submitFormCodependence() {
+     this.formSubmitted = true;
+    this.wpService.sendFormconfidence(this.formData).subscribe({
+      next: (res) => {
+        console.log('✅ Success:', res);
+         this.formSuccessconfidence = true; 
+        // alert('Message sent successfully!');
+        this.formData = {
+          name: '',  
+          email: '', 
+        };
+        this.formSubmitted = false;
+      },
+      error: (err) => {
+        console.error('❌ Error:', err);
+        alert('Failed to send message. Please try again.');
+      }
+    });
+  }
 
 
 }

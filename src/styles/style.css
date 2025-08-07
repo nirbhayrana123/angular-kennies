@@ -2551,7 +2551,7 @@ a.buttobooksec {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Font Awesome 6 Free';
+    font-family: 'Font Awesome 7 Free';
     font-weight: 900;
     transform: rotate(90deg);
 }
@@ -6493,6 +6493,19 @@ a.button.border-only {
     .card-section.sticky .card-content-grey-bg {
         order: 2;
     }
+
+
+
+header.header.blacktext.homenav,
+header.header.blacktext.homenav .flexsocial.whitei i,
+header.header.blacktext.homenav i,
+header.header.blacktext.homenav ul.navmenu li span, 
+header.header.blacktext.homenav ul.navmenu li i, 
+header.header.blacktext.homenav ul.navmenu li a {
+    color: #000;
+}
+
+
 
 }
 

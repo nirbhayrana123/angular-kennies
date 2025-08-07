@@ -29,7 +29,7 @@ constructor(private titleService: Title, private metaService: Meta,  private wpS
     });
   }
 
-  submitForm( form :any) {
+  submitFormresource() {
      this.formSubmitted = true;
     this.wpService.sendFormRejected(this.formData).subscribe({
       next: (res) => {

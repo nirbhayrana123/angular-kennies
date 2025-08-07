@@ -35,7 +35,7 @@ formSubmitted = false;
     });
   }
 
-  submitForm(form :any) {
+  submitForm(contactForm :any) {
      this.formSubmitted = true;
     this.wpService.sendForm(this.formData).subscribe({
       next: (res) => {

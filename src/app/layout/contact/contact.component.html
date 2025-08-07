@@ -11,7 +11,7 @@
                         <div *ngIf="formSuccess" class="success-message">
                         Thank you! Your message has been sent successfully.
                         </div>
-                    <form *ngIf="!formSuccess" #contactForm="ngForm" (ngSubmit)="submitForm(form)">
+                    <form *ngIf="!formSuccess" #contactForm="ngForm"(ngSubmit)="submitForm(contactForm)"> 
 
                         <div class="row">
                             <input type="text" placeholder="First Name" name="name" [(ngModel)]="formData.name" required
@@ -81,7 +81,6 @@
             </div>
         </div>
 
-    </div>
 
 
 

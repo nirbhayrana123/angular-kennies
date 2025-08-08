@@ -49,6 +49,7 @@ constructor(private titleService: Title, private metaService: Meta,  private wpS
           email: '', 
         };
         this.formSubmitted = false;
+        window.open('/images/pdf/How-To-Remove-Feeling-Rejected-.pdf', '_blank');
       },
       error: (err) => {
         console.error('❌ Error:', err);

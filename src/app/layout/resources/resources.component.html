@@ -368,10 +368,10 @@
 
                              <div class="mainformfield">
                                 <!-- ✅ Success message -->
-                                <div *ngIf="formSuccess" class="success-message">
+                                <div *ngIf="formSuccessCodependenceGiving" class="success-message">
                                     Thank you! Your message has been sent successfully.
                                 </div>
-                                <form *ngIf="!formSuccess" #contactForm="ngForm" (ngSubmit)="submitFormresource()">
+                                <form *ngIf="!formSuccessCodependenceGiving" #contactForm="ngForm" (ngSubmit)="submitFormConfrontation()">
 
                                      <div class="flexfield"> 
                                         <div class="group-form-field">
@@ -421,10 +421,10 @@
 
                            <div class="mainformfield">
                                 <!-- ✅ Success message -->
-                                <div *ngIf="formSuccess" class="success-message">
+                                <div *ngIf="formSuccessFeelingsWheel" class="success-message">
                                     Thank you! Your message has been sent successfully.
                                 </div>
-                                <form *ngIf="!formSuccess" #contactForm="ngForm" (ngSubmit)="submitFormresource()">
+                                <form *ngIf="!formSuccessFeelingsWheel" #contactForm="ngForm" (ngSubmit)="submitFormFeelingsWheel()">
 
                                      <div class="flexfield"> 
                                         <div class="group-form-field">

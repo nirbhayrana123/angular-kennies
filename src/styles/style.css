@@ -682,6 +682,11 @@ a.button.blockbutton:hover {
     background-color: #ffffff;
     color: #434343;
 }
+.success-message 
+ {
+    color: #1cbf00;
+}
+
 
 .button-row {
     display: flex;

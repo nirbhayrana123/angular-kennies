@@ -23,8 +23,8 @@ formSuccessconfidence = false;
 formSubmitted = false; 
 formSuccessconquerconfrontation = false;
 formSuccessboundaries = false;
-
-
+formSuccessCodependenceGiving = false;
+formSuccessFeelingsWheel = false;
 constructor(private titleService: Title, private metaService: Meta,  private wpService: WpService) {
     this.titleService.setTitle('Resources | Emotional Authenticity Coach | Emotion Coaching');
     this.metaService.updateTag({
@@ -63,7 +63,7 @@ constructor(private titleService: Title, private metaService: Meta,  private wpS
     //alert('Please fill in all required fields.');
     return;
   }
-    this.wpService.sendFormconfidence(this.formData).subscribe({
+    this.wpService.sendFormcodependencequestionnaire(this.formData).subscribe({
       next: (res) => {
         console.log('✅ Success:', res);
          this.formSuccessconfidence = true; 
@@ -120,6 +120,61 @@ constructor(private titleService: Title, private metaService: Meta,  private wpS
       next: (res) => {
         console.log('✅ Success:', res);
          this.formSuccessconquerconfrontation = true; 
+        // alert('Message sent successfully!');
+        this.formData = {
+          name: '',  
+          email: '', 
+        };
+        this.formSubmitted = false;
+      },
+      error: (err) => {
+        console.error('❌ Error:', err);
+        alert('Failed to send message. Please try again.');
+      }
+    });
+  }
+
+
+
+
+
+
+
+ submitFormConfrontation() {
+     this.formSubmitted = true;
+      if (!this.formData.name || !this.formData.email) {
+    //alert('Please fill in all required fields.');
+    return;
+  }
+    this.wpService.sendFormCodependenceGiving(this.formData).subscribe({
+      next: (res) => {
+        console.log('✅ Success:', res);
+         this.formSuccessCodependenceGiving = true; 
+        // alert('Message sent successfully!');
+        this.formData = {
+          name: '',  
+          email: '', 
+        };
+        this.formSubmitted = false;
+      },
+      error: (err) => {
+        console.error('❌ Error:', err);
+        alert('Failed to send message. Please try again.');
+      }
+    });
+  }
+
+
+submitFormFeelingsWheel() {
+     this.formSubmitted = true;
+      if (!this.formData.name || !this.formData.email) {
+    //alert('Please fill in all required fields.');
+    return;
+  }
+    this.wpService.sendFormFeelingsWheel(this.formData).subscribe({
+      next: (res) => {
+        console.log('✅ Success:', res);
+         this.formSuccessFeelingsWheel = true; 
         // alert('Message sent successfully!');
         this.formData = {
           name: '',  

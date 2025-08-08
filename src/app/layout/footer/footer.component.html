@@ -3,10 +3,15 @@
                 <h5 class="tag-line">Weekly Newsletter</h5>
                 <h3> Get my tips directly into your inbox every Monday morning.</h3>
                 <p class="caption">illustration by Ouch.pics</p>
-                <form class="newsletter-form">
+                <!-- <form class="newsletter-form">
                     <input type="email" placeholder="Enter your e-mail" required />
                     <button type="submit">Subscribe!</button>
-                </form>
+                </form> -->
+
+                <form (ngSubmit)="submitSubscribe()" class="newsletter-form"  #form="ngForm">
+  <input type="email" name="email" [(ngModel)]="email" placeholder="Enter your e-mail" required />
+  <button type="submit">Subscribe!</button>
+</form>
 
                    <div class="social-icons">
                     <a target="_blank" href="https://www.facebook.com/kennyweiss.net"><i class="fa-brands fa-facebook-f"></i></a>

@@ -81,11 +81,10 @@ export const routes: Routes = [
     import('./layout/childhood-trauma/childhood-trauma.component').then(m => m.ChildhoodTraumaComponent)
 },
 {
-  path: 'courses-details',
+  path: 'courses/:slug',
   loadComponent: () =>
-    import('./layout/courses-details/courses-details/courses-details.component').then(m => m.CoursesDetailsComponent)
-},
-
+    import('./layout/courses/courses-details/courses-details.component').then(m => m.CoursesDetailsComponent)
+} 
 
 
 ];

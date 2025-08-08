@@ -1,16 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router'; 
+import { WpService } from '../../services/wp.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-courses',
   standalone: true,
-  imports: [RouterModule],
+  imports: [RouterModule, CommonModule ],
   templateUrl: './courses.component.html',
   styleUrl: './courses.component.css'
 })
 export class CoursesComponent {
-constructor(private titleService: Title, private metaService: Meta) {
+   services: any[] = [];
+   acfData: any;
+   bannerHeading = '';
+
+constructor(private titleService: Title, private metaService: Meta, private wp: WpService,private route: ActivatedRoute) {
     this.titleService.setTitle('Begin Your Journey Course - Kenny Weiss');
     this.metaService.updateTag({
       name: 'description',
@@ -18,4 +24,11 @@ constructor(private titleService: Title, private metaService: Meta) {
     });
   }
  
+  ngOnInit() {
+    this.wp.getServices().subscribe((data) => {
+      this.services = data;
+      console.log(data);
+      this.bannerHeading = data[0]?.acf?.banner_heading || '';
+    });
+  }
 }

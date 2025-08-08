@@ -1,13 +1,14 @@
 // src/app/services/wp.service.ts
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class WpService {
   private baseUrl = 'https://kennyweiss.net/cms/wp-json/wp/v2';
-
+  private apiUrl = 'https://kennyweiss.net/cms/wp-json/wp/v2/services';
   constructor(private http: HttpClient) {}
 
   getPosts() {
@@ -17,6 +18,13 @@ export class WpService {
   getPost(id: number) {
     return this.http.get(`${this.baseUrl}/posts/${id}?_embed`);
   }
+ getServices(): Observable<any> {
+  return this.http.get<any>(`${this.apiUrl}?_embed`);
+}
+
+getServiceBySlug(slug: string): Observable<any> {
+  return this.http.get<any>(`${this.apiUrl}/services?slug=${slug}&_embed`);
+}
 
   /////////Contact
   sendForm(data: any) {

@@ -86,7 +86,7 @@ export class WpService {
   return this.http.post(url, body);
 }
 
-/////////confidence
+/////////Conquer Confrontation
   sendFormConquerConfrontation(data: any) {
    const url = 'https://kennyweiss.net/cms/wp-json/contact-form-7/v1/contact-forms/584/feedback';
   const body = new FormData();
@@ -102,7 +102,7 @@ export class WpService {
   return this.http.post(url, body);
 }
   
-/////////confidence
+/////////Codependence
   sendFormCodependence(data: any) {
    const url = 'https://kennyweiss.net/cms/wp-json/contact-form-7/v1/contact-forms/586/feedback';
   const body = new FormData();

@@ -1,5 +1,7 @@
-<main class="mt pt-4">
 
+
+<main class="mt pt-4">
+ <div *ngIf="services.length">
     <section class="sourses-section">
         <div class="course-heading">
             <h5 class="tag-line">Learn from me</h5>
@@ -8,6 +10,7 @@
 
         <div class="container ">
 
+     <div *ngFor="let service of services">
             <div class="flex-who-we-are mb-3">
                 <!-- Left Side Images -->
                 <div class="left-images">
@@ -26,33 +29,22 @@
 
                 <!-- Right Side Content -->
                 <div class="right-content">
-                    <h3>Begin Your Journey To Emotional Authenticity</h3>
+                    <h3 [innerHTML]="service.title.rendered"></h3>
                     <div class="pricing-set">
-                        <h4 class="price2">$29.77</h4>
+                        <h4 class="price2">$ {{ service.acf?.price }}</h4>
                         <h4>Course • By Kenny Weiss</h4>
                     </div>
-                    <p class="description">
-                        Learn the first, foundational steps in developing Emotional Authenticity
-                        <br>
-                        <br>
-                        Learn the first foundational step to turn your feelings of fear, anger, sadness, and
-                        hopelessness, and transform them into happiness, joy, excitement, and empowerment.
-
-                        <br>
-                        <br>
-                        Because you have been hurt, of course, you are skeptical if this program really works.
-
-                        That’s why I am offering this beginning course so you can see how quickly and easily you can
-                        move from emotional misery to Emotional Authenticity.
-
-                        Once you have that confidence, you can feel safe and secure that my Complete Emotional
-                        Authenticity Method will provide you with the transformation you seek.
-
-                    </p>
-                      <a routerLink="/courses-details" class="button w-7">Enroll now</a>
+                     <div class="description">{{ service.acf?.banner_desc }}</div> 
+                 
+                      <a [routerLink]="['/courses', service.slug]" class="button w-7">Enroll now</a> 
                        
                 </div>
             </div>
+</div>
+
+
+
+            <H3>BELOW static</H3>
 
             <div class="flex-who-we-are mb-3" data-aos="fade-up" data-aos-duration="300">
                 <!-- Left Side Images -->
@@ -320,6 +312,6 @@
 
 
 
-
+</div>
 
 </main>

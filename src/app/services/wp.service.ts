@@ -1,13 +1,14 @@
 // src/app/services/wp.service.ts
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class WpService {
   private baseUrl = 'https://kennyweiss.net/cms/wp-json/wp/v2';
-
+  private apiUrl = 'https://kennyweiss.net/cms/wp-json/wp/v2/services';
   constructor(private http: HttpClient) {}
 
   getPosts() {
@@ -17,6 +18,13 @@ export class WpService {
   getPost(id: number) {
     return this.http.get(`${this.baseUrl}/posts/${id}?_embed`);
   }
+ getServices(): Observable<any> {
+  return this.http.get<any>(`${this.apiUrl}?_embed`);
+}
+
+getServiceBySlug(slug: string): Observable<any> {
+  return this.http.get<any>(`${this.apiUrl}/services?slug=${slug}&_embed`);
+}
 
   /////////Contact
   sendForm(data: any) {
@@ -53,8 +61,8 @@ export class WpService {
   return this.http.post(url, body);
 }
 /////////pdf
-/////////confidence
-  sendFormconfidence(data: any) {
+/////////Codependence Questionnaire
+  sendFormcodependencequestionnaire(data: any) {
    const url = 'https://kennyweiss.net/cms/wp-json/contact-form-7/v1/contact-forms/580/feedback';
   const body = new FormData();
   body.append('your-name', data.name);
@@ -102,8 +110,8 @@ export class WpService {
   return this.http.post(url, body);
 }
   
-/////////Codependence
-  sendFormCodependence(data: any) {
+/////////Codependence Giving
+  sendFormCodependenceGiving(data: any) {
    const url = 'https://kennyweiss.net/cms/wp-json/contact-form-7/v1/contact-forms/586/feedback';
   const body = new FormData();
   body.append('your-name', data.name);
@@ -133,6 +141,4 @@ export class WpService {
   body.append('_wpcf7_posted_data_hash', '');
   return this.http.post(url, body);
 }
-
-
 }

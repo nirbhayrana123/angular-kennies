@@ -13,36 +13,62 @@ import { CommonModule } from '@angular/common';
   styleUrl: './courses-details.component.css'
 })
 export class CoursesDetailsComponent {
-services: any;
-bannerHeading = '';
-courseImage = '';
-featuredImage = '';
+  service: any = { acf: {} };
+  bannerHeading = '';
+  courseImage = '';
+  featuredImage = ''; 
+  serviceLoaded = false;
+  backgroundImage = ''; 
 
-constructor(private titleService: Title, private metaService: Meta, private wp: WpService,private route: ActivatedRoute) {
+  constructor(
+    private titleService: Title, 
+    private metaService: Meta, 
+    private wp: WpService,
+    private route: ActivatedRoute
+  ) {
     this.titleService.setTitle('Begin Your Journey Course - Kenny Weiss');
     this.metaService.updateTag({
       name: 'description',
       content: 'This journey to Emotional Authenticity is for those who have looked everywhere and are desperate for a solution. If that&#039;s you, you&#039;re ready. Best Emotional Authenticity coach.',
     });
-  };
-
+  }
 
 ngOnInit() {
+  this.courseImage = '';
+  this.backgroundImage = '';
+  this.featuredImage = ''; 
+  
   const slug = this.route.snapshot.paramMap.get('slug');
-console.log(slug);
+  
   if (slug) {
     this.wp.getServiceBySlug(slug).subscribe((res) => {
       if (res.length > 0) {
-        this.services = res[0];
-        this.bannerHeading = this.services.acf?.banner_heading || '';
-        this.courseImage = this.services.acf?.course_image || '';
+        this.service = res[0];
 
-        // Featured image from _embedded
-        this.featuredImage = this.services._embedded?.['wp:featuredmedia']?.[0]?.source_url || '';
+        // Banner Heading
+        this.bannerHeading = this.service.acf?.banner_heading || ''; 
+
+        // Featured image
+        this.featuredImage = this.service._embedded?.['wp:featuredmedia']?.[0]?.source_url || '';
+
+        // Course Image
+        const courseImageId = this.service.acf?.course_image;
+        if (courseImageId) {
+          this.wp.getMediaById(courseImageId).subscribe((mediaRes) => {
+            this.courseImage = mediaRes.source_url;
+          });
+        }
+
+        // Background Image
+        const backgroundImageId = this.service.acf?.background_img;
+        if (backgroundImageId) {
+          this.wp.getMediaById(backgroundImageId).subscribe((mediaRes) => {
+            this.backgroundImage = mediaRes.source_url;
+          });
+        }
       }
     });
   }
 }
-
 
 }

@@ -14,7 +14,7 @@ import { CommonModule } from '@angular/common';
 export class CoursesComponent {
    services: any[] = [];
    acfData: any;
-   bannerHeading = '';
+   bannerHeading = ''; 
 
 constructor(private titleService: Title, private metaService: Meta, private wp: WpService,private route: ActivatedRoute) {
     this.titleService.setTitle('Begin Your Journey Course - Kenny Weiss');
@@ -28,7 +28,15 @@ constructor(private titleService: Title, private metaService: Meta, private wp: 
     this.wp.getServices().subscribe((data) => {
       this.services = data;
       console.log(data);
-      this.bannerHeading = data[0]?.acf?.banner_heading || '';
+      this.bannerHeading = data[0]?.acf?.banner_heading || ''; 
+     this.services = data.map((service: any) => {
+      return {
+        ...service,
+        courseImage: service.acf?.course_image_url || '',
+        featuredImage:
+          service._embedded?.['wp:featuredmedia']?.[0]?.source_url || '',
+      };
+    });
     });
   }
-}
+} 

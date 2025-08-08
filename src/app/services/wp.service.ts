@@ -21,11 +21,13 @@ export class WpService {
  getServices(): Observable<any> {
   return this.http.get<any>(`${this.apiUrl}?_embed`);
 }
-
+ 
 getServiceBySlug(slug: string): Observable<any> {
-  return this.http.get<any>(`${this.apiUrl}/services?slug=${slug}&_embed`);
+  return this.http.get<any[]>(`${this.baseUrl}/services?slug=${slug}&_embed`);
 }
-
+getMediaById(id: number) {
+  return this.http.get<any>(`https://kennyweiss.net/cms/wp-json/wp/v2/media/${id}`);
+}
   /////////Contact
   sendForm(data: any) {
    const url = 'https://kennyweiss.net/cms/wp-json/contact-form-7/v1/contact-forms/573/feedback';

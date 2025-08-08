@@ -63,8 +63,8 @@ getMediaById(id: number) {
   return this.http.post(url, body);
 }
 /////////pdf
-/////////confidence
-  sendFormconfidence(data: any) {
+/////////Codependence Questionnaire
+  sendFormcodependencequestionnaire(data: any) {
    const url = 'https://kennyweiss.net/cms/wp-json/contact-form-7/v1/contact-forms/580/feedback';
   const body = new FormData();
   body.append('your-name', data.name);
@@ -112,8 +112,8 @@ getMediaById(id: number) {
   return this.http.post(url, body);
 }
   
-/////////Codependence
-  sendFormCodependence(data: any) {
+/////////Codependence Giving
+  sendFormCodependenceGiving(data: any) {
    const url = 'https://kennyweiss.net/cms/wp-json/contact-form-7/v1/contact-forms/586/feedback';
   const body = new FormData();
   body.append('your-name', data.name);
@@ -128,7 +128,19 @@ getMediaById(id: number) {
   return this.http.post(url, body);
 }
 
-
-
-
+/////////Feelings Wheel
+  sendFormFeelingsWheel(data: any) {
+   const url = 'https://kennyweiss.net/cms/wp-json/contact-form-7/v1/contact-forms/595/feedback';
+  const body = new FormData();
+  body.append('your-name', data.name);
+  body.append('your-email', data.email);
+  // Required hidden fields
+  body.append('_wpcf7', '595');
+  body.append('_wpcf7_version', '6.1.1');
+  body.append('_wpcf7_locale', 'en_US');
+  body.append('_wpcf7_unit_tag', 'wpcf7-f578-p574-o7');
+  body.append('_wpcf7_container_post', '574');
+  body.append('_wpcf7_posted_data_hash', '');
+  return this.http.post(url, body);
+}
 }

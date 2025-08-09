@@ -1,7 +1,7 @@
 
 
 <main class="mt pt-4">
- <div *ngIf="services.length">
+ <div *ngIf="services?.length">
     <section class="sourses-section">
         <div class="course-heading">
             <h5 class="tag-line">Learn from me</h5>
@@ -15,7 +15,7 @@
                 <!-- Left Side Images -->
                 <div class="left-images">
                     <div class="main-img">
-                        <img src="images/price-change1.jpeg" loading="lazy" alt="Woman on computer">
+                      <img *ngIf="service.featuredImage" [src]="service.featuredImage" [alt]="service.title.rendered" loading="lazy" />
                     </div>
                     <div class="video-boxes">
                         <img src="images/afro-american-business-woman.jpeg" loading="lazy" alt="Video thumbnail">
@@ -42,167 +42,6 @@
             </div>
 </div>
 
-
-
-            <H3>BELOW static</H3>
-
-            <div class="flex-who-we-are mb-3" data-aos="fade-up" data-aos-duration="300">
-                <!-- Left Side Images -->
-                <div class=" left-images">
-                    <div class="main-img">
-                        <img src="images/price-change2.png" loading="lazy" alt="Woman on computer">
-                    </div>
-                    <div class="video-boxes">
-                        <img src="images/afro-american-business-woman.jpeg" loading="lazy" alt="Video thumbnail">
-                        <a id="play-video" target="_blank" class="video-play-button"
-                            href="https://youtu.be/a1udGRR63OA?si=D7Iddfp5ezrC8jTJ" data-toggle="modal"
-                            data-target="#savoybeachhotel">
-                            <span></span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Right Side Content -->
-                <div class="right-content">
-                    <h3>The Complete Emotional Authenticity Method (one-time Purchase)</h3>
-                    <div class="pricing-set">
-                        <h4 class="price2">$747</h4>
-                        <h4>Bundle</h4>
-                    </div>
-                    <p class="description">
-                        Overcome your Worst Day Cycle and reclaim your authentic self with Emotional Authenticity
-                        <br>
-                        <br>
-                        1- Emotional Authenticity is based on the latest neuroscientific model of the brain and how
-                        it
-                        processes emotions. EQ is based on a brain model that was disproved before the book was
-                        written.
-
-
-                        <br>
-                        <br>
-                        2- Emotional Authenticity shows you how all your emotion and feeling definitions are learned
-                        in
-                        childhood, thus giving you complete emotional self-awareness.
-
-                        EQ does not.
-
-                    </p>
-
-                    <a routerLink="/courses-details" class="button w-7">Enroll now</a>
-
-                </div>
-            </div>
-
-            <div class="flex-who-we-are mb-3" data-aos="fade-up" data-aos-duration="400">
-                <!-- Left Side Images -->
-                <div class="left-images">
-                    <div class="main-img">
-                        <img src="images/price-change3.png" loading="lazy" alt="Woman on computer">
-                    </div>
-                    <div class="video-boxes">
-                        <img src="images/afro-american-business-woman.jpeg" loading="lazy" alt="Video thumbnail">
-                        <a id="play-video" target="_blank" class="video-play-button"
-                            href="https://youtu.be/a1udGRR63OA?si=D7Iddfp5ezrC8jTJ" data-toggle="modal"
-                            data-target="#savoybeachhotel">
-                            <span></span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Right Side Content -->
-                <div class="right-content">
-                    <h3>The Complete Emotional Authenticity Method Subscription</h3>
-                    <div class="pricing-set">
-                        <h4 class="price2">$77/month</h4>
-                        <h4>Bundle</h4>
-                    </div>
-
-                    <p class="description">
-                        Overcome your Worst Day Cycle and reclaim your authentic self with Emotional Authenticity
-
-                        <br>
-                        <br>
-                        1- Emotional Authenticity is based on the latest neuroscientific model of the brain and how
-                        it
-                        processes emotions. EQ is based on a brain model that was disproved before the book was
-                        written.
-                        <br>
-                        <br>
-
-                        2- Emotional Authenticity shows you how all your emotion and feeling definitions are learned
-                        in
-                        childhood, thus giving you complete emotional self-awareness.
-                    </p>
-                    <a routerLink="/courses-details" class="button w-7">Enroll now</a>
-                </div>
-            </div>
-
-
-
-            <div class="flex-aboutarea" data-aos="fade-up" data-aos-duration="500">
-                <div class="left-area">
-                    <div class="thumbnail-wrapper3">
-                        <div class="course-1">
-                            <img src="images/price-change1.jpeg" loading="lazy" alt="">
-                        </div>
-                        <div class="touimg">
-                            <div class="thumbnail image-2">
-                                <img src="images/price-change2.png" loading="lazy" alt="">
-                            </div>
-                            <div class="thumbnail image-3">
-                                <img src="images/price-change3.png" loading="lazy" alt="Price Change">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="right-area">
-                    <h5 class="tag-line">What we have</h5>
-                    <h3>Combo Course Packs</h3>
-                    <p>Learn the first, foundational steps in developing Emotional Authenticity</p>
-
-                    <div class="rbt-feature-feature-style-2">
-                        <div class="listver" data-aos="fade-up" data-aos-duration="100">
-                            <div class="boxlist">
-                                <i class="fa-regular fa-heart"></i>
-                            </div>
-                            <div class="boxlist-content">
-                                <h5>Begin Your Journey To Emotional Authenticity</h5>
-                                <p>It is a long established fact that a reader will be distracted by this on
-                                    readable content of when looking at its layout.</p>
-                            </div>
-                        </div>
-
-
-                        <div class="listver" data-aos="fade-up" data-aos-duration="200">
-                            <div class="boxlist">
-                                <i class="fa-solid fa-book"></i>
-                            </div>
-                            <div class="boxlist-content">
-                                <h5>The Complete Emotional Authenticity Method (one-time Purchase)</h5>
-                                <p>Overcome your Worst Day Cycle and reclaim your authentic self with Emotional
-                                    Authenticity</p>
-                            </div>
-                        </div>
-
-
-                        <div class="listver" data-aos="fade-up" data-aos-duration="300">
-                            <div class="boxlist">
-                                <i class="fa-solid fa-brain"></i>
-                            </div>
-                            <div class="boxlist-content">
-                                <h5>The Complete Emotional Authenticity Method Subscription</h5>
-                                <p>Overcome your Worst Day Cycle and reclaim your authentic self with Emotional
-                                    Authenticity</p>
-                            </div>
-                        </div>
-
-
-                    </div>
-                    <a routerLink="/courses-details" class="button w-7">Enroll now</a>
-
-                </div>
-            </div>
         </div>
 
     </section>

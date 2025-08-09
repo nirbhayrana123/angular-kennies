@@ -1,18 +1,19 @@
 <main class="pt-1 pt68px">
-        <div class="healing-inner-pages height-7" style="background-image: url('./images/22.jpg');">
+        <div class="healing-inner-pages height-7" [style.background-image]="'url(' + backgroundImage + ')'">
             <div class="container">
                 <div class='courses-details-banner'>
-                    <h3>How To Love and Accept Your Perfect Imperfections</h3>
-                    <p>Your Journey To Self-Love. Develop the knowledge, skills, and tools to love and accept your
-                        perfect imperfections</p>
+                    <h3 [innerHTML]="service.title.rendered"> </h3>
+                    <p>{{ service.acf?.banner_desc }}</p>
+                 
                     <a class="button whitebt" routerLink="/courses">Enroll Now !</a>
                 </div>
             </div>
-        </div>
-
+        </div> 
+  
+<!-- <img *ngIf="courseImage" [src]="courseImage" alt="Course Image">
+<img *ngIf="backgroundImage" [src]="backgroundImage" alt="Background Image"> -->
 
         <div class="courses-details-section">
-
             <section class="who-we-are bookssection ">
                 <div class="container ">
                     <div class="flex-who-we-are gap3">
@@ -29,8 +30,8 @@
                         <!-- Right Side Content -->
                         <div class="right-content homesder aos-init aos-animate" data-aos="fade-up"
                             data-aos-duration="1500">
-                            <h5 class="tag-line">Our details</h5>
-                            <h3>Treat Yourself!Learn To Love and Accept Your Perfect Imperfections?</h3>
+                            <h5 class="tag-line">{{ service.acf?.right_tagline }}</h5> 
+                            <h3>{{ service.acf?.right_heading }}</h3>
                             <p>Do you feel like no one will ever love or accept you unless you are perfect?</p>
                             <p>We've all felt this way at some point in our lives. But we don't have to. All of us are
                                 perfectly imperfect in our own special and unique way.

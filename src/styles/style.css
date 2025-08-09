@@ -1148,7 +1148,10 @@ ul.doterd li::after {
     top: 8px;
     border-radius: 15px;
 }
-
+.et_pb_text_inner p a {
+    color: #512570;
+    font-weight: 600;
+}
 ul.doterd {
     padding-left: 20px;
     margin: 10px 0px;
@@ -3935,6 +3938,14 @@ section.podcastvideos {
     font-size: 1rem;
     margin: 10px 0px;
 }
+
+.main-img.noafter img {
+ border-radius: 10px;
+}
+.main-img.noafter::after {
+    display: none;
+}
+
 
 .main-img iframe {
     border-radius: 20px;

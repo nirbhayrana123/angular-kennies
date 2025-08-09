@@ -86,7 +86,7 @@
                         <div class="left-images sticky6">
                             <div class="main-img">
                                 <img src="images/17.jpeg">
-                               <!-- <img [src]="service.acf?.left_main_image" alt=""> --> 
+                              <img *ngIf="service.featuredImage" [src]="service.featuredImage" [alt]="service.title.rendered" loading="lazy" />
                             </div>
                             <div class="video-boxes">
                                 <img src="images/others-img2.png" >

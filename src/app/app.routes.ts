@@ -76,15 +76,19 @@ export const routes: Routes = [
 } ,
 
  {
-  path: 'childhood-trauma',
+  path: 'services/:slug',
   loadComponent: () =>
-    import('./layout/childhood-trauma/childhood-trauma.component').then(m => m.ChildhoodTraumaComponent)
+    import('./layout/healing-services/services-details/childhood-trauma.component').then(m => m.ChildhoodTraumaComponent)
 },
 {
   path: 'courses/:slug',
   loadComponent: () =>
     import('./layout/courses/courses-details/courses-details.component').then(m => m.CoursesDetailsComponent)
 } 
-
-
+,
+{
+  path: 'healing-services',
+  loadComponent: () =>
+    import('./layout/healing-services/healing-services.component').then(m => m.HealingServicesComponent)
+} 
 ];

@@ -32,35 +32,13 @@
                             data-aos-duration="1500">
                             <h5 class="tag-line">{{ service.acf?.right_tagline }}</h5> 
                             <h3>{{ service.acf?.right_heading }}</h3>
-                            <p>Do you feel like no one will ever love or accept you unless you are perfect?</p>
-                            <p>We've all felt this way at some point in our lives. But we don't have to. All of us are
-                                perfectly imperfect in our own special and unique way.
-                                <br>We just haven't been shown how to live our life full of self-love and acceptance for
-                                our
-                                perfect imperfections.
-                            </p>
-
-                            <p>That ends today. This masterclass will provide you with the knowledge, skills, and tools
-                                to accept who you are as an individual - ALL of you. Your perfect and your imperfect!
-                            </p>
-                            <p>By learning the seven characteristics of high self-love and a simple process to stop
-                                negative thoughts and feelings, you will no longer feel lonely, rejected, or like an
-                                outsider in this world.
-                            </p>
-                            <p>In fact, you will embrace change without fear; communicate your needs and wants
-                                decisively, and easily shrug off attempts by others to judge or criticize you.
-                            </p>
-
-                            <p>See how simple it is to transform the imperfect emotional wounds from the past into
-                                perfect, unshakeable self-confidence.
-                            </p>
-
-                            <h4>Start loving and accepting your perfect imperfections
-                                by signing up
-                                TODAY!</h4>
+                         <div [innerHTML]="service.acf?.right_para_1"></div>
                             <div class="button-row left">
-                                <a target="_blank" href="https://checkout.teachable.com/secure/561462/checkout/order_nj79dty4" class="button mt3">Enroll In Course !</a>
-
+                             <a target="_blank" 
+                                [href]="service.acf?.right_button_link?.url" 
+                                class="button mt3">
+                                {{ service.acf?.right_button_text }}
+                            </a>
                             </div>
                         </div>
 
@@ -74,16 +52,14 @@
 
                     <div class="grid-3-7">
                         <div class="box3">
-                            <h3>TIFFANY SAYS,</h3>
-                            <p>"I SPENT OVER $80,000 WITH ALL THE BIG-NAME GURUS and nothing changed. Since I started
-                                working with Kenny and The Greatness University MY WHOLE LIFE HAS SHIFTED"
-                            </p>
+                           <h3>{{ service.acf?.person_heading }}</h3>
+                           <div [innerHTML]="service.acf?.person_quote"></div>
                         </div>
 
-                        <div class="Player5">
-                            <iframe title="YouTube video player" src="https://player.hotmart.com/embed/WLa96km4Lk"
-                                width="100%" height="500" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
-                        </div>
+                       <div class="Player5">
+                        <div [innerHTML]="service.acf?.video_embed_url"></div> 
+                      
+                    </div>
 
                     </div>
                 </div>
@@ -97,44 +73,12 @@
                         <!-- Right Side Content -->
                         <div class="right-content homesder aos-init aos-animate" data-aos="fade-up"
                             data-aos-duration="1500">
-                            <h3>Feeling Lost & Alone On Your Journey To Your Authentic Self?</h3>
-                            <h4>You are not alone anymore!</h4>
-                            <h4>My name is Kenny Weiss, and I'm here to help.</h4><br>
-                            <p>My innovative Emotional Mastery coaching and programs will transform the pain from your
-                                past by providing you with a proven process to love and accept your perfect
-                                imperfections and reclaim your authentic self.</p>
-
-                            <p>I will guide and support your healing and recovery from trauma, an imperfect childhood,
-                                enmeshment, codependence, stress, fear, anxiety, and depression. But that is not all.
-                            </p>
-
-                            <p>I will provide you with the knowledge, skills, and tools to live in complete self-love so
-                                you can stop your self-sabotage, making it easy to put an end to people-pleasing and the
-                                inability to say no.</p>
-
-                            <p>I believe you deserve to feel safe in your skin again. To have healthy relationships with
-                                yourself and others; to be loved unconditionally without fear of abandonment or
-                                rejection.</p>
-
-                            <p>To feel happy and find peace within yourself so that you can live life on your terms
-                                without being controlled by someone else's agenda or expectations for who they want you
-                                to be.</p>
-
-                            <p>You deserve effective help - not just another person telling you what they think about
-                                what's going on in your life but showing you HOW to change it. </p>
-
-                            <p>Let me show you how it feels when someone truly cares about who YOU are!</p>
-
-                            <p>I'll be there every step of the way - holding your hand along your journey to
-                                rediscovering your authentic self and loving your perfect imperfections.</p>
-
-                            <h4>I Am Excited To Take This Fantastic Journey Together!</h4>
-
-
-
-                            <div class="button-row left ">
-                                <a target="_blank" href="https://checkout.teachable.com/secure/561462/checkout/order_nj79dty4" class="button mt3">Enroll In Course !</a>
-
+                           <h3>{{ service.acf?.main_heading }}</h3>
+                            <h4>{{ service.acf?.sub_heading_1 }}</h4>
+                             <h4>{{ service.acf?.sub_heading_2 }}</h4><br> 
+                               <div [innerHTML]="service.acf?.paragraphs"></div> 
+                            <div class="button-row left">
+                          <a target="_blank" [href]="service.acf?.cta_url.url" class="button mt3"> {{ service.acf?.cta_text }}</a>
                             </div>
                         </div>
 
@@ -142,31 +86,27 @@
                         <div class="left-images sticky6">
                             <div class="main-img">
                                 <img src="images/17.jpeg">
+                              <img *ngIf="service.featuredImage" [src]="service.featuredImage" [alt]="service.title.rendered" loading="lazy" />
                             </div>
                             <div class="video-boxes">
                                 <img src="images/others-img2.png" >
                             </div>
-                        </div>
-
-
+                        </div> 
                     </div>
                 </div>
             </section>
 
 
             <div class="videosectionleft ">
-                <div class="container">
-
+                <div class="container"> 
                     <div class="grid-3-7 grid-7-3">
                         <div class="Player5">
                             <iframe title="YouTube video player" src="https://player.hotmart.com/embed/Yq2jKv05qa"
                                 width="100%" height="500" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
-                        </div>
-
-
-                        <div class="box3">
-                            <h3>Introduction</h3>
-                            <p>Here’s a free look inside at what you can expect to get from taking this masterclass</p>
+                        </div> 
+                        <div class="box3"> 
+                            <h3>{{ service.acf?.video_title}}</h3>
+                            <div [innerHTML]="service.acf?.video_description"></div> 
                         </div>
                     </div>
                 </div>
@@ -179,27 +119,17 @@
                     <div class="journey-point">
                         <!-- Left content -->
                         <div class="left-box">
-                            <h3>WHAT YOU WILL ACHIEVE AND DISCOVER IN THIS MASTERCLASS</h3>
-                            <p>1- What determines our ability to love ourselves?
-                                2- How to discover the things you love about yourself</p>
-                            <div class="button-row">
-                                <a target="_blank" href="https://checkout.teachable.com/secure/561462/checkout/order_nj79dty4" class="button">Enroll In Course !</a>
+                            <h3>{{ service.acf?.left_title}}</h3>
+                            <p>{{ service.acf?.left_paragraph}}</p>
+                            <div class="button-row"> 
+                                <a target="_blank" [href]="service.acf?.button_link.url" class="button mt3"> {{ service.acf?.button_text}}</a>
                             </div>
-                        </div>
-
+                        </div> 
                         <!-- Right benefits list -->
                         <div class="right-box">
-                            <h4>Your Journey To Self-love</h4>
+                            <h4>{{ service.acf?.right_title}}</h4>
                             <ul class="benefits-list">
-                                <li>What determines our ability to love ourselves?</li>
-                                <li>How to discover the things you love about yourself</li>
-                                <li>How to take those discoveries and create Self-love.</li>
-                                <li>The 7 characteristics of High Self-love.</li>
-                                <li>The 7 characteristics that sabotage Self-love.</li>
-                                <li>Why we have to think “negative” to be genuinely positive.</li>
-                                <li>How to flip negative self-talk to positive self-talk instantly.</li>
-                                <li>How to create the Greatest Version Of Yourself and achieve emotional mastery in 30
-                                    days</li>
+                                <li>{{ service.acf?.benefits}}</li> 
                             </ul>
                         </div>
                     </div>
@@ -211,23 +141,22 @@
                 <div class="container">
                     <div class="your-journey-Self-love">
                         <div class="positionsticky">
-                            <h3>Your Journey Curriculum</h3>
-                            <p>1– Introduction To Self–Love– What to Expect (1:32)</p>
-                            <p>2– What Creates Self Love (5:56)</p>
-                            <p>JOURNEY BOOK 1 – Actions Speak Louder than Words</p>
+                            <h3>{{ service.acf?.journey_left_title}}</h3>
+                             <div [innerHTML]="service.acf?.journey_left_paragraphs"></div> 
                         </div>
 
 
                         <div class="industry-grid">
-                            <h4>Your Journey To Self-love</h4>
+                            <h4>{{ service.acf?.journey_right_title}}</h4>
                             <div class="industry-card">
                                 <span class="icon"><i class="fa-solid fa-play"></i></span>
-                                <p>1– Introduction To Self–Love– What to Expect (1:32)</p>
+                                <div [innerHTML]="service.acf?.journey_right_title"></div> 
+                                <!-- <p>1– Introduction To Self–Love– What to Expect (1:32)</p> -->
                                 <a target="_blank"
                                     href="https://thegreatnessu.com/courses/how-to-love-and-accept-your-perfect-imperfections/lectures/33186479">Start</a>
                             </div>
 
-                            <div class="industry-card">
+                            <!-- <div class="industry-card">
                                 <span class="icon"><i class="fa-solid fa-play"></i></span>
                                 <p>2– What Creates Self Love (5:56)</p>
                                 <a target="_blank"
@@ -344,7 +273,7 @@
                                 <p>14– How To Live In The Greatest Version Of Ourselves (5:47)</p>
                                 <a target="_blank"
                                     href="https://thegreatnessu.com/courses/how-to-love-and-accept-your-perfect-imperfections/lectures/33186479">Start</a>
-                            </div>
+                            </div> -->
 
                         </div>
 
@@ -367,25 +296,13 @@
 
                         <!-- Right Side Content -->
                         <div class="right-content homesder aos-init aos-animate" data-aos="fade-up"
-                            data-aos-duration="1500">
-                            <h3>Are You Ready to Take Your Next Step in Your Journey to Become The Greatest Version of
-                                Yourself?</h3>
-                            <p>We have the most popular Masterclasses, and we want to help you complete your Emotional
-                                Mastery Journey. You can start by taking one of these transformational classes. </p>
-                            <p>Each class plays an essential role in your journey, so it's like building a puzzle! Of
-                                course, it's usually easier to make the edges than the middle, but that's where all of
-                                the beauty comes out. </p>
-                            <p>Your true beauty will be found here, too, when you take your next Masterclass!</p>
-                            <p>Our classes are designed so that they can fit into any busy schedule. So whether you want
-                                an hour or two each week or something more intensive, we have something for everyone!
-                            </p>
-                            <p>There's no need to feel overwhelmed by trying to do everything at once – just start where
-                                you are today and work your way up as life allows. </p>
-                            <p>It doesn't matter if it's one piece at a time - what matters is getting started right
-                                now!</p>
+                            data-aos-duration="1500"> 
+                                <h3>{{ service.acf?.ready_to_take_heading}}</h3>
+                                <div [innerHTML]="service.acf?.ready_to_take_paragraph"></div> 
+                             
 
-                            <div class="button-row left">
-                                <a target="_blank" href="https://checkout.teachable.com/secure/561462/checkout/order_nj79dty4" class="button">Enroll In Course !</a>
+                            <div class="button-row left"> 
+                                <a target="_blank" [href]="service.acf?.ready_to_take_button_link.url" class="button mt3"> {{ service.acf?.ready_to_take_button_text}}</a>
                             </div>
                         </div>
 

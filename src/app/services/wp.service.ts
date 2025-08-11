@@ -9,6 +9,8 @@ import { Observable } from 'rxjs';
 export class WpService {
   private baseUrl = 'https://kennyweiss.net/cms/wp-json/wp/v2';
   private apiUrl = 'https://kennyweiss.net/cms/wp-json/wp/v2/services';
+  private healingapiUrl = 'https://kennyweiss.net/cms/wp-json/wp/v2/emotional_healing';
+
   constructor(private http: HttpClient) {}
 
   getPosts() {
@@ -21,6 +23,12 @@ export class WpService {
  getServices(): Observable<any> {
   return this.http.get<any>(`${this.apiUrl}?_embed`);
 }
+ gethealingServices(): Observable<any> {
+  return this.http.get<any>(`${this.healingapiUrl}?_embed`);
+}
+gethealingServicesSlug(slug: string): Observable<any> {
+  return this.http.get<any[]>(`${this.baseUrl}/emotional_healing?slug=${slug}&_embed`);
+}
  
 getServiceBySlug(slug: string): Observable<any> {
   return this.http.get<any[]>(`${this.baseUrl}/services?slug=${slug}&_embed`);
@@ -28,6 +36,9 @@ getServiceBySlug(slug: string): Observable<any> {
 getMediaById(id: number) {
   return this.http.get<any>(`https://kennyweiss.net/cms/wp-json/wp/v2/media/${id}`);
 }
+
+
+
   /////////Contact
   sendForm(data: any) {
    const url = 'https://kennyweiss.net/cms/wp-json/contact-form-7/v1/contact-forms/573/feedback';

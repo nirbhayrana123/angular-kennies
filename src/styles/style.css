@@ -2243,11 +2243,13 @@ h5.info-title {
     border-radius: 12px;
     padding: 20px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    display: flex;
+    display: flex
+;
     align-items: center;
     justify-content: left;
     height: 58px;
     gap: 20px;
+    padding-left: 65px;
 }
 
 .industry-card .icon {

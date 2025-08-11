@@ -14,6 +14,7 @@ import { RouterModule } from '@angular/router';
 export class MeetKennyComponent {
 isExpanded = false;
 
+
 constructor(private titleService: Title, private metaService: Meta) {
     this.titleService.setTitle('About Kenny Weiss | Top Life Coaches | Life and Relationship Coach');
     this.metaService.updateTag({

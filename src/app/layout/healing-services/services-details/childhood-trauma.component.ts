@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { EmotionalswiperComponent } from '../../components/emotionalswiper/emotionalswiper.component';
+import { EmotionalswiperComponent } from '../../../components/emotionalswiper/emotionalswiper.component';
 
 @Component({
   selector: 'app-childhood-trauma',

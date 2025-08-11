@@ -9,35 +9,32 @@
                 </div>
             </div>
         </div> 
-  
-<!-- <img *ngIf="courseImage" [src]="courseImage" alt="Course Image">
-<img *ngIf="backgroundImage" [src]="backgroundImage" alt="Background Image"> -->
-
-        <div class="courses-details-section">
+   <div class="courses-details-section">
             <section class="who-we-are bookssection ">
                 <div class="container ">
                     <div class="flex-who-we-are gap3">
                         <!-- Left Side Images -->
                         <div class="left-images sticky6">
-                            <div class="main-img">
-                                <img src="images/Imperfections.jpg"  />
+                            <div class="main-img"> 
+                                <img *ngIf="mainImage" [src]="mainImage" alt="Background Image"> 
                             </div>
                             <div class="video-boxes mt22">
-                                <img src="images/course.jpeg"/>
+                                  <img *ngIf="videoImage" [src]="videoImage" alt="Background Image">  
                             </div>
                         </div>
 
                         <!-- Right Side Content -->
                         <div class="right-content homesder aos-init aos-animate" data-aos="fade-up"
-                            data-aos-duration="1500">
-                            <h5 class="tag-line">{{ service.acf?.right_tagline }}</h5> 
-                            <h3>{{ service.acf?.right_heading }}</h3>
-                         <div [innerHTML]="service.acf?.right_para_1"></div>
+                            data-aos-duration="1500">                           
+                            <h3>{{ service.acf?.main_heading }}</h3>
+                         <div [innerHTML]="service.acf?.paragraphs"></div>
+                          <h4>{{ service.acf?.sub_heading_2 }}</h4> 
+                         
                             <div class="button-row left">
                              <a target="_blank" 
-                                [href]="service.acf?.right_button_link?.url" 
+                                [href]="service.acf?.cta_url?.url" 
                                 class="button mt3">
-                                {{ service.acf?.right_button_text }}
+                                {{ service.acf?.cta_text }}
                             </a>
                             </div>
                         </div>
@@ -56,9 +53,19 @@
                            <div [innerHTML]="service.acf?.person_quote"></div>
                         </div>
 
-                      <div class="Player5">
-                            <iframe title="YouTube video player" src="https://player.hotmart.com/embed/WLa96km4Lk" width="100%" height="500" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
-                        </div>
+                       <div class="Player5">
+                      <div *ngIf="videoUrl">
+                <iframe 
+                    width="560" 
+                    height="315" 
+                     src ="https://player.hotmart.com/embed/WLa96km4Lk" 
+                    frameborder="0" 
+                    allowfullscreen>
+                </iframe>
+                </div>
+                         
+                      
+                    </div>
 
                     </div>
                 </div>
@@ -66,29 +73,27 @@
             </div>
 
 
-            <section class="who-we-are bookssection">
+            <section class="who-we-are bookssection secondcard">
                 <div class="container ">
                     <div class="flex-who-we-are">
                         <!-- Right Side Content -->
                         <div class="right-content homesder aos-init aos-animate" data-aos="fade-up"
                             data-aos-duration="1500">
-                           <h3>{{ service.acf?.main_heading }}</h3>
-                            <h4>{{ service.acf?.sub_heading_1 }}</h4>
-                             <h4>{{ service.acf?.sub_heading_2 }}</h4><br> 
-                               <div [innerHTML]="service.acf?.paragraphs"></div> 
+                           <h3>{{ service.acf?.right_heading }}</h3>
+                            <h4>{{ service.acf?.sub_heading_1 }}</h4> 
+                               <div [innerHTML]="service.acf?.right_para_1"></div> 
                             <div class="button-row left">
-                          <a target="_blank" [href]="service.acf?.cta_url.url" class="button mt3"> {{ service.acf?.cta_text }}</a>
+                          <a target="_blank" [href]="service.acf?.right_button_link.url" class="button mt3"> {{ service.acf?.right_button_text }}</a>
                             </div>
                         </div>
 
                         <!-- Left Side Images -->
                         <div class="left-images sticky6">
                             <div class="main-img">
-                                <img src="images/17.jpeg">
-                               <!-- <img [src]="service.acf?.left_main_image" alt=""> --> 
+                                <img *ngIf="secondcardleftImage" [src]="secondcardleftImage" alt="Background Image"> 
                             </div>
                             <div class="video-boxes">
-                                <img src="images/others-img2.png" >
+                                 <img *ngIf="secondcardVedioleftImage" [src]="secondcardVedioleftImage" alt="Background Image"> 
                             </div>
                         </div> 
                     </div>
@@ -126,12 +131,10 @@
                         </div> 
                         <!-- Right benefits list -->
                         <div class="right-box">
-                          <h4>{{ service.acf?.right_title }}</h4>
-                            <ul class="benefits-list">
-                            <li *ngFor="let benefits of service.acf?.benefits">
-                                {{ benefits }}
-                            </li>
-                            </ul>
+                            <h4>{{ service.acf?.right_title}}</h4>
+                            <ul class="benefits-list" *ngIf="benefits?.length">
+                                <li *ngFor="let benefit of benefits">{{ benefit }}</li>
+                                </ul>
 
                         </div>
                     </div>
@@ -148,11 +151,12 @@
                         </div>
 
 
-                        <div class="industry-grid">
+                        <div class="industry-grid" *ngIf="curriculum_list?.length">
                             <h4>{{ service.acf?.journey_right_title}}</h4>
-                            <div class="industry-card">
-                                <!-- <span class="icon"><i class="fa-solid fa-play"></i></span> -->
-                                <div [innerHTML]="service.acf?.journey_right_title"></div> 
+
+                            <div class="industry-card" *ngFor="let curriculum of curriculum_list">
+                                <span class="icon"><i class="fa-solid fa-play"></i></span> 
+                                {{ curriculum }}
                                 <!-- <p>1– Introduction To Self–Love– What to Expect (1:32)</p> -->
                                 <a target="_blank"
                                     href="https://thegreatnessu.com/courses/how-to-love-and-accept-your-perfect-imperfections/lectures/33186479">Start</a>
@@ -161,124 +165,7 @@
                             </div>
                             </div>
 
-                            <!-- <div class="industry-card">
-                                <span class="icon"><i class="fa-solid fa-play"></i></span>
-                                <p>2– What Creates Self Love (5:56)</p>
-                                <a target="_blank"
-                                    href="https://thegreatnessu.com/courses/how-to-love-and-accept-your-perfect-imperfections/lectures/33186479">Start</a>
-                            </div>
-
-                            <div class="industry-card">
-                                <span class="icon"><i class="fa-solid fa-book"></i></span>
-                                <p>JOURNEY BOOK 1 – Actions Speak Louder than Words</p>
-                                <a target="_blank"
-                                    href="https://thegreatnessu.com/courses/how-to-love-and-accept-your-perfect-imperfections/lectures/33186479">Start</a>
-                            </div>
-
-                            <div class="industry-card">
-                                <span class="icon"><i class="fa-solid fa-play"></i></span>
-                                <p>3– Characteristic 1 and 2 Of High Self Love (5:14)</p>
-                                <a target="_blank"
-                                    href="https://thegreatnessu.com/courses/how-to-love-and-accept-your-perfect-imperfections/lectures/33186479">Start</a>
-                            </div>
-
-                            <div class="industry-card">
-                                <span class="icon"><i class="fa-solid fa-play"></i></span>
-                                <p>4– Characteristic 3 And 4 Of High Self Love (3:45)</p>
-                                <a target="_blank"
-                                    href="https://thegreatnessu.com/courses/how-to-love-and-accept-your-perfect-imperfections/lectures/33186479">Start</a>
-                            </div>
-
-                            <div class="industry-card">
-                                <span class="icon"><i class="fa-solid fa-play"></i></span>
-                                <p>5– Characteristic 5 And 6 Of High Self Love (3:49)</p>
-                                <a target="_blank"
-                                    href="https://thegreatnessu.com/courses/how-to-love-and-accept-your-perfect-imperfections/lectures/33186479">Start</a>
-                            </div>
-
-                            <div class="industry-card">
-                                <span class="icon"><i class="fa-solid fa-play"></i></span>
-                                <p>6– Characteristic 7 Of High Self Love (4:25)</p>
-                                <a target="_blank"
-                                    href="https://thegreatnessu.com/courses/how-to-love-and-accept-your-perfect-imperfections/lectures/33186479">Start</a>
-                            </div>
-
-                            <div class="industry-card">
-                                <span class="icon"><i class="fa-solid fa-play"></i></span>
-                                <p>7– How To Do Affirmations The Right Way (4:47)</p>
-                                <a target="_blank"
-                                    href="https://thegreatnessu.com/courses/how-to-love-and-accept-your-perfect-imperfections/lectures/33186479">Start</a>
-                            </div>
-
-                            <div class="industry-card">
-                                <span class="icon"><i class="fa-solid fa-book"></i></span>
-                                <p>JOURNEY BOOK 2 – Affirmations in Action</p>
-                                <a target="_blank"
-                                    href="https://thegreatnessu.com/courses/how-to-love-and-accept-your-perfect-imperfections/lectures/33186479">Start</a>
-                            </div>
-
-                            <div class="industry-card">
-                                <span class="icon"><i class="fa-solid fa-play"></i></span>
-                                <p>8– Why Thinking "Negatively" Creates Self Love (5:35)</p>
-                                <a target="_blank"
-                                    href="https://thegreatnessu.com/courses/how-to-love-and-accept-your-perfect-imperfections/lectures/33186479">Start</a>
-                            </div>
-
-                            <div class="industry-card">
-                                <span class="icon"><i class="fa-solid fa-book"></i></span>
-                                <p>JOURNEY BOOK 3 – Turning a Negative Into a Positive</p>
-                                <a target="_blank"
-                                    href="https://thegreatnessu.com/courses/how-to-love-and-accept-your-perfect-imperfections/lectures/33186479">Start</a>
-                            </div>
-
-                            <div class="industry-card">
-                                <span class="icon"><i class="fa-solid fa-play"></i></span>
-                                <p>9– Characteristic 1 And 2 That Sabotage Self Love (3:44)</p>
-                                <a target="_blank"
-                                    href="https://thegreatnessu.com/courses/how-to-love-and-accept-your-perfect-imperfections/lectures/33186479">Start</a>
-                            </div>
-
-                            <div class="industry-card">
-                                <span class="icon"><i class="fa-solid fa-play"></i></span>
-                                <p>10– Characteristic 3 And 4 That Sabotage Self Love (6:13)</p>
-                                <a target="_blank"
-                                    href="https://thegreatnessu.com/courses/how-to-love-and-accept-your-perfect-imperfections/lectures/33186479">Start</a>
-                            </div>
-
-                            <div class="industry-card">
-                                <span class="icon"><i class="fa-solid fa-play"></i></span>
-                                <p>11– Characteristic 5 And 6 That Sabotage Self Love (3:25)</p>
-                                <a target="_blank"
-                                    href="https://thegreatnessu.com/courses/how-to-love-and-accept-your-perfect-imperfections/lectures/33186479">Start</a>
-                            </div>
-
-                            <div class="industry-card">
-                                <span class="icon"><i class="fa-solid fa-play"></i></span>
-                                <p>12– Characteristic 7 That Sabotages Self Love (3:49)</p>
-                                <a target="_blank"
-                                    href="https://thegreatnessu.com/courses/how-to-love-and-accept-your-perfect-imperfections/lectures/33186479">Start</a>
-                            </div>
-
-                            <div class="industry-card">
-                                <span class="icon"><i class="fa-solid fa-play"></i></span>
-                                <p>13– How To Stop Negative Self Talk (4:57)</p>
-                                <a target="_blank"
-                                    href="https://thegreatnessu.com/courses/how-to-love-and-accept-your-perfect-imperfections/lectures/33186479">Start</a>
-                            </div>
-
-                            <div class="industry-card">
-                                <span class="icon"><i class="fa-solid fa-book"></i></span>
-                                <p>JOURNEY BOOK 4 – The Greatest Version of Ourselves</p>
-                                <a target="_blank"
-                                    href="https://thegreatnessu.com/courses/how-to-love-and-accept-your-perfect-imperfections/lectures/33186479">Start</a>
-                            </div>
-
-                            <div class="industry-card">
-                                <span class="icon"><i class="fa-solid fa-play"></i></span>
-                                <p>14– How To Live In The Greatest Version Of Ourselves (5:47)</p>
-                                <a target="_blank"
-                                    href="https://thegreatnessu.com/courses/how-to-love-and-accept-your-perfect-imperfections/lectures/33186479">Start</a>
-                            </div> -->
+                             
 
                         </div>
 
@@ -321,26 +208,10 @@
                 <div class="container">
                     <div class="self-development-content background-attachment aos-init aos-animate" data-aos="fade-up"
                         data-aos-duration="1500">
-                        <h3>Are You Ready to Take Your Next Step in Your Journey to Become The Greatest Version of
-                            Yourself?</h3>
-                        <p>We have the most popular Masterclasses, and we want to help you complete your Emotional
-                            Mastery Journey. You can start by taking one of these transformational classes. </p>
-
-                        <p>Each class plays an essential role in your journey, so it's like building a puzzle! Of
-                            course, it's usually easier to make the edges than the middle, but that's where all of the
-                            beauty comes out.
-                        </p>
-                        <p>Your true beauty will be found here, too, when you take your next Masterclass!
-                        </p>
-                        <p>Our classes are designed so that they can fit into any busy schedule. So whether you want an
-                            hour or two each week or something more intensive, we have something for everyone!
-                        </p>
-                        <p>There's no need to feel overwhelmed by trying to do everything at once – just start where you
-                            are today and work your way up as life allows.
-                        </p>
-                        <p>It doesn't matter if it's one piece at a time - what matters is getting started right now!
-                        </p>
-
+                        <h3>What Are You Waiting For? </h3>
+                        <p>Complete The Greatest Version Of Yourself by taking one of our fantastic masterclasses today!  </p>
+                      <a class="button whitebt" routerLink="/courses">Enroll Now !</a>
+                        
                     </div>
                 </div>
             </section>
@@ -357,114 +228,27 @@
 
 
                         <div class="industry-grid">
-                            <!-- <div class="faq-wrapper blog-detailsdhidee">
+                       <div class="faq-wrapper blog-detailsdhidee"  *ngIf="faqs?.length">
 
-                                <div class="faq-item">
-                                    <div class="question">When does the course start and finish?</div>
-                                    <div class="answercont">
-                                        <div class="answer">
-                                            <p>The course starts now and never ends! It is a completely self-paced
-                                                online course - you decide when you start and when you finish.</p>
-                                        </div>
-                                    </div>
-                                </div>
+                                <!-- <div class="faq-item" *ngFor="let faq of faqs">
+  <div class="question">{{ faq.question }}</div>
+  <div class="answercont">
+    <div class="answer">
+      <p>{{ faq.answer }}</p>
+    </div>
+  </div>
+</div> -->
 
-
-                                <div class="faq-item">
-                                    <div class="question">How long do I have access to the course?</div>
-                                    <div class="answercont">
-                                        <div class="answer">
-                                            <p>How does lifetime access sound? After enrolling, you have unlimited
-                                                access to this course for as long as you like - across any and all
-                                                devices you own.</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div class="faq-item">
-                                    <div class="question">What if I am unhappy with the course?</div>
-                                    <div class="answercont">
-                                        <div class="answer">
-                                            <p>We would never want you to be unhappy! If you are unsatisfied with your
-                                                purchase, contact us in the first 7 days and we will give you a full
-                                                refund.</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div class="faq-item">
-                                    <div class="question">New things scare me. Is this hard to use?</div>
-                                    <div class="answercont">
-                                        <div class="answer">
-                                            <p>I am not very savvy with technology either. That is why I picked the most
-                                                effortless platform use I could find. It only takes a few clicks, and
-                                                you are immediately learning. All of the material and the navigation
-                                                tools are laid out in a very friendly-to-use manner.</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-
-                                <div class="faq-item">
-                                    <div class="question">I am swamped. How much time does this take? </div>
-                                    <div class="answercont">
-                                        <div class="answer">
-                                            <p>All it takes is 15 minutes a day. Just watch one video and answer one
-                                                question in the Journey books. If you can do that four days a week and
-                                                stick with the process, you will achieve your goals. </p>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div class="faq-item">
-                                    <div class="question">Which class should I start with? </div>
-                                    <div class="answercont">
-                                        <div class="answer">
-                                            <p>Your Journey To Emotional Mastery. Because it is the foundational piece
-                                                to your success, I have included it for free in ALL masterclasses.</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="faq-item">
-                                    <div class="question">Will this Masterclass really work? </div>
-                                    <div class="answercont">
-                                        <div class="answer">
-                                            <p>It has been my experience that every student who followed the process
-                                                exactly as I have designed it has achieved their goals. No exceptions!
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="faq-item">
-                                    <div class="question">How long does it take to see results? </div>
-                                    <div class="answercont">
-                                        <div class="answer">
-                                            <p>The feeling of progress, understanding, and accomplishment happens
-                                                IMMEDIATELY for everyone! No exceptions.</p>
-                                        </div>
-                                    </div>
-                                </div>
+ 
 
 
 
 
 
-
-                            </div> -->
-
-
-
-
-<app-faq-section/>
+   
 
                         </div>
-
+                         </div>
                     </div>
                 </div>
             </section>

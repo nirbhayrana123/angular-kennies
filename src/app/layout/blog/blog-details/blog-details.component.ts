@@ -21,20 +21,30 @@ export class BlogDetailsComponent {
   titleService = inject(Title);
   metaService = inject(Meta);
 
+ 
   post: any = null;
+  courseImage = '';
+  featuredImage = '';
 
-  constructor() {
+  constructor() {  }
+  ngOnInit() {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.wp.getPost(id).subscribe((res) => {
+    this.wp.getPost(id).subscribe((res: any) => {
       this.post = res;
 
-// Set title and meta
+      // Title & Meta
       this.titleService.setTitle(this.post.title.rendered);
       this.metaService.updateTag({
         name: 'description',
         content: this.post.excerpt?.rendered.replace(/<[^>]+>/g, '') || '',
       });
 
+      // ACF custom field image
+      this.courseImage = this.post.acf?.postimage || '';
+
+      // Featured image
+      this.featuredImage =
+        this.post._embedded?.['wp:featuredmedia']?.[0]?.source_url || '';
     });
   }
 }

@@ -1148,7 +1148,10 @@ ul.doterd li::after {
     top: 8px;
     border-radius: 15px;
 }
-
+.et_pb_text_inner p a {
+    color: #512570;
+    font-weight: 600;
+}
 ul.doterd {
     padding-left: 20px;
     margin: 10px 0px;
@@ -1550,11 +1553,21 @@ p.left-br {
     top: -42px;
     right: 0;
     color: white;
-    font-size: 55px;
+    font-size: 50px;
     cursor: pointer;
     background-color: #512570;
     padding: 10px;
+    font-weight: 300;
+    padding-top: 12px;
 }
+
+.lightbox {
+  display: none;
+}
+.lightbox.active {
+  display: block; 
+}
+ 
 
 .kannyimgg {
     overflow: hidden;
@@ -3935,6 +3948,14 @@ section.podcastvideos {
     font-size: 1rem;
     margin: 10px 0px;
 }
+
+.main-img.noafter img {
+ border-radius: 10px;
+}
+.main-img.noafter::after {
+    display: none;
+}
+
 
 .main-img iframe {
     border-radius: 20px;

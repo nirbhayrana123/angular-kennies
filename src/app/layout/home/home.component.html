@@ -178,26 +178,27 @@
                     </div>
                 </div>
 
-                <!-- Right Side -->
-                <div class="right">
-                    <h5 class="tag-line" data-aos="fade-up" data-aos-duration="100">WHO WE ARE</h5>
-                    <h3 data-aos="fade-up" data-aos-duration="1500">Kenny Weiss is an advocate for truth,
-                        responsibility, healing, and forgiveness!</h3>
+                <div class="blog-grid" >
 
-                    <p class="left-br " data-aos="fade-up" data-aos-duration="200">He specializes in helping people
-                        heal from their emotional hurts,
-                        co-dependence, and pain from the past so they can once again love themselves.</p>
-
-
-                    <div class="services" data-aos="fade-up" data-aos-duration="300">
-                        <div class="followers-item">
-                            <i class="fa-brands fa-facebook-f"></i>
-                            <h5>163k</h5>
+                    <div class="blog-post" *ngFor="let post of posts">
+                        <div class="blog-img shine-effect">
+                              <a [routerLink]="['/post', post.id]"> 
+  <!-- Agar featured image ho -->
+  <img *ngIf="!post.courseImage && post.featuredImage" 
+       [src]="post.featuredImage" 
+       alt="{{ post.title?.rendered }}" 
+       loading="lazy"> 
+                                    </a>
                         </div>
-
-                        <div class="followers-item">
-                            <i class="fa-brands fa-instagram"></i>
-                            <h5>46.8k</h5>
+                        <div class="card-content">
+                            <div class="meta">
+                                <span><i class="fa-solid fa-user"></i> By: <b [innerHTML]="post._embedded?.author[0]?.name"></b></span>
+                                <span><i class="fa-solid fa-book-open-reader"></i>Motivation</span>
+                            </div>
+                            <h3>{{ post.title?.rendered }}</h3> 
+                              <div [innerHTML]="getShortContent(post.excerpt?.rendered || post.content?.rendered, 30) "></div>
+                            <a class="post-link" routerLink="/blog">View more <i
+                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
                         </div>
 
                         <div class="followers-item">
@@ -213,6 +214,14 @@
 
                     </div>
 
+                  
+                </div>
+            </div>
+            </div>
+        </section>
+        <section class="podcast-section" data-aos="fade-up" data-aos-duration="100">
+            <div class="left-bg"></div>
+            <div class="right-bg"></div>
 
 
                     <div class="video-box-row">
@@ -260,10 +269,7 @@
 
                     </div>
 
-                </div>
-
-            </div>
-        </div>
+      
      
     </section>
 

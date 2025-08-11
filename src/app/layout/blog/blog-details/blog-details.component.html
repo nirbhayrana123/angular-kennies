@@ -1,13 +1,18 @@
  <main class="pt-1"  *ngIf="post">
         <div class="bg-gry">
             <div class="container">
-                <div class="grid2">
-
+                <div class="grid2"> 
                     <!-- Main Content -->
                     <div class="main-content">
                         <div class="shine-effect">
                             <div class="imghigh">
-                                <img src="images/business-woman-working-in-an-office.jpeg" loading="lazy" alt="Nutrition">
+                                 <!-- Agar featured image ho -->
+ <img *ngIf="featuredImage" 
+     [src]="featuredImage" 
+     alt="{{ post.title?.rendered }}" 
+     loading="lazy" 
+     class="course-details-img"> 
+
                             </div>
                         </div>
                         <div class="meta by-admin">
@@ -77,6 +82,9 @@
                     </div>
                 </div>
             </div>
-          <app-course-slider/>
+            <div class="container">
+<app-course-slider/>
+            </div>
+          
         </div>
     </main>

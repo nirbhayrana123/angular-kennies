@@ -13,8 +13,9 @@ import { Title, Meta } from '@angular/platform-browser';
   styleUrl: './blog.component.css'
 })
 export class BlogComponent implements OnInit{
-  posts: any[] = [];
-
+  posts: any[] = []; 
+   acfData: any;
+   bannerHeading = ''; 
     
   
   constructor(
@@ -32,7 +33,18 @@ export class BlogComponent implements OnInit{
   ngOnInit() {
     this.wp.getPosts().subscribe((data: any) => {
       this.posts = data; 
+       this.posts = data.map((post: any) => {
+      return {
+        ...post,
+        courseImage: post.acf?.postimage || '',
+        featuredImage:
+          post._embedded?.['wp:featuredmedia']?.[0]?.source_url || '',
+      };
     });
+    });
+
+ 
    
   }
+  
 }

@@ -5,6 +5,7 @@ import { FaqSectionComponent } from '../../../components/faq-section/faq-section
 import { Title, Meta } from '@angular/platform-browser'; 
 import { WpService } from '../../../services/wp.service';
 import { CommonModule } from '@angular/common';
+
 @Component({
   selector: 'app-courses-details',
   standalone: true,
@@ -19,6 +20,16 @@ export class CoursesDetailsComponent {
   featuredImage = ''; 
   serviceLoaded = false;
   backgroundImage = ''; 
+  mainImage ='';
+  videoImage ='';
+  secondcardVedioleftImage = '';
+  secondcardleftImage = '';
+  benefits: string[] = [];
+  curriculum_list: string[] = [];
+  videoUrl: string = ''; 
+  faqs: string[] = [];
+  question: string[] = [];
+
 
   constructor(
     private titleService: Title, 
@@ -66,9 +77,58 @@ ngOnInit() {
             this.backgroundImage = mediaRes.source_url;
           });
         }
+          // first section main Image
+        const mainmageId = this.service.acf?.main_image;
+        if (mainmageId) {
+          this.wp.getMediaById(mainmageId).subscribe((mediaRes) => {
+            this.mainImage = mediaRes.source_url;
+          });
+        }
+        // first section video Image
+           const videomageId = this.service.acf?.video_image;
+        if (videomageId) {
+          this.wp.getMediaById(videomageId).subscribe((mediaRes) => {
+            this.videoImage = mediaRes.source_url;
+          });
+        }
+        // second card Image
+           const seconcardmageId = this.service.acf?.left_main_image;
+        if (seconcardmageId) {
+          this.wp.getMediaById(seconcardmageId).subscribe((mediaRes) => {
+            this.secondcardleftImage = mediaRes.source_url;
+          });
+        }
+         // second card video Image
+           const seconcardVDmageId = this.service.acf?.left_video_image;
+        if (seconcardVDmageId) {
+          this.wp.getMediaById(seconcardVDmageId).subscribe((mediaRes) => {
+            this.secondcardVedioleftImage = mediaRes.source_url;
+          });
+        }
       }
-    });
-  }
+    if (this.service.acf?.benefits) {
+      this.benefits = this.service.acf.benefits.map((b: any) => b.field_688c63539c27a);
+    }
+    if (this.service.acf?.curriculum_list) {
+      this.curriculum_list = this.service.acf.curriculum_list.map((b: any) => b.field_688c676a1c3df);
+      //console.log(this.service.acf.curriculum_list)
+    }
+if (this.service.acf?.faq_repeater && this.service.acf?.faq_repeateranswer) {
+  this.faqs = this.service.acf.faq_repeater.map((q: any, i: number) => ({
+    question: q.field_688c956b85ceb,
+    answer: this.service.acf.faq_repeateranswer[i]?.field_688c954685cea || ''
+  }));
+
+  console.log(this.faqs); // [{ question: "...", answer: "..." }, ...]
 }
 
+
+ 
+
+       this.videoUrl = this.service.acf?.video_embed_url || '';
+    });
+  }
+  
+}
+ 
 }

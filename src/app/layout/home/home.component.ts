@@ -48,4 +48,20 @@ export class HomeComponent  {
     // Optional: Add scroll animation/logic here if needed
   }
 
-}
+ 
+  isLightboxOpen = false;
+
+  openLightbox() {
+    this.isLightboxOpen = true;
+  }
+
+  closeLightbox() {
+    this.isLightboxOpen = false;
+  }
+
+  
+
+  }
+
+
+ 

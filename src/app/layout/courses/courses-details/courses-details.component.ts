@@ -25,7 +25,10 @@ export class CoursesDetailsComponent {
   secondcardVedioleftImage = '';
   secondcardleftImage = '';
   benefits: string[] = [];
-  videoUrl: string = '';
+  curriculum_list: string[] = [];
+  videoUrl: string = ''; 
+  faqs: string[] = [];
+  question: string[] = [];
 
 
   constructor(
@@ -103,12 +106,29 @@ ngOnInit() {
           });
         }
       }
-        if (this.service.acf?.benefits) {
-    this.benefits = this.service.acf.benefits.map((b: any) => b.benefit_item);
-  }
+    if (this.service.acf?.benefits) {
+      this.benefits = this.service.acf.benefits.map((b: any) => b.field_688c63539c27a);
+    }
+    if (this.service.acf?.curriculum_list) {
+      this.curriculum_list = this.service.acf.curriculum_list.map((b: any) => b.field_688c676a1c3df);
+      //console.log(this.service.acf.curriculum_list)
+    }
+if (this.service.acf?.faq_repeater && this.service.acf?.faq_repeateranswer) {
+  this.faqs = this.service.acf.faq_repeater.map((q: any, i: number) => ({
+    question: q.field_688c956b85ceb,
+    answer: this.service.acf.faq_repeateranswer[i]?.field_688c954685cea || ''
+  }));
+
+  console.log(this.faqs); // [{ question: "...", answer: "..." }, ...]
+}
+
+
+ 
+
        this.videoUrl = this.service.acf?.video_embed_url || '';
     });
   }
+  
 }
-
+ 
 }

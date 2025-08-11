@@ -133,9 +133,9 @@
                         <div class="right-box">
                             <h4>{{ service.acf?.right_title}}</h4>
                             <ul class="benefits-list" *ngIf="benefits?.length">
-                                 <li *ngFor="let benefit of benefits">{{ benefit }}</li>
+                                <li *ngFor="let benefit of benefits">{{ benefit }}</li>
+                                </ul>
 
-                            </ul>
                         </div>
                     </div>
                 </div>
@@ -151,11 +151,12 @@
                         </div>
 
 
-                        <div class="industry-grid">
+                        <div class="industry-grid" *ngIf="curriculum_list?.length">
                             <h4>{{ service.acf?.journey_right_title}}</h4>
-                            <div class="industry-card">
-                                <span class="icon"><i class="fa-solid fa-play"></i></span>
-                                <div [innerHTML]="service.acf?.journey_right_title"></div> 
+
+                            <div class="industry-card" *ngFor="let curriculum of curriculum_list">
+                                <span class="icon"><i class="fa-solid fa-play"></i></span> 
+                                {{ curriculum }}
                                 <!-- <p>1– Introduction To Self–Love– What to Expect (1:32)</p> -->
                                 <a target="_blank"
                                     href="https://thegreatnessu.com/courses/how-to-love-and-accept-your-perfect-imperfections/lectures/33186479">Start</a>
@@ -224,114 +225,27 @@
 
 
                         <div class="industry-grid">
-                            <!-- <div class="faq-wrapper blog-detailsdhidee">
+                       <div class="faq-wrapper blog-detailsdhidee"  *ngIf="faqs?.length">
 
-                                <div class="faq-item">
-                                    <div class="question">When does the course start and finish?</div>
-                                    <div class="answercont">
-                                        <div class="answer">
-                                            <p>The course starts now and never ends! It is a completely self-paced
-                                                online course - you decide when you start and when you finish.</p>
-                                        </div>
-                                    </div>
-                                </div>
+                                <!-- <div class="faq-item" *ngFor="let faq of faqs">
+  <div class="question">{{ faq.question }}</div>
+  <div class="answercont">
+    <div class="answer">
+      <p>{{ faq.answer }}</p>
+    </div>
+  </div>
+</div> -->
 
-
-                                <div class="faq-item">
-                                    <div class="question">How long do I have access to the course?</div>
-                                    <div class="answercont">
-                                        <div class="answer">
-                                            <p>How does lifetime access sound? After enrolling, you have unlimited
-                                                access to this course for as long as you like - across any and all
-                                                devices you own.</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div class="faq-item">
-                                    <div class="question">What if I am unhappy with the course?</div>
-                                    <div class="answercont">
-                                        <div class="answer">
-                                            <p>We would never want you to be unhappy! If you are unsatisfied with your
-                                                purchase, contact us in the first 7 days and we will give you a full
-                                                refund.</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div class="faq-item">
-                                    <div class="question">New things scare me. Is this hard to use?</div>
-                                    <div class="answercont">
-                                        <div class="answer">
-                                            <p>I am not very savvy with technology either. That is why I picked the most
-                                                effortless platform use I could find. It only takes a few clicks, and
-                                                you are immediately learning. All of the material and the navigation
-                                                tools are laid out in a very friendly-to-use manner.</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-
-                                <div class="faq-item">
-                                    <div class="question">I am swamped. How much time does this take? </div>
-                                    <div class="answercont">
-                                        <div class="answer">
-                                            <p>All it takes is 15 minutes a day. Just watch one video and answer one
-                                                question in the Journey books. If you can do that four days a week and
-                                                stick with the process, you will achieve your goals. </p>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div class="faq-item">
-                                    <div class="question">Which class should I start with? </div>
-                                    <div class="answercont">
-                                        <div class="answer">
-                                            <p>Your Journey To Emotional Mastery. Because it is the foundational piece
-                                                to your success, I have included it for free in ALL masterclasses.</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="faq-item">
-                                    <div class="question">Will this Masterclass really work? </div>
-                                    <div class="answercont">
-                                        <div class="answer">
-                                            <p>It has been my experience that every student who followed the process
-                                                exactly as I have designed it has achieved their goals. No exceptions!
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="faq-item">
-                                    <div class="question">How long does it take to see results? </div>
-                                    <div class="answercont">
-                                        <div class="answer">
-                                            <p>The feeling of progress, understanding, and accomplishment happens
-                                                IMMEDIATELY for everyone! No exceptions.</p>
-                                        </div>
-                                    </div>
-                                </div>
+ 
 
 
 
 
 
-
-                            </div> -->
-
-
-
-
-<app-faq-section/>
+   
 
                         </div>
-
+                         </div>
                     </div>
                 </div>
             </section>

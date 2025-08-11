@@ -4,6 +4,8 @@ import { ActivatedRoute, RouterModule } from '@angular/router';
 import { WpService } from '../../services/wp.service';
 import { CommonModule } from '@angular/common';
 
+ 
+
 @Component({
   selector: 'app-healing-services',
   standalone: true,
@@ -27,8 +29,7 @@ export class HealingServicesComponent {
   ngOnInit() {
     this.wp.gethealingServices().subscribe((data) => {
       this.healservices = data;
-      console.log(data);
-      this.bannerHeading = data[0]?.acf?.banner_heading || ''; 
+      console.log(data); 
      this.healservices = data.map((service: any) => {
       return {
         ...service,

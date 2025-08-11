@@ -5,6 +5,7 @@ import { FaqSectionComponent } from '../../../components/faq-section/faq-section
 import { Title, Meta } from '@angular/platform-browser'; 
 import { WpService } from '../../../services/wp.service';
 import { CommonModule } from '@angular/common';
+
 @Component({
   selector: 'app-courses-details',
   standalone: true,
@@ -19,6 +20,13 @@ export class CoursesDetailsComponent {
   featuredImage = ''; 
   serviceLoaded = false;
   backgroundImage = ''; 
+  mainImage ='';
+  videoImage ='';
+  secondcardVedioleftImage = '';
+  secondcardleftImage = '';
+  benefits: string[] = [];
+  videoUrl: string = '';
+
 
   constructor(
     private titleService: Title, 
@@ -66,7 +74,39 @@ ngOnInit() {
             this.backgroundImage = mediaRes.source_url;
           });
         }
+          // first section main Image
+        const mainmageId = this.service.acf?.main_image;
+        if (mainmageId) {
+          this.wp.getMediaById(mainmageId).subscribe((mediaRes) => {
+            this.mainImage = mediaRes.source_url;
+          });
+        }
+        // first section video Image
+           const videomageId = this.service.acf?.video_image;
+        if (videomageId) {
+          this.wp.getMediaById(videomageId).subscribe((mediaRes) => {
+            this.videoImage = mediaRes.source_url;
+          });
+        }
+        // second card Image
+           const seconcardmageId = this.service.acf?.left_main_image;
+        if (seconcardmageId) {
+          this.wp.getMediaById(seconcardmageId).subscribe((mediaRes) => {
+            this.secondcardleftImage = mediaRes.source_url;
+          });
+        }
+         // second card video Image
+           const seconcardVDmageId = this.service.acf?.left_video_image;
+        if (seconcardVDmageId) {
+          this.wp.getMediaById(seconcardVDmageId).subscribe((mediaRes) => {
+            this.secondcardVedioleftImage = mediaRes.source_url;
+          });
+        }
       }
+        if (this.service.acf?.benefits) {
+    this.benefits = this.service.acf.benefits.map((b: any) => b.benefit_item);
+  }
+       this.videoUrl = this.service.acf?.video_embed_url || '';
     });
   }
 }

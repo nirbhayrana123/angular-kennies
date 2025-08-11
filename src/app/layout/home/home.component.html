@@ -485,8 +485,8 @@
                                 <span><i class="fa-solid fa-book-open-reader"></i>Motivation</span>
                             </div>
                             <h3>{{ post.title?.rendered }}</h3> 
-                              <div [innerHTML]="getShortContent(post.excerpt?.rendered || post.content?.rendered, 30) "></div>
-                            <a class="post-link" routerLink="/blog">View more <i
+                              <div [innerHTML]="getShortContent(post.excerpt?.rendered || post.content?.rendered, 20) "></div>
+                            <a class="post-link"  [routerLink]="['/post', post.id]">View more <i
                                     class="fa-solid fa-arrow-up-right-from-square"></i></a>
                         </div>
                     </div>

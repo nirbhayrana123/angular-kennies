@@ -225,16 +225,15 @@
 
 
                         <div class="industry-grid">
-                       <div class="faq-wrapper blog-detailsdhidee"  *ngIf="faqs?.length">
-
-                                <!-- <div class="faq-item" *ngFor="let faq of faqs">
-  <div class="question">{{ faq.question }}</div>
-  <div class="answercont">
-    <div class="answer">
-      <p>{{ faq.answer }}</p>
-    </div>
-  </div>
-</div> -->
+                       <div class="faq-wrapper blog-detailsdhidee"  *ngIf="faqQ?.length">
+                        <div class="faq-item" *ngFor="let faq of faqQ">
+                        <div class="question">{{ faq }}</div>
+                        <div class="answercont">
+                            <div class="answer">
+                            <p>{{ faq }}</p>
+                            </div>
+                        </div>
+                        </div>  
 
  
 

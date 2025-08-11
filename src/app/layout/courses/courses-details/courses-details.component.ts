@@ -27,8 +27,8 @@ export class CoursesDetailsComponent {
   benefits: string[] = [];
   curriculum_list: string[] = [];
   videoUrl: string = ''; 
-  faqs: string[] = [];
-  question: string[] = [];
+  faqQ: string[] = [];
+  faqA: string[] = [];
 
 
   constructor(
@@ -113,16 +113,10 @@ ngOnInit() {
       this.curriculum_list = this.service.acf.curriculum_list.map((b: any) => b.field_688c676a1c3df);
       //console.log(this.service.acf.curriculum_list)
     }
-if (this.service.acf?.faq_repeater && this.service.acf?.faq_repeateranswer) {
-  this.faqs = this.service.acf.faq_repeater.map((q: any, i: number) => ({
-    question: q.field_688c956b85ceb,
-    answer: this.service.acf.faq_repeateranswer[i]?.field_688c954685cea || ''
-  }));
-
-  console.log(this.faqs); // [{ question: "...", answer: "..." }, ...]
-}
-
-
+   if (this.service.acf?.faq_repeater) {
+      this.faqQ = this.service.acf.faq_repeater.map((b: any) => b.field_688c956b85ceb);
+      console.log(this.service.acf.faq_repeater)
+    }
  
 
        this.videoUrl = this.service.acf?.video_embed_url || '';

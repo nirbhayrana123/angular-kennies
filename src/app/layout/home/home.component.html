@@ -467,75 +467,31 @@
                         and more.</p>
                 </div>
 
-                <div class="blog-grid">
+                <div class="blog-grid" >
 
-                    <div class="blog-post">
+                    <div class="blog-post" *ngFor="let post of posts">
                         <div class="blog-img shine-effect">
-                            <img src="images/1.jpeg" loading="lazy" alt="">
+                              <a [routerLink]="['/post', post.id]"> 
+  <!-- Agar featured image ho -->
+  <img *ngIf="!post.courseImage && post.featuredImage" 
+       [src]="post.featuredImage" 
+       alt="{{ post.title?.rendered }}" 
+       loading="lazy"> 
+                                    </a>
                         </div>
                         <div class="card-content">
                             <div class="meta">
-                                <span><i class="fa-solid fa-user"></i> By: Admin</span>
+                                <span><i class="fa-solid fa-user"></i> By: <b [innerHTML]="post._embedded?.author[0]?.name"></b></span>
                                 <span><i class="fa-solid fa-book-open-reader"></i>Motivation</span>
                             </div>
-                            <h3>We provide you Motivational coaching</h3>
-                            <p>Novia's spaciously two bedroom apartments are perfect for families and even business
-                                partners. Look out into the Manhattan skyline from the open fully equipped kitchen.</p>
+                            <h3>{{ post.title?.rendered }}</h3> 
+                              <div [innerHTML]="getShortContent(post.excerpt?.rendered || post.content?.rendered, 30) "></div>
                             <a class="post-link" routerLink="/blog">View more <i
                                     class="fa-solid fa-arrow-up-right-from-square"></i></a>
                         </div>
                     </div>
 
-                    <div class="blog-post">
-                        <div class="blog-img shine-effect">
-                            <img src="images/4.jpeg" loading="lazy" alt="">
-                        </div>
-                        <div class="card-content">
-                            <div class="meta">
-                                <span><i class="fa-solid fa-user"></i> By: Admin</span>
-                                <span><i class="fa-solid fa-book-open-reader"></i>Motivation</span>
-                            </div>
-                            <h3>We provide you Motivational coaching</h3>
-                            <p>Novia's spaciously two bedroom apartments are perfect for families and even business
-                                partners. Look out into the Manhattan skyline from the open fully equipped kitchen.</p>
-                            <a class="post-link" routerLink="/blog">View more <i
-                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="blog-post">
-                        <div class="blog-img shine-effect">
-                            <img src="images/16.jpeg" loading="lazy" alt="">
-                        </div>
-                        <div class="card-content">
-                            <div class="meta">
-                                <span><i class="fa-solid fa-user"></i> By: Admin</span>
-                                <span><i class="fa-solid fa-book-open-reader"></i>Motivation</span>
-                            </div>
-                            <h3>We provide you Motivational coaching</h3>
-                            <p>Novia's spaciously two bedroom apartments are perfect for families and even business
-                                partners. Look out into the Manhattan skyline from the open fully equipped kitchen.</p>
-                            <a class="post-link" routerLink="/blog">View more <i
-                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="blog-post">
-                        <div class="blog-img shine-effect">
-                            <img src="images/12.jpeg" loading="lazy" alt="">
-                        </div>
-                        <div class="card-content">
-                            <div class="meta">
-                                <span><i class="fa-solid fa-user"></i> By: Admin</span>
-                                <span><i class="fa-solid fa-book-open-reader"></i>Motivation</span>
-                            </div>
-                            <h3>We provide you Motivational coaching</h3>
-                            <p>Novia's spaciously two bedroom apartments are perfect for families and even business
-                                partners. Look out into the Manhattan skyline from the open fully equipped kitchen.</p>
-                            <a class="post-link" routerLink="/blog">View more <i
-                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                        </div>
-                    </div>
+                  
                 </div>
             </div>
         </section>

@@ -14,8 +14,12 @@
                         <div class="news-block-two">
                             <div class="inner-box">
                                 <div class="image">
-                                    <a [routerLink]="['/post', post.id]">
-                                        <img *ngIf="post.featuredImage" [src]="post.featuredImage" alt="Post Image" />
+                                    <a [routerLink]="['/post', post.id]"> 
+  <!-- Agar featured image ho -->
+  <img *ngIf="!post.courseImage && post.featuredImage" 
+       [src]="post.featuredImage" 
+       alt="{{ post.title?.rendered }}" 
+       loading="lazy"> 
                                     </a>
                                 </div>
                                 <div class="lower-content">

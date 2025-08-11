@@ -76,4 +76,20 @@ getShortContent(htmlContent: string, wordLimit: number = 30): string {
   }
   
 
-}
+ 
+  isLightboxOpen = false;
+
+  openLightbox() {
+    this.isLightboxOpen = true;
+  }
+
+  closeLightbox() {
+    this.isLightboxOpen = false;
+  }
+
+  
+
+  }
+
+
+ 

@@ -1487,7 +1487,9 @@ img.award-star {
 .aboutus .right {
     position: relative;
 }
-
+.works-sections .right {
+    padding-top: 80px;
+}
 .aboutus img {
     height: 100%;
 }
@@ -1527,6 +1529,19 @@ p.left-br {
     position: relative;
     margin: 40px 0;
     color: #512570;
+}
+
+.lightbox-bg {
+    position: fixed;
+    inset: 0;
+    background: #000000c7;
+    z-index: 999999;
+    display: none;
+}
+ 
+
+.lightbox-bg:has(.lightbox.active) {
+  display: block;
 }
 
 .lightbox {

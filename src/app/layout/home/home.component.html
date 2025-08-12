@@ -212,75 +212,10 @@
 
 
                     </div>
-</div>
-
-</div>
-</div>
-        </section>
-
-       
-
-        <app-exercises-workbook/>
-        <section class="self-development" style="background-image: url(./images/8.jpeg);">
-            <div class="container">
-                <div class="self-development-content" data-aos="fade-up" data-aos-duration="100">
-                    <h3>Feeling Lost, Alone and Struggling Inside — But Still Not Sure If You Deserve Help?</h3>
-                    <p>Start With a Free Resource That Speaks to What You’re Really Feeling</p>
-
-                    <a class="button whitebt"  routerLink="/courses" >Explore Our Free Resources</a>
-
-                </div>
-            </div>
-
-        </section>
-
-        <section class="blog-section">
-            <div class="container">
-                <div class="flex-row" data-aos="fade-up" data-aos-duration="100">
-                    <h5 class="tag-line">Our Blog</h5>
-                    <h3>Latest from the Blog</h3>
-                    <p class="subtitle">I write about self development
-                        and more.</p>
-                </div>
-
-                <div class="blog-grid" >
-
-                    <div class="blog-post" *ngFor="let post of posts">
-                        <div class="blog-img shine-effect">
-                              <a [routerLink]="['/post', post.id]"> 
-  <!-- Agar featured image ho -->
-  <img *ngIf="!post.courseImage && post.featuredImage" 
-       [src]="post.featuredImage" 
-       alt="{{ post.title?.rendered }}" 
-       loading="lazy"> 
-                                    </a>
-                        </div>
-                        <div class="card-content">
-                            <div class="meta">
-                                <span><i class="fa-solid fa-user"></i> By: <b [innerHTML]="post._embedded?.author[0]?.name"></b></span>
-                                <span><i class="fa-solid fa-book-open-reader"></i>Motivation</span>
-                            </div>
-                            <h3>{{ post.title?.rendered }}</h3> 
-                              <div [innerHTML]="getShortContent(post.excerpt?.rendered || post.content?.rendered, 20) "></div>
-                            <a class="post-link"  [routerLink]="['/post', post.id]">View more <i
-                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                        </div>
-                    </div>
-
-                  
-                </div>
-            </div>
-        </section>
-        <section class="podcast-section" data-aos="fade-up" data-aos-duration="100">
-            <div class="left-bg"></div>
-            <div class="right-bg"></div>
 
 
-            <div class="container">
-                <div class="podcast-row">
-                    <div class="podcast-left">
-                        <h5 class="tag-line">What we have</h5>
-                        <h3>Heal The Hurt Podcast</h3>
+
+                    <div class="video-box-row">
                         <ul>
                             <li data-aos="fade-up" data-aos-duration="100">
                                 <span class="iconlist"><img src="images/long-term.png" loading="lazy" alt=""></span>
@@ -311,25 +246,28 @@
                             </div>
                         </ul>
 
-
                         <div class="video-box shine-effect" (click)="openLightbox()">
                             <img src="images/5.jpeg" alt="Thumbnail" loading="lazy" style="width:200px;cursor:pointer;">
                             <a class="video-play-button"><span></span></a>
                         </div>
 
-                        <!-- Lightbox -->
-                        <div [class.active]="isLightboxOpen" class="lightbox">
-                            <span class="close3" (click)="closeLightbox()">&times;</span>
-                            <iframe title="YouTube video player" src="https://www.youtube.com/embed/SKqP2K0R1z4"
-                                width="200" height="188" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
-                        </div>
- 
                     </div>
 
                 </div>
 
             </div>
-      
+        </div>
+        <!-- Lightbox -->
+        <div class="lightbox-bg">
+            <div [class.active]="isLightboxOpen" class="lightbox">
+
+                <span class="close3" (click)="closeLightbox()">&times;</span>
+                <iframe title="YouTube video player" src="https://www.youtube.com/embed/SKqP2K0R1z4" width="200"
+                    height="188" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+            </div>
+        </div>
+
+
     </section>
 
     <section class=" into-section">

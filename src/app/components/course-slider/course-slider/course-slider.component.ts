@@ -1,10 +1,12 @@
  
-import { Component, AfterViewInit, Inject, PLATFORM_ID  } from '@angular/core';
+import { Component, AfterViewInit, Inject, PLATFORM_ID,OnInit  } from '@angular/core';
 import { isPlatformBrowser, CommonModule } from '@angular/common';
-
 import Swiper from 'swiper/bundle';
-import 'swiper/css/bundle';
-import { RouterModule } from '@angular/router';
+import 'swiper/css/bundle';  
+import { Title, Meta } from '@angular/platform-browser';
+import { ActivatedRoute, RouterModule } from '@angular/router'; 
+import { WpService } from '../../../services/wp.service'; 
+
 
 @Component({
   selector: 'app-course-slider',
@@ -14,51 +16,23 @@ import { RouterModule } from '@angular/router';
   styleUrl: './course-slider.component.css'
 })
 export class CourseSliderComponent implements AfterViewInit {
- constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+    services: any[] = [];
+   acfData: any;
+   bannerHeading = ''; 
+constructor(@Inject(PLATFORM_ID) private platformId: Object, private titleService: Title, private metaService: Meta, private wp: WpService,private route: ActivatedRoute) {
+    this.titleService.setTitle('Begin Your Journey Course - Kenny Weiss');
+    this.metaService.updateTag({
+      name: 'description',
+      content: 'This journey to Emotional Authenticity is for those who have looked everywhere and are desperate for a solution. If that&#039;s you, you&#039;re ready. Best Emotional Authenticity coach.',
+    });
+  }
 
-
-  courses = [
-    {
-      title: 'Begin Your Journey To Emotional Authenticity',
-      description: 'Learn the first, foundational steps in developing Emotional Authenticity',
-      image: './images/price-change1.jpeg',
-      price: '$29.77',
-      originalPrice: '$120',
-      lessons: 12,
-      students: 50,
-      link: '/courses'
-    },
-    {
-      title: 'The Complete Emotional Authenticity Method (one-time Purchase)',
-      description: 'Overcome your Worst Day Cycle and reclaim your authentic self with Emotional Authenticity',
-      image: './images/price-change2.png',
-      price: '$29.77',
-      originalPrice: '$120',
-      lessons: 12,
-      students: 50,
-      link: '/courses'
-    },
-    {
-      title: 'The Complete Emotional Authenticity Method Subscription',
-      description: 'Overcome your Worst Day Cycle and reclaim your authentic self with Emotional Authenticity',
-      image: 'images/price-change3.png',
-      price: '$77/month',
-      originalPrice: '$120',
-      lessons: 12,
-      students: 50,
-      link: '/courses'
-    },
-       {
-      title: 'The Complete Emotional Authenticity Method Subscription',
-      description: 'Overcome your Worst Day Cycle and reclaim your authentic self with Emotional Authenticity',
-      image: 'images/price-change3.png',
-      price: '$77/month',
-      originalPrice: '$120',
-      lessons: 12,
-      students: 50,
-      link: '/courses'
-    }
-  ];
+getShortText(text: string, wordLimit: number): string {
+  if (!text) return '';
+  const plainText = text.replace(/<[^>]+>/g, ''); // HTML remove
+  const words = plainText.split(/\s+/);
+  return words.length > wordLimit ? words.slice(0, wordLimit).join(' ') + '...' : plainText;
+}
 
   ngAfterViewInit(): void {
      if (isPlatformBrowser(this.platformId)) {
@@ -87,4 +61,19 @@ export class CourseSliderComponent implements AfterViewInit {
     });
   }
 }
+  ngOnInit() {
+    this.wp.getServices().subscribe((data) => {
+      this.services = data;
+      console.log(data);
+      this.bannerHeading = data[0]?.acf?.banner_heading || ''; 
+     this.services = data.map((service: any) => {
+      return {
+        ...service,
+        courseImage: service.acf?.course_image_url || '',
+        featuredImage:
+          service._embedded?.['wp:featuredmedia']?.[0]?.source_url || '',
+      };
+    });
+    });
+  }
 }

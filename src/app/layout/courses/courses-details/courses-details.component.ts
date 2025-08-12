@@ -1,7 +1,5 @@
 import { Component} from '@angular/core';
-import { RouterModule,ActivatedRoute } from '@angular/router';
-import { CourseSliderComponent } from '../../../components/course-slider/course-slider/course-slider.component';
-import { FaqSectionComponent } from '../../../components/faq-section/faq-section.component';
+import { RouterModule,ActivatedRoute } from '@angular/router'; 
 import { SafeUrlPipe } from '../../../pipes/safe-url.pipe'; // pipe ka import
 import { Title, Meta } from '@angular/platform-browser'; 
 import { WpService } from '../../../services/wp.service';
@@ -10,12 +8,15 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-courses-details',
   standalone: true,
-  imports: [RouterModule, CourseSliderComponent, FaqSectionComponent, CommonModule, SafeUrlPipe ],
+  imports: [RouterModule, CommonModule, SafeUrlPipe],
   templateUrl: './courses-details.component.html',
   styleUrl: './courses-details.component.css' 
 })
 export class CoursesDetailsComponent {
   service: any = { acf: {} };
+
+
+  loading = true;
   bannerHeading = '';
   courseImage = '';
   featuredImage = ''; 
@@ -25,12 +26,14 @@ export class CoursesDetailsComponent {
   videoImage ='';
   secondcardVedioleftImage = '';
   secondcardleftImage = '';
+  rdVedioleftImage = '';
+  readyVedioleftImage= '';
   benefits: string[] = [];
   curriculum_list: string[] = [];
   videoUrl: string = ''; 
   introvideoUrl: string = ''; 
-  faqQ: string[] = [];
-  faqA: string[] = [];
+ faqQ: { question: string; answer: string; open?: boolean }[] = [];
+
   
 
 
@@ -108,6 +111,20 @@ ngOnInit() {
             this.secondcardVedioleftImage = mediaRes.source_url;
           });
         }
+
+         // ready card video Image
+           const readycardVDmageId = this.service.acf?.ready_to_take_main_img;
+        if (readycardVDmageId) {
+          this.wp.getMediaById(readycardVDmageId).subscribe((mediaRes) => {
+            this.rdVedioleftImage = mediaRes.source_url;
+          });
+        }
+            const readyvdcardVDmageId = this.service.acf?.ready_to_take_second_img;
+        if (readyvdcardVDmageId) {
+          this.wp.getMediaById(readyvdcardVDmageId).subscribe((mediaRes) => {
+            this.readyVedioleftImage = mediaRes.source_url;
+          });
+        }
       }
     if (this.service.acf?.benefits) {
       this.benefits = this.service.acf.benefits.map((b: any) => b.field_688c63539c27a);
@@ -116,19 +133,33 @@ ngOnInit() {
       this.curriculum_list = this.service.acf.curriculum_list.map((b: any) => b.field_688c676a1c3df);
       //console.log(this.service.acf.curriculum_list)
     }
-   if (this.service.acf?.faq_repeater) {
-      this.faqQ = this.service.acf.faq_repeater.map((b: any) => b.field_688c956b85ceb);
-      console.log(this.service.acf.faq_repeater)
-    }
- 
+  //  if (this.service.acf?.faq_repeater) { 
+  //     this.faqQ = this.service.acf.faq_repeater.map((b: any) => b.field_688c954685cea);
+  //     console.log(this.service.acf.faq_repeater)
+  //   }
+if (this.service.acf?.faq_repeater) {
+    this.faqQ = this.service.acf.faq_repeater.map((b: any) => ({
+      question: b.field_688c954685cea ?? '',
+      answer: b.field_688c956b85ceb ?? '',
+      open: false // start closed      
+    })); 
+
+  }
+
 
            // ✅ Yahan video field check karo
-        console.log('ACF Data:', this.service.acf);
+       // console.log('ACF Data:', this.service.acf);
         this.videoUrl = this.service.acf?.video_embed_url || '';
         this.introvideoUrl = this.service.acf?.video_iframe_url || '';
+
+
+         this.loading = false;
     });
   }
   
+}
+toggleFaq(index: number) {
+  this.faqQ[index].open = !this.faqQ[index].open;
 }
  
 }

@@ -1,6 +1,11 @@
 
+<div *ngIf="loading" class="loader-maim"> 
+<div class="hm-spinner"></div>
+</div>
+
+
 <div class="blog">
-  <main class="mt">
+  <main class="mt" *ngIf="!loading">
 
         <section class="blog-section">
             <div class="container">

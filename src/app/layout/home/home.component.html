@@ -565,7 +565,7 @@
                             <span><i class="fa-solid fa-book-open-reader"></i>Motivation</span>
                         </div>
                         <h3>{{ post.title?.rendered }}</h3>
-                        <div [innerHTML]="getShortContent(post.excerpt?.rendered || post.content?.rendered, 30) "></div>
+                        <div [innerHTML]="getShortContent(post.excerpt?.rendered || post.content?.rendered, 15) "></div>
                         <a class="post-link" routerLink="/blog">View more <i
                                 class="fa-solid fa-arrow-up-right-from-square"></i></a>
                     </div>
@@ -641,7 +641,7 @@
                     <div class="main-img">
                         <img src="images/books.jpg" alt="Woman on computer" loading="lazy">
                     </div>
-                    <div class="video-boxes">
+                    <div class="video-boxes videos2">
                         <img src="images/books2.jpeg" alt="Video thumbnail" loading="lazy">
 
                         <div class="audio-player">

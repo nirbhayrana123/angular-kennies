@@ -12,9 +12,11 @@ import { CommonModule } from '@angular/common';
   styleUrl: './courses.component.css'
 })
 export class CoursesComponent {
-   services: any[] = [];
+  services: any = { acf: {} };
+   //services: any[] = [];
    acfData: any;
    bannerHeading = ''; 
+  videoImage= '';
    loading = true;
 
 
@@ -39,7 +41,16 @@ constructor(private titleService: Title, private metaService: Meta, private wp: 
           service._embedded?.['wp:featuredmedia']?.[0]?.source_url || '',
       };
     });
-    this.loading = true;
+        this.services.forEach((service: any) => {
+        const videoImageId = service.acf?.video_image;
+        if (videoImageId) {
+          this.wp.getMediaById(videoImageId).subscribe((mediaRes: any) => {
+            service.videoImage = mediaRes.source_url; // store in that service object
+          });
+        }
+      });
+      
+    this.loading = false;
     });
   }
 } 

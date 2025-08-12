@@ -1,10 +1,12 @@
 
 <!-- Loader -->
-<div *ngIf="loading" class="loader">
-  <img src="assets/loader.gif" alt="Loading..." />
-  loader
+<div *ngIf="loading" class="loader-maim"> 
+<div class="hm-spinner"></div>
 </div>
-<main class="mt pt-4" *ngIf="!loading">
+
+
+
+<main  class="mt pt-4" *ngIf="!loading">
  <div *ngIf="services?.length">
     <section class="sourses-section">
         <div class="course-heading">
@@ -21,8 +23,8 @@
                     <div class="main-img">
                       <img *ngIf="service.featuredImage" [src]="service.featuredImage" [alt]="service.title.rendered" loading="lazy" />
                     </div>
-                    <div class="video-boxes">
-                        <img src="images/afro-american-business-woman.jpeg" loading="lazy" alt="Video thumbnail">
+                    <div class="video-boxes"> 
+                         <img *ngIf="service.videoImage" [src]="service.videoImage" alt="Background Image" loading="lazy" />
                         <a id="play-video" target="_blank" class="video-play-button"
                             href="https://youtu.be/a1udGRR63OA?si=D7Iddfp5ezrC8jTJ" data-toggle="modal"
                             data-target="#savoybeachhotel">

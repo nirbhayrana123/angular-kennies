@@ -1,5 +1,8 @@
- <main class="pt-1"  *ngIf="post">
-        <div class="bg-gry">
+<div *ngIf="loading" class="loader-maim"> 
+<div class="hm-spinner"></div>
+</div>
+<main   class="pt-1"  *ngIf="post">
+        <div class="bg-gry colorlink">
             <div class="container">
                 <div class="grid2"> 
                     <!-- Main Content -->

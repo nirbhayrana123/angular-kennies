@@ -15,6 +15,7 @@ import { CommonModule } from '@angular/common';
 })
 export class ChildhoodTraumaComponent {
   choosePathData: any;
+    loading = true;
   service: any = { acf: {} };
   bannerHeading = '';
   courseImage = '';
@@ -25,6 +26,11 @@ export class ChildhoodTraumaComponent {
   postcardImage1 = '';
   postcardImage2 = '';
   postcardicfImage = '';
+
+
+
+
+
     constructor(
       private titleService: Title, 
       private metaService: Meta, 
@@ -93,7 +99,7 @@ const cardImage3Id = this.service.acf?.healing_service_card_three_image;
         }
 
 
-const postcardImage1Id = this.service.acf?.healing_service_card_three_image;
+const postcardImage1Id = this.service.acf?.post_card_one_image;
         if (postcardImage1Id) {
           this.wp.getMediaById(postcardImage1Id).subscribe((mediaRes) => {
             this.postcardImage1 = mediaRes.source_url;
@@ -118,10 +124,8 @@ const postcardicfImageId = this.service.acf?.post_card_tow_ifc_image;
         }
     
 
-
-
       }
- 
+ this.loading = false;
     });
   }
   

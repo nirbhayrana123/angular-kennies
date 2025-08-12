@@ -2,6 +2,7 @@ import { Component} from '@angular/core';
 import { RouterModule,ActivatedRoute } from '@angular/router';
 import { CourseSliderComponent } from '../../../components/course-slider/course-slider/course-slider.component';
 import { FaqSectionComponent } from '../../../components/faq-section/faq-section.component';
+import { SafeUrlPipe } from '../../../pipes/safe-url.pipe'; // pipe ka import
 import { Title, Meta } from '@angular/platform-browser'; 
 import { WpService } from '../../../services/wp.service';
 import { CommonModule } from '@angular/common';
@@ -9,9 +10,9 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-courses-details',
   standalone: true,
-  imports: [RouterModule, CourseSliderComponent, FaqSectionComponent, CommonModule],
+  imports: [RouterModule, CourseSliderComponent, FaqSectionComponent, CommonModule, SafeUrlPipe ],
   templateUrl: './courses-details.component.html',
-  styleUrl: './courses-details.component.css'
+  styleUrl: './courses-details.component.css' 
 })
 export class CoursesDetailsComponent {
   service: any = { acf: {} };
@@ -27,8 +28,10 @@ export class CoursesDetailsComponent {
   benefits: string[] = [];
   curriculum_list: string[] = [];
   videoUrl: string = ''; 
+  introvideoUrl: string = ''; 
   faqQ: string[] = [];
   faqA: string[] = [];
+  
 
 
   constructor(
@@ -119,7 +122,10 @@ ngOnInit() {
     }
  
 
-       this.videoUrl = this.service.acf?.video_embed_url || '';
+           // ✅ Yahan video field check karo
+        console.log('ACF Data:', this.service.acf);
+        this.videoUrl = this.service.acf?.video_embed_url || '';
+        this.introvideoUrl = this.service.acf?.video_iframe_url || '';
     });
   }
   

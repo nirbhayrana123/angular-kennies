@@ -1,6 +1,6 @@
-import { Component, OnInit, AfterViewInit, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, OnInit, AfterViewInit, Inject, PLATFORM_ID, HostListener, ElementRef, } from '@angular/core';
 import { isPlatformBrowser,CommonModule } from '@angular/common';
-import { Title, Meta } from '@angular/platform-browser';
+import { Title, Meta } from '@angular/platform-browser'; 
 
 import { EmotionalswiperComponent } from '../../components/emotionalswiper/emotionalswiper.component';
 import { CourseSliderComponent } from '../../components/course-slider/course-slider/course-slider.component';
@@ -22,6 +22,7 @@ export class HomeComponent  {
    posts: any[] = []; 
    acfData: any; 
   constructor(
+    private el: ElementRef,
     private titleService: Title,
     private metaService: Meta,
      private wp: WpService, 
@@ -71,9 +72,7 @@ getShortContent(htmlContent: string, wordLimit: number = 30): string {
     this.isExpanded = !this.isExpanded;
   }
 
-  onWindowScroll(): void {
-    // Optional: Add scroll animation/logic here if needed
-  }
+ 
   
 
  
@@ -88,6 +87,36 @@ getShortContent(htmlContent: string, wordLimit: number = 30): string {
   }
 
   
+
+private steps!: HTMLElement[];
+ 
+
+
+  ngAfterViewInit(): void {
+    // Collect all elements with class 'step' after the view is loaded
+    this.steps = Array.from(this.el.nativeElement.querySelectorAll('.step'));
+  }
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const windowHeight = window.innerHeight;
+    const scrollMiddle = scrollTop + windowHeight / 2;
+
+    this.steps.forEach(step => {
+      const rect = step.getBoundingClientRect();
+      const offsetTop = rect.top + window.scrollY;
+      const offsetBottom = offsetTop + rect.height;
+
+      if (scrollMiddle >= offsetTop && scrollMiddle < offsetBottom) {
+        this.steps.forEach(s => s.classList.remove('active'));
+        step.classList.add('active');
+      }
+    });
+  }
+
+
+
 
   }
 

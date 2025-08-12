@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-courses-details',
   standalone: true,
-  imports: [RouterModule, CourseSliderComponent, FaqSectionComponent,CommonModule],
+  imports: [RouterModule, CourseSliderComponent, FaqSectionComponent, CommonModule],
   templateUrl: './courses-details.component.html',
   styleUrl: './courses-details.component.css'
 })

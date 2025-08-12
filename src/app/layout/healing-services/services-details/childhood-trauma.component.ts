@@ -23,6 +23,8 @@ export class ChildhoodTraumaComponent {
   cardImage2 = '';
   cardImage3 = '';
   postcardImage1 = '';
+  postcardImage2 = '';
+  postcardicfImage = '';
     constructor(
       private titleService: Title, 
       private metaService: Meta, 
@@ -43,6 +45,8 @@ ngOnInit() {
   this.cardImage2 = '';
   this.cardImage3 = '';
   this.postcardImage1 = '';
+  this.postcardImage2 = '';
+  this.postcardicfImage ='';
   const slug = this.route.snapshot.paramMap.get('slug');
   
   if (slug) {
@@ -96,8 +100,27 @@ const postcardImage1Id = this.service.acf?.healing_service_card_three_image;
           });
         }
     
+
+      
+const postcardImage2Id = this.service.acf?.post_card_tow_image;
+        if (postcardImage2Id) {
+          this.wp.getMediaById(postcardImage2Id).subscribe((mediaRes) => {
+            this.postcardImage2 = mediaRes.source_url;
+          });
+        }
+
+
+const postcardicfImageId = this.service.acf?.post_card_tow_ifc_image;
+        if (postcardicfImageId) {
+          this.wp.getMediaById(postcardicfImageId).subscribe((mediaRes) => {
+            this.postcardicfImage = mediaRes.source_url;
+          });
+        }
+    
+
+
+
       }
-   
  
     });
   }

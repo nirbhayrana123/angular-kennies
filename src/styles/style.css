@@ -1451,6 +1451,10 @@ section.into-section .wellness-col {
     width: 100%;
 }
 
+.video-box-row.blockvider{
+    display: block;
+}
+
 /************************end slider*****************************/
 /************ABOUT******/
 section.aboutus {

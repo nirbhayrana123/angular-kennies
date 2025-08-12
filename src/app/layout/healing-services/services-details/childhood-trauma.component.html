@@ -176,40 +176,19 @@
                                     <h5 class="tag-line">About Freedom</h5>
                                     <h3>{{ service.acf?.post_card_tow_heading }}</h3>
 
-                                    <div class="video-box-row">
-                                        <ul>
-                                            <li data-aos="fade-up" data-aos-duration="100">
-                                                <span class="iconlist"><img src="images/long-term.png"></span>
-                                                <p> You don’t have to relive every memory to heal.</p>
-                                            </li>
-                                            <li data-aos="fade-up" data-aos-duration="200">
-                                                <span class="iconlist"><img src="images/active.png"></span>
-                                                <p> You just have to understand the patterns, honor your truth, and begin the journey
-                                                    back to yourself.</p>
-                                            </li>
-                                            <li data-aos="fade-up" data-aos-duration="300">
-                                                <span class="iconlist"><img src="images/podcast.png"></span>
-                                                <p> Every moment you wait, the old cycle runs one more day.</p>
-                                            </li>
-                                            <li data-aos="fade-up" data-aos-duration="400">
-                                                <span class="iconlist"><img src="images/creator.png"></span>
-                                                <p>But every step forward gives you back your power.</p>
-                                            </li>
-                                            <p>You’re safe here. You’re ready. Let’s begin.</p>
-                                            <div class="button-row">
-                                                <!-- <a class="button" href="meet-kenny.html">Read Kenny’s Story</a> -->
-                                                <a class="button" routerLink="/book-session">Start Your Healing Journey Now</a>
-                                            </div>
-                                        </ul>
+                                    <div class="video-box-row blockvider">
+                                     <div  [innerHTML]="service.acf?.post_card_tow_content_list"></div>
+
+                                     <a class="button" [href]="service.acf?.post_card_tow_button_link?.url">{{ service.acf?.post_card_tow_button_text }}</a>
                                     </div>
 
                                 </div>
                                 <div class="right-about">
                                     <div class="about-right-img">
-                                        <img class="imagedesign" src="images/kanny2.jpeg" alt="">
+                                        <img class="imagedesign" *ngIf="postcardImage2" [src]="postcardImage2" alt="">
 
                                         <div class="rightdesigncontent">
-                                            <img src="images/icf_horizontal.png" alt="">
+                                            <img *ngIf="postcardicfImage" [src]="postcardicfImage" alt="">
                                             <h5>Certified Life Coach</h5>
                                         </div>
                                     </div>

@@ -33,39 +33,21 @@ export class EmotionalswiperComponent implements AfterViewInit {
     });
 
 }
-  slides = [
-    {
-      title: 'Childhood trauma',
-      description: 'He is the author of Your Journey to Success, and Your Journey To Being Yourself and the creator of a process known as The Worst Day Cycle. ',
-      image: 'images/7.jpeg',
-      link: '/childhood-trauma'
-    },
-    {
-      title: 'Relationship issues',
-      description: 'He is the author of Your Journey to Success, and Your Journey To Being Yourself and the creator of a process known as The Worst Day Cycle. ',
-      image: 'images/11.jpeg',
-      link: '/childhood-trauma'
-    },
-    {
-      title: 'Parenting issues',
-      description: 'He is the author of Your Journey to Success, and Your Journey To Being Yourself and the creator of a process known as The Worst Day Cycle. ',
-      image: 'images/add.jpeg',
-      link: '/childhood-trauma'
-    },
-    {
-      title: 'Narcissistic Abuse',
-      description: 'He is the author of Your Journey to Success, and Your Journey To Being Yourself and the creator of a process known as The Worst Day Cycle. ',
-      image: 'images/8.jpeg',
-      link: '/childhood-trauma'
-    },
-    {
-      title: 'Depression Page',
-      description: 'He is the author of Your Journey to Success, and Your Journey To Being Yourself and the creator of a process known as The Worst Day Cycle. ',
-      image: 'images/sad.png',
-      link: '/childhood-trauma'
-    }
-  ];
-  ngAfterViewInit(): void {
+  ngOnInit() {
+    this.wp.gethealingServices().subscribe((data) => {
+      this.healservices = data;
+      console.log(data); 
+     this.healservices = data.map((service: any) => {
+      return {
+        ...service,
+        courseImage: service.acf?.course_image_url || '',
+        featuredImage:
+          service._embedded?.['wp:featuredmedia']?.[0]?.source_url || '',
+      };
+    });
+    });
+  }
+    ngAfterViewInit(): void {
      if (isPlatformBrowser(this.platformId)) {
     new Swiper('.emotional-swiper', {
       slidesPerView: 1,
@@ -92,20 +74,5 @@ export class EmotionalswiperComponent implements AfterViewInit {
     }
     });
   }
-  }
-
-  ngOnInit() {
-    this.wp.gethealingServices().subscribe((data) => {
-      this.healservices = data;
-      console.log(data); 
-     this.healservices = data.map((service: any) => {
-      return {
-        ...service,
-        courseImage: service.acf?.course_image_url || '',
-        featuredImage:
-          service._embedded?.['wp:featuredmedia']?.[0]?.source_url || '',
-      };
-    });
-    });
   }
 }

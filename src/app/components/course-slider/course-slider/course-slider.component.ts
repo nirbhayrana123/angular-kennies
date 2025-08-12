@@ -34,7 +34,23 @@ getShortText(text: string, wordLimit: number): string {
   return words.length > wordLimit ? words.slice(0, wordLimit).join(' ') + '...' : plainText;
 }
 
-  ngAfterViewInit(): void {
+
+  ngOnInit() {
+    this.wp.getServices().subscribe((data) => {
+      this.services = data;
+      console.log(data);
+      this.bannerHeading = data[0]?.acf?.banner_heading || ''; 
+     this.services = data.map((service: any) => {
+      return {
+        ...service,
+        courseImage: service.acf?.course_image_url || '',
+        featuredImage:
+          service._embedded?.['wp:featuredmedia']?.[0]?.source_url || '',
+      };
+    });
+    });
+  }
+    ngAfterViewInit(): void {
      if (isPlatformBrowser(this.platformId)) {
     setTimeout(() => {
       new Swiper('.mySwiper', {
@@ -61,19 +77,4 @@ getShortText(text: string, wordLimit: number): string {
     });
   }
 }
-  ngOnInit() {
-    this.wp.getServices().subscribe((data) => {
-      this.services = data;
-      console.log(data);
-      this.bannerHeading = data[0]?.acf?.banner_heading || ''; 
-     this.services = data.map((service: any) => {
-      return {
-        ...service,
-        courseImage: service.acf?.course_image_url || '',
-        featuredImage:
-          service._embedded?.['wp:featuredmedia']?.[0]?.source_url || '',
-      };
-    });
-    });
-  }
 }

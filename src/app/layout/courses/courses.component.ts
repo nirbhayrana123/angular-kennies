@@ -39,7 +39,7 @@ constructor(private titleService: Title, private metaService: Meta, private wp: 
           service._embedded?.['wp:featuredmedia']?.[0]?.source_url || '',
       };
     });
-    this.loading = false;
+    this.loading = true;
     });
   }
 } 

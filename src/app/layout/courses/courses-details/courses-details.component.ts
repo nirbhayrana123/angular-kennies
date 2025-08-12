@@ -29,6 +29,7 @@ export class CoursesDetailsComponent {
   videoUrl: string = ''; 
   faqs: string[] = [];
   question: string[] = [];
+lesson: any;
 
 
   constructor(

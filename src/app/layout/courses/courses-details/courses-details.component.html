@@ -1,3 +1,6 @@
+<div *ngIf="loading" class="loader-maim"> 
+<div class="hm-spinner"></div>
+</div>
 <main class="pt-1 pt68px">
         <div class="healing-inner-pages height-7" [style.background-image]="'url(' + backgroundImage + ')'">
             <div class="container">
@@ -24,8 +27,8 @@
                         </div>
 
                         <!-- Right Side Content -->
-                        <div class="right-content homesder aos-init aos-animate" data-aos="fade-up"
-                            data-aos-duration="1500">                           
+                        <div class="right-content homesder " data-aos="fade-up"
+                            data-aos-duration="100">                           
                             <h3>{{ service.acf?.main_heading }}</h3>
                          <div [innerHTML]="service.acf?.paragraphs"></div>
                           <h4>{{ service.acf?.sub_heading_2 }}</h4> 

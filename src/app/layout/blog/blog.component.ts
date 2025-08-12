@@ -16,7 +16,7 @@ export class BlogComponent implements OnInit{
   posts: any[] = []; 
    acfData: any;
    bannerHeading = ''; 
-    
+    loading = true;
   
   constructor(
     private wp: WpService,
@@ -41,6 +41,7 @@ export class BlogComponent implements OnInit{
           post._embedded?.['wp:featuredmedia']?.[0]?.source_url || '',
       };
     });
+      this.loading = false;
     });
 
  

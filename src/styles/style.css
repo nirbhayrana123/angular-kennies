@@ -427,6 +427,7 @@ header.header {
     position: fixed;
     z-index: 999;
     padding: 15px 0;
+    top: 0;
 }
 
 
@@ -1353,7 +1354,7 @@ section.into-section .wellness-col {
     height: 100%;
     background-color: rgb(21 21 21 / 6%);
 }
-
+.colorlink a {color: #BBA056;}
 .progress-content {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -1454,6 +1455,74 @@ section.into-section .wellness-col {
 .video-box-row.blockvider{
     display: block;
 }
+
+
+.hm-spinner{
+  height: 70px;
+  width: 70px;
+  border: 3px solid transparent;
+  border-top-color: #d169dd;
+  border-bottom-color: #d169dd;
+  border-radius: 50%;
+  position: relative;
+  -webkit-animation: spin 3s linear infinite;
+          animation: spin 3s linear infinite;
+}
+
+.hm-spinner::before{
+  content: "";
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  bottom: 20px;
+  left: 20px;
+  border: 3px solid transparent;
+  border-top-color: #d169dd;
+  border-bottom-color: #d169dd;
+  border-radius: 50%;
+  -webkit-animation: spin 1.5s linear infinite;
+  animation: spin 1.5s linear infinite;
+
+}
+
+.loader-maim {
+      background-color: #ffffff;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 67vh;
+    position: relative;
+    margin-top: 81px;
+    border-top: 1px solid #ffecec;
+    clear: both;
+}
+
+
+ 
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
 
 /************************end slider*****************************/
 /************ABOUT******/

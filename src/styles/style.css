@@ -5703,7 +5703,7 @@ section.sourses-section .right-content h3 {
     padding: 20px;
 }
 
-.flex-about .video-box-row li {
+.video-box-row.blockvider ul li {
     display: block;
 }
 .card-body .stars {

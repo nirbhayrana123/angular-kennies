@@ -1,14 +1,14 @@
- <div class="newblog-post">
+                   <div class="newblog-post">
                           <div *ngFor="let hservice of healservices">                        
                         <div class="news-block-two">
                             <div class="inner-box">
                                 <div class="image">
                                     <a [routerLink]="['/hservice', slug.id]"> 
-  <!-- Agar featured image ho -->
-  <img *ngIf="!hservice.courseImage && hservice.featuredImage" 
-       [src]="hservice.featuredImage" 
-       alt="{{ hservice.title?.rendered }}" 
-       loading="lazy"> 
+                                      <!-- Agar featured image ho -->
+                            <img *ngIf="!hservice.courseImage && hservice.featuredImage" 
+                                [src]="hservice.featuredImage" 
+                                alt="{{ hservice.title?.rendered }}" 
+                                loading="lazy"> 
                                     </a>
                                 </div>
                                 <div class="lower-content">

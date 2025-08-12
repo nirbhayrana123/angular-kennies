@@ -15,6 +15,7 @@ import { CommonModule } from '@angular/common';
 })
 export class ChildhoodTraumaComponent {
   choosePathData: any;
+    loading = true;
   service: any = { acf: {} };
   bannerHeading = '';
   courseImage = '';
@@ -25,6 +26,11 @@ export class ChildhoodTraumaComponent {
   postcardImage1 = '';
   postcardImage2 = '';
   postcardicfImage = '';
+
+
+
+
+
     constructor(
       private titleService: Title, 
       private metaService: Meta, 
@@ -118,10 +124,8 @@ const postcardicfImageId = this.service.acf?.post_card_tow_ifc_image;
         }
     
 
-
-
       }
- 
+ this.loading = false;
     });
   }
   

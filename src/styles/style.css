@@ -5703,7 +5703,9 @@ section.sourses-section .right-content h3 {
     padding: 20px;
 }
 
-
+.flex-about .video-box-row li {
+    display: block;
+}
 .card-body .stars {
     color: #BBA056;
     font-size: 0.7em;

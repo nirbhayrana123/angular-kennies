@@ -2,7 +2,7 @@
 <div class="hm-spinner"></div>
 </div>    
 
-<div class="newblog-post">
+<div *ngIf="!loading" class="newblog-post">
     <div *ngFor="let hservice of healservices">
         <div class="news-block-two">
             <div class="inner-box">

@@ -17,6 +17,8 @@ export class CoursesComponent {
    acfData: any;
    bannerHeading = ''; 
   videoImage= '';
+   loading = true;
+
 
 constructor(private titleService: Title, private metaService: Meta, private wp: WpService,private route: ActivatedRoute) {
     this.titleService.setTitle('Begin Your Journey Course - Kenny Weiss');
@@ -48,6 +50,7 @@ constructor(private titleService: Title, private metaService: Meta, private wp: 
         }
       });
       
+    this.loading = false;
     });
   }
 } 

@@ -36,7 +36,7 @@
                     </section>
 
 
-                    <div class="might-feel">
+                    <div class="might-feel" >
                         <div class="container">
                             <div class="headinginfo">
                                 <h3>{{ service.acf?.healing_comparison_main_heading }}</h3>
@@ -59,7 +59,25 @@
                         </div>
 
 
+ <div class="container" *ngIf="service.acf?.banner_desc?.trim()">
+                            <div class="headinginfo">
+                                <h3>{{ service.acf?.healing_comparison_main_heading2 }}</h3> 
+                            </div>
+                            <div class="might-feel-row  mb-4">
+                                <div class="might-feel-col1">
+                                    <h4>{{ service.acf?.healing_comparison_left_heading2 }}</h4>
+                                      
+      <div  [innerHTML]="service.acf?.healing_comparison_left_list_content2"></div>
+   
 
+                                </div>
+                                <div class="might-feel-col2">
+                                    <h4>{{ service.acf?.healing_comparison_right_heading2 }}</h4>
+                                     <div  [innerHTML]="service.acf?.healing_comparison_right_content2"></div>
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
 
               <section class="about-banner">
@@ -169,7 +187,7 @@
                             </div>
                         </div>
                     </section>
-                    <section class="about-banner">
+                    <section class="about-banner"  >
                         <div class="container">
                             <div class="flex-about">
                                 <div class="left-about aos-init aos-animate" data-aos="fade-up" data-aos-duration="1500">
@@ -196,28 +214,5 @@
                             </div>
                         </div>
                     </section>
-
-                    <section class="into-section-white-bg">
-                        <div class="container">
-                            <div class="wellness-header" data-aos="fade-up" data-aos-duration="2000">
-                                <h3>Emotional Healing and Personal Growth</h3>
-                                <p>Take the next step in your healing journey. Reclaim Your Best Life
-                                    is a powerful guide to emotional healing, trauma recovery, and building
-                                    a life of
-                                    confidence, peace, and purpose.</p>
-                            </div>
-
-                     
-<app-emotionalswiper/>
-
-
-
-                        </div>
-                    </section>
-
-
-
-
-
-
+ 
                 </main>

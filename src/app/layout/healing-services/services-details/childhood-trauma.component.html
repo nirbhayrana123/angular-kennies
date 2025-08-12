@@ -106,7 +106,7 @@
                     <div class="healing-table">
                         <div class="container">
                             <div class="headinginfo">
-                                <h3>✅ Choose the Path That Feels Right for You</h3>
+                                <h3>{{ service.acf?.choose_the_path_table_heading }}</h3>
                             </div>
 
                             <table border="1" cellpadding="10" cellspacing="0" style="border-collapse: collapse; width: 100%;">
@@ -148,7 +148,7 @@
                                 </tbody>
                             </table>
 
-                            <p>Not sure where to begin? Start with a free discovery session — no pressure, just clarity.</p>
+                            <p>{{ service.acf?.choose_the_path_content }}</p>
 
 
 
@@ -163,15 +163,8 @@
                                     <img *ngIf="postcardImage1" [src]="postcardImage1" />
                                 </div>
                                 <div class="postcard-item2 wording">
-                                    <h3>💬 Hear From Women Just Like You</h3>
-                                    <p> “I didn’t even realize I had trauma until Kenny helped me connect the dots. Now I know why I
-                                        react the way I do — and more importantly, how to choose differently.”
-                                        <label>— Jessica, 41</label>
-                                    </p>
-                                    <p>“This work changed how I parent, love, and live. I only wish I’d found it sooner.”
-
-                                        <label>— Lori, 38</label>
-                                    </p>
+                                    <h3>{{ service.acf?.post_card_one_heading }}</h3>
+<div  [innerHTML]="service.acf?.post_card_one_content"></div>
                                 </div>
                             </div>
                         </div>
@@ -181,7 +174,7 @@
                             <div class="flex-about">
                                 <div class="left-about aos-init aos-animate" data-aos="fade-up" data-aos-duration="1500">
                                     <h5 class="tag-line">About Freedom</h5>
-                                    <h3>🕊️ Final Word: It’s Not About Blame. It’s About Freedom.</h3>
+                                    <h3>{{ service.acf?.post_card_tow_heading }}</h3>
 
                                     <div class="video-box-row">
                                         <ul>

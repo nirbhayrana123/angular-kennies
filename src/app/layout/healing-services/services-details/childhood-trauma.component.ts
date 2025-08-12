@@ -14,7 +14,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './childhood-trauma.component.css'
 })
 export class ChildhoodTraumaComponent {
-
+  choosePathData: any;
   service: any = { acf: {} };
   bannerHeading = '';
   courseImage = '';

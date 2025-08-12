@@ -11,7 +11,7 @@ body {
     font-family: "Poppins", sans-serif;
     font-size: 18px;
     font-weight: 400;
-    line-height: 22px;
+    line-height: 1.7em;
     color: #434343;
     margin: 0;
     padding: 0;
@@ -262,6 +262,7 @@ ul.navmenu li i {
 
 .Player5 iframe {
     height: 525px;
+    border-radius: 10px;
 }
 
 .Player5 {
@@ -344,7 +345,7 @@ ul.doropmenu li a {
 }
 
 .doropmenu li {
-    padding: 5px 13px;
+    padding: 2px 13px;
 }
 
 a.logo-brand {
@@ -1560,9 +1561,7 @@ img.award-star {
 .aboutus .right {
     position: relative;
 }
-.works-sections .right {
-    padding-top: 80px;
-}
+ 
 .aboutus img {
     height: 100%;
 }
@@ -2686,10 +2685,13 @@ a.buttobooksec {
     color: #512570;
 }
 
-.answercont {
+/* .answercont {
     max-height: 0;
     overflow: hidden;
     transition: 0.3s;
+} */
+.answercont {
+  transition: max-height 0.3s ease;
 }
 
 .faq-wrapper h3 {
@@ -2932,7 +2934,7 @@ iframe {
     display: grid;
     align-items: center;
     justify-content: space-between;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
     margin-bottom: 60px;
     margin-top: 60px;
@@ -5467,7 +5469,8 @@ section.sourses-section .right-content h3 {
     position: absolute;
     bottom: -30px;
     right: 0px;
-    width: 50%;
+    width: 245px;
+    height: 230px;
     background-color: white;
     border-radius: 16px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -5475,6 +5478,25 @@ section.sourses-section .right-content h3 {
     border: 10px solid #fff;
 }
 
+
+
+.video-boxes.videos2 {  
+    width: 50%;
+    height: auto; 
+}
+.video-boxes.videos2 img {  
+    width: 100%;
+    height: 100%; 
+}
+
+
+.video-boxes img {
+    display: block;
+    border-radius: 16px;
+    width: 245px;
+    height: 230px;
+    object-fit: cover;
+}
 .main-img::after {
     content: "";
     position: absolute;
@@ -5487,11 +5509,6 @@ section.sourses-section .right-content h3 {
     z-index: -1;
 }
 
-.video-boxes img {
-    width: 100%;
-    display: block;
-    border-radius: 16px;
-}
 
 .flex-who-we-are.mb-3 {
     margin-bottom: 80px;
@@ -5865,14 +5882,18 @@ a.more-link.button {
     height: 20px;
     font-size: 13px;
 }
-
-
-
+ 
 .card-img {
     position: relative;
 }
-
-
+.card-img a {
+    min-height: 300px;
+    display: inline-block;
+}
+.card-img a img  {
+    min-height: 300px; 
+        object-fit: cover;
+}
 
 .stars ul {
     display: flex;

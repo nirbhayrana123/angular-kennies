@@ -3,12 +3,12 @@
                         <div class="news-block-two">
                             <div class="inner-box">
                                 <div class="image">
-                                    <a [routerLink]="['/hservice', slug.id]"> 
-                                      <!-- Agar featured image ho -->
-                            <img *ngIf="!hservice.courseImage && hservice.featuredImage" 
-                                [src]="hservice.featuredImage" 
-                                alt="{{ hservice.title?.rendered }}" 
-                                loading="lazy"> 
+                                    <a [routerLink]="['/services', hservice.slug]"> 
+  <!-- Agar featured image ho -->
+  <img *ngIf="!hservice.courseImage && hservice.featuredImage" 
+       [src]="hservice.featuredImage" 
+       alt="{{ hservice.title?.rendered }}" 
+       loading="lazy"> 
                                     </a>
                                 </div>
                                 <div class="lower-content">
@@ -22,7 +22,7 @@
 
                                         </div>
                                     </div>
-                                    <a [routerLink]="['/services', hservice.id]"> 
+                                    <a [routerLink]="['/services', hservice.slug]"> 
                                          <h3 [innerHTML]="hservice.title.rendered"></h3>
                                     </a>
                                     <div class="text">

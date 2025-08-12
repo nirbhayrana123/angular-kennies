@@ -246,21 +246,21 @@
                         <h3>Frequently Asked Questions</h3>
 
                     </div>
+<div class="industry-grid">
+  <div class="faq-wrapper blog-detailsdhidee" *ngIf="faqQ?.length">
+    <div class="faq-item" *ngFor="let faq of faqQ; let i = index">
+      <div class="question" (click)="toggleFaq(i)">
+        {{ faq.question }}
+      </div>
+      <div class="answercont" *ngIf="faq.open">
+        <div class="answer">
+          <p>{{ faq.answer }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-                    <div class="industry-grid">
-                        <div class="faq-wrapper blog-detailsdhidee"
-                            *ngIf="faqQ?.length">
-                            <div class="faq-item" *ngFor="let faq of faqQ">
-                                <div class="question">{{ faq }}</div>
-                                <div class="answercont">
-                                    <div class="answer">
-                                        <p>{{ faq }}</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>

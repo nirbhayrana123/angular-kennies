@@ -29,8 +29,8 @@ export class CoursesDetailsComponent {
   curriculum_list: string[] = [];
   videoUrl: string = ''; 
   introvideoUrl: string = ''; 
-  faqQ: string[] = [];
-  faqA: string[] = [];
+ faqQ: { question: string; answer: string; open?: boolean }[] = [];
+
   
 
 
@@ -130,19 +130,30 @@ ngOnInit() {
       this.curriculum_list = this.service.acf.curriculum_list.map((b: any) => b.field_688c676a1c3df);
       //console.log(this.service.acf.curriculum_list)
     }
-   if (this.service.acf?.faq_repeater) {
-      this.faqQ = this.service.acf.faq_repeater.map((b: any) => b.field_688c956b85ceb);
-      console.log(this.service.acf.faq_repeater)
-    }
- 
+  //  if (this.service.acf?.faq_repeater) { 
+  //     this.faqQ = this.service.acf.faq_repeater.map((b: any) => b.field_688c954685cea);
+  //     console.log(this.service.acf.faq_repeater)
+  //   }
+if (this.service.acf?.faq_repeater) {
+    this.faqQ = this.service.acf.faq_repeater.map((b: any) => ({
+      question: b.field_688c954685cea ?? '',
+      answer: b.field_688c956b85ceb ?? '',
+      open: false // start closed      
+    })); 
+
+  }
+
 
            // ✅ Yahan video field check karo
-        console.log('ACF Data:', this.service.acf);
+       // console.log('ACF Data:', this.service.acf);
         this.videoUrl = this.service.acf?.video_embed_url || '';
         this.introvideoUrl = this.service.acf?.video_iframe_url || '';
     });
   }
   
+}
+toggleFaq(index: number) {
+  this.faqQ[index].open = !this.faqQ[index].open;
 }
  
 }

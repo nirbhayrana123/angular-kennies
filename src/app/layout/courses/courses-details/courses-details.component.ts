@@ -14,6 +14,9 @@ import { CommonModule } from '@angular/common';
 })
 export class CoursesDetailsComponent {
   service: any = { acf: {} };
+
+
+  loading = true;
   bannerHeading = '';
   courseImage = '';
   featuredImage = ''; 
@@ -148,6 +151,9 @@ if (this.service.acf?.faq_repeater) {
        // console.log('ACF Data:', this.service.acf);
         this.videoUrl = this.service.acf?.video_embed_url || '';
         this.introvideoUrl = this.service.acf?.video_iframe_url || '';
+
+
+         this.loading = false;
     });
   }
   

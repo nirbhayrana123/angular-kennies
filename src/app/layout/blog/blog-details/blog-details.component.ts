@@ -21,7 +21,7 @@ export class BlogDetailsComponent {
   titleService = inject(Title);
   metaService = inject(Meta);
 
- 
+    loading = true;
   post: any = null;
   courseImage = '';
   featuredImage = '';
@@ -45,6 +45,8 @@ export class BlogDetailsComponent {
       // Featured image
       this.featuredImage =
         this.post._embedded?.['wp:featuredmedia']?.[0]?.source_url || '';
+
+          this.loading = false;
     });
   }
 }

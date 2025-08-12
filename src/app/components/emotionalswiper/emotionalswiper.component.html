@@ -1,14 +1,19 @@
 <div class="swiper emotional-swiper">
   <div class="swiper-wrapper">
-    <div class="swiper-slide" *ngFor="let item of slides">
+    <div class="swiper-slide" *ngFor="let hservice of healservices">
       <div class="wellness-col bb-1">
         <div class="childhoodimg">
-          <img [src]="item.image" [alt]="item.title" />
+                                     <a [routerLink]="['/services', hservice.slug]"> 
+  <!-- Agar featured image ho -->
+  <img *ngIf="!hservice.courseImage && hservice.featuredImage" 
+       [src]="hservice.featuredImage" 
+       alt="{{ hservice.title?.rendered }}" 
+       loading="lazy"> </a>
         </div>
         <div class="trauma">
-          <h4>{{ item.title }}</h4>
-          <p>{{ item.description }}</p>
-          <a class="more-link button" [routerLink]="item.link">Read more</a>
+          <h4 [innerHTML]="hservice.title.rendered"></h4> 
+           <!-- <div [innerHTML]="hservice.excerpt.rendered"></div> -->
+          <a class="more-link button" [routerLink]="['/services', hservice.slug]">Read more</a>
         </div>
       </div>
     </div>

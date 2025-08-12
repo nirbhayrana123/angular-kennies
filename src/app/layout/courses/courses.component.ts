@@ -12,9 +12,11 @@ import { CommonModule } from '@angular/common';
   styleUrl: './courses.component.css'
 })
 export class CoursesComponent {
-   services: any[] = [];
+  services: any = { acf: {} };
+   //services: any[] = [];
    acfData: any;
    bannerHeading = ''; 
+  videoImage= '';
 
 constructor(private titleService: Title, private metaService: Meta, private wp: WpService,private route: ActivatedRoute) {
     this.titleService.setTitle('Begin Your Journey Course - Kenny Weiss');
@@ -37,6 +39,15 @@ constructor(private titleService: Title, private metaService: Meta, private wp: 
           service._embedded?.['wp:featuredmedia']?.[0]?.source_url || '',
       };
     });
+        this.services.forEach((service: any) => {
+        const videoImageId = service.acf?.video_image;
+        if (videoImageId) {
+          this.wp.getMediaById(videoImageId).subscribe((mediaRes: any) => {
+            service.videoImage = mediaRes.source_url; // store in that service object
+          });
+        }
+      });
+      
     });
   }
 } 

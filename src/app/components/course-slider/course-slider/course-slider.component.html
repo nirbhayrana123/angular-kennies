@@ -1,11 +1,11 @@
 
 <div class="swiper mySwiper">
   <div class="swiper-wrapper">
-    <div class="swiper-slide" *ngFor="let course of courses">
+    <div class="swiper-slide"  *ngFor="let service of services">
       <div class="card">
         <div class="card-img">
-          <a [routerLink]="course.link">
-            <img [src]="course.image" alt="Course" class="preview" />
+          <a [routerLink]="['/courses', service.slug]">
+             <img *ngIf="service.featuredImage" [src]="service.featuredImage" [alt]="service.title.rendered" loading="lazy" />
           </a>
         </div>
 
@@ -22,22 +22,22 @@
               <span>(15 Reviews)</span>
             </div>
           </div>
-          <h4>{{ course.title }}</h4>
-          <p>{{ course.description }}</p>
-          <div class="info">
+          <h4  [innerHTML]="service.title.rendered"> </h4>
+          <p>{{ getShortText(service.acf?.banner_desc, 15) }}</p>
+          <!-- <div class="info">
             <div><i class="fa-solid fa-book"></i>{{ course.lessons }} Lessons</div>
             <div><i class="fa-solid fa-user-tie"></i>{{ course.students }} Students</div>
-          </div>
+          </div> -->
           <div class="author">
             <img src="./images/course.jpeg" alt="Author">
             <div class="author-info">Course • By Kenny Weiss</div>
           </div>
           <div class="price-row">
             <div class="price">
-              <span class="current-price">{{ course.price }}</span>
-              <span class="original-price">{{ course.originalPrice }}</span>
+              <span class="current-price">$ {{ service.acf?.price }}</span>
+              <span class="original-price">$ {{ service.acf?.price }}</span>
             </div>
-            <a [routerLink]="course.link" class="button">
+            <a [routerLink]="['/courses', service.slug]" class="button">
               Learn More <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
             </a>
           </div>

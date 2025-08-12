@@ -27,7 +27,7 @@ export class WpService {
   return this.http.get<any>(`${this.healingapiUrl}?_embed`);
 }
 gethealingServicesSlug(slug: string): Observable<any> {
-  return this.http.get<any[]>(`${this.baseUrl}/emotional_healing?slug=${slug}&_embed`);
+  return this.http.get<any[]>(`${this.healingapiUrl}/?slug=${slug}&_embed`);
 }
  
 getServiceBySlug(slug: string): Observable<any> {

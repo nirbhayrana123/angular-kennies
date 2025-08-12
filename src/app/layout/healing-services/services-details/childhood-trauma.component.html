@@ -2,7 +2,7 @@
                     <section id="top0" class="kanny-content">
                         <div class="container">
                             <div class="contentallkanny">
-                                <img class="form-bac" src="images/form-bac.png">
+                                <img class="form-bac" *ngIf="service.bannerHeading" [src]="service.bannerHeading">
                                 <h3>{{ service.acf?.as_parent_heading }}</h3> 
                                 <div [innerHTML]="service.acf?.intro_discription"></div> 
                               
@@ -19,24 +19,14 @@
                             <div class="flex-who-we-are">
                                 <div class="left-images">
                                     <div class="main-img">
-                                        <img src="images/attractive.jpeg" alt="Woman on computer">
+                                        <img *ngIf="cardImage1" [src]="cardImage1" alt="Woman on computer">
                                     </div>
                                 </div>
 
                                 <div class="right-content" data-aos="fade-up" data-aos-duration="1500">
-                                    <h3>🧠 What Is Childhood Trauma—Really?</h3>
-                                    <p class="b">Most people think trauma only means abuse or extreme events.
-                                        But often, it’s the emotional needs that went unmet — the silent moments that left a lasting
-                                        impact.</p>
-                                    <p class="description">
-                                        “Trauma isn’t what happens to you. It’s what happens inside you because of what happened to
-                                        you.”
-                                    </p>
+                                    <h3>{{ service.acf?.healing__service_card_one_heading}}</h3>
+                                    <div class="b" [innerHTML]="service.acf?.real_people_content"></div>
 
-                                    <p class="description">
-                                        These subtle but powerful experiences can rewire your brain, trigger survival responses, and
-                                        silently shape your adult life.
-                                    </p>
 
                                 </div>
                             </div>
@@ -49,61 +39,20 @@
                     <div class="might-feel">
                         <div class="container">
                             <div class="headinginfo">
-                                <h3>😔 Real-Life Examples: What Seemed Small Then Still Hurts Now</h3>
-                                <p>You might not label it as trauma — but your nervous system remembers.</p>
+                                <h3>{{ service.acf?.healing_comparison_main_heading }}</h3>
+                                <p>{{ service.acf?.healing_comparison_conetnt }}</p>
                             </div>
                             <div class="might-feel-row  mb-4">
                                 <div class="might-feel-col1">
-                                    <h4>Childhood Experience</h4>
-                                    <ul>
-                                        <li>
-                                            <p>You were told “Stop crying” or “You’re too sensitive”</p>
-                                        </li>
-                                        <li>
-                                            <p>Your efforts were never enough for praise</p>
-                                        </li>
-                                        <li>
-                                            <p>You felt invisible or were left alone with emotions</p>
-                                        </li>
-                                        <li>
-                                            <p>A parent was emotionally unavailable or unpredictable</p>
-                                        </li>
-                                        <li>
-                                            <p>You were the “good child” who never caused trouble</p>
-                                        </li>
-                                        <li>
-                                            <p>No one asked how you felt after painful experiences</p>
-                                        </li>
-                                    </ul>
+                                    <h4>{{ service.acf?.healing_comparison_left_heading }}</h4>
+                                      
+      <div  [innerHTML]="service.acf?.healing_comparison_left_list_content"></div>
+   
 
                                 </div>
                                 <div class="might-feel-col2">
-                                    <h4>How It Shows Up in Adult Life</h4>
-                                    <ul>
-                                        <li>
-                                            <p>You bottle up emotions or feel weak for expressing them</p>
-                                        </li>
-                                        <li>
-                                            <p>You chase perfection and feel like a failure even when you're succeeding</p>
-                                        </li>
-                                        <li>
-                                            <p>You struggle with self-worth or feel unlovable unless you “earn” attention
-                                            </p>
-                                        </li>
-                                        <li>
-                                            <p>You struggle with self-worth or feel unlovable unless you “earn” attention
-                                            </p>
-                                        </li>
-                                        <li>
-                                            <p>You now people-please or feel lost when you're not needed
-                                            </p>
-                                        </li>
-                                        <li>
-                                            <p>You learned to ignore your own pain and disconnect from emotions
-                                            </p>
-                                        </li>
-
-                                    </ul>
+                                    <h4>{{ service.acf?.healing_comparison_right_heading }}</h4>
+                                     <div  [innerHTML]="service.acf?.healing_comparison_right_content"></div>
                                 </div>
 
                             </div>
@@ -118,23 +67,13 @@
                             <div class="flex-about">
                                 <div class="left-about" data-aos="fade-up" data-aos-duration="1500">
                                     <h5 class="tag-line">Brain Adapted</h5>
-                                    <h3>🔄 Your Brain Adapted to Survive — But It's Keeping You Stuck</h3>
-                                    <p>Those early emotional patterns created a “survival blueprint”. It served you then, but now it
-                                        might look like:</p><br>
-                                    <ul class="pointer-dots">
-                                        <li>Emotional overwhelm, anxiety, or numbness</li>
-                                        <li>Constant overthinking or self-doubt</li>
-                                        <li>Feeling “not good enough,” even with success</li>
-                                        <li>Attracting the same unhealthy relationships</li>
-                                        <li>Sabotaging happiness, love, or career goals</li>
-                                    </ul>
-                                    <p>You're not broken. You're patterned — and patterns can be rewired.</p>
-
+                                    <h3>{{ service.acf?.healing_service_card_tow_heading }}</h3>
+                                    <div  [innerHTML]="service.acf?.healing_service_card_tow_content"></div>
 
                                 </div>
                                 <div class="right-about">
                                     <div class="about-right-img">
-                                        <img class="imagedesign" src="images/3.jpeg" />
+                                        <img *ngIf="cardImage2" [src]="cardImage2" class="imagedesign" />
 
 
                                     </div>
@@ -150,27 +89,13 @@
                             <div class="flex-who-we-are">
                                 <div class="left-images">
                                     <div class="main-img">
-                                        <img src="images/11.jpeg" alt="Woman on computer">
+                                        <img *ngIf="cardImage3" [src]="cardImage3" alt="Woman on computer">
                                     </div>
                                 </div>
 
                                 <div class="right-content aos-init aos-animate" data-aos="fade-up" data-aos-duration="1500">
-                                    <h3>🎯 Meet Kenny Weiss — Trauma Expert & Emotional Healing Coach</h3>
-                                    <p class="b">Most people think trauma only means abuse or extreme events.
-                                        But often, it’s the emotional needs that went unmet — the silent moments that left a lasting
-                                        impact.</p>
-                                    <p class="description">
-                                        Kenny Weiss has helped thousands break free from the unconscious cycles that hold them back.
-                                    </p>
-
-                                    <p class="description">
-                                        His method — The Worst Day Cycle™ — identifies the root cause of your pain, gently heals it, and
-                                        rewires your brain for lasting peace.
-
-                                    </p>
-                                    <p class="description">
-                                        Whether through 1:1 coaching, self-paced courses, or his bestselling book, Kenny meets you where
-                                        you are — and walks with you to who you can become.</p>
+                                    <h3>{{ service.acf?.healing_service_card_three_heading }}</h3>
+                                     <div  [innerHTML]="service.acf?.healing_service_card_three_content"></div>
                                 </div>
                             </div>
 
@@ -235,7 +160,7 @@
                         <div class="container">
                             <div class="postcard-row">
                                 <div class="postcard-item1">
-                                    <img src="images/laptop-meeting.jpeg" />
+                                    <img *ngIf="postcardImage1" [src]="postcardImage1" />
                                 </div>
                                 <div class="postcard-item2 wording">
                                     <h3>💬 Hear From Women Just Like You</h3>

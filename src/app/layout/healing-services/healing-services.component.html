@@ -3,7 +3,7 @@
                         <div class="news-block-two">
                             <div class="inner-box">
                                 <div class="image">
-                                    <a [routerLink]="['/hservice', slug.id]"> 
+                                    <a [routerLink]="['/hservice', hservice.slug]"> 
   <!-- Agar featured image ho -->
   <img *ngIf="!hservice.courseImage && hservice.featuredImage" 
        [src]="hservice.featuredImage" 

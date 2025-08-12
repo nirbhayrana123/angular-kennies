@@ -19,7 +19,10 @@ export class ChildhoodTraumaComponent {
   bannerHeading = '';
   courseImage = '';
   featuredImage = ''; 
-
+  cardImage1 = '';
+  cardImage2 = '';
+  cardImage3 = '';
+  postcardImage1 = '';
     constructor(
       private titleService: Title, 
       private metaService: Meta, 
@@ -36,7 +39,10 @@ export class ChildhoodTraumaComponent {
 ngOnInit() {
   this.courseImage = ''; 
   this.featuredImage = ''; 
-  
+  this.cardImage1 = '';
+  this.cardImage2 = '';
+  this.cardImage3 = '';
+  this.postcardImage1 = '';
   const slug = this.route.snapshot.paramMap.get('slug');
   
   if (slug) {
@@ -59,6 +65,36 @@ ngOnInit() {
         }
  
  
+      const cardImage1Id = this.service.acf?.healing_service_card_one_image;
+        if (cardImage1Id) {
+          this.wp.getMediaById(cardImage1Id).subscribe((mediaRes) => {
+            this.cardImage1 = mediaRes.source_url;
+          });
+        }
+
+
+const cardImage2Id = this.service.acf?.healing_service_card_tow_image;
+        if (cardImage2Id) {
+          this.wp.getMediaById(cardImage2Id).subscribe((mediaRes) => {
+            this.cardImage2 = mediaRes.source_url;
+          });
+        }
+
+
+const cardImage3Id = this.service.acf?.healing_service_card_three_image;
+        if (cardImage3Id) {
+          this.wp.getMediaById(cardImage3Id).subscribe((mediaRes) => {
+            this.cardImage3 = mediaRes.source_url;
+          });
+        }
+
+
+const postcardImage1Id = this.service.acf?.healing_service_card_three_image;
+        if (postcardImage1Id) {
+          this.wp.getMediaById(postcardImage1Id).subscribe((mediaRes) => {
+            this.postcardImage1 = mediaRes.source_url;
+          });
+        }
     
       }
    

@@ -99,7 +99,7 @@ const cardImage3Id = this.service.acf?.healing_service_card_three_image;
         }
 
 
-const postcardImage1Id = this.service.acf?.healing_service_card_three_image;
+const postcardImage1Id = this.service.acf?.post_card_one_image;
         if (postcardImage1Id) {
           this.wp.getMediaById(postcardImage1Id).subscribe((mediaRes) => {
             this.postcardImage1 = mediaRes.source_url;

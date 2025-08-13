@@ -5,6 +5,7 @@ import { WpService } from '../../services/wp.service';
 import { RouterModule } from '@angular/router'; //
 import { Title, Meta } from '@angular/platform-browser';
 import { NgxPaginationModule } from 'ngx-pagination'; 
+
 @Component({
   selector: 'app-blog',
   standalone: true,

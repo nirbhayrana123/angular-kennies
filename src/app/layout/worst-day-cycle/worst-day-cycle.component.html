@@ -94,12 +94,9 @@
 
                     <div class="bookcard" *ngFor="let wdcpost of wdcposts" data-aos="fade-up" data-aos-duration="100">
                         <div class="bookcardimg">
-                              <a [routerLink]="['/', wdcpost.slug]"> 
+                              <a  [routerLink]="['/', wdcpost.slug]"> 
                                 <!-- Agar featured image ho -->
-                                <img *ngIf="!wdcpost.courseImage && wdcpost.featuredImage" 
-                                    [src]="wdcpost.featuredImage" 
-                                    alt="{{ wdcpost.title?.rendered }}" 
-                                    loading="lazy"> 
+                            <img *ngIf="wdcpost.featuredImage" [src]="wdcpost.featuredImage" [alt]="wdcpost.title.rendered" loading="lazy" />
                                     </a>
                         </div>
                         <div class="bookcardbody">
@@ -107,17 +104,16 @@
                             <div class="info">
                                 <div><i class="fa-solid fa-calendar-days"></i> May 14, 2022</div>
                                 <div><i class="fa-solid fa-user-tie"></i> Worst Day Cycle</div>
-                            </div>
-                            <div [innerHTML]="wdcpost.excerpt.rendered"></div>
-
+                            </div> 
+                              <div [innerHTML]="getShortContent(wdcpost.excerpt?.rendered || wdcpost.content?.rendered, 15) "></div>
                             <div class="author">
                                 <div>
                                     <img src="images/16.jpeg" alt="Author" loading="lazy">
                                     <div class="author-info">
-                                        <span>By <span [innerHTML]="wdcpost._embedded?.author[0]?.name"></span></span>
+                                        <span>By : Kenny Weiss</span> 
                                     </div>
                                 </div>
-                                <a [routerLink]="['/', wdcpost.slug]" class="button abslut">
+                                <a  [routerLink]="['/', wdcpost.slug]" class="button abslut">
                                     Read More <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
                                 </a>
 

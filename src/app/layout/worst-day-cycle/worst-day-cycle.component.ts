@@ -15,7 +15,7 @@ import { WpService } from '../../services/wp.service';
 export class WorstDayCycleComponent {
     wdcposts: any[] = []; 
    acfData: any;
-   bannerHeading = ''; 
+   bannerHeading = '';  
     loading = true;
   constructor(private titleService: Title, private metaService: Meta, private wp: WpService,) {
     this.titleService.setTitle('Worst Day Cycle | Life Coach | Personal Development Coach');
@@ -24,23 +24,41 @@ export class WorstDayCycleComponent {
       content: 'Absorbing childhood trauma leads to self-destructive behavior. Learn about breaking The Worst Day Cycle. Hire a personal development coach...',
     });
   }
+  getShortContent(htmlContent: string, wordLimit: number = 30): string {
+  if (!htmlContent) return '';
 
-    ngOnInit() {
-    this.wp.getwdc().subscribe((data: any) => {
-      this.wdcposts = data; 
-       this.wdcposts = data.map((post: any) => {
+  // HTML tags hatao
+  const text = htmlContent.replace(/<[^>]+>/g, '');
+
+  // Words me split karke limit lagao
+  const words = text.split(/\s+/).slice(0, wordLimit);
+
+  return words.join(' ') + (words.length >= wordLimit ? '...' : '');
+}
+  ngOnInit() {
+    this.wp.getwdc().subscribe((data) => {
+      this.wdcposts = data;
+      console.log(data);
+      this.bannerHeading = data[0]?.acf?.banner_heading || ''; 
+     this.wdcposts = data.map((wdcpost: any) => {
       return {
-        ...post,
-        courseImage: post.acf?.postimage || '',
+        ...wdcpost,
+        courseImage: wdcpost.acf?.course_image_url || '',
         featuredImage:
-          post._embedded?.['wp:featuredmedia']?.[0]?.source_url || '',
+          wdcpost._embedded?.['wp:featuredmedia']?.[0]?.source_url || '',
       };
     });
-      this.loading = false;
+        this.wdcposts.forEach((service: any) => {
+        const videoImageId = service.acf?.video_image;
+        if (videoImageId) {
+          this.wp.getMediaById(videoImageId).subscribe((mediaRes: any) => {
+            service.videoImage = mediaRes.source_url; // store in that service object
+          });
+        }
+      });
+      
+    this.loading = false;
     });
-
- 
-   
   }
 
 }

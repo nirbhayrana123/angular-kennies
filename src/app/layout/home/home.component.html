@@ -555,9 +555,9 @@
                     and more.</p>
             </div>
 
-            <div class="blog-grid">
-
-                <div class="blog-post" *ngFor="let post of posts">
+            <div class="blog-grid"> 
+                <!-- <div class="blog-post" *ngFor="let post of posts"> -->
+                    <div class="blog-post" *ngFor="let post of posts | slice:0:2">
                     <div class="blog-img shine-effect">
                         <a [routerLink]="['/post', post.id]">
                             <!-- Agar featured image ho -->

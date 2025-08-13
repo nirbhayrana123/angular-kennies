@@ -7552,7 +7552,9 @@ main.pt-1.pt68px{
     padding-left: 20px;
 }
 
-
+h4.wp-block-heading, h5.wp-block-heading {
+    font-size: 1.5em; 
+}
 
 
 }

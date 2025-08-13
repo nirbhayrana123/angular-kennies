@@ -363,7 +363,7 @@ a.logo-brand {
     box-sizing: border-box;
 }
 main.pt-1.blogdetailspage {
-    padding-top: 50px;
+    padding-top: 70px;
 }
 
 
@@ -1399,7 +1399,8 @@ section.into-section .wellness-col {
     margin-bottom: 28px;
 }
 .blogdetailspage h1 {
-    font-weight: 400;
+    font-weight: 600;
+    margin-bottom: 10px;
 }
 .progress-content h5 {
     font-size: 1.2em;
@@ -1640,7 +1641,13 @@ img.award-star {
 .left .shine-effect {
     display: flex;
 }
-
+.shine-effect.wfull {
+    width: 100%;
+    margin-bottom: 20px;
+}
+.shine-effect.wfull .imghigh {
+    max-height: inherit; 
+}
 .award-badge {
     position: absolute;
     bottom: 10px;

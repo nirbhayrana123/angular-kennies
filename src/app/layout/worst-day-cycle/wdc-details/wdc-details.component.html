@@ -1,54 +1,51 @@
-<div *ngIf="loading" class="loader-maim"> 
-<div class="hm-spinner"></div>
+<div *ngIf="loading" class="loader-maim">
+    <div class="hm-spinner"></div>
 </div>
-<main   class="pt-1"  *ngIf="wdcpost">
-        <div class="bg-gry colorlink">
-            <div class="container">
-                <div class="grid2"> 
-                    <!-- Main Content -->
-                    <div class="main-content">
-                        <div class="shine-effect">
-                            <div class="imghigh">
-                                 <!-- Agar featured image ho -->
- <img *ngIf="featuredImage" 
-     [src]="featuredImage" 
-     alt="{{ wdcpost.title?.rendered }}" 
-     loading="lazy" 
-     class="course-details-img"> 
+<main class="pt-1 blogdetailspage" *ngIf="wdcpost">
+    <div class="bg-gry colorlink">
+        <div class="container">
+            <div class="grid2">
+                <!-- Main Content -->
+                <div class="main-content">
+                    <div class="shine-effect wfull">
+                        <div class="imghigh">
+                            <!-- Agar featured image ho -->
+                            <img *ngIf="featuredImage" [src]="featuredImage" alt="{{ wdcpost.title?.rendered }}"
+                                loading="lazy" class="course-details-img">
 
-                            </div>
-                        </div> 
-                       <h1 [innerHTML]="wdcpost.title.rendered"></h1> 
-                         <div [innerHTML]="wdcpost.content.rendered"></div>
- 
+                        </div>
                     </div>
+                    <h1 [innerHTML]="wdcpost.title.rendered"></h1>
+                    <div [innerHTML]="wdcpost.content.rendered"></div>
 
-                    <!-- Sidebar -->
-                    <div class="sidebar">
-                        <div class="position-sticky">
-                            <div class="contact-box">
-                                <div class="shine-effect canter-content">
-                                    <img src="images/15.jpeg" loading="lazy" alt="Contact">
+                </div>
 
-                                    <div class="img-contant">
-                                        <h5>Have you any questio</h5>
-                                        <p>Don't waste your time call us!</p>
-                                        <p><strong>Contact today!</strong></p>
-                                        <div class="button-row">
-                                        <a href="book-session.html" class="button">
+                <!-- Sidebar -->
+                <div class="sidebar">
+                    <div class="position-sticky">
+                        <div class="contact-box">
+                            <div class="shine-effect canter-content">
+                                <img src="images/8.jpeg" loading="lazy" alt="Contact">
+
+                                <div class="img-contant">
+                                    <h5>Have you any questio</h5>
+                                    <p>Don't waste your time call us!</p>
+                                    <p><strong>Contact today!</strong></p>
+                                    <div class="button-row">
+                                        <a routerLink="/book-session" class="button">
                                             book a call with kenny <span class="arrow"><i
                                                     class="fa-solid fa-arrow-right"></i></span>
                                         </a>
-                                      
-                                    </div> 
+
                                     </div>
                                 </div>
                             </div>
-                           
                         </div>
+
                     </div>
                 </div>
-            </div> 
-          
+            </div>
         </div>
-    </main>
+
+    </div>
+</main>

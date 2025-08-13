@@ -27,6 +27,7 @@ export class MeetKennyComponent  implements OnInit, OnDestroy {
     }
   ];
 
+  
   constructor(private titleService: Title, private metaService: Meta) {
     this.titleService.setTitle('About Kenny Weiss | Top Life Coaches | Life and Relationship Coach');
     this.metaService.updateTag({

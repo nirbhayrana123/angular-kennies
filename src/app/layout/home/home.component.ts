@@ -6,12 +6,13 @@ import { EmotionalswiperComponent } from '../../components/emotionalswiper/emoti
 import { CourseSliderComponent } from '../../components/course-slider/course-slider/course-slider.component';
 import { ExercisesWorkbookComponent } from '../../components/exercises-workbook/exercises-workbook.component';
 import { RouterModule } from '@angular/router';  
-import { WpService } from '../../services/wp.service';  
+import { WpService } from '../../services/wp.service';
+import { SafeUrlPipe } from "../../pipes/safe-url.pipe";  
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [EmotionalswiperComponent, CourseSliderComponent, ExercisesWorkbookComponent, RouterModule, CommonModule],
+  imports: [EmotionalswiperComponent, CourseSliderComponent, ExercisesWorkbookComponent, RouterModule, CommonModule, SafeUrlPipe],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
@@ -75,16 +76,23 @@ getShortContent(htmlContent: string, wordLimit: number = 30): string {
  
   
 
- 
-  isLightboxOpen = false;
+isLightboxOpen = false;
+videoUrl = 'https://www.youtube.com/embed/SKqP2K0R1z4';
 
-  openLightbox() {
-    this.isLightboxOpen = true;
-  }
+openLightbox() {
+  this.isLightboxOpen = true;
+}
 
-  closeLightbox() {
-    this.isLightboxOpen = false;
-  }
+closeLightbox() {
+  this.isLightboxOpen = false;
+
+  // Stop video by removing src temporarily
+  const temp = this.videoUrl;
+  this.videoUrl = ''; // iframe ka src empty kardo
+  setTimeout(() => {
+    this.videoUrl = temp; // dobara set kardo jab next time open hoga
+  });
+}
 
   
 

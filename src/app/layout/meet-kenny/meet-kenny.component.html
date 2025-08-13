@@ -319,12 +319,10 @@
         <div class="container">
             <div class="mentor-wrapper">
 
-                <!-- Left Image -->
                 <div class="mentor-image">
                     <img src="images/michael-pinkston.jpg" loading="lazy" alt="Mike Pinkston">
                 </div>
 
-                <!-- Right Content -->
                 <div class="mentor-content">
                     <h2>Everyone Needs a Mentor. Meet Mine.</h2>
                     <p>No one heals alone. No one grows alone.
@@ -386,11 +384,11 @@
                         is familiar with Sandstone’s programs as someone very close to him has been treated at that
                         facility. He has met many of the counselors and highly recommends them if you or a loved one
                         is struggling with an addiction. Watch Kenny’s video to hear the story.</p>
- <div class="sandstone-logo-blk">
-                            <img src="images/sandstone-logo-blk.webp" loading="lazy" alt="">
-                        </div>
-                        <a routerLink="/book-session" class="button mt-3">BOOK A MEETING WITH KENNY</a>
-                    
+                    <div class="sandstone-logo-blk">
+                        <img src="images/sandstone-logo-blk.webp" loading="lazy" alt="">
+                    </div>
+                    <a routerLink="/book-session" class="button mt-3">BOOK A MEETING WITH KENNY</a>
+
 
                 </div>
             </div>
@@ -403,32 +401,32 @@
     <section class="who-we-are">
         <div class="container ">
             <div class="flex-who-we-are sticky">
-               
+
                 <div class="right-content" data-aos="fade-up" data-aos-duration="200">
                     <h5 class="tag-line">WHO WE ARE</h5>
-                     <h3>The Science Behind the Healing: Neurofeedback & Neuroscience</h3>
-                        <p>Kenny didn’t stop at psychology and coaching. He went deeper — into the brain itself.</p>
-                        <br>
+                    <h3>The Science Behind the Healing: Neurofeedback & Neuroscience</h3>
+                    <p>Kenny didn’t stop at psychology and coaching. He went deeper — into the brain itself.</p>
+                    <br>
 
-                        <p>Through neurofeedback therapy, he discovered how trauma physically rewires the brain,
-                            trapping people in cycles of stress, anxiety, and emotional reactivity.</p><br>
+                    <p>Through neurofeedback therapy, he discovered how trauma physically rewires the brain,
+                        trapping people in cycles of stress, anxiety, and emotional reactivity.</p><br>
 
 
-                        <p>Today, Kenny integrates <b>neuroscience-backed tools</b> and <b>neurofeedback
-                                techniques</b> into his coaching — helping clients regulate their nervous systems
-                            and create change not just emotionally, but neurologically.</p><br>
+                    <p>Today, Kenny integrates <b>neuroscience-backed tools</b> and <b>neurofeedback
+                            techniques</b> into his coaching — helping clients regulate their nervous systems
+                        and create change not just emotionally, but neurologically.</p><br>
 
-                        <p>It’s where <b>inner work meets brain science —</b> and the results are
-                            life-changing.</p><br>
- 
-                        <a routerLink="/book-session" class="button mt-3">Talk to Kenny</a>
-                    
+                    <p>It’s where <b>inner work meets brain science —</b> and the results are
+                        life-changing.</p><br>
+
+                    <a routerLink="/book-session" class="button mt-3">Talk to Kenny</a>
+
 
                 </div>
-                 <div class="left-images">
+                <div class="left-images">
                     <div class="main-img">
                         <div class="main-img">
-                        <iframe title="YouTube video player" src="https://www.youtube.com/embed/m5XAN2nFBT0"
+                            <iframe title="YouTube video player" src="https://www.youtube.com/embed/m5XAN2nFBT0"
                                 width="100%" height="500" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
                         </div>
 
@@ -562,14 +560,15 @@
                                 Now on Amazon</a>
 
                         </div>
-                        <button class="audibleBtn audible-button" data-audio="#audio2">
-                            <img class="icon"
-                                src="https://m.media-amazon.com/images/G/01/Audible/Homestead/samplePlayer/Play._CB655354636_.svg"
-                                alt="Play">
+                        <button class="audibleBtn audible-button" (click)="toggleAudio(0)">
+                            <img class="icon" [src]="
+      audios[0].isPlaying
+        ? 'https://m.media-amazon.com/images/G/01/Audible/Homestead/samplePlayer/Pause._CB655354636_.svg'
+        : 'https://m.media-amazon.com/images/G/01/Audible/Homestead/samplePlayer/Play._CB655354636_.svg'
+    " alt="Play/Pause" />
                             <span>Audible sample</span>
                         </button>
-                        <audio id="audio2"
-                            src="https://samples.audible.com/bk/acx0/105161/bk_acx0_105161_sample.mp3"></audio>
+
                         <div class="icon-item">
                             <span class="icon"><img src="images/authentication.png" loading="lazy" alt=""></span>
                             <div>
@@ -590,14 +589,14 @@
                                 Now
                                 at Barnes &amp; Noble</a>
                         </div>
-                        <button class="audibleBtn audible-button" data-audio="#audio1">
-                            <img class="icon"
-                                src="https://m.media-amazon.com/images/G/01/Audible/Homestead/samplePlayer/Play._CB655354636_.svg"
-                                alt="Play">
+                        <button class="audibleBtn audible-button" (click)="toggleAudio(1)">
+                            <img class="icon" [src]="
+      audios[1].isPlaying
+        ? 'https://m.media-amazon.com/images/G/01/Audible/Homestead/samplePlayer/Pause._CB655354636_.svg'
+        : 'https://m.media-amazon.com/images/G/01/Audible/Homestead/samplePlayer/Play._CB655354636_.svg'
+    " alt="Play/Pause" />
                             <span>Audible sample</span>
                         </button>
-                        <audio id="audio1"
-                            src="https://samples.audible.com/bk/acx0/385990/bk_acx0_385990_sample.mp3"></audio>
 
 
                     </div>
@@ -735,14 +734,14 @@
                 <div class="left-area">
                     <div class="thumbnail-wrapper3">
                         <div class="course-1">
-                            <img src="images/17.jpeg" loading="lazy" alt="">
+                            <img src="images/5.jpeg" loading="lazy" alt="">
                         </div>
                         <div class="touimg">
                             <div class="thumbnail image-2">
-                                <img src="images/13.jpeg" loading="lazy" alt="">
+                                <img src="images/12.jpeg" loading="lazy" alt="">
                             </div>
                             <div class="thumbnail image-3" loading="lazy" alt="">
-                                <img src="images/14.jpeg" loading="lazy" alt="">
+                                <img src="images/16.jpeg" loading="lazy" alt="">
                             </div>
                         </div>
                     </div>
@@ -755,8 +754,8 @@
 
                     <div class="rbt-feature-feature-style-2">
 
-                        <div class="listver">
-                            <div class="boxlist" data-aos="fade-up" data-aos-duration="100">
+                        <div class="listver" data-aos="fade-up" data-aos-duration="100">
+                            <div class="boxlist">
                                 <i class="fa-regular fa-heart"></i>
                             </div>
                             <div class="boxlist-content">
@@ -797,11 +796,9 @@
                                 <p>Move from a constant “why me?” to a confident “look at what I can do,” knowing
                                     that every setback is a setup for a powerful comeback.</p>
                             </div>
-                        </div>
-
-                    </div>
-                    <a target="_blank" href="https://checkout.teachable.com/secure/561462/checkout/order_m5mcxtck"
-                        class="button">Enroll Now & Start Learning Today!</a>
+                        </div> 
+                    </div> 
+                      <a class="button" routerLink="/courses">Enroll Now & Start Learning Today!</a>
                 </div>
             </div>
 

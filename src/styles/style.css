@@ -1398,7 +1398,9 @@ section.into-section .wellness-col {
     font-size: 3rem;
     margin-bottom: 28px;
 }
-
+.blogdetailspage h1 {
+    font-weight: 400;
+}
 .progress-content h5 {
     font-size: 1.2em;
     color: #ffffff;
@@ -1416,7 +1418,7 @@ section.into-section .wellness-col {
     background-color: #ccc;
     color: #000;
 }
-.ngx-pagination .current { 
+.blogpagination .ngx-pagination .current { 
     background: #512570; 
     border-radius: 20px;
 }
@@ -1427,6 +1429,14 @@ section.into-section .wellness-col {
 .blogpagination .ngx-pagination .pagination-next a:after, .blogpagination .ngx-pagination .pagination-next.disabled:after{
     content: "";
     margin: 0;
+}
+
+
+.blogpagination .ngx-pagination li.pagination-previous a, .blogpagination .ngx-pagination li.pagination-next a{
+    color: #fff;
+}
+.blogpagination .ngx-pagination li.pagination-previous a:hover, .blogpagination .ngx-pagination li.pagination-next a:hover {
+    background-color: transparent;
 }
 /********************slider************************/
 .swiper {

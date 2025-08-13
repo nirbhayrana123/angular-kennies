@@ -259,13 +259,20 @@
             </div>
         </div>
         <!-- Lightbox -->
-        <div class="lightbox-bg">
-            <div [class.active]="isLightboxOpen" class="lightbox"> 
-                <span class="close3" (click)="closeLightbox()">&times;</span>
-                <iframe title="YouTube video player" src="https://www.youtube.com/embed/SKqP2K0R1z4" width="200"
-                    height="188" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
-            </div>
-        </div>
+     <div class="lightbox-bg"> 
+  <div [class.active]="isLightboxOpen" class="lightbox">
+    <span class="close3" (click)="closeLightbox()">&times;</span>
+    <iframe
+      *ngIf="videoUrl"
+      title="YouTube video player"
+      [src]="videoUrl | safeUrl"
+      width="200"
+      height="188"
+      frameborder="0"
+      allowfullscreen>
+    </iframe>
+  </div>
+</div>
 
 
     </section>

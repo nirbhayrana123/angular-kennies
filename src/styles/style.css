@@ -202,6 +202,7 @@ a.button.mt3 {
     margin-bottom: 50px;
     max-width: 200px;
     justify-content: center;
+    cursor: pointer;
 
 }
 

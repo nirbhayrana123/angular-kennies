@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, Inject, PLATFORM_ID, HostListener, ElementRef, } from '@angular/core';
+import { Component, OnInit, AfterViewInit, OnDestroy, Inject, PLATFORM_ID, HostListener, ElementRef, } from '@angular/core';
 import { isPlatformBrowser,CommonModule } from '@angular/common';
 import { Title, Meta } from '@angular/platform-browser'; 
 
@@ -16,7 +16,7 @@ import { SafeUrlPipe } from "../../pipes/safe-url.pipe";
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
-export class HomeComponent  {
+export class HomeComponent implements OnInit, AfterViewInit, OnDestroy  {
 
 
   isExpanded = false;
@@ -55,6 +55,15 @@ export class HomeComponent  {
       name: 'description',
       content: `This journey to Emotional Authenticity is for those who have looked everywhere and are desperate for a solution. If that's you, you're ready. Best Emotional Authenticity coach.`,
     });
+  }
+  ngOnDestroy(): void {
+  if (this.isBrowser) {
+      this.audios.forEach(a => {
+        a.player.pause();
+        a.isPlaying = false;
+        a.player.currentTime = 0;
+      });
+    }
   }
 
 

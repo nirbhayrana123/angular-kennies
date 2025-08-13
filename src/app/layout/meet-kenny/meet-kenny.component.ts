@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 import { CourseSliderComponent } from '../../components/course-slider/course-slider/course-slider.component';
 import { RouterModule } from '@angular/router';
@@ -11,7 +11,7 @@ import { RouterModule } from '@angular/router';
   templateUrl: './meet-kenny.component.html',
   styleUrl: './meet-kenny.component.css'
 })
-export class MeetKennyComponent {
+export class MeetKennyComponent  implements OnInit, OnDestroy {
   isExpanded = false;
 
   audios = [
@@ -32,6 +32,13 @@ export class MeetKennyComponent {
     this.metaService.updateTag({
       name: 'description',
       content: 'Kenny Weiss is an Emotional Authenticity Coach, Leading Personal Development Speaker, and The Author of Your Journey to Success.'
+    });
+  }
+  ngOnDestroy(): void {
+     this.audios.forEach(a => {
+      a.player.pause();
+      a.isPlaying = false;
+      a.player.currentTime = 0;
     });
   }
 

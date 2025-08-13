@@ -14,8 +14,8 @@
                     <h3>Latest from the Blog</h3>
                 </div>
                 <div class="flex-blog">
-                    <div class="newblog-post">
-                          <div *ngFor="let post of posts">                        
+                    <div class="newblog-post ">
+                          <div *ngFor="let post of posts | paginate: { itemsPerPage: itemsPerPage, currentPage: page }">                        
                         <div class="news-block-two">
                             <div class="inner-box">
                                 <div class="image">
@@ -55,6 +55,8 @@
                             </div>
                         </div> 
                     </div> 
+                    <pagination-controls class="blogpagination" (pageChange)="page = $event"></pagination-controls>
+
                     </div>
                     <div class="blog-rightside"> 
                         <aside class="sidebar sticky-top"> 
@@ -100,9 +102,8 @@
 
                                 </div>
                             </div>
-                            <div class="sidebar-widget-two popular-posts">
-                                <div class="widget-content">
-                                    <!-- Sidebar Title -->
+                            <!-- <div class="sidebar-widget-two popular-posts">
+                                <div class="widget-content"> 
                                     <div class="sidebar-title-two">
                                         <h5>Popular Feeds</h5>
                                     </div>
@@ -152,7 +153,7 @@
                                     </article>
 
                                 </div>
-                            </div>
+                            </div> -->
 
                             <div class="sidebar-widget-two add-widget">
                                 <div class="widget-content">

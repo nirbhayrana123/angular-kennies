@@ -362,7 +362,9 @@ a.logo-brand {
     padding: 0 20px;
     box-sizing: border-box;
 }
-
+main.pt-1.blogdetailspage {
+    padding-top: 50px;
+}
 
 
 
@@ -1370,7 +1372,7 @@ section.into-section .wellness-col {
     background-color: rgb(21 21 21 / 6%);
 }
 
-.colorlink a {
+.colorlink .main-content a{
     color: #BBA056;
 }
 
@@ -1403,7 +1405,29 @@ section.into-section .wellness-col {
     font-weight: 600;
     margin-top: 15px;
 }
+.blogpagination .ngx-pagination li.pagination-previous, .blogpagination .ngx-pagination li.pagination-next {
+    background-color: #512570;
+    border-radius: 20px;
+    font-size: 15px;
+    font-family: 'Poppins';
+}
 
+.blogpagination .ngx-pagination li.pagination-next.disabled, .blogpagination .ngx-pagination li.pagination-previous.disabled {
+    background-color: #ccc;
+    color: #000;
+}
+.ngx-pagination .current { 
+    background: #512570; 
+    border-radius: 20px;
+}
+.blogpagination .ngx-pagination .pagination-previous a:before, .blogpagination .ngx-pagination .pagination-previous.disabled:before{
+    content: "";
+     margin: 0;
+}
+.blogpagination .ngx-pagination .pagination-next a:after, .blogpagination .ngx-pagination .pagination-next.disabled:after{
+    content: "";
+    margin: 0;
+}
 /********************slider************************/
 .swiper {
     width: 100%;

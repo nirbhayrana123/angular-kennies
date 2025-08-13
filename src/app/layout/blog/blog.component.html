@@ -14,8 +14,8 @@
                     <h3>Latest from the Blog</h3>
                 </div>
                 <div class="flex-blog">
-                    <div class="newblog-post">
-                          <div *ngFor="let post of posts">                        
+                    <div class="newblog-post ">
+                          <div *ngFor="let post of posts | paginate: { itemsPerPage: itemsPerPage, currentPage: page }">                        
                         <div class="news-block-two">
                             <div class="inner-box">
                                 <div class="image">
@@ -27,8 +27,13 @@
        loading="lazy"> 
                                     </a>
                                 </div>
-                                <div class="lower-content">
-                                    <div class="category">Business</div>
+                                <div class="lower-content"> 
+                                        <div class="category" *ngIf="post._embedded?.['wp:term']?.[0]?.length">
+  <span *ngFor="let cat of post._embedded['wp:term'][0]; let i = index">
+    {{ cat.name }}<span *ngIf="i < post._embedded['wp:term'][0].length - 1">, </span>
+  </span>
+</div>
+ 
                                     <div class="author-box">
                                         <div class="box-inner">
                                             <div class="author-image">
@@ -55,6 +60,8 @@
                             </div>
                         </div> 
                     </div> 
+                    <pagination-controls class="blogpagination" (pageChange)="page = $event"></pagination-controls>
+
                     </div>
                     <div class="blog-rightside"> 
                         <aside class="sidebar sticky-top"> 
@@ -100,9 +107,8 @@
 
                                 </div>
                             </div>
-                            <div class="sidebar-widget-two popular-posts">
-                                <div class="widget-content">
-                                    <!-- Sidebar Title -->
+                            <!-- <div class="sidebar-widget-two popular-posts">
+                                <div class="widget-content"> 
                                     <div class="sidebar-title-two">
                                         <h5>Popular Feeds</h5>
                                     </div>
@@ -152,7 +158,7 @@
                                     </article>
 
                                 </div>
-                            </div>
+                            </div> -->
 
                             <div class="sidebar-widget-two add-widget">
                                 <div class="widget-content">

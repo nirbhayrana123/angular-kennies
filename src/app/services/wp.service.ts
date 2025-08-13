@@ -10,12 +10,21 @@ export class WpService {
   private baseUrl = 'https://kennyweiss.net/cms/wp-json/wp/v2';
   private apiUrl = 'https://kennyweiss.net/cms/wp-json/wp/v2/services';
   private healingapiUrl = 'https://kennyweiss.net/cms/wp-json/wp/v2/emotional_healing';
+  private wdcapiUrl = 'https://kennyweiss.net/cms/wp-json/wp/v2/worst-day-cycle';
 
   constructor(private http: HttpClient) {}
 
   getPosts() {
     return this.http.get(`${this.baseUrl}/posts?_embed`);
   }
+getAllPosts(): Observable<any[]> {
+  const maxPerPage = 100;
+
+  // Pehle 100 posts lo
+  return this.http.get<any[]>(
+    `${this.baseUrl}/posts?_embed&per_page=${maxPerPage}`
+  );
+}
 
   getPost(id: number) {
     return this.http.get(`${this.baseUrl}/posts/${id}?_embed`);
@@ -28,6 +37,12 @@ export class WpService {
 }
 gethealingServicesSlug(slug: string): Observable<any> {
   return this.http.get<any[]>(`${this.healingapiUrl}/?slug=${slug}&_embed`);
+}
+ getwdc(): Observable<any> {
+  return this.http.get<any>(`${this.wdcapiUrl}?_embed`);
+}
+getwdcSlug(slug: string): Observable<any> {
+  return this.http.get<any[]>(`${this.wdcapiUrl}/?slug=${slug}&_embed`);
 }
  
 getServiceBySlug(slug: string): Observable<any> {

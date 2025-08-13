@@ -4,11 +4,11 @@ import { CommonModule } from '@angular/common';
 import { WpService } from '../../services/wp.service';
 import { RouterModule } from '@angular/router'; //
 import { Title, Meta } from '@angular/platform-browser';
-
+import { NgxPaginationModule } from 'ngx-pagination'; 
 @Component({
   selector: 'app-blog',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, NgxPaginationModule],
   templateUrl: './blog.component.html',
   styleUrl: './blog.component.css'
 })
@@ -18,6 +18,11 @@ export class BlogComponent implements OnInit{
    bannerHeading = ''; 
     loading = true;
   
+
+  page = 1;       // current page
+  itemsPerPage = 10; // har page me 10 post
+
+
   constructor(
     private wp: WpService,
     private titleService: Title,
@@ -31,7 +36,7 @@ export class BlogComponent implements OnInit{
   }
 
   ngOnInit() {
-    this.wp.getPosts().subscribe((data: any) => {
+    this.wp.getAllPosts().subscribe((data: any) => {
       this.posts = data; 
        this.posts = data.map((post: any) => {
       return {

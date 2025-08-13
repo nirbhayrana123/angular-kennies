@@ -27,8 +27,13 @@
        loading="lazy"> 
                                     </a>
                                 </div>
-                                <div class="lower-content">
-                                    <div class="category">Business</div>
+                                <div class="lower-content"> 
+                                        <div class="category" *ngIf="post._embedded?.['wp:term']?.[0]?.length">
+  <span *ngFor="let cat of post._embedded['wp:term'][0]; let i = index">
+    {{ cat.name }}<span *ngIf="i < post._embedded['wp:term'][0].length - 1">, </span>
+  </span>
+</div>
+ 
                                     <div class="author-box">
                                         <div class="box-inner">
                                             <div class="author-image">

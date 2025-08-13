@@ -55,7 +55,12 @@ export const routes: Routes = [
   loadComponent: () =>
     import('./layout/worst-day-cycle/worst-day-cycle.component').then(m => m.WorstDayCycleComponent)
 },
-
+{
+  path: ':slug',
+  loadComponent: () =>
+    import('./layout/worst-day-cycle/wdc-details/wdc-details.component').then(m => m.WdcDetailsComponent)
+} 
+,
 {
   path: 'contact',
   loadComponent: () =>
@@ -91,4 +96,6 @@ export const routes: Routes = [
   loadComponent: () =>
     import('./layout/healing-services/healing-services.component').then(m => m.HealingServicesComponent)
 } 
+
+
 ];

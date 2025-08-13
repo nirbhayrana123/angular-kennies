@@ -652,10 +652,12 @@
                         <img src="images/books2.jpeg" alt="Video thumbnail" loading="lazy">
 
                         <div class="audio-player">
-                            <button id="playBtn">
-                                <img id="playIcon" src="images/play.png" alt="Play" loading="lazy" />
-                                <img id="pauseIcon" src="images/pause-button.png" alt="Pause" loading="lazy"
-                                    style="display:none;" />
+                            <button (click)="toggleAudio(1)">
+                              <img class="icon" [src]="
+      audios[1].isPlaying
+        ? 'https://m.media-amazon.com/images/G/01/Audible/Homestead/samplePlayer/Pause._CB655354636_.svg'
+        : 'https://m.media-amazon.com/images/G/01/Audible/Homestead/samplePlayer/Play._CB655354636_.svg'
+    " alt="Play/Pause" />
                             </button>
                         </div>
                         <audio id="audibleAudio">
@@ -699,14 +701,14 @@
                             Now at Barnes &amp; Noble</a>
                     </div>
 
-                    <button class="audibleBtn audible-button" data-audio="#audio2">
-                        <img class="icon"
-                            src="https://m.media-amazon.com/images/G/01/Audible/Homestead/samplePlayer/Play._CB655354636_.svg"
-                            alt="Play">
-                        <span>Audible sample</span>
-                    </button>
-                    <audio id="audio2"
-                        src="https://samples.audible.com/bk/acx0/105161/bk_acx0_105161_sample.mp3"></audio>
+                     <button class="audibleBtn audible-button" (click)="toggleAudio(0)">
+                            <img class="icon" [src]="
+      audios[0].isPlaying
+        ? 'https://m.media-amazon.com/images/G/01/Audible/Homestead/samplePlayer/Pause._CB655354636_.svg'
+        : 'https://m.media-amazon.com/images/G/01/Audible/Homestead/samplePlayer/Play._CB655354636_.svg'
+    " alt="Play/Pause" />
+                            <span>Audible sample</span>
+                        </button>
 
 
                     <div class="feature">
@@ -727,14 +729,14 @@
                             at Barnes &amp; Noble</a>
                     </div>
 
-                    <button class="audibleBtn audible-button" data-audio="#audio1">
-                        <img class="icon"
-                            src="https://m.media-amazon.com/images/G/01/Audible/Homestead/samplePlayer/Play._CB655354636_.svg"
-                            alt="Play">
-                        <span>Audible sample</span>
-                    </button>
-                    <audio id="audio1"
-                        src="https://samples.audible.com/bk/acx0/385990/bk_acx0_385990_sample.mp3"></audio>
+                      <button class="audibleBtn audible-button" (click)="toggleAudio(1)">
+                            <img class="icon" [src]="
+      audios[1].isPlaying
+        ? 'https://m.media-amazon.com/images/G/01/Audible/Homestead/samplePlayer/Pause._CB655354636_.svg'
+        : 'https://m.media-amazon.com/images/G/01/Audible/Homestead/samplePlayer/Play._CB655354636_.svg'
+    " alt="Play/Pause" />
+                            <span>Audible sample</span>
+                        </button>
 
                 </div>
             </div>

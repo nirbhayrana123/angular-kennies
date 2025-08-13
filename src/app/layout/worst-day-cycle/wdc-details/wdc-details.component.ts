@@ -24,7 +24,7 @@ export class WdcDetailsComponent {
   featuredImage = '';
 
   constructor() {  }
-ngOnInit() {
+  ngOnInit() {
   this.courseImage = ''; 
   this.featuredImage = ''; 
   
@@ -44,6 +44,7 @@ ngOnInit() {
             this.courseImage = mediaRes.source_url;
           });
         }
+        console.log(res);
       }
          this.loading = false;
     });

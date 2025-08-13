@@ -14,12 +14,13 @@
 
                     <p class="people">Trusted by 4,000+ people</p>
                     <div class="logos-people">
-                        <img class="logos-people1" src="./images/9.jpeg" loading="lazy" alt="">
-                        <img class="logos-people2" src="./images/2.jpeg" loading="lazy" alt="">
-                        <img class="logos-people3" src="./images/16.jpeg" loading="lazy" alt="">
-                        <img class="logos-people4" src="./images/4.jpeg" loading="lazy" alt="">
-                        <img class="logos-people5" src="./images/5.jpeg" loading="lazy" alt="">
-                        <img class="logos-people6" src="./images/7.jpeg" loading="lazy" alt="">
+                        <img class="logos-people1" src="./images/people1.png" loading="lazy" alt="">
+                        <img class="logos-people2" src="./images/people2.png" loading="lazy" alt="">
+                        <img class="logos-people3" src="./images/people3.png" loading="lazy" alt="">
+                        <img class="logos-people4" src="./images/people4.png" loading="lazy" alt="">
+                        <img class="logos-people5" src="./images/people5.png" loading="lazy" alt="">
+                        <img class="logos-people6" src="./images/people6.png" loading="lazy" alt="">
+                        <img class="logos-people7" src="./images/people7.png" loading="lazy" alt="">
                     </div>
                 </div>
             </div>
@@ -259,8 +260,7 @@
         </div>
         <!-- Lightbox -->
         <div class="lightbox-bg">
-            <div [class.active]="isLightboxOpen" class="lightbox">
-
+            <div [class.active]="isLightboxOpen" class="lightbox"> 
                 <span class="close3" (click)="closeLightbox()">&times;</span>
                 <iframe title="YouTube video player" src="https://www.youtube.com/embed/SKqP2K0R1z4" width="200"
                     height="188" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
@@ -470,8 +470,8 @@
                             <h3>Kenny Weiss: Truth & Healing Advocate</h3>
                             <p>He specializes in helping people heal from their emotional hurts, co-dependence, and pain
                                 from the past so they can once again love themselves. </p>
-                            <div class="button-row">
-                                <a class="button" href="book-session.html">Let’s talk</a>
+                            <div class="button-row"> 
+                                 <a class="button" routerLink="/book-session">Let’s talk</a>
                             </div>
                             <div class="step"><small>All queries are replied within
                                     <u>24hrs</u>.</small></div>
@@ -532,7 +532,7 @@
                 <h3>Feeling Lost, Alone and Struggling Inside — But Still Not Sure If You Deserve Help?</h3>
                 <p>Start With a Free Resource That Speaks to What You’re Really Feeling</p>
 
-                <a class="button whitebt" routerLink="/courses">Explore Our Free Resources</a>
+                <a class="button whitebt" routerLink="/resources">Explore Our Free Resources</a>
 
             </div>
         </div>
@@ -563,8 +563,8 @@
                             <span><i class="fa-solid fa-user"></i> By: <b
                                     [innerHTML]="post._embedded?.author[0]?.name"></b></span>
                             <span><i class="fa-solid fa-book-open-reader"></i>Motivation</span>
-                        </div>
-                        <h3>{{ post.title?.rendered }}</h3>
+                        </div> 
+                       <a routerLink="/blog"><h3>{{ post.title?.rendered }}</h3> </a>
                         <div [innerHTML]="getShortContent(post.excerpt?.rendered || post.content?.rendered, 15) "></div>
                         <a class="post-link" routerLink="/blog">View more <i
                                 class="fa-solid fa-arrow-up-right-from-square"></i></a>

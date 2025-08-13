@@ -1419,8 +1419,11 @@ section.into-section .wellness-col {
     color: #000;
 }
 .blogpagination .ngx-pagination .current { 
-    background: #512570; 
-    border-radius: 20px;
+        border-radius: 5px!important;
+    background: #512570;  
+     min-width: 40px;
+    min-height: 40px;
+    text-align: center;
 }
 .blogpagination .ngx-pagination .pagination-previous a:before, .blogpagination .ngx-pagination .pagination-previous.disabled:before{
     content: "";
@@ -1437,6 +1440,13 @@ section.into-section .wellness-col {
 }
 .blogpagination .ngx-pagination li.pagination-previous a:hover, .blogpagination .ngx-pagination li.pagination-next a:hover {
     background-color: transparent;
+}
+
+.ngx-pagination a { 
+    border-radius: 5px!important;
+    min-width: 40px;
+    min-height: 40px;
+    text-align: center;
 }
 /********************slider************************/
 .swiper {

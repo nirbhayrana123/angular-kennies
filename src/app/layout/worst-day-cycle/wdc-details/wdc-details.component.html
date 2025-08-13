@@ -1,0 +1,86 @@
+<div *ngIf="loading" class="loader-maim"> 
+<div class="hm-spinner"></div>
+</div>
+<main   class="pt-1"  *ngIf="wdcpost">
+        <div class="bg-gry colorlink">
+            <div class="container">
+                <div class="grid2"> 
+                    <!-- Main Content -->
+                    <div class="main-content">
+                        <div class="shine-effect">
+                            <div class="imghigh">
+                                 <!-- Agar featured image ho -->
+ <img *ngIf="featuredImage" 
+     [src]="featuredImage" 
+     alt="{{ wdcpost.title?.rendered }}" 
+     loading="lazy" 
+     class="course-details-img"> 
+
+                            </div>
+                        </div> 
+                       <h1 [innerHTML]="wdcpost.title.rendered"></h1> 
+                         <div [innerHTML]="wdcpost.content.rendered"></div>
+ 
+                    </div>
+
+                    <!-- Sidebar -->
+                    <div class="sidebar">
+                        <div class="position-sticky">
+                            <div class="contact-box">
+                                <div class="shine-effect canter-content">
+                                    <img src="images/15.jpeg" loading="lazy" alt="Contact">
+
+                                    <div class="img-contant">
+                                        <h5>Have you any questio</h5>
+                                        <p>Don't waste your time call us!</p>
+                                        <p><strong>Contact today!</strong></p>
+                                        <div class="button-row">
+                                        <a href="book-session.html" class="button">
+                                            book a call with kenny <span class="arrow"><i
+                                                    class="fa-solid fa-arrow-right"></i></span>
+                                        </a>
+                                      
+                                    </div> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="service-item-main">
+                                <h4>Our Categories</h4>
+                                <article class="post">
+                                    <figure class="post-thumb"><img src="images/Have-You-Experienced.webp" loading="lazy" alt=""><a
+                                            href="#" class="overlay-box"><span class="icon fa fa-link"></span></a>
+                                    </figure>
+                                    <div class="contentrifgty">
+                                        <div class="text"><a href="#">In today’s Best Day Blog article...</a>
+                                        </div>
+                                        <div class="post-info">24th March 2022</div>
+                                    </div>
+                                </article>
+                                <article class="post">
+                                    <figure class="post-thumb"><img src="images/codependency.webp" loading="lazy" alt=""><a href="#"
+                                            class="overlay-box"><span class="icon fa fa-link"></span></a>
+                                    </figure>
+                                    <div class="contentrifgty">
+                                        <div class="text"><a href="#">The Two Types Of Codependents</a>
+                                        </div>
+                                        <div class="post-info">24th March 2022</div>
+                                    </div>
+                                </article>
+                                <article class="post">
+                                    <figure class="post-thumb"><img src="images/codependency.webp" loading="lazy" alt=""><a href="#"
+                                            class="overlay-box"><span class="icon fa fa-link"></span></a>
+                                    </figure>
+                                    <div class="contentrifgty">
+                                        <div class="text"><a href="#">The Two Types Of Codependents</a>
+                                        </div>
+                                        <div class="post-info">24th March 2022</div>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+          
+        </div>
+    </main>

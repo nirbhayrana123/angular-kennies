@@ -31,7 +31,7 @@ export class BlogComponent implements OnInit{
   }
 
   ngOnInit() {
-    this.wp.getPosts().subscribe((data: any) => {
+    this.wp.getAllPosts().subscribe((data: any) => {
       this.posts = data; 
        this.posts = data.map((post: any) => {
       return {

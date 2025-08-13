@@ -25,8 +25,8 @@
                     </div>
                     <div class="video-boxes"> 
                          <img *ngIf="service.videoImage" [src]="service.videoImage" alt="Background Image" loading="lazy" />
-                        <a id="play-video" target="_blank" class="video-play-button"
-                            href="https://youtu.be/a1udGRR63OA?si=D7Iddfp5ezrC8jTJ" data-toggle="modal"
+                        <a id="play-video" class="video-play-button"
+                            [routerLink]="['/courses', service.slug]" data-toggle="modal"
                             data-target="#savoybeachhotel">
                             <span></span>
                         </a>

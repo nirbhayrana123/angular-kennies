@@ -565,7 +565,7 @@ section.banner {
     overflow: hidden;
     position: relative;
     width: 98%;
-    margin: 1% auto;
+    margin: 0 auto;
     border-radius: 0 0 0 80px;
 }
 

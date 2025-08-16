@@ -47,7 +47,7 @@ export class BlogComponent implements OnInit{
           post._embedded?.['wp:featuredmedia']?.[0]?.source_url || '',
       };
     });
-      this.loading = false;
+      this.loading = false; 
     });
 
  

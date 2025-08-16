@@ -94,7 +94,7 @@
 
                     <div class="bookcard" *ngFor="let wdcpost of wdcposts" data-aos="fade-up" data-aos-duration="100">
                         <div class="bookcardimg">
-                              <a  [routerLink]="['/', wdcpost.slug]"> 
+                              <a  [routerLink]="['/worst-day-cycle', wdcpost.slug]"> 
                                 <!-- Agar featured image ho -->
                             <img *ngIf="wdcpost.featuredImage" [src]="wdcpost.featuredImage" [alt]="wdcpost.title.rendered" loading="lazy" />
                                     </a>
@@ -113,7 +113,7 @@
                                         <span>By : Kenny Weiss</span> 
                                     </div>
                                 </div>
-                                <a  [routerLink]="['/', wdcpost.slug]" class="button abslut">
+                                <a  [routerLink]="['/worst-day-cycle', wdcpost.slug]" class="button abslut">
                                     Read More <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
                                 </a>
 

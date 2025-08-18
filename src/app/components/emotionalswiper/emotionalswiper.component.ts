@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, PLATFORM_ID, Inject } from '@angular/core';
+import { Component, OnInit, AfterViewInit, PLATFORM_ID, Inject, ViewChild, ElementRef } from '@angular/core';
 import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
 import { CommonModule, isPlatformBrowser } from '@angular/common'; 
@@ -12,9 +12,11 @@ import { WpService } from '../../services/wp.service';
   standalone: true,
   imports: [CommonModule, RouterModule],
   templateUrl: './emotionalswiper.component.html',
-  styleUrl: './emotionalswiper.component.css'
+  styleUrls: ['./emotionalswiper.component.css'] 
 })
-export class EmotionalswiperComponent implements AfterViewInit {
+export class EmotionalswiperComponent implements OnInit {
+    @ViewChild('emotionalSwiper', { static: false }) swiperRef!: ElementRef;
+
      healservices: any[] = [];
     acfData: any;
     bannerHeading = ''; 
@@ -33,46 +35,37 @@ export class EmotionalswiperComponent implements AfterViewInit {
     });
 
 }
-  ngOnInit() {
+ ngOnInit() {
     this.wp.gethealingServices().subscribe((data) => {
-      this.healservices = data;
-      console.log(data); 
-     this.healservices = data.map((service: any) => {
-      return {
-        ...service,
-        courseImage: service.acf?.course_image_url || '',
-        featuredImage:
-          service._embedded?.['wp:featuredmedia']?.[0]?.source_url || '',
-      };
-    });
-    });
-  }
-    ngAfterViewInit(): void {
-     if (isPlatformBrowser(this.platformId)) {
-    new Swiper('.emotional-swiper', {
-      slidesPerView: 1,
-      spaceBetween: 20,
-      loop: true,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-       breakpoints: {
-       991: {
-        slidesPerView: 3
-      },
-      767: {
-        slidesPerView: 2
-      },
-      480: {
-        slidesPerView: 1
+      this.healservices = data.map((service: any) => {
+        return {
+          ...service,
+          courseImage: service.acf?.course_image_url || '',
+          featuredImage: service._embedded?.['wp:featuredmedia']?.[0]?.source_url || '',
+        };
+      });
+    if (isPlatformBrowser(this.platformId)) {
+        setTimeout(() => {
+          new Swiper('.emotional-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            loop: true,
+            pagination: {
+              el: '.swiper-pagination',
+              clickable: true,
+            },
+            navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+              991: { slidesPerView: 3 },
+              767: { slidesPerView: 2 },
+              480: { slidesPerView: 1 }
+            }
+          });
+        }, 0);
       }
-    }
     });
-  }
   }
 }

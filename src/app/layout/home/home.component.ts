@@ -12,7 +12,7 @@ import { SafeUrlPipe } from "../../pipes/safe-url.pipe";
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [EmotionalswiperComponent, CourseSliderComponent, ExercisesWorkbookComponent, RouterModule, CommonModule, SafeUrlPipe],
+  imports: [EmotionalswiperComponent, CourseSliderComponent,  ExercisesWorkbookComponent,  RouterModule, CommonModule, SafeUrlPipe],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })

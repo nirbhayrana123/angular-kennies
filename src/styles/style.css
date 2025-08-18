@@ -362,6 +362,7 @@ a.logo-brand {
     padding: 0 20px;
     box-sizing: border-box;
 }
+
 main.pt-1.blogdetailspage {
     padding-top: 70px;
 }
@@ -636,10 +637,12 @@ img.logos-people6 {
     position: relative;
     left: -125px;
 }
+
 img.logos-people7 {
     position: relative;
     left: -150px;
 }
+
 .bannerflex {
     height: 100%;
     display: flex;
@@ -744,11 +747,14 @@ section.books-section {
 .books-main {
     width: 90%;
 }
-h4.wp-block-heading, h5.wp-block-heading {
+
+h4.wp-block-heading,
+h5.wp-block-heading {
     font-size: 1em;
     font-weight: 500;
     margin: 15px 0px;
 }
+
 .books-main-right {
     width: 40%;
     text-align: right;
@@ -1372,7 +1378,7 @@ section.into-section .wellness-col {
     background-color: rgb(21 21 21 / 6%);
 }
 
-.colorlink .main-content a{
+.colorlink .main-content a {
     color: #BBA056;
 }
 
@@ -1398,57 +1404,71 @@ section.into-section .wellness-col {
     font-size: 3rem;
     margin-bottom: 28px;
 }
+
 .blogdetailspage h1 {
     font-weight: 600;
     margin-bottom: 10px;
 }
+
 .progress-content h5 {
     font-size: 1.2em;
     color: #ffffff;
     font-weight: 600;
     margin-top: 15px;
 }
-.blogpagination .ngx-pagination li.pagination-previous, .blogpagination .ngx-pagination li.pagination-next {
+
+.blogpagination .ngx-pagination li.pagination-previous,
+.blogpagination .ngx-pagination li.pagination-next {
     background-color: #512570;
     border-radius: 20px;
     font-size: 15px;
     font-family: 'Poppins';
 }
 
-.blogpagination .ngx-pagination li.pagination-next.disabled, .blogpagination .ngx-pagination li.pagination-previous.disabled {
+.blogpagination .ngx-pagination li.pagination-next.disabled,
+.blogpagination .ngx-pagination li.pagination-previous.disabled {
     background-color: #ccc;
     color: #000;
 }
-.blogpagination .ngx-pagination .current { 
-        border-radius: 5px!important;
-    background: #512570;  
-     min-width: 40px;
+
+.blogpagination .ngx-pagination .current {
+    border-radius: 5px !important;
+    background: #512570;
+    min-width: 40px;
     min-height: 40px;
     text-align: center;
 }
-.blogpagination .ngx-pagination .pagination-previous a:before, .blogpagination .ngx-pagination .pagination-previous.disabled:before{
+
+.blogpagination .ngx-pagination .pagination-previous a:before,
+.blogpagination .ngx-pagination .pagination-previous.disabled:before {
     content: "";
-     margin: 0;
+    margin: 0;
 }
-.blogpagination .ngx-pagination .pagination-next a:after, .blogpagination .ngx-pagination .pagination-next.disabled:after{
+
+.blogpagination .ngx-pagination .pagination-next a:after,
+.blogpagination .ngx-pagination .pagination-next.disabled:after {
     content: "";
     margin: 0;
 }
 
 
-.blogpagination .ngx-pagination li.pagination-previous a, .blogpagination .ngx-pagination li.pagination-next a{
+.blogpagination .ngx-pagination li.pagination-previous a,
+.blogpagination .ngx-pagination li.pagination-next a {
     color: #fff;
 }
-.blogpagination .ngx-pagination li.pagination-previous a:hover, .blogpagination .ngx-pagination li.pagination-next a:hover {
+
+.blogpagination .ngx-pagination li.pagination-previous a:hover,
+.blogpagination .ngx-pagination li.pagination-next a:hover {
     background-color: transparent;
 }
 
-.ngx-pagination a { 
-    border-radius: 5px!important;
+.ngx-pagination a {
+    border-radius: 5px !important;
     min-width: 40px;
     min-height: 40px;
     text-align: center;
 }
+
 /********************slider************************/
 .swiper {
     width: 100%;
@@ -1641,13 +1661,16 @@ img.award-star {
 .left .shine-effect {
     display: flex;
 }
+
 .shine-effect.wfull {
     width: 100%;
     margin-bottom: 20px;
 }
+
 .shine-effect.wfull .imghigh {
-    max-height: inherit; 
+    max-height: inherit;
 }
+
 .award-badge {
     position: absolute;
     bottom: 10px;
@@ -2657,7 +2680,7 @@ a.buttobooksec {
 
 .main-content h3 {
     margin-top: 30px;
-        font-size: 1.4rem;
+    font-size: 1.4rem;
     font-weight: 500;
 }
 
@@ -5903,13 +5926,17 @@ section.sourses-section .right-content h3 {
 
 .video-boxes .audio-player button {
     background-color: #ffffff;
-    border-radius: 50%;
-    padding: 10px;
+    border-radius: 56%;
+    padding: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
     border: 0;
     position: relative;
+    min-width: 40px;
+    min-height: 40px;
+    max-width: 40px;
+    max-height: 40px;
 }
 
 
@@ -6119,14 +6146,14 @@ a.more-link.button {
     max-height: 360px;
     object-fit: cover;
 }
-.thumbnail 
- {
+
+.thumbnail {
     max-height: 288px;
     overflow: hidden;
-    display: flex
-;
+    display: flex;
     align-items: center;
 }
+
 .left-area {
     width: 45%;
 }
@@ -7568,9 +7595,11 @@ a.button.border-only {
     main.pt-1.pt-4 {
         padding-top: 70px;
     }
-main.pt-1.pt68px{
-    padding-top: 0;
-}
+
+    main.pt-1.pt68px {
+        padding-top: 0;
+    }
+
     main.pt-1 {
         padding-top: 70px;
     }
@@ -7595,28 +7624,30 @@ main.pt-1.pt68px{
         padding-bottom: 0;
     }
 
-.industry-grid { 
-    gap: 30px;
-}
+    .industry-grid {
+        gap: 30px;
+    }
 
-.industry-card{
-    padding-left: 20px;
-}
+    .industry-card {
+        padding-left: 20px;
+    }
 
-h4.wp-block-heading, h5.wp-block-heading {
-    font-size: 1.5em; 
-}
+    h4.wp-block-heading,
+    h5.wp-block-heading {
+        font-size: 1.5em;
+    }
 
 
 }
 
 @media (max-width: 500px) {
-.grid-3-7 { 
-    padding: 30px 0;
-}
-section.who-we-are {
-    padding: 30px 0px;
-}
+    .grid-3-7 {
+        padding: 30px 0;
+    }
+
+    section.who-we-are {
+        padding: 30px 0px;
+    }
 
     .flexbuttoons {
         gap: 20px 0px;
@@ -7701,37 +7732,41 @@ section.who-we-are {
 
 
 
-.banner-content {
-    text-align: center;
-}
+    .banner-content {
+        text-align: center;
+    }
+
     .button-row a.button {
         margin-top: 5px;
         width: 100%;
     }
+
     .video-box.shine-effect {
-    width: 100%;
-}
-.video-box.shine-effect img {
-    width: auto!important;
-}
-.self-development-content {
+        width: 100%;
+    }
+
+    .video-box.shine-effect img {
+        width: auto !important;
+    }
+
+    .self-development-content {
         width: 100%;
     }
 
     .blog-img {
-        max-height: max-content; 
+        max-height: max-content;
         height: auto;
     }
 
-.video-boxes img { 
-    height: 160px; 
-}
+    .video-boxes img {
+        height: 160px;
+    }
 
-.video-boxes{
-    height: 160px;
-}
+    .video-boxes {
+        height: 160px;
+    }
 
-h3 {
-    font-size: 1.5em; 
-}
+    h3 {
+        font-size: 1.5em;
+    }
 }

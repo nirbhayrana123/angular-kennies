@@ -2,61 +2,63 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from '../../env/env';
+
 
 @Injectable({
   providedIn: 'root',
 })
 export class WpService {
-  private baseUrl = 'https://kennyweiss.net/cms/wp-json/wp/v2';
-  private apiUrl = 'https://kennyweiss.net/cms/wp-json/wp/v2/services';
-  private healingapiUrl = 'https://kennyweiss.net/cms/wp-json/wp/v2/emotional_healing';
-  private wdcapiUrl = 'https://kennyweiss.net/cms/wp-json/wp/v2/worst-day-cycle';
-
+  private baseUrl = environment.baseUrl;
+  private contactUrl = environment.contactBaseUrl;
   constructor(private http: HttpClient) {}
 
   getPosts() {
     return this.http.get(`${this.baseUrl}/posts?_embed`);
   }
-getAllPosts(): Observable<any[]> {
-  const maxPerPage = 100;
+  getAllPosts(): Observable<any[]> {
+    const maxPerPage = 100;
 
-  // Pehle 100 posts lo
-  return this.http.get<any[]>(
-    `${this.baseUrl}/posts?_embed&per_page=${maxPerPage}`
-  );
-}
+    // Pehle 100 posts lo
+    return this.http.get<any[]>(
+      `${this.baseUrl}/posts?_embed&per_page=${maxPerPage}`
+    );
+  }
 
   getPost(id: number) {
     return this.http.get(`${this.baseUrl}/posts/${id}?_embed`);
   }
+  getpostSlug(slug: string): Observable<any> {
+  return this.http.get<any[]>(`${this.baseUrl}/posts/?slug=${slug}&_embed`);
+}
  getServices(): Observable<any> {
-  return this.http.get<any>(`${this.apiUrl}?_embed`);
+  return this.http.get<any>(`${this.baseUrl}/services?_embed`);
 }
  gethealingServices(): Observable<any> {
-  return this.http.get<any>(`${this.healingapiUrl}?_embed`);
+  return this.http.get<any>(`${this.baseUrl}/emotional_healing?_embed`);
 }
 gethealingServicesSlug(slug: string): Observable<any> {
-  return this.http.get<any[]>(`${this.healingapiUrl}/?slug=${slug}&_embed`);
+  return this.http.get<any[]>(`${this.baseUrl}/emotional_healing?slug=${slug}&_embed`);
 }
  getwdc(): Observable<any> {
-  return this.http.get<any>(`${this.wdcapiUrl}?_embed`);
+  return this.http.get<any>(`${this.baseUrl}/worst-day-cycle?_embed`);
 }
 getwdcSlug(slug: string): Observable<any> {
-  return this.http.get<any[]>(`${this.wdcapiUrl}/?slug=${slug}&_embed`);
+  return this.http.get<any[]>(`${this.baseUrl}/worst-day-cycle?slug=${slug}&_embed`);
 }
  
 getServiceBySlug(slug: string): Observable<any> {
   return this.http.get<any[]>(`${this.baseUrl}/services?slug=${slug}&_embed`);
 }
-getMediaById(id: number) {
-  return this.http.get<any>(`https://kennyweiss.net/cms/wp-json/wp/v2/media/${id}`);
+getMediaById(id: number) { 
+  return this.http.get<any>(`${this.baseUrl}/media/${id}`);
 }
 
 
 
   /////////Contact
   sendForm(data: any) {
-   const url = 'https://kennyweiss.net/cms/wp-json/contact-form-7/v1/contact-forms/573/feedback';
+   const url = `${this.contactUrl}/contact-forms/573/feedback`;
   const body = new FormData();
   body.append('your-name', data.name);
   body.append('your-email', data.email);
@@ -75,7 +77,7 @@ getMediaById(id: number) {
 /////////pdf
 /////////Contact
   sendFormRejected(data: any) {
-   const url = 'https://kennyweiss.net/cms/wp-json/contact-form-7/v1/contact-forms/578/feedback';
+   const url = `${this.contactUrl}/contact-forms/578/feedback`;
   const body = new FormData();
   body.append('your-name', data.name);
   body.append('your-email', data.email);
@@ -91,7 +93,7 @@ getMediaById(id: number) {
 /////////pdf
 /////////Codependence Questionnaire
   sendFormcodependencequestionnaire(data: any) {
-   const url = 'https://kennyweiss.net/cms/wp-json/contact-form-7/v1/contact-forms/580/feedback';
+   const url = `${this.contactUrl}/contact-forms/580/feedback`;
   const body = new FormData();
   body.append('your-name', data.name);
   body.append('your-email', data.email);
@@ -108,7 +110,7 @@ getMediaById(id: number) {
 /////////pdf
 /////////Boundaries
   sendFormboundaries (data: any) {
-   const url = 'https://kennyweiss.net/cms/wp-json/contact-form-7/v1/contact-forms/582/feedback';
+   const url = `${this.contactUrl}//contact-forms/582/feedback`;
   const body = new FormData();
   body.append('your-name', data.name);
   body.append('your-email', data.email);
@@ -124,7 +126,7 @@ getMediaById(id: number) {
 
 /////////Conquer Confrontation
   sendFormConquerConfrontation(data: any) {
-   const url = 'https://kennyweiss.net/cms/wp-json/contact-form-7/v1/contact-forms/584/feedback';
+   const url = `${this.contactUrl}/contact-forms/584/feedback`;
   const body = new FormData();
   body.append('your-name', data.name);
   body.append('your-email', data.email);
@@ -140,7 +142,7 @@ getMediaById(id: number) {
   
 /////////Codependence Giving
   sendFormCodependenceGiving(data: any) {
-   const url = 'https://kennyweiss.net/cms/wp-json/contact-form-7/v1/contact-forms/586/feedback';
+   const url = `${this.contactUrl}/contact-forms/586/feedback`;
   const body = new FormData();
   body.append('your-name', data.name);
   body.append('your-email', data.email);
@@ -156,7 +158,7 @@ getMediaById(id: number) {
 
 /////////Feelings Wheel
   sendFormFeelingsWheel(data: any) {
-   const url = 'https://kennyweiss.net/cms/wp-json/contact-form-7/v1/contact-forms/595/feedback';
+   const url = `${this.contactUrl}/contact-forms/595/feedback`;
   const body = new FormData();
   body.append('your-name', data.name);
   body.append('your-email', data.email);

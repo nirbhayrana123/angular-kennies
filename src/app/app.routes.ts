@@ -7,7 +7,7 @@ export const routes: Routes = [
       import('./layout/home/home.component').then((m) => m.HomeComponent),
   },
   {
-    path: 'blog',
+    path: 'best-day-blog',
     loadComponent: () =>
       import('./layout/blog/blog.component').then((m) => m.BlogComponent),
   },
@@ -68,13 +68,6 @@ export const routes: Routes = [
     import('./layout/book-session/book-session.component').then(m => m.BookSessionComponent)
 },
 
-
-{
-  path: 'post/:id',
-  loadComponent: () =>
-    import('./layout/blog/blog-details/blog-details.component').then(m => m.BlogDetailsComponent)
-} ,
-
  {
   path: 'services/:slug',
   loadComponent: () =>
@@ -93,9 +86,14 @@ export const routes: Routes = [
 } 
 ,
 {
-  path: ':slug',
+  path: 'worst-day-cycle/:slug',
   loadComponent: () =>
     import('./layout/worst-day-cycle/wdc-details/wdc-details.component').then(m => m.WdcDetailsComponent)
-} 
+} ,
+{
+  path: ':slug',
+  loadComponent: () =>
+    import('./layout/blog/blog-details/blog-details.component').then(m => m.BlogDetailsComponent)
+} ,
 
 ];

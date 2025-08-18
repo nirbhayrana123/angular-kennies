@@ -1,5 +1,5 @@
 // src/app/layout/blog-details/blog-details.component.ts
-import { Component, inject } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router'; // ✅ Required for route param
 import { RouterModule } from '@angular/router';
@@ -16,28 +16,27 @@ import { CourseSliderComponent } from '../../../components/course-slider/course-
   styleUrls: ['./blog-details.component.css'] // ✅ Fix typo: should be style**Urls**
 })
 export class BlogDetailsComponent {
+  @Input() post: any;
   route = inject(ActivatedRoute);
   wp = inject(WpService);
   titleService = inject(Title);
   metaService = inject(Meta);
 
     loading = true;
-  post: any = null;
+  // post: any = null;
   courseImage = '';
   featuredImage = '';
 
   constructor() {  }
-  ngOnInit() {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.wp.getPost(id).subscribe((res: any) => {
-      this.post = res;
+  ngOnInit() { 
 
-      // Title & Meta
-      this.titleService.setTitle(this.post.title.rendered);
-      this.metaService.updateTag({
-        name: 'description',
-        content: this.post.excerpt?.rendered.replace(/<[^>]+>/g, '') || '',
-      });
+    const slug = this.route.snapshot.paramMap.get('slug'); 
+     if(slug){
+    this.wp.getpostSlug(slug).subscribe((res) => {
+      if(res.length > 0){
+      this.post = res[0];
+      
+    
 
       // ACF custom field image
       this.courseImage = this.post.acf?.postimage || '';
@@ -45,8 +44,11 @@ export class BlogDetailsComponent {
       // Featured image
       this.featuredImage =
         this.post._embedded?.['wp:featuredmedia']?.[0]?.source_url || '';
-
+        console.log(res);
+    }
           this.loading = false;
+          
     });
+   }
   }
 }

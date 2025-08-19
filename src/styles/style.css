@@ -568,7 +568,14 @@ a.contact-nav {
     visibility: visible;
     transform: scale(1);
 }
+.blogdetailspage .main-content h3 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
 
+.clendly iframe {
+    height: 100%;
+}
 
 
 /**************header**********************************/

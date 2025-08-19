@@ -1,7 +1,7 @@
 <div *ngIf="loading" class="loader-maim"> 
 <div class="hm-spinner"></div>
 </div>
-<main *ngIf="!loading" class="pt-1 pt68px">
+<main *ngIf="!loading" class="pt-1 pt68px coressdetailes">
     <div class="healing-inner-pages height-7"
         [style.background-image]="'url(' + backgroundImage + ')'">
         <div class="container">
@@ -141,16 +141,7 @@
             <div class="container">
                 <div class="journey-point">
                     <!-- Left content -->
-                    <div class="left-box">
-                        <h3>{{ service.acf?.left_title}}</h3>
-                        <p>{{ service.acf?.left_paragraph}}</p>
-                        <div class="button-row">
-                            <a target="_blank"
-                                [href]="service.acf?.button_link.url"
-                                class="button mt3"> {{
-                                service.acf?.button_text}}</a>
-                        </div>
-                    </div>
+                   
                     <!-- Right benefits list -->
                     <div class="right-box">
                         <h4>{{ service.acf?.right_title}}</h4>
@@ -159,6 +150,18 @@
                                 }}</li>
                         </ul>
 
+                    </div>
+
+
+                     <div class="left-box">
+                        <h3>{{ service.acf?.left_title}}</h3>
+                        <p>{{ service.acf?.left_paragraph}}</p>
+                        <div class="button-row">
+                            <a target="_blank"
+                                [href]="service.acf?.button_link.url"
+                                class="button mt3"> {{
+                                service.acf?.button_text}}</a>
+                        </div>
                     </div>
                 </div>
             </div>

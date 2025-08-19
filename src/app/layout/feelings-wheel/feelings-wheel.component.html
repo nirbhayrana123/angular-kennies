@@ -20,13 +20,29 @@
                     <p>The first step to Emotional Authenticity and discovering your Greatness is to reconnect to your
                         authentic self. Complete this form for instant access.</p>
                 </div>
-                <form>
+                <div *ngIf="formSuccessFeelingsWheel2" class="success-message">
+                                    Thank you! Your message has been sent successfully.
+                                </div>
+                <form  *ngIf="!formSuccessFeelingsWheel2" #contactForm="ngForm" (ngSubmit)="submitFormFeelingsWheel2()">
                         <div class="row">
                         
-                            <input type="text" placeholder="Name">
-                             <input type="email" placeholder="E-mail Address">
+<div class="formgruopd">
+                            <input type="text" placeholder="Name"  name="name"    [(ngModel)]="formData.name" required #name="ngModel" />
+                                            <div *ngIf="(formSubmitted || name.touched) && name.invalid" class="error">
+                                                First Name is required</div>
+                                       </div>
+                                       <div class="formgruopd">
+                             <input type="email" name="email"  placeholder="E-mail Address" [(ngModel)]="formData.email" required email #email="ngModel" />
+                                            <div *ngIf="(formSubmitted || email.touched) && email.invalid"
+                                                class="error">
+                                                A valid Email is required
+                                            </div>
+                                            </div>
                         </div> 
-                        <button class="button">Download Now</button>
+                        <div class="buttontext-center">
+                            <button class="button" type="submit">Submit</button>
+                        </div>
+                        
                         </form>
                     </div>
                     </div>

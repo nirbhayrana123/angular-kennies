@@ -27,11 +27,24 @@
                     </div>
                     <div class="formcontainerrow">
                         <p class="ber">Download a Free Preview</p>
+                             <div *ngIf="formSuccessBooks" class="success-message">
+                                    Thank you! Your message has been sent successfully.
+                                </div>
+                               <form  *ngIf="!formSuccessBooks" #contactForm="ngForm" (ngSubmit)="submitFormBooks()">  
                         <div class="formcontainer">
-                            <input type="text" placeholder="First Name*" />
-                            <input type="email" placeholder="Email*" />
+                            <input type="text" name="name" placeholder="First Name*"[(ngModel)]="formData.name" required #name="ngModel"/>
+                                            <div *ngIf="(formSubmitted || name.touched) && name.invalid"
+                                                class="error">
+                                                A valid Email is required
+                                            </div>
+                            <input type="email" placeholder="Email*" name="email" [(ngModel)]="formData.email" required email #email="ngModel" />
+                                            <div *ngIf="(formSubmitted || email.touched) && email.invalid"
+                                                class="error">
+                                                A valid Email is required
+                                            </div>
                             <button class="button submit-btn">Submit</button>
                         </div>
+                        </form>
                         <p>“Your Journey to Being Yourself” also includes a list of resources gathered just for you
                             and accessible by links included in the book. Order your copy now!
 
@@ -446,11 +459,11 @@
                     <div class="booklistcontent">
                         <a href="https://www.amazon.com/Your-Journey-Success-Answers-Discover/dp/1981471014/ref=tmm_pap_swatch_0?_encoding=UTF8&qid=1580748958&sr=8-1"
                             target="_blank">
-                            <h5> Buy My Book</h5>
+                            <h5> Your Journey to Success</h5>
 
                         </a>
                         <h6>by Kenny Weiss</h6>
-                        <p>Louise Hay was a metaphysical teacher and the best-selling author of more than 20 books.
+                        <p>Kenny Weiss reveals strategies that will teach you exactly how to break through the pain of your past, forgive yourself for your imperfections, master your emotions, and see your life from a new perspective. 
                         </p>
                     </div>
 
@@ -468,11 +481,11 @@
                     <div class="booklistcontent">
                         <a href="https://www.amazon.com/Your-Journey-Success-Answers-Discover/dp/1981471014/ref=tmm_pap_swatch_0?_encoding=UTF8&qid=1580748958&sr=8-1"
                             target="_blank">
-                            <h5> Buy My Book</h5>
+                            <h5>Your Journey to Being Yourself Book</h5>
 
                         </a>
                         <h6>by Kenny Weiss</h6>
-                        <p>Louise Hay was a metaphysical teacher and the best-selling author of more than 20 books.
+                        <p>Introducing “Your Journey to Being Yourself” – my new book that’s as hard-hitting as it is transformative.
                         </p>
                     </div>
 

@@ -171,4 +171,40 @@ getMediaById(id: number) {
   body.append('_wpcf7_posted_data_hash', '');
   return this.http.post(url, body);
 }
+
+
+  sendFormFeelingsWheel2(data: any) {
+   const url = `${this.contactUrl}/contact-forms/3216/feedback`;
+  const body = new FormData();
+  body.append('your-name', data.name);
+  body.append('your-email', data.email);
+  // Required hidden fields
+  body.append('_wpcf7', '3216');
+  body.append('_wpcf7_version', '6.1.1');
+  body.append('_wpcf7_locale', 'en_US');
+  body.append('_wpcf7_unit_tag', 'wpcf7-f3216-p574-o9');
+  body.append('_wpcf7_container_post', '574');
+  body.append('_wpcf7_posted_data_hash', '');
+  return this.http.post(url, body);
+}
+
+
+
+  sendFormBookspage(data: any) {
+   const url = `${this.contactUrl}/contact-forms/3220/feedback`;
+  const body = new FormData();
+  body.append('your-name', data.name);
+  body.append('your-email', data.email);
+  // Required hidden fields
+  body.append('_wpcf7', '3220');
+  body.append('_wpcf7_version', '6.1.1');
+  body.append('_wpcf7_locale', 'en_US');
+  body.append('_wpcf7_unit_tag', 'wpcf7-f3220-p574-o10');
+  body.append('_wpcf7_container_post', '574');
+  body.append('_wpcf7_posted_data_hash', '');
+  return this.http.post(url, body);
+}
+
+
+
 }

@@ -2,7 +2,7 @@ import { Component, inject, Input } from '@angular/core';
 import { CommonModule } from '@angular/common'; 
 import { RouterModule ,ActivatedRoute } from '@angular/router';
 import { WpService } from '../../../services/wp.service';
-import { Title, Meta } from '@angular/platform-browser'; 
+import { Title, Meta,DomSanitizer, SafeHtml } from '@angular/platform-browser'; 
 
 @Component({
   selector: 'app-wdc-details',
@@ -22,10 +22,11 @@ export class WdcDetailsComponent {
 
   courseImage = '';
   featuredImage = '';
-
+safeContent!: SafeHtml;  
   constructor(  private titleService: Title, 
     private metaService: Meta, 
     private wp: WpService,
+    private sanitizer: DomSanitizer,
     private route: ActivatedRoute) { 
        this.titleService.setTitle('Begin Your Journey Course - Kenny Weiss');
     this.metaService.updateTag({
@@ -45,6 +46,22 @@ console.log('Slug:', slug);  // ✅ add this
     this.wp.getwdcSlug(slug).subscribe((res: any) => {
       if (res.length > 0) {
         this.wdcpost = res[0];
+        let content = this.wdcpost.content.rendered;
+
+
+content = content.replace(
+            /(https?:\/\/www\.youtube\.com\/watch\?v=([a-zA-Z0-9_-]+))/g,
+            `<iframe width="560" height="315" 
+                src="https://www.youtube.com/embed/$2" 
+                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+             </iframe>`
+          );
+
+          // ✅ Step 3: sanitize
+          this.safeContent = this.sanitizer.bypassSecurityTrustHtml(content);
+
+
         // Featured image
         this.featuredImage = this.wdcpost._embedded?.['wp:featuredmedia']?.[0]?.source_url || '';
 

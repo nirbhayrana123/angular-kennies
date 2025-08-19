@@ -16,7 +16,8 @@
                         </div>
                     </div>
                     <h1 [innerHTML]="wdcpost.title.rendered"></h1>
-                    <div [innerHTML]="wdcpost.content.rendered"></div>
+                    <div [innerHTML]="safeContent" class="contentsocialserd"></div>
+                 
 
                 </div>
                 

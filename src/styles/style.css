@@ -3799,6 +3799,7 @@ section.section-panel {
     display: inline-block;
     border-radius: 10px;
     overflow: hidden;
+    width: 100%;
 }
 
 .imghigh {

@@ -9,7 +9,7 @@
                 <h3 [innerHTML]="service.title.rendered"> </h3>
                 <p>{{ service.acf?.banner_desc }}</p>
 
-                <a class="button whitebt" routerLink="/courses">Enroll Now !</a>
+                <a class="button whitebt" [href]="service.acf?.banner_btn_link?.url">Enroll Now !</a>
             </div>
         </div>
     </div>

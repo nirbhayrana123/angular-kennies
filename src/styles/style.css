@@ -2279,7 +2279,16 @@ h5.info-title {
     gap: 35px;
     padding: 60px 0;
 }
-
+.main-content ol {
+    padding-left: 20px;
+}
+.bg-gray .card {
+    box-shadow: inherit;
+}
+.bg-gray {
+    background-color: rgb(176 175 175 / 8%);
+    padding: 50px 0;
+}
 .courses-details-section img {
     border-radius: 10px 10px 10px 10px;
 }

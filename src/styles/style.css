@@ -664,10 +664,12 @@ img.logos-people7 {
     font-size: 1.6em;
     color: #32220b;
 }
-
+.formgruopd {
+    width: 100%;
+}
 .button:hover {
     color: #ffffff;
-    box-shadow: 360px 0 0 0 #bba056 inset;
+    box-shadow: 400px 0 0 0 #bba056 inset;
 }
 
 a.button.blockbutton:hover {
@@ -1404,7 +1406,10 @@ section.into-section .wellness-col {
     font-size: 3rem;
     margin-bottom: 28px;
 }
-
+.buttontext-center {
+    text-align: center;
+    margin-top: 15px;
+}
 .blogdetailspage h1 {
     font-weight: 600;
     margin-bottom: 10px;
@@ -6866,7 +6871,7 @@ a.button.border-only {
     }
 
     .flex-who-we-are {
-        gap: 205px;
+        gap: 50px;
     }
 
     .flex-who-we-are.sticky .left-images {
@@ -7210,7 +7215,7 @@ a.button.border-only {
     }
 
     .flex-who-we-are {
-        gap: 168px;
+        gap: 50px;
     }
 
     .button {

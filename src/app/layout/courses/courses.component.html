@@ -21,21 +21,26 @@
                 <!-- Left Side Images -->
                 <div class="left-images">
                     <div class="main-img">
+                        <a [routerLink]="['/courses', service.slug]" >
                       <img *ngIf="service.featuredImage" [src]="service.featuredImage" [alt]="service.title.rendered" loading="lazy" />
+                    </a>
                     </div>
-                    <div class="video-boxes"> 
+                    <!-- <div class="video-boxes"> 
                          <img *ngIf="service.videoImage" [src]="service.videoImage" alt="Background Image" loading="lazy" />
                         <a id="play-video" class="video-play-button"
                             [routerLink]="['/courses', service.slug]" data-toggle="modal"
                             data-target="#savoybeachhotel">
                             <span></span>
                         </a>
-                    </div>
+                    </div> -->
                 </div>
 
                 <!-- Right Side Content -->
                 <div class="right-content">
-                    <h3 [innerHTML]="service.title.rendered"></h3>
+                     <a [routerLink]="['/courses', service.slug]" >
+                        <h3 [innerHTML]="service.title.rendered"></h3>
+                     </a>
+                    
                     <div class="pricing-set">
                         <h4 class="price2">$ {{ service.acf?.price }}</h4>
                         <h4>Course • By Kenny Weiss</h4>

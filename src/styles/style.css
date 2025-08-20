@@ -2492,7 +2492,9 @@ h5.info-title {
     gap: 20px;
     padding-left: 65px;
 }
-
+.main-content ol li {
+    margin-bottom: 10px;
+}
 .industry-card .icon {
     position: absolute;
     left: 0;

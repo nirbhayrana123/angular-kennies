@@ -227,7 +227,7 @@
                             </li>
                             <li data-aos="fade-up" data-aos-duration="200">
                                 <span class="iconlist"><img src="images/active.png" loading="lazy" alt=""></span>
-                                <p>Author of “Your Journey to Success” & “Your Journey to Being Yourself””</p>
+                                <p>Author of “Your Journey to Success” & “Your Journey to Being Yourself”</p>
                             </li>
                             <li data-aos="fade-up" data-aos-duration="300">
                                 <span class="iconlist"><img src="images/podcast.png" loading="lazy" alt=""></span>
@@ -562,9 +562,9 @@
                                     [innerHTML]="post._embedded?.author[0]?.name"></b></span>
                             <span><i class="fa-solid fa-book-open-reader"></i>Motivation</span>
                         </div> 
-                       <a routerLink="/blog"><h3>{{ post.title?.rendered }}</h3> </a>
+                       <a routerLink="/best-day-blog"><h3>{{ post.title?.rendered }}</h3> </a>
                         <div [innerHTML]="getShortContent(post.excerpt?.rendered || post.content?.rendered, 15) "></div>
-                        <a class="post-link" routerLink="/blog">View more <i
+                        <a class="post-link" routerLink="/best-day-blog">View more <i
                                 class="fa-solid fa-arrow-up-right-from-square"></i></a>
                     </div>
                 </div>

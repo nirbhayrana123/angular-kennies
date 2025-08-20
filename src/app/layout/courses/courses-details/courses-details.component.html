@@ -141,7 +141,16 @@
             <div class="container">
                 <div class="journey-point">
                     <!-- Left content -->
-                   
+                   <div class="left-box">
+                        <h3>{{ service.acf?.left_title}}</h3>
+                        <p>{{ service.acf?.left_paragraph}}</p>
+                        <div class="button-row">
+                            <a target="_blank"
+                                [href]="service.acf?.button_link.url"
+                                class="button mt3"> {{
+                                service.acf?.button_text}}</a>
+                        </div>
+                    </div>
                     <!-- Right benefits list -->
                     <div class="right-box">
                         <h4>{{ service.acf?.right_title}}</h4>
@@ -153,16 +162,7 @@
                     </div>
 
 
-                     <div class="left-box">
-                        <h3>{{ service.acf?.left_title}}</h3>
-                        <p>{{ service.acf?.left_paragraph}}</p>
-                        <div class="button-row">
-                            <a target="_blank"
-                                [href]="service.acf?.button_link.url"
-                                class="button mt3"> {{
-                                service.acf?.button_text}}</a>
-                        </div>
-                    </div>
+                     
                 </div>
             </div>
         </section>

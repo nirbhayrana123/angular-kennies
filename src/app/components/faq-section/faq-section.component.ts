@@ -37,7 +37,7 @@ export class FaqSectionComponent {
     },
     {
       question: 'Which class should I start with?',
-      answer: `Your Journey To Emotional Mastery. Because it is the foundational piece to your success, I have included it for free in ALL masterclasses.`,
+      answer: `Your Journey To Emotional Authenticity . Because it is the foundational piece to your success, I have included it for free in ALL masterclasses.`,
       open: false
     },
     {

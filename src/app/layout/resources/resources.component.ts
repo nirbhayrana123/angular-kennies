@@ -49,7 +49,7 @@ constructor(private titleService: Title, private metaService: Meta,  private wpS
           email: '', 
         };
         this.formSubmitted = false;
-        window.open('/images/pdf/How-To-Remove-Feeling-Rejected-.pdf', '_self');
+        window.open('/staged/images/pdf/How-To-Remove-Feeling-Rejected-.pdf', '_self');
       },
       error: (err) => {
         console.error('❌ Error:', err);
@@ -73,7 +73,7 @@ constructor(private titleService: Title, private metaService: Meta,  private wpS
           email: '', 
         };
         this.formSubmitted = false;
-        window.open('/images/pdf/Codependence-Questionnaire.pdf', '_self');
+        window.open('/staged/images/pdf/Codependence-Questionnaire.pdf', '_self');
       },
       error: (err) => {
         console.error('❌ Error:', err);
@@ -98,7 +98,7 @@ constructor(private titleService: Title, private metaService: Meta,  private wpS
           email: '', 
         };
         this.formSubmitted = false;
-        window.open('/images/pdf/How-to-Keep-Our-Boundaries-in-3-Simple-Steps.pdf', '_self');
+        window.open('/staged/images/pdf/How-to-Keep-Our-Boundaries-in-3-Simple-Steps.pdf', '_self');
       },
       error: (err) => {
         console.error('❌ Error:', err);
@@ -128,7 +128,7 @@ constructor(private titleService: Title, private metaService: Meta,  private wpS
           email: '', 
         };
         this.formSubmitted = false;
-        window.open('/images/pdf/CREATE-LASTING-LOVE-CONQUER-CONFRONTATION.pdf', '_self');
+        window.open('/staged/images/pdf/CREATE-LASTING-LOVE-CONQUER-CONFRONTATION.pdf', '_self');
       },
       error: (err) => {
         console.error('❌ Error:', err);
@@ -159,7 +159,7 @@ constructor(private titleService: Title, private metaService: Meta,  private wpS
           email: '', 
         };
         this.formSubmitted = false;
-         window.open('/images/pdf/Giving-the-Pain-Back.pdf', '_self');
+         window.open('/staged/images/pdf/Giving-the-Pain-Back.pdf', '_self');
       },
       error: (err) => {
         console.error('❌ Error:', err);
@@ -185,7 +185,7 @@ submitFormFeelingsWheel() {
           email: '', 
         };
         this.formSubmitted = false;
-         window.open('/images/pdf/Feelings-Wheel-Download-kenny-weiss.pdf', '_self');
+         window.open('/staged/images/pdf/Feelings-Wheel-Download-kenny-weiss.pdf', '_self');
       },
       error: (err) => {
         console.error('❌ Error:', err);

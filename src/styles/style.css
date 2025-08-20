@@ -153,7 +153,7 @@ a.button.mt3 {
 .mentor-image img {
     width: 250px;
     height: 250px;
-    object-fit: cover;
+
     border-radius: 5px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
@@ -171,21 +171,22 @@ a.button.mt3 {
     margin-bottom: 15px;
     font-weight: bold;
 }
-.contentsocialserd ul.wp-block-social-links
- {
+
+.contentsocialserd ul.wp-block-social-links {
     display: flex;
     align-items: center;
     gap: 10px;
 }
+
 .contentsocialserd ul.wp-block-social-links li a svg {
     width: 35px;
     height: 35px;
 }
-.contentsocialserd ul.wp-block-social-links li a span.wp-block-social-link-label
- 
- {
+
+.contentsocialserd ul.wp-block-social-links li a span.wp-block-social-link-label {
     display: none;
 }
+
 .mentor-content h2 span {
     color: #3b1f5b;
 }
@@ -351,6 +352,8 @@ img {
     width: 100%;
     max-width: 100%;
     display: block;
+    object-fit: cover;
+
 }
 
 ul {
@@ -619,7 +622,6 @@ img.banner-shep {
     height: 60px;
     border-radius: 100px;
     border: 2px solid #fff;
-    object-fit: cover;
 }
 
 .logos-people {
@@ -678,9 +680,11 @@ img.logos-people7 {
     font-size: 1.6em;
     color: #32220b;
 }
+
 .formgruopd {
     width: 100%;
 }
+
 .button:hover {
     color: #ffffff;
     box-shadow: 400px 0 0 0 #bba056 inset;
@@ -858,7 +862,6 @@ section.book-section.podcast-banner .book-cintent {
 
 .video-sec img {
     height: 100vh;
-    object-fit: cover;
 }
 
 .video-sec {
@@ -936,7 +939,6 @@ a.detail2 {
     height: 450px;
     max-width: 450px;
     max-height: 450px;
-    object-fit: cover;
     z-index: 1;
 }
 
@@ -960,7 +962,6 @@ section.audio-section {
 
 .audio-podcast img {
     height: 100%;
-    object-fit: cover;
 }
 
 .audio-content h4 {
@@ -1342,7 +1343,6 @@ section.into-section .wellness-col {
     top: 0;
     bottom: 0;
     height: 100%;
-    object-fit: cover;
     object-position: center;
 }
 
@@ -1420,10 +1420,12 @@ section.into-section .wellness-col {
     font-size: 3rem;
     margin-bottom: 28px;
 }
+
 .buttontext-center {
     text-align: center;
     margin-top: 15px;
 }
+
 .blogdetailspage h1 {
     font-weight: 600;
     margin-bottom: 10px;
@@ -2129,7 +2131,6 @@ section.into-section-white-bg .wellness-col.bb-1 {
 
 .video-box img {
     height: 100%;
-    object-fit: cover;
 }
 
 
@@ -2178,7 +2179,6 @@ section.courses-master-classes {
     top: 0;
     bottom: 0;
     height: 100%;
-    object-fit: cover;
     border-radius: 15px;
 }
 
@@ -2274,16 +2274,20 @@ h5.info-title {
     gap: 35px;
     padding: 60px 0;
 }
+
 .main-content ol {
     padding-left: 20px;
 }
+
 .bg-gray .card {
     box-shadow: inherit;
 }
+
 .bg-gray {
     background-color: rgb(176 175 175 / 8%);
     padding: 50px 0;
 }
+
 .courses-details-section img {
     border-radius: 10px 10px 10px 10px;
 }
@@ -3112,7 +3116,6 @@ iframe {
     width: 70px;
     height: 70px;
     border-radius: 50%;
-    object-fit: cover;
     margin-bottom: 12px;
 }
 
@@ -3540,7 +3543,6 @@ body.blog .blog-post h3 {
     scale: 1;
     transition: 1s;
     height: 100%;
-    object-fit: cover;
 }
 
 .meta {
@@ -3615,17 +3617,7 @@ button.button.submit-btn {
     margin-top: 0;
     border-radius: 4px;
 }
-
-
-
-
-
-
-
-
-
-
-
+ 
 section.book-section.page {
     padding: 100px 0;
 }
@@ -3654,7 +3646,7 @@ section.book-section.podcast-banner {
 .book-img img {
     display: block;
     height: 100vh;
-    object-fit: cover;
+
 }
 
 .book-cintent img {
@@ -3687,7 +3679,7 @@ section.book-section.podcast-banner {
 
 .sesson-image1-box img {
     height: 100%;
-    object-fit: cover;
+
 }
 
 .experience-badge {
@@ -3715,7 +3707,7 @@ section.book-section.podcast-banner {
     z-index: -1;
     top: 10%;
     height: 600px;
-    object-fit: cover;
+
 }
 
 section.sesson {
@@ -3962,7 +3954,7 @@ section.mb-4 {
     top: 0;
     bottom: 0;
     height: 100%;
-    object-fit: cover;
+
     object-position: top;
 }
 
@@ -4064,7 +4056,7 @@ section.mb-4 {
 }
 
 .image-c {
-    object-fit: cover;
+
     width: 100%;
     height: 116%;
     position: absolute;
@@ -4100,7 +4092,7 @@ section.mb-4 {
 .book-img-wrapper img {
     position: absolute;
     height: 100%;
-    object-fit: cover;
+
     inset: 0;
 }
 
@@ -4199,7 +4191,7 @@ section.recommended-readinglist {
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     min-height: 650px;
-    object-fit: cover;
+
 }
 
 .rigth-realpandemic {
@@ -4313,7 +4305,7 @@ section.free-download {
     left: 0;
     right: 0;
     bottom: 0;
-    object-fit: cover;
+
     object-position: center;
 }
 
@@ -4483,7 +4475,7 @@ h5.tag {
 }
 
 .instagram-feed a img {
-    object-fit: cover;
+
     height: 100%;
     position: absolute;
     inset: 0%;
@@ -5443,7 +5435,7 @@ section.postcard {
 }
 
 .why-imgds img {
-    object-fit: cover;
+
     object-position: center center;
     border-radius: 30px 30px 30px 30px;
 }
@@ -5621,7 +5613,7 @@ section.sourses-section .right-content h3 {
     border-radius: 16px;
     width: 245px;
     height: 230px;
-    object-fit: cover;
+
 }
 
 .main-img::after {
@@ -5899,7 +5891,7 @@ section.sourses-section .right-content h3 {
     border-radius: 50%;
     width: 2.25em;
     height: 2.25em;
-    object-fit: cover;
+
 }
 
 .bookcardbody h4 {
@@ -6027,7 +6019,7 @@ a.more-link.button {
 
 .card-img a img {
     min-height: 300px;
-    object-fit: cover;
+
 }
 
 .stars ul {
@@ -6147,7 +6139,7 @@ a.more-link.button {
 
 .thumbnail-wrapper .thumbnail.image-1 img {
     max-height: 360px;
-    object-fit: cover;
+
 }
 
 .thumbnail-wrapper .thumbnail.image-2 {
@@ -6158,7 +6150,7 @@ a.more-link.button {
 
 .thumbnail-wrapper .thumbnail.image-2 img {
     max-height: 200px;
-    object-fit: cover;
+
 }
 
 .thumbnail-wrapper .thumbnail img {
@@ -6173,7 +6165,7 @@ a.more-link.button {
 
 .thumbnail-wrapper .thumbnail.image-3 img {
     max-height: 360px;
-    object-fit: cover;
+
 }
 
 .thumbnail {
@@ -6373,7 +6365,7 @@ a.culction {
     width: 3em;
     height: 3em;
     border-radius: 50%;
-    object-fit: cover;
+
 }
 
 .review-content {

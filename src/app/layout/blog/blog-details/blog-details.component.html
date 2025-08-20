@@ -23,7 +23,7 @@
                             <span><i class="fa-regular fa-user"></i>By: {{ post._embedded?.author[0]?.name }}</span>
                         </div>
                        <h1 [innerHTML]="post.title.rendered"></h1> 
-                         <div [innerHTML]="post.content.rendered"></div>
+                         <div [innerHTML]="post.content.rendered | embedYoutube"></div>
  
                     </div>
 
@@ -40,7 +40,7 @@
                                         <p><strong>Contact today!</strong></p>
                                         <div class="button-row">
                                         <a routerLink="/book-session" class="button">
-                                            book a call with kenny <span class="arrow"><i
+                                            book a call with Kenny <span class="arrow"><i
                                                     class="fa-solid fa-arrow-right"></i></span>
                                         </a>
                                       

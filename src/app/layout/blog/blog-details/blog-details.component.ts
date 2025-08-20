@@ -6,12 +6,13 @@ import { RouterModule } from '@angular/router';
 import { WpService } from '../../../services/wp.service';
 import { Title, Meta } from '@angular/platform-browser';
 import { CourseSliderComponent } from '../../../components/course-slider/course-slider/course-slider.component';
+import { EmbedYoutubePipe } from '../../../pipes/embed-youtube.pipe';
 
 
 @Component({
   selector: 'app-blog-details',
   standalone: true,
-  imports: [CommonModule, RouterModule, CourseSliderComponent], // ✅ CommonModule is required for *ngIf, etc.
+  imports: [CommonModule, RouterModule, CourseSliderComponent, EmbedYoutubePipe], // ✅ CommonModule is required for *ngIf, etc.
   templateUrl: './blog-details.component.html',
   styleUrls: ['./blog-details.component.css'] // ✅ Fix typo: should be style**Urls**
 })

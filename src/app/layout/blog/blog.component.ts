@@ -9,7 +9,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 @Component({
   selector: 'app-blog',
   standalone: true,
-  imports: [CommonModule, RouterModule, NgxPaginationModule],
+  imports: [CommonModule, RouterModule, NgxPaginationModule ],
   templateUrl: './blog.component.html',
   styleUrl: './blog.component.css'
 })

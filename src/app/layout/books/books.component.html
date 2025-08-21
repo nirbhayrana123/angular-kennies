@@ -32,16 +32,20 @@
                                 </div>
                                <form  *ngIf="!formSuccessBooks" #contactForm="ngForm" (ngSubmit)="submitFormBooks()">  
                         <div class="formcontainer">
+                            <div class="flexingform">
                             <input type="text" name="name" placeholder="First Name*"[(ngModel)]="formData.name" required #name="ngModel"/>
                                             <div *ngIf="(formSubmitted || name.touched) && name.invalid"
                                                 class="error">
                                                 A valid Email is required
                                             </div>
+                                            </div>
+                                     <div class="flexingform">      
                             <input type="email" placeholder="Email*" name="email" [(ngModel)]="formData.email" required email #email="ngModel" />
                                             <div *ngIf="(formSubmitted || email.touched) && email.invalid"
                                                 class="error">
                                                 A valid Email is required
                                             </div>
+                                            </div>  
                             <button class="button submit-btn">Submit</button>
                         </div>
                         </form>

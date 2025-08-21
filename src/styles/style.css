@@ -265,6 +265,7 @@ img.form-bac {
     top: 0;
     opacity: 65%;
     height: 100%;
+    border-radius: 0px 30px 30px 30px;
 }
 
 ul.navmenu li a,
@@ -272,6 +273,9 @@ ul.navmenu li span,
 ul.navmenu li i {
     font-size: 0.8em;
     cursor: pointer;
+}
+.event-details-right ul.features.doterd.full {
+    padding-left: 25px;
 }
 
 
@@ -299,7 +303,7 @@ p.bold {
 p {
     font-size: 1em;
     color: #434343;
-    line-height: 1.7em;
+    line-height: 1.8em;
     font-family: "Poppins", sans-serif;
     font-weight: 400;
 }
@@ -1221,7 +1225,10 @@ ul.doterd {
 
 ul.doterd li {
     position: relative;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+}
+.bookasectionage p {
+    margin-bottom: 15px;
 }
 
 .kanneylessloren ul li {
@@ -3751,7 +3758,7 @@ section.sesson {
 ul.features {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px 30px;
+    gap: 10px 30px;
     /* background-color: #ffeef2; */
     padding: 30px 0;
     margin-top: 20px;
@@ -3759,7 +3766,7 @@ ul.features {
 
 ul.features li {
     display: flex;
-    align-items: center;
+    align-items: start;
     gap: 10px;
 }
 
@@ -6602,7 +6609,9 @@ a.button.border-only {
     font-size: 0.8em;
     font-weight: 500;
 }
-
+.banner0mobileview {
+    display: none;
+}
 /*********************Mobile styles ************************/
 @media (max-width: 1300px) {
     ul.navmenu {
@@ -7172,11 +7181,22 @@ a.button.border-only {
         width: 100%;
         padding: 0px 20px;
     }
-
+.banner0mobileview {
+    display: block;
+}
     .videotestiomonials,
     .courses-details-banner {
         width: 100%;
     }
+section.banner {
+    background-image: none !important;
+}
+
+.bannerflex { 
+    justify-content: center;
+}
+
+
 
     .lastcontnt {
         text-align: center;
@@ -7646,9 +7666,13 @@ a.button.border-only {
         height: auto;
         width: 100%;
         margin: 0 auto;
-        padding: 75px 0px;
+        padding: 75px 0px; 
+        background-color: #000000;
     }
-
+ section.banner::after{
+    content: "";
+    display: none;
+ }
     main.pt-1.pt-4 {
         padding-top: 70px;
     }
@@ -7703,7 +7727,7 @@ a.button.border-only {
     .grid-3-7 {
         padding: 30px 0;
     }
-
+ 
     section.who-we-are {
         padding: 30px 0px;
     }
@@ -7828,4 +7852,7 @@ a.button.border-only {
     h3 {
         font-size: 1.5em;
     }
+    .banner-content h1 {
+    font-size: 2em;
+}
 }

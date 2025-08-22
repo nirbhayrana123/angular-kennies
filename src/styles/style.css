@@ -2808,10 +2808,6 @@ a.buttobooksec {
     margin: 45px 0px;
 }
 
-.feature {
-    margin-bottom: 20px;
-}
-
 .nutrition-image {
     width: 45%;
     min-width: 35%;
@@ -5703,6 +5699,7 @@ section.sourses-section .right-content h3 {
 .feature {
     display: flex;
     margin-bottom: 20px;
+    margin-top: 20px;
     gap: 10px;
     align-items: flex-start;
 }
@@ -7127,39 +7124,55 @@ a.button.border-only {
 
     .right-content {
         order: 2;
+        max-width: 100%;
     }
 
     .positionsticky {
         position: static;
     }
-
-    .video-boxes img {
-        width: 100%;
-        height: 100%;
-    }
-
-    .coressdetailes .video-boxes.mt22 {
-        width: 155px;
-        height: 128px;
-        bottom: -80px;
-    }
-
-    .right-box {
-        order: 2;
-    }
-
-    .video-boxes.videos2 {
-        width: 18%;
-        height: auto;
-        bottom: -12%;
-    }
+ 
+.video-boxes img { 
+    width: 100%;
+    height: 100%; 
+}
+.coressdetailes .video-boxes.mt22 {
+    width: 155px;
+    height: 128px;
+    bottom: -80px;
+}
+.right-box { 
+    order: 2;
+}
+.video-boxes.videos2 {
+    width: 18%;
+    height: auto;
+    bottom: -12%;
+}
 
 
-    .video-boxes .audio-player {
-        top: 28%;
-        left: 38%;
-    }
+.video-boxes .audio-player { 
+    top: 28%;
+    left: 38%;
+}
 
+
+.about-banner .left-about {
+    order: 2;
+}
+
+.who-we-are a.button {
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    display: block;
+    max-width: 270px;
+}
+.right-area a.button {
+    max-width: 340px;
+    display: block;
+    margin: 0 auto;
+}
 }
 
 
@@ -7342,7 +7355,7 @@ a.button.border-only {
         grid-template-columns: 100%;
     }
 
-    .about-row,
+     
     .video-box-row,
     .wellness-header,
     .meta,
@@ -7802,6 +7815,10 @@ a.button.border-only {
     .grid-3-7 {
         padding: 30px 0;
     }
+ .audible-button {
+    max-width: 100%;
+}
+
 
     section.who-we-are {
         padding: 30px 0px;
@@ -7811,7 +7828,9 @@ a.button.border-only {
         gap: 20px 0px;
         flex-wrap: wrap;
     }
-
+.video-sec {
+        height: auto;
+    }
     .righttresourcsertymain h2 {
         font-size: 2em;
     }
@@ -7843,12 +7862,7 @@ a.button.border-only {
 
     .flexbuttoons a.button {
         width: 100%;
-    }
-
-    .progress-content {
-        grid-template-columns: repeat(1, 1fr);
-    }
-
+    } 
     .formcontainer input[type="text"],
     .formcontainer input[type="email"] {
         width: 100%;
@@ -7939,14 +7953,32 @@ a.button.border-only {
     }
 
     .banner-content h1 {
-        font-size: 2em;
-    }
-
-    .blogdetailspage iframe {
-        height: 210px;
-    }
-
-    .left-wordsendcycal h3 {
-        font-size: 2em;
-    }
+    font-size: 2em;
 }
+.blogdetailspage iframe {
+    height: 210px;
+}
+.left-wordsendcycal h3 { 
+    font-size: 2em;
+}
+.childhoodimg { 
+    height: auto; 
+}
+
+.childhoodimg img {
+    position: relative; 
+    height: auto; 
+}
+
+
+
+
+
+
+
+
+
+
+}
+
+ 

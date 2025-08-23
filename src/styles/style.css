@@ -50,7 +50,10 @@ h4 {
     font-size: 1.2em;
     font-weight: 700;
 }
-
+.wordsendsicyel .form h4 {
+    font-size: 1.7em;
+    margin-bottom: 18px;
+}
 .contacts-box i {
     font-size: 23px;
 }
@@ -3116,7 +3119,7 @@ iframe {
     display: grid;
     align-items: center;
     justify-content: space-between;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
     margin-bottom: 60px;
     margin-top: 60px;
@@ -7739,9 +7742,7 @@ section.podcast-section .container h3 {
         justify-content: space-between;
     }
 
-    .industry-grid {
-        gap: 10px;
-    }
+   
 
     .industry-card .button-row.left {
         display: none;
@@ -7834,9 +7835,6 @@ section.podcast-section .container h3 {
         margin-top: 0px;
     }
 
-
-
-
     section.self-development {
         min-height: auto;
     }
@@ -7846,7 +7844,7 @@ section.podcast-section .container h3 {
     }
 
     .industry-grid {
-        gap: 30px;
+        gap: 15px;
     }
 
     h4.wp-block-heading,
@@ -7867,7 +7865,9 @@ section.podcast-section .container h3 {
         display: none;
     }
 
-     
+    .card-body .stars,a.detail2 {
+        font-size: 1em;
+    }
 
     p,
     .read-more-btn,
@@ -7952,26 +7952,43 @@ h5
     .caption {
         font-size: 1.1em;
     }
-.card-body h4 {
-    font-size: 1.8em; 
-}
-.price-row .price { 
-    font-size: 20px;
-    margin-bottom: 20px;
-}
-.pricing-set h4 { 
-    font-size: 1.7em;
-}
-.formleffieldds {
-    padding: 40px 20px 40px 20px; 
-}
-.blogdetailspage .main-content h3, .blogdetailspage .main-content h4, .blogdetailspage .main-content h5, .blogdetailspage .main-content h6 {
-    
-    font-size: 24px;
+
+    .card-body h4 {
+        font-size: 1.8em;
+    }
+
+    .price-row .price {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .pricing-set h4 {
+        font-size: 1.7em;
+    }
+
+    .formleffieldds {
+        padding: 40px 20px 40px 20px;
+    }
+
+    .blogdetailspage .main-content h3,
+    .blogdetailspage .main-content h4,
+    .blogdetailspage .main-content h5,
+    .blogdetailspage .main-content h6 {
+
+        font-size: 24px;
+    }
+
+    .wordsendsicyel .form {
+        padding: 20px 20px;
+    }
+ 
+
+.video-box-row ul li p,.answer {
+    width: 100%; 
 }
 
-.wordsendsicyel .form {
-    padding: 20px 20px; 
+.video-sec { 
+    border-radius: 10px; 
 }
 
 
@@ -8007,23 +8024,9 @@ a.culction
 }
 
 @media (max-width: 500px) {
-        .card-content-grey-bg {
+    .card-content-grey-bg {
         padding: 20px 20px 20px 20px;
     }
-    .bookcardbody .author { 
-    flex-wrap: wrap;
-}
-.main-content ol li {
-    margin-bottom: 20px;
-    font-size: 1.4em;
-    line-height: 1.5;
-}
-.kanneylessloren ul li::after, ul.doterd li::after { 
-    top: 12px; 
-}
-    .post-meta .buttonsser a { 
-    font-size: 1em; 
-}
 
 .flex-online-coures h4 { 
     font-size: 2em;
@@ -8039,51 +8042,95 @@ a.culction
 .industry-card { 
     font-size: 14px;
     }
+
+    .main-content ol li {
+        margin-bottom: 20px;
+        font-size: 1.4em;
+        line-height: 1.5;
+    }
+
+    .kanneylessloren ul li::after,
+    ul.doterd li::after {
+        top: 12px;
+    }
+
+    .post-meta .buttonsser a {
+        font-size: 1em;
+    }
+
+    .flex-online-coures h4 {
+        font-size: 1.5em;
+    }
+
+    .benefits-list li {
+        font-size: 17px;
+        line-height: 1.5;
+    }
+
+    .industry-grid h4 {
+        font-size: 1.5em;
+    }
+
+    .industry-card {
+        font-size: 14px;
+    }
+
     .formcontainer .flexingform {
-    width: 100%;
-}
-button.button.submit-btn { 
-    margin: 0 auto;
-}
-.podcast-left ul li::before {
-    top: 12px;
-    position: relative;
-}
+        width: 100%;
+    }
+
+    
+
+    .podcast-left ul li::before {
+        top: 12px;
+        position: relative;
+    }
+
     .grid-3-7 {
         padding: 30px 0;
     }
+
     .icon-item span.icon {
-    width: 125px;
-}
-.featurerd { 
-    font-size: 1.5em; 
-}
-.icon-item span { 
-    font-size: 23px;
-}
-.images .img2 {
+        width: 125px;
+    }
+
+    .featurerd {
+        font-size: 1.5em;
+    }
+
+    .icon-item span {
+        font-size: 23px;
+    }
+
+    .images .img2 {
         width: 92px;
     }
+
     .audible-button {
         max-width: 100%;
         width: 100%;
     }
-.right-content button.audibleBtn {
-    margin-left: 0;
-}
+
+    .right-content button.audibleBtn {
+        margin-left: 0;
+    }
 
     section.who-we-are {
         padding: 30px 0px;
     }
-.right-content .button-row {
+
+    .right-content .button-row {
         padding-left: 0;
     }
+
     .card-img a img {
-    min-height: auto;
-}
-.card-img a {
-    min-height: auto; 
-}
+        min-height: auto;
+    }
+
+    .card-img a {
+        min-height: auto;
+    }
+
     .flexbuttoons {
         gap: 20px 0px;
         flex-wrap: wrap;
@@ -8260,10 +8307,11 @@ button.button.submit-btn {
         margin-top: 10px;
     }
 
-.audible-button {
-    font-size: 18px; 
-}
-    .who-we-are a.button { 
+    .audible-button {
+        font-size: 18px;
+    }
+
+    .who-we-are a.button {
         max-width: 100%;
     }
 

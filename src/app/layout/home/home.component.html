@@ -584,7 +584,7 @@
                         <a routerLink="/best-day-blog">
                             <h3>{{ post.title?.rendered }}</h3>
                         </a>
-                        <div [innerHTML]="getShortContent(post.excerpt?.rendered || post.content?.rendered, 15) "></div>
+                        <div class="" [innerHTML]="getShortContent(post.excerpt?.rendered || post.content?.rendered, 15) "></div>
                         <a class="post-link" routerLink="/best-day-blog">View more <i
                                 class="fa-solid fa-arrow-up-right-from-square"></i></a>
                     </div>

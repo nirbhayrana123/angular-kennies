@@ -7371,7 +7371,23 @@ a.button.border-only {
     section.podcast-section .podcast-left {
         width: 100%;
         order: 2;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
     }
+section.podcast-section .podcast-left p.white {
+    order: 3;
+}
+ .podcast-row ul{
+    order: 4;
+}
+  .podcast-left  .button-row {
+       order: 5;
+    }
+section.podcast-section .container h3 {
+    margin-top: 20px;
+}
+
 
     .video-box-row,
     .wellness-header,
@@ -7766,7 +7782,7 @@ a.button.border-only {
         width: 100%;
         margin: 0 auto;
         padding: 75px 0px;
-        background-color: #000000;
+        background-color: #512570;
     }
 
     section.banner::after {
@@ -7863,11 +7879,13 @@ a.button.border-only {
     .testimonial-role,
     .boxlist-content p,
     .description {
-        font-size: 1.5em;
+        font-size: 1.4em;
         margin: 10px 0px;
         line-height: 1.5;
     }
-
+section.sourses-section .right-content h3{
+    font-size: 2em;
+}
     .cta-box.mobile-hide {
         display: none;
     }
@@ -7895,11 +7913,41 @@ a.button.border-only {
     .thumbnail {
         max-height: 160px;
     }
-
+.card-body .stars {
+    font-size: 1em;
+}
+.card-body .stars span{
+    font-size: 1.3em;
+}
+.step h4{
+    font-size: 2em;
+}
+h4
+ {
+    font-size: 2.2em;
+}
+h5
+ {
+    font-size: 2.2em;
+}
+.followers-item h5 {
+    font-size: 1em;
+}
     .flex-online-coures {
         padding: 25px;
         gap: 20px;
     }
+.feature-text h4
+ {
+    font-size: 2em;
+}
+.flex-inwrapper .button-row {
+    order: 4;
+}
+.boxlist-content h5 {
+    font-size: 22px;
+}
+
 
     .caption {
         font-size: 1.1em;
@@ -7925,6 +7973,37 @@ a.button.border-only {
 .wordsendsicyel .form {
     padding: 20px 20px; 
 }
+
+
+
+
+
+.flex-inwrapper .content{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.flex-inwrapper .content p {
+    order: 3;
+}
+.featuresse{
+    order: 4;
+}
+.flex-inwrapper ul.doterd{
+    order: 5;
+}
+.flex-inwrapper .button{
+    order: 6;
+}
+a.culction
+ {
+    font-size: 1.2em;
+}
+
+
+
+
+
 }
 
 @media (max-width: 500px) {
@@ -7947,7 +8026,7 @@ a.button.border-only {
 }
 
 .flex-online-coures h4 { 
-    font-size: 1.5em;
+    font-size: 2em;
 }
 
 .benefits-list li { 
@@ -7955,7 +8034,7 @@ a.button.border-only {
     line-height: 1.5;
 }
 .industry-grid h4 {
-    font-size: 1.5em;
+    font-size: 2em;
 }
 .industry-card { 
     font-size: 14px;
@@ -8148,11 +8227,11 @@ button.button.submit-btn {
     }
 
     h3 {
-        font-size: 1.7em;
+        font-size: 2.3em;
     }
 
     .banner-content h1 {
-        font-size: 2em;
+        font-size: 2.3em;
     }
 
     .blogdetailspage iframe {

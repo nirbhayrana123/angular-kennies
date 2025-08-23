@@ -2495,7 +2495,9 @@ h5.info-title {
     font-size: 13px;
 }
 
-
+.notorder p{
+    margin: 20px 0px;
+}
 .journey-point p {
     margin: 0;
     margin-bottom: 10px;
@@ -6876,7 +6878,7 @@ a.button.border-only {
 
 @media (max-width: 1024px) {
     body {
-        font-size: 14px;
+        font-size: 20px;
     }
 
     .postcard-row {
@@ -7276,7 +7278,12 @@ a.button.border-only {
     img.testimonialimg {
         bottom: 0;
     }
-
+    h3{
+        font-size: 1.7em;
+    }
+ .course-heading h3 {
+        font-size: 1.7em;
+    }
     .progress-content h3 span.numbersd {
         font-size: 2rem;
     }
@@ -7339,7 +7346,7 @@ a.button.border-only {
     }
 
     body {
-        font-size: 13.3px;
+        font-size: 18px;
     }
 
     .video-boxes {
@@ -7879,13 +7886,11 @@ section.podcast-section .container h3 {
     .testimonial-role,
     .boxlist-content p,
     .description {
-        font-size: 1.4em;
+        font-size: 1.2em;
         margin: 10px 0px;
         line-height: 1.5;
     }
-section.sourses-section .right-content h3{
-    font-size: 2em;
-}
+
     .cta-box.mobile-hide {
         display: none;
     }
@@ -7920,15 +7925,15 @@ section.sourses-section .right-content h3{
     font-size: 1.3em;
 }
 .step h4{
-    font-size: 2em;
+    font-size: 1.7em;
 }
 h4
  {
-    font-size: 2.2em;
+    font-size: 1.7em;
 }
 h5
  {
-    font-size: 2.2em;
+    font-size: 1.7em;
 }
 .followers-item h5 {
     font-size: 1em;
@@ -7939,7 +7944,7 @@ h5
     }
 .feature-text h4
  {
-    font-size: 2em;
+    font-size: 1.5em;
 }
 .flex-inwrapper .button-row {
     order: 4;
@@ -7950,7 +7955,7 @@ h5
 
 
     .caption {
-        font-size: 1.1em;
+        font-size: 1.3em;
     }
 
     .card-body h4 {
@@ -7970,13 +7975,7 @@ h5
         padding: 40px 20px 40px 20px;
     }
 
-    .blogdetailspage .main-content h3,
-    .blogdetailspage .main-content h4,
-    .blogdetailspage .main-content h5,
-    .blogdetailspage .main-content h6 {
-
-        font-size: 24px;
-    }
+   
 
     .wordsendsicyel .form {
         padding: 20px 20px;
@@ -8016,10 +8015,19 @@ a.culction
  {
     font-size: 1.2em;
 }
-
-
-
-
+.booklistcontent h5{
+    font-size: 1.7;
+}
+h1{
+    font-size: 1.8em;
+}
+.main-content h3
+ {
+    font-size: 1.7rem;
+}
+.notorder.flex-inwrapper .content p.desc {
+    order: inherit;
+}
 
 }
 
@@ -8027,7 +8035,14 @@ a.culction
     .card-content-grey-bg {
         padding: 20px 20px 20px 20px;
     }
-
+.bookcardbody .author {
+    flex-wrap: wrap;
+}
+    .info
+ {
+        font-size: 1em;
+        flex-wrap: wrap;
+    }
 .flex-online-coures h4 { 
     font-size: 2em;
 }
@@ -8141,7 +8156,7 @@ a.culction
     }
 
     .righttresourcsertymain h2 {
-        font-size: 2em;
+        font-size: 1.7em;
     }
 
     .right-wordsendcycal {
@@ -8210,7 +8225,7 @@ a.culction
     }
 
     .book-col2 h2 {
-        font-size: 2em;
+        font-size: 1.7em;
         margin-bottom: 10px;
     }
 
@@ -8273,12 +8288,11 @@ a.culction
         padding: 6px 13px;
     }
 
-    h3 {
-        font-size: 2.3em;
-    }
+ 
 
     .banner-content h1 {
-        font-size: 2.3em;
+        font-size: 2em;
+        line-height: 1.5;
     }
 
     .blogdetailspage iframe {

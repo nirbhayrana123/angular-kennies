@@ -26,16 +26,19 @@ h6 {
     font-family: "Montserrat", sans-serif;
     line-height: 1.3em;
 }
+
 h1 {
     font-size: 2.6em;
     line-height: 1.1;
     margin-bottom: 20px;
 }
+
 h2 {
     font-size: 2.2em;
     line-height: 1.1;
     margin-bottom: 20px;
 }
+
 .mt-3 {
     margin-top: 30px !important;
 }
@@ -43,9 +46,11 @@ h2 {
 bold {
     font-weight: 600;
 }
+
 b {
     font-weight: 600;
 }
+
 .italic {
     font-style: italic;
 }
@@ -663,7 +668,7 @@ img.banner-shep {
     display: none;
 }
 
-.banner-content h1 { 
+.banner-content h1 {
     text-transform: uppercase;
     color: #ffffff;
 }
@@ -1281,7 +1286,8 @@ ul.doterd li {
     border-radius: 15px;
 }
 
-.vertyvery-contents.expanded h4,.kanneylessloren h4 {
+.vertyvery-contents.expanded h4,
+.kanneylessloren h4 {
     margin-bottom: 18px;
     margin-top: 30px;
 }
@@ -1316,7 +1322,7 @@ ul.doterd li {
 }
 
 .wellness-header p {
-    color: #ffffff; 
+    color: #ffffff;
     text-align: center;
 }
 
@@ -1407,7 +1413,7 @@ section.into-section .wellness-col {
 }
 
 .trauma {
-    padding: 20px; 
+    padding: 20px;
 }
 
 
@@ -1417,15 +1423,17 @@ section.into-section .wellness-col {
     z-index: 1;
     transition: all 0.4s ease-in-out;
 }
+
 .trauma div {
     min-height: 180px;
 }
+
 .wellness-col p {
     color: #000;
-    margin-bottom: 15px; 
+    margin-bottom: 15px;
 
     display: -webkit-box;
-    -webkit-line-clamp: 5;  
+    -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
@@ -1470,7 +1478,7 @@ section.into-section .wellness-col {
 .progress-content {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    justify-content: space-between; 
+    justify-content: space-between;
     text-align: center;
     margin-top: 50px;
 }
@@ -1598,9 +1606,11 @@ section.into-section .wellness-col {
 .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
     bottom: 8px;
 }
-section.courses-master-classes .swiper { 
+
+section.courses-master-classes .swiper {
     padding-bottom: 60px;
 }
+
 .swiper-pagination-bullet-active {
     background: #512570;
 }
@@ -2515,9 +2525,10 @@ h5.info-title {
     font-size: 13px;
 }
 
-.notorder p{
+.notorder p {
     margin: 20px 0px;
 }
+
 .journey-point p {
     margin: 0;
     margin-bottom: 10px;
@@ -3138,9 +3149,11 @@ iframe {
     font-weight: 400;
     color: #1d1d1d;
 }
+
 .heightmin {
     min-height: 110px;
 }
+
 .contact-boxesflex {
     display: grid;
     align-items: center;
@@ -7242,9 +7255,10 @@ a.button.border-only {
         width: 100%;
         text-align: justify;
     }
-.healing-table {
-    padding-top:  0;
-}
+
+    .healing-table {
+        padding-top: 0;
+    }
 
     .healing-table td {
         width: 100%;
@@ -7284,7 +7298,7 @@ a.button.border-only {
     .trauma h4 {
         font-size: 1.3em;
     }
- 
+
 
     .progress-content h5 {
         font-size: 1em;
@@ -7298,7 +7312,7 @@ a.button.border-only {
     .bookcardbody .info {
         font-size: 0.8em;
     }
- 
+
 
     .add-widget .add-image .add-size {
         padding: 8px 25px;
@@ -7308,9 +7322,12 @@ a.button.border-only {
         width: 100%;
         padding: 0px 20px;
     }
-section.courses-master-classes .swiper-button-prev, .swiper-button-next { 
-    top: 26% !important; 
-}
+
+    section.courses-master-classes .swiper-button-prev,
+    .swiper-button-next {
+        top: 24% !important;
+    }
+
     .banner0mobileview {
         display: block;
     }
@@ -7339,17 +7356,19 @@ section.courses-master-classes .swiper-button-prev, .swiper-button-next {
     img.testimonialimg {
         bottom: 0;
     }
-   
- .course-heading h3 {
+
+    .course-heading h3 {
         font-size: 1.7em;
     }
+
     .progress-content h3 span.numbersd {
         font-size: 2rem;
     }
-.postcard-item2 {
-    padding: 15px;
-}
- 
+
+    .postcard-item2 {
+        padding: 15px;
+    }
+
     .card-columns,
     .flexfield {
         grid-template-columns: 1fr;
@@ -7432,7 +7451,7 @@ section.courses-master-classes .swiper-button-prev, .swiper-button-next {
     .flexsocial.whitei {
         display: none;
     }
- 
+
 
     .book-banner {
         grid-template-columns: 100%;
@@ -7445,21 +7464,11 @@ section.courses-master-classes .swiper-button-prev, .swiper-button-next {
         flex-direction: column;
     }
 
-    section.podcast-section .podcast-left p.white {
-        order: 1;
+
+
+    section.podcast-section .container h3 {
+        margin-top: 20px;
     }
-section.podcast-section .podcast-left p.white {
-    order: 3;
-}
- .podcast-row ul{
-    order: 4;
-}
-  .podcast-left  .button-row {
-       order: 5;
-    }
-section.podcast-section .container h3 {
-    margin-top: 20px;
-}
 
 
     .video-box-row,
@@ -7523,9 +7532,14 @@ section.podcast-section .container h3 {
         margin-top: 4px;
     }
 
+    .cta-box h3 {
+        font-size: 1.4em;
+    }
+
     .cta-box {
         position: static;
         margin-top: 30px;
+        padding: 20px;
     }
 
 
@@ -7587,7 +7601,7 @@ section.podcast-section .container h3 {
         margin-bottom: 20px;
     }
 
-      .button-row {
+    .button-row {
         margin-top: 20px;
         flex-wrap: wrap;
         gap: 10px;
@@ -7597,9 +7611,6 @@ section.podcast-section .container h3 {
         font-size: 1.4em;
     }
 
-    section.podcast-section .podcast-left .button-row {
-        order: 3;
-    }
 
     .blog-img {
         max-height: 300px;
@@ -7628,7 +7639,7 @@ section.podcast-section .container h3 {
     .grid4 {
         grid-template-columns: 1fr;
     }
- 
+
 
     .left-area,
     .right-area {
@@ -7772,13 +7783,15 @@ section.podcast-section .container h3 {
     .Player5 iframe {
         height: 270px;
     }
-h5.tag-line::after {
-    display: none;
-    content: none; 
-  }
-h5.tag-line {
-    padding: 0;
-  }
+
+    h5.tag-line::after {
+        display: none;
+        content: none;
+    }
+
+    h5.tag-line {
+        padding: 0;
+    }
 
 
     .boximg.content {
@@ -7836,7 +7849,10 @@ h5.tag-line {
         justify-content: space-between;
     }
 
- 
+    section.into-section .swiper-button-next,
+    .swiper-button-prev {
+        top: 38% !important;
+    }
 
     .author img {
         width: 3em;
@@ -7876,6 +7892,7 @@ h5.tag-line {
     section.book-section.page {
         padding: 40px 0;
     }
+
     section.banner {
         height: auto;
         width: 100%;
@@ -7885,10 +7902,12 @@ h5.tag-line {
         position: relative;
         top: -30px;
     }
-.logos-people img {
-    width: 50px;
-    height: 50px; 
-}
+
+    .logos-people img {
+        width: 50px;
+        height: 50px;
+    }
+
     section.banner::after {
         content: "";
         display: none;
@@ -7992,7 +8011,9 @@ h5.tag-line {
     i.fa-solid.fa-check {
         font-size: 10px;
     }
-
+.mentor-content h2 {
+    font-size: 1.4em;
+}
     .mentor-section {
         padding: 40px 0;
     }
@@ -8000,41 +8021,42 @@ h5.tag-line {
     .thumbnail {
         max-height: 160px;
     }
-.card-body .stars {
-    font-size: 1em;
-}
- 
-.step h4{
-    font-size: 1.7em;
-}
-h4
- {
-    font-size: 1.7em;
-}
-h5
- {
-    font-size: 1.7em;
-}
-.followers-item h5 {
-    font-size: 1em;
-}
+
+    .card-body .stars {
+        font-size: 1em;
+    }
+
+    .step h4 {
+        font-size: 1.4em;
+    }
+
+    h5 {
+        font-size: 1.7em;
+    }
+
+    .followers-item h5 {
+        font-size: 1em;
+    }
+
     .flex-online-coures {
         padding: 25px;
         gap: 20px;
     }
-.feature-text h4
- {
-    font-size: 1.4em;
-}
-.flex-inwrapper .button-row {
-    order: 4;
-}
-.boxlist-content h5 {
-    font-size: 22px;
-}
- 
-    .card-body h4 {
-        font-size: 1.8em;
+
+    .feature-text h4 {
+        font-size: 1.4em;
+    }
+
+    .flex-inwrapper .button-row {
+        order: 4;
+    }
+
+    .boxlist-content h5 {
+        font-size: 22px;
+    }
+
+    .banner-content a.button.whitebt {
+        width: 100%;
     }
 
     .price-row .price {
@@ -8047,7 +8069,7 @@ h5
         padding: 40px 20px 40px 20px;
     }
 
-   
+
 
     .wordsendsicyel .form {
         padding: 20px 20px;
@@ -8082,76 +8104,88 @@ h5
     }
 
 
-.flex-inwrapper .content{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-}
-.flex-inwrapper .content p {
-    order: 3;
-}
-.featuresse{
-    order: 4;
-}
-.flex-inwrapper ul.doterd{
-    order: 5;
-}
-.flex-inwrapper .button{
-    order: 6;
-}
-a.culction
- {
-    font-size: 1.2em;
-}
-.booklistcontent h5{
-    font-size: 1.7;
-}
-h1{
-    font-size: 1.8em;
-}
-.main-content h3
- {
-    font-size: 1.7rem;
-}
-.notorder.flex-inwrapper .content p.desc {
-    order: inherit;
-}
+    .flex-inwrapper .content {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    .flex-inwrapper .content p {
+        order: 3;
+    }
+
+    .featuresse {
+        order: 4;
+    }
+
+    .flex-inwrapper ul.doterd {
+        order: 5;
+    }
+
+    .flex-inwrapper .button {
+        order: 6;
+    }
+
+    a.culction {
+        font-size: 1.2em;
+    }
+
+    .booklistcontent h5 {
+        font-size: 1.7;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .main-content h3 {
+        font-size: 1.7rem;
+    }
+
+    .notorder.flex-inwrapper .content p.desc {
+        order: inherit;
+    }
 
 }
 
 @media (max-width: 500px) {
 
-.rightdesigncontent { 
-    bottom: 0; 
-}
-.rightdesigncontent h5 { 
-    font-size: 1em;
-}
+    .rightdesigncontent {
+        bottom: 0;
+    }
+
+    .rightdesigncontent h5 {
+        font-size: 1em;
+    }
 
     .card-content-grey-bg {
         padding: 20px 20px 20px 20px;
     }
-.bookcardbody .author {
-    flex-wrap: wrap;
-}
-    .info
- {
+
+    .bookcardbody .author {
+        flex-wrap: wrap;
+    }
+
+    .info {
         font-size: 1em;
         flex-wrap: wrap;
     }
-.flex-online-coures h4 { 
-    font-size: 2em;
-}
 
-.benefits-list li { 
-    font-size: 17px;
-    line-height: 1.5;
-}
-.industry-grid h4 {
-    font-size: 2em;
-}
-.industry-card { 
-    font-size: 14px;
+    .flex-online-coures h4 {
+        font-size: 2em;
+    }
+
+    .benefits-list li {
+        font-size: 17px;
+        line-height: 1.5;
+    }
+
+    .industry-grid h4 {
+        font-size: 2em;
+    }
+
+    .industry-card {
+        font-size: 14px;
     }
 
     .main-content ol li {
@@ -8333,7 +8367,7 @@ h1{
     }
 
     .button-row a.button {
-        margin-top: 5px; 
+        margin-top: 5px;
     }
 
     .video-box.shine-effect {
@@ -8373,7 +8407,8 @@ h1{
 
     .doropmenu li {
         padding: 6px 13px;
-    } 
+    }
+
     .blogdetailspage iframe {
         height: 210px;
     }
@@ -8381,10 +8416,10 @@ h1{
     .left-wordsendcycal h3 {
         font-size: 2em;
     }
- 
+
 
     .childhoodimg img {
-        position: relative; 
+        position: relative;
     }
 
     .podcast-row ul {

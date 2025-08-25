@@ -1281,7 +1281,7 @@ ul.doterd li {
     border-radius: 15px;
 }
 
-.vertyvery-contents.expanded h4 {
+.vertyvery-contents.expanded h4,.kanneylessloren h4 {
     margin-bottom: 18px;
     margin-top: 30px;
 }
@@ -1598,13 +1598,15 @@ section.into-section .wellness-col {
 .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
     bottom: 8px;
 }
-
+section.courses-master-classes .swiper { 
+    padding-bottom: 60px;
+}
 .swiper-pagination-bullet-active {
     background: #512570;
 }
 
 .mySwiper .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
-    bottom: -40px;
+    bottom: 15px;
 }
 
 .video-box-row ul li {
@@ -2208,7 +2210,7 @@ section.into-section-white-bg .wellness-col.bb-1 {
 }
 
 section.courses-master-classes {
-    padding: 60px 0px;
+    padding-top: 60px;
     background-color: #f5f4f1;
 }
 
@@ -7306,7 +7308,9 @@ a.button.border-only {
         width: 100%;
         padding: 0px 20px;
     }
-
+section.courses-master-classes .swiper-button-prev, .swiper-button-next { 
+    top: 26% !important; 
+}
     .banner0mobileview {
         display: block;
     }
@@ -7345,10 +7349,7 @@ a.button.border-only {
 .postcard-item2 {
     padding: 15px;
 }
-.button {
-        padding: 10px;
-        min-width: 200px;
-    }
+ 
     .card-columns,
     .flexfield {
         grid-template-columns: 1fr;
@@ -7586,9 +7587,10 @@ section.podcast-section .container h3 {
         margin-bottom: 20px;
     }
 
-    .button-row {
+      .button-row {
         margin-top: 20px;
         flex-wrap: wrap;
+        gap: 10px;
     }
 
     section.sourses-section .right-content h3 {
@@ -8001,9 +8003,7 @@ h5.tag-line {
 .card-body .stars {
     font-size: 1em;
 }
-.card-body .stars span{
-    font-size: 1.3em;
-}
+ 
 .step h4{
     font-size: 1.7em;
 }
@@ -8032,12 +8032,7 @@ h5
 .boxlist-content h5 {
     font-size: 22px;
 }
-
-
-    .caption {
-        font-size: 1.3em;
-    }
-
+ 
     .card-body h4 {
         font-size: 1.8em;
     }
@@ -8338,8 +8333,7 @@ h1{
     }
 
     .button-row a.button {
-        margin-top: 5px;
-        width: 100%;
+        margin-top: 5px; 
     }
 
     .video-box.shine-effect {

@@ -1401,7 +1401,9 @@ section.into-section .wellness-col {
 
 .trauma {
     padding: 23px;
+    min-height: 303px;
 }
+
 
 .wellness-col i svg {
     color: #ffffff;
@@ -3200,7 +3202,7 @@ iframe {
     background: #fff;
     padding: 8px;
     border-radius: 50px;
-    top: 40%;
+    top: 34% !important;
     width: 50px !important;
     height: 50px !important;
     border: 2px solid #BBA056;

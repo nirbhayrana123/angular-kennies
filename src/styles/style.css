@@ -103,7 +103,10 @@ header.header.blacktext.homenav.bgcolor .flexsocial.whitei i {
 .flexsocial.whitei i {
     color: #000000;
 }
-
+.contentsocialserd h2.wp-block-heading strong {
+    font-size: 0.7em;
+    font-weight: 600;
+}
 header.header.blacktext.homenav a.logo-brand img {
     filter: brightness(0) invert(1);
 }
@@ -1505,6 +1508,7 @@ section.into-section .wellness-col {
 
 .blogdetailspage h1 {
     margin-bottom: 10px;
+    font-size: 2em;
 }
 
 .progress-content h5 {
@@ -2704,13 +2708,12 @@ section.Self-love.faqbg {
     flex-direction: column;
     display: flex;
     align-items: center;
-    justify-content: center;
-    background-color: #f9f9f9;
+    justify-content: center; 
 }
 
 .img-contant h5,
 .img-contant p {
-    color: #000000;
+    color: #ffffff;
 }
 
  
@@ -7498,14 +7501,20 @@ a.button.border-only {
     section.podcast-section .container h3 {
         margin-top: 20px;
     }
-
-
+.blogdetailspage h1 { 
+    font-size: 1.5em;
+}
+.contentsocialserd h2.wp-block-heading strong{ 
+    font-size: 0.6em;
+}
     .video-box-row,
     .wellness-header,
     .meta {
         display: block;
     }
-
+.img-contant h5, .img-contant p { 
+    font-size: 1.2em;
+}
     .info {
         font-size: 1em;
     }
@@ -8260,11 +8269,7 @@ section.replay-section.aos-init.aos-animate {
         font-size: 1em;
         line-height: 1.5;
     }
-.img-contant {
-    position: relative; 
-    padding: 20px 10px; 
-    background-color: #020a65;
-}
+ 
     .kanneylessloren ul li::after,
     ul.doterd li::after {
         top: 12px;

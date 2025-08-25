@@ -7944,7 +7944,7 @@ h5
     }
 .feature-text h4
  {
-    font-size: 1.5em;
+    font-size: 1.4em;
 }
 .flex-inwrapper .button-row {
     order: 4;
@@ -8032,6 +8032,14 @@ h1{
 }
 
 @media (max-width: 500px) {
+
+.rightdesigncontent { 
+    bottom: 0; 
+}
+.rightdesigncontent h5 { 
+    font-size: 1em;
+}
+
     .card-content-grey-bg {
         padding: 20px 20px 20px 20px;
     }

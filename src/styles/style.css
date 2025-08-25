@@ -41,9 +41,11 @@ h2 {
 }
 
 bold {
-    font-weight: 700;
+    font-weight: 600;
 }
-
+b {
+    font-weight: 600;
+}
 .italic {
     font-style: italic;
 }
@@ -729,7 +731,7 @@ img.logos-people7 {
 }
 
 .trauma h4 {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     font-size: 1.6em;
     color: #32220b;
 }
@@ -1280,7 +1282,8 @@ ul.doterd li {
 }
 
 .vertyvery-contents.expanded h4 {
-    margin-bottom: 1rem;
+    margin-bottom: 18px;
+    margin-top: 30px;
 }
 
 .read-more-btn {
@@ -1313,9 +1316,7 @@ ul.doterd li {
 }
 
 .wellness-header p {
-    color: #ffffff;
-    width: 50%;
-    margin: auto;
+    color: #ffffff; 
     text-align: center;
 }
 
@@ -1391,7 +1392,7 @@ section.into-section .wellness-col {
 
 .childhoodimg {
     position: relative;
-    height: 250px;
+    height: 300px;
     overflow: hidden;
 }
 
@@ -1406,8 +1407,7 @@ section.into-section .wellness-col {
 }
 
 .trauma {
-    padding: 23px;
-    min-height: 303px;
+    padding: 20px; 
 }
 
 
@@ -1417,11 +1417,19 @@ section.into-section .wellness-col {
     z-index: 1;
     transition: all 0.4s ease-in-out;
 }
-
+.trauma div {
+    min-height: 180px;
+}
 .wellness-col p {
     color: #000;
-    margin-bottom: 15px;
+    margin-bottom: 15px; 
+
+    display: -webkit-box;
+    -webkit-line-clamp: 5;  
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
+
 
 .left-group,
 .right-group {
@@ -1462,8 +1470,7 @@ section.into-section .wellness-col {
 .progress-content {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-between; 
     text-align: center;
     margin-top: 50px;
 }
@@ -1495,7 +1502,7 @@ section.into-section .wellness-col {
     font-size: 1.2em;
     color: #ffffff;
     font-weight: 600;
-    margin-top: 15px;
+    margin-top: 8px;
 }
 
 .blogpagination .ngx-pagination li.pagination-previous,
@@ -1597,7 +1604,7 @@ section.into-section .wellness-col {
 }
 
 .mySwiper .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
-    bottom: 0px;
+    bottom: -40px;
 }
 
 .video-box-row ul li {
@@ -3129,7 +3136,9 @@ iframe {
     font-weight: 400;
     color: #1d1d1d;
 }
-
+.heightmin {
+    min-height: 110px;
+}
 .contact-boxesflex {
     display: grid;
     align-items: center;
@@ -3208,7 +3217,7 @@ iframe {
     background: #fff;
     padding: 8px;
     border-radius: 50px;
-    top: 34% !important;
+    top: 39% !important;
     width: 50px !important;
     height: 50px !important;
     border: 2px solid #BBA056;
@@ -7326,9 +7335,7 @@ a.button.border-only {
     img.testimonialimg {
         bottom: 0;
     }
-    h3{
-        font-size: 1.7em;
-    }
+   
  .course-heading h3 {
         font-size: 1.7em;
     }
@@ -7424,10 +7431,7 @@ a.button.border-only {
     .flexsocial.whitei {
         display: none;
     }
-
-    .services div {
-        font-size: 1.1em;
-    }
+ 
 
     .book-banner {
         grid-template-columns: 100%;
@@ -7622,10 +7626,7 @@ section.podcast-section .container h3 {
     .grid4 {
         grid-template-columns: 1fr;
     }
-
-    .wellness-header p {
-        width: auto;
-    }
+ 
 
     .left-area,
     .right-area {
@@ -7685,6 +7686,7 @@ section.podcast-section .container h3 {
 
     .vertyvery-box {
         padding: 20px;
+        margin-top: 20px;
     }
 
     .right {
@@ -7768,6 +7770,14 @@ section.podcast-section .container h3 {
     .Player5 iframe {
         height: 270px;
     }
+h5.tag-line::after {
+    display: none;
+    content: none; 
+  }
+h5.tag-line {
+    padding: 0;
+  }
+
 
     .boximg.content {
         text-align: center;
@@ -7824,10 +7834,7 @@ section.podcast-section .container h3 {
         justify-content: space-between;
     }
 
-    .swiper-button-prev,
-    .swiper-button-next {
-        top: 30% !important;
-    }
+ 
 
     .author img {
         width: 3em;
@@ -7867,16 +7874,19 @@ section.podcast-section .container h3 {
     section.book-section.page {
         padding: 40px 0;
     }
-
     section.banner {
         height: auto;
         width: 100%;
         margin: 0 auto;
-        padding: 75px 0px;
+        padding: 35px 0px;
         background-color: #512570;
-        margin-top: -3px;
+        position: relative;
+        top: -30px;
     }
-
+.logos-people img {
+    width: 50px;
+    height: 50px; 
+}
     section.banner::after {
         content: "";
         display: none;
@@ -8369,15 +8379,7 @@ h1{
 
     .doropmenu li {
         padding: 6px 13px;
-    }
-
- 
-
-    .banner-content h1 {
-        font-size: 2em;
-        line-height: 1.5;
-    }
-
+    } 
     .blogdetailspage iframe {
         height: 210px;
     }
@@ -8385,14 +8387,10 @@ h1{
     .left-wordsendcycal h3 {
         font-size: 2em;
     }
-
-    .childhoodimg {
-        height: auto;
-    }
+ 
 
     .childhoodimg img {
-        position: relative;
-        height: auto;
+        position: relative; 
     }
 
     .podcast-row ul {

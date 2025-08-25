@@ -708,11 +708,14 @@
                     </div>
 
                     <button class="audibleBtn audible-button" (click)="toggleAudio(0)">
-                        <img class="icon" [src]="
+                
+                      <i  class="fa-solid"  [ngClass]="audios[0].isPlaying ? 'fa-pause' : 'fa-play'"></i>
+                      <!-- <img class="icon" [src]="
       audios[0].isPlaying
         ? 'https://m.media-amazon.com/images/G/01/Audible/Homestead/samplePlayer/Pause._CB655354636_.svg'
         : 'https://m.media-amazon.com/images/G/01/Audible/Homestead/samplePlayer/Play._CB655354636_.svg'
-    " alt="Play/Pause" />
+    " alt="Play/Pause" /> -->
+     
                         <span>Audible sample</span>
                     </button>
 
@@ -736,11 +739,7 @@
                     </div>
 
                     <button class="audibleBtn audible-button" (click)="toggleAudio(1)">
-                        <img class="icon" [src]="
-      audios[1].isPlaying
-        ? 'https://m.media-amazon.com/images/G/01/Audible/Homestead/samplePlayer/Pause._CB655354636_.svg'
-        : 'https://m.media-amazon.com/images/G/01/Audible/Homestead/samplePlayer/Play._CB655354636_.svg'
-    " alt="Play/Pause" />
+                        <i  class="fa-solid"  [ngClass]="audios[1].isPlaying ? 'fa-pause' : 'fa-play'"></i>
                         <span>Audible sample</span>
                     </button>
 

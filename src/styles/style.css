@@ -8261,6 +8261,7 @@ a.button.border-only {
 
     .right-content .button-row {
         padding-left: 0;
+            margin-bottom: 15px;
     }
 
     .card-img a img {

@@ -8055,9 +8055,6 @@ a.button.border-only {
         font-size: 22px;
     }
 
-    .banner-content a.button.whitebt {
-        width: 100%;
-    }
 
     .price-row .price {
         font-size: 20px;
@@ -8154,6 +8151,9 @@ a.button.border-only {
         bottom: 0;
     }
 
+    .banner-content a.button.whitebt {
+        width: 100%;
+    }
     .rightdesigncontent h5 {
         font-size: 1em;
     }

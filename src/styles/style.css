@@ -7360,6 +7360,19 @@ a.button.border-only {
         justify-content: center;
     }
 
+    .flex-who-we-are.mb-3{
+        padding: 45px 0px;
+        margin-bottom: 0;
+    }
+    .odd-class .flex-who-we-are {
+    border-bottom: 1px solid #ccc;
+}
+.even-class .flex-who-we-are {
+    border-bottom: 1px solid #ccc;
+}
+.courseslistitemsdd .even-class:last-child .flex-who-we-are{
+    border: none;
+}
     .lastcontnt {
         text-align: center;
     }
@@ -7460,6 +7473,7 @@ a.button.border-only {
 
     .flex-who-we-are {
         gap: 50px;
+        position: relative;
     }
 
 
@@ -7885,7 +7899,6 @@ a.button.border-only {
     }
 
 
-
     .industry-card p {
         margin-left: 0;
         text-align: center;
@@ -8247,12 +8260,11 @@ section.replay-section.aos-init.aos-animate {
         font-size: 1em;
         line-height: 1.5;
     }
-
-    .img-contant {
-        position: relative;
-        padding: 20px 10px;
-    }
-
+.img-contant {
+    position: relative; 
+    padding: 20px 10px; 
+    background-color: #020a65;
+}
     .kanneylessloren ul li::after,
     ul.doterd li::after {
         top: 12px;

@@ -76,7 +76,9 @@ h5 {
     font-size: 1.7em;
     margin-bottom: 18px;
 }
-
+.button-row.left {
+    justify-content: flex-start;
+}
 .contacts-box i {
     font-size: 23px;
 }
@@ -1502,7 +1504,6 @@ section.into-section .wellness-col {
 }
 
 .blogdetailspage h1 {
-    font-weight: 600;
     margin-bottom: 10px;
 }
 
@@ -2429,7 +2430,7 @@ h5.info-title {
     padding: 60px 0;
 }
 
-.videosectionleft { 
+.videosectionleft {
     background-color: #f9f9f9;
 }
 
@@ -2699,19 +2700,20 @@ section.Self-love.faqbg {
     inset: 0;
     width: 100%;
     height: 100%;
-    background-color: #0000002e;
     text-align: center;
     flex-direction: column;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: #f9f9f9;
 }
 
 .img-contant h5,
 .img-contant p {
-    color: #ffffff;
+    color: #000000;
 }
 
+ 
 
 .service-item-main {
     padding: 30px;
@@ -3756,16 +3758,7 @@ section.book-section.podcast-banner {
 .button-row.canter {
     justify-content: center;
 }
-
-.book-cintent h5 {
-    text-transform: uppercase;
-    font-size: 0.6em;
-    font-weight: 500;
-    color: #838280;
-    margin-bottom: 17px;
-    margin-top: 30px;
-}
-
+ 
 /***********BOOK sesson************/
 .sesson-image1-box {
     position: relative;
@@ -5797,7 +5790,7 @@ section.sourses-section .right-content h3 {
     padding: 1px;
     font-size: 0.8em;
 }
- 
+
 
 .discover-btn {
     background-color: #ff6243;
@@ -6855,9 +6848,7 @@ a.button.border-only {
 
     .card-section.sticky .card-content-grey-bg {
         order: 2;
-    }
-
-
+    } 
 
     header.header.blacktext.homenav,
     header.header.blacktext.homenav .flexsocial.whitei i,
@@ -6916,7 +6907,7 @@ a.button.border-only {
     }
 
     .flex-who-we-are.sticky {
-        gap: 65px;
+        gap: 40px;
     }
 
     .bookssection .left-images {
@@ -7016,9 +7007,11 @@ a.button.border-only {
         padding-left: 0px;
         margin-bottom: 25px;
     }
-.about-right-img .imagedesign { 
-    border-radius: 15px 15px 15px 70px;
-}
+
+    .about-right-img .imagedesign {
+        border-radius: 15px 15px 15px 70px;
+    }
+
     .works-sections .right {
         padding-left: 0px;
     }
@@ -7203,12 +7196,15 @@ a.button.border-only {
         flex-wrap: wrap;
         gap: 45px 6px;
     }
-.box3 { 
-    order: 2;
-}
-.grid-3-7 .Player5 {
-   order: 1;
-}
+
+    .box3 {
+        order: 2;
+    }
+
+    .grid-3-7 .Player5 {
+        order: 1;
+    }
+
     .flexfield {
         grid-template-columns: 1fr;
     }
@@ -7301,6 +7297,10 @@ a.button.border-only {
         font-size: 1.3em;
     }
 
+    .card-body {
+        padding-top: 0;
+    }
+
     .trauma h4 {
         font-size: 1.3em;
     }
@@ -7319,9 +7319,18 @@ a.button.border-only {
         font-size: 0.8em;
     }
 
+    .swiper-button-prev,
+    .swiper-button-next {
+        width: 40px !important;
+        height: 40px !important;
+    }
 
     .add-widget .add-image .add-size {
         padding: 8px 25px;
+    }
+
+    section.courses-master-classes .swiper {
+        padding-bottom: 30px;
     }
 
     .healing-inner-content {
@@ -7875,7 +7884,7 @@ a.button.border-only {
         position: static;
     }
 
- 
+
 
     .industry-card p {
         margin-left: 0;
@@ -8017,9 +8026,11 @@ a.button.border-only {
     i.fa-solid.fa-check {
         font-size: 10px;
     }
-.mentor-content h2 {
-    font-size: 1.4em;
-}
+
+    .mentor-content h2 {
+        font-size: 1.4em;
+    }
+
     .mentor-section {
         padding: 40px 0;
     }
@@ -8031,20 +8042,45 @@ a.button.border-only {
     .card-body .stars {
         font-size: 1em;
     }
-
+.contacts-box { 
+    padding: 13px; 
+}
     .step h4 {
         font-size: 1.4em;
     }
 
-.flex-inwrapper .content {
-    order: 2;
-}
-.flex-inwrapper .images {
-    order: 1;
-}
+    .flex-inwrapper .content {
+        order: 2;
+    }
+
+    .flex-inwrapper .images {
+        order: 1;
+    }
+
     .flex-inwrapper .images .img2 {
         width: 135px;
     }
+    .footer {
+    padding-top: 40px; 
+}
+.testimonial-section { 
+    padding: 35px 0;
+    padding-bottom: 0;
+}
+
+.iconcontact {
+    height: 50px;
+    width: 50px;
+    min-height: 50px;
+    min-width: 50px; 
+} 
+section.replay-section.aos-init.aos-animate {
+    padding-top: 0;
+}
+.section-wrapper {
+    padding-bottom: 30px;
+}
+
 
     h5 {
         font-size: 1.7em;
@@ -8058,7 +8094,7 @@ a.button.border-only {
         padding: 25px;
         gap: 20px;
     }
- 
+
     .flex-inwrapper .button-row {
         order: 4;
     }
@@ -8134,7 +8170,7 @@ a.button.border-only {
     .flex-inwrapper .button {
         order: 6;
     }
- 
+
 
     .booklistcontent h5 {
         font-size: 1.7;
@@ -8144,27 +8180,28 @@ a.button.border-only {
         font-size: 1.8em;
     }
 
-   
+
 
     .notorder.flex-inwrapper .content p.desc {
         order: inherit;
     }
 
-.card-content-grey-bg  {
+    .card-content-grey-bg {
         padding: 20px 20px 20px 20px;
         order: 2;
     }
-.healing-inner-pages.height-7 {
-    height: auto;
-    padding: 100px 0px;
-}
+
+    .healing-inner-pages.height-7 {
+        height: auto;
+        padding: 100px 0px;
+    }
 }
 
 @media (max-width: 500px) {
-    .formcontainer { 
+    .formcontainer {
         justify-content: center;
     }
-    
+
     .rightdesigncontent {
         bottom: 0;
         right: 0;
@@ -8173,6 +8210,7 @@ a.button.border-only {
     .banner-content a.button.whitebt {
         width: 100%;
     }
+
     .rightdesigncontent h5 {
         font-size: 1em;
     }
@@ -8209,10 +8247,12 @@ a.button.border-only {
         font-size: 1em;
         line-height: 1.5;
     }
-.img-contant {
-    position: relative; 
-    padding: 20px 10px; 
-}
+
+    .img-contant {
+        position: relative;
+        padding: 20px 10px;
+    }
+
     .kanneylessloren ul li::after,
     ul.doterd li::after {
         top: 12px;
@@ -8275,7 +8315,7 @@ a.button.border-only {
     }
 
     section.who-we-are {
-        padding: 30px 0px; 
+        padding: 30px 0px;
     }
 
     section.who-we-are.bgg {
@@ -8284,7 +8324,7 @@ a.button.border-only {
 
     .right-content .button-row {
         padding-left: 0;
-            margin-bottom: 15px;
+        margin-bottom: 15px;
     }
 
     .card-img a img {

@@ -2429,8 +2429,8 @@ h5.info-title {
     padding: 60px 0;
 }
 
-.videosectionleft {
-    padding-bottom: 60px;
+.videosectionleft { 
+    background-color: #f9f9f9;
 }
 
 .grid-3-7 .Player5 {
@@ -2446,6 +2446,7 @@ h5.info-title {
 
 .journey-section {
     padding-bottom: 60px;
+    padding-top: 60px;
     font-family: 'Poppins', sans-serif;
     color: #4b3c3c;
 }
@@ -2613,7 +2614,8 @@ h5.info-title {
 }
 
 section.Self-love {
-    padding: 20px 0;
+    padding: 60px 0;
+    background-color: #f9f9f9;
 }
 
 
@@ -2924,6 +2926,7 @@ a.buttobooksec {
 
 .videosectionleft.mb0 {
     padding-bottom: 0;
+    background-color: #f9f9f9;
 }
 
 /*********FAQS END***********/
@@ -7200,7 +7203,12 @@ a.button.border-only {
         flex-wrap: wrap;
         gap: 45px 6px;
     }
-
+.box3 { 
+    order: 2;
+}
+.grid-3-7 .Player5 {
+   order: 1;
+}
     .flexfield {
         grid-template-columns: 1fr;
     }
@@ -7603,6 +7611,7 @@ a.button.border-only {
         margin-top: 20px;
         flex-wrap: wrap;
         gap: 10px;
+        justify-content: center;
     }
 
     section.sourses-section .right-content h3 {
@@ -7849,7 +7858,7 @@ a.button.border-only {
 
     section.into-section .swiper-button-next,
     .swiper-button-prev {
-        top: 38% !important;
+        top: 24% !important;
     }
 
     .author img {
@@ -7927,6 +7936,7 @@ a.button.border-only {
 
     section.resourcesmain-section {
         padding: 40px 0px;
+        background-color: #fafafa;
     }
 
     section.self-development.bg2 {
@@ -8057,9 +8067,6 @@ a.button.border-only {
         font-size: 22px;
     }
 
-    .banner-content a.button.whitebt {
-        width: 100%;
-    }
 
     .price-row .price {
         font-size: 20px;
@@ -8137,9 +8144,7 @@ a.button.border-only {
         font-size: 1.8em;
     }
 
-    .main-content h3 {
-        font-size: 1.7rem;
-    }
+   
 
     .notorder.flex-inwrapper .content p.desc {
         order: inherit;
@@ -8149,15 +8154,25 @@ a.button.border-only {
         padding: 20px 20px 20px 20px;
         order: 2;
     }
+.healing-inner-pages.height-7 {
+    height: auto;
+    padding: 100px 0px;
+}
 }
 
 @media (max-width: 500px) {
-
+    .formcontainer { 
+        justify-content: center;
+    }
+    
     .rightdesigncontent {
         bottom: 0;
         right: 0;
     }
 
+    .banner-content a.button.whitebt {
+        width: 100%;
+    }
     .rightdesigncontent h5 {
         font-size: 1em;
     }
@@ -8191,10 +8206,13 @@ a.button.border-only {
 
     .main-content ol li {
         margin-bottom: 20px;
-        font-size: 1.4em;
+        font-size: 1em;
         line-height: 1.5;
     }
-
+.img-contant {
+    position: relative; 
+    padding: 20px 10px; 
+}
     .kanneylessloren ul li::after,
     ul.doterd li::after {
         top: 12px;
@@ -8266,6 +8284,7 @@ a.button.border-only {
 
     .right-content .button-row {
         padding-left: 0;
+            margin-bottom: 15px;
     }
 
     .card-img a img {

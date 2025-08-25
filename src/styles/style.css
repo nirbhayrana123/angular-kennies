@@ -50,10 +50,17 @@ h4 {
     font-size: 1.2em;
     font-weight: 700;
 }
+
+h5 {
+    font-size: 1em;
+    font-weight: 700;
+}
+
 .wordsendsicyel .form h4 {
     font-size: 1.7em;
     margin-bottom: 18px;
 }
+
 .contacts-box i {
     font-size: 23px;
 }
@@ -127,11 +134,7 @@ header.header.blacktext.homenav ul.navmenu li ul.doropmenu li a {
 }
 
 .boxlist-content h5 {
-    font-size: 18px;
-}
-
-.boxlist-content p {
-    font-size: 14px;
+    font-size: 1.2em;
 }
 
 .error {
@@ -219,7 +222,7 @@ a.button.mt3 {
     padding: 11px 20px;
     text-transform: uppercase;
     text-decoration: none;
-    border-radius: 1.875em;
+    border-radius: 200px;
     transition: 0.6s;
     box-shadow: 0 0 0 0 #bba056 inset;
     text-align: center;
@@ -748,7 +751,7 @@ a.button.blockbutton:hover {
     text-transform: uppercase;
     margin-top: 30px;
     text-decoration: none;
-    border-radius: 1.875em;
+    border-radius: 200px;
     transition: 0.6s;
     display: inline-block;
     box-shadow: 0 0 0 0 #bba056 inset;
@@ -948,7 +951,7 @@ section.book-section.podcast-banner .audio-player .time {
 }
 
 a.detail2 {
-    color: #991a34;
+    color: #512570;
     font-size: 0.8em;
 }
 
@@ -1462,7 +1465,6 @@ section.into-section .wellness-col {
     margin: 0;
     font-family: "Poppins", sans-serif;
     font-size: 0.8rem;
-    font-weight: 500;
 }
 
 .progress-content h3 span.numbersd {
@@ -1854,6 +1856,7 @@ h5.tag-line {
     text-transform: uppercase;
     display: inline-flex;
     font-family: "Poppins", sans-serif;
+    margin-bottom: 10px;
 }
 
 .pricing-set {
@@ -3086,6 +3089,8 @@ iframe {
 .iconcontact {
     height: 60px;
     width: 60px;
+    min-height: 60px;
+    min-width: 60px;
     text-align: center;
     line-height: 60px;
     display: flex;
@@ -3110,7 +3115,7 @@ iframe {
 
 .contact-content a,
 .contact-content p {
-    font-size: 0.8em;
+    font-size: 0.9em;
     font-weight: 400;
     color: #1d1d1d;
 }
@@ -3280,7 +3285,6 @@ img.testimonialimg {
 }
 
 .testimonial-message {
-    font-size: 0.8em;
     color: #434343;
     margin-bottom: 15px;
     line-height: 1.7em;
@@ -3298,7 +3302,6 @@ img.testimonialimg {
 
 .testimonial-role {
     color: #434343;
-    font-size: 0.8em;
 }
 
 section.bg-colors {
@@ -3379,7 +3382,7 @@ a.button.w-7 {
 .cta-box small {
     display: block;
     margin-top: 12px;
-    font-size: 0.6em;
+    font-size: 0.8em;
     color: #000000;
     margin-bottom: 0;
 }
@@ -3721,7 +3724,6 @@ section.book-section.podcast-banner {
     text-transform: uppercase;
     font-size: 0.6em;
     font-weight: 500;
-    letter-spacing: .4em;
     color: #838280;
     margin-bottom: 17px;
     margin-top: 30px;
@@ -4043,10 +4045,6 @@ section.mb-4 {
 
 
 /***************card-section************/
-.card-section {
-    padding: 0 2%;
-}
-
 .card-row {
     grid-column-gap: 29px;
     grid-row-gap: 29px;
@@ -4399,7 +4397,6 @@ section.free-download {
 .group-form-field input.customefields {
     font-size: 1rem;
     padding: 10px;
-    font-family: "Montserrat", sans-serif;
     width: 100%;
     background-color: #fff;
 }
@@ -4455,9 +4452,7 @@ section.resourcesmain-section {
     position: relative;
 }
 
-a.button.abslut {
-    font-size: 14px;
-}
+
 
 .booklistblog {
     display: grid;
@@ -4585,7 +4580,6 @@ html {
 }
 
 .replay-section p {
-    font-size: 1.1rem;
     margin-bottom: 18px;
 }
 
@@ -4595,7 +4589,7 @@ html {
 
 .replay-section .highlight,
 span.bolder {
-    font-weight: bold;
+    font-weight: 600;
     color: #BBA056;
 }
 
@@ -4632,7 +4626,7 @@ span.bolder {
 
 .caption {
     color: #BBA056;
-    font-size: 0.6em;
+    font-size: 0.8em;
     margin-bottom: 30px;
 }
 
@@ -5063,6 +5057,7 @@ span.bolder {
 
 .about-widget .lower-content h6 {
     margin-top: 25px;
+    font-size: 1em;
 }
 
 .about-widget .lower-content .text {
@@ -5458,7 +5453,7 @@ section.postcard {
 
 .icon-item p {
     margin: 4px 0 0 0;
-    font-size: 14px;
+    font-size: 0.9em;
     color: #ccc;
 }
 
@@ -5791,31 +5786,6 @@ section.sourses-section .right-content h3 {
     width: 220px;
 }
 
-/* .business-coach {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    padding-top: 110px;
-    width: 65%;
-    gap: 30px;
-} */
-
-/* .exprince img {
-    width: 290px;
-    border-radius: 10px;
-    border: 3px solid #991a34;
-} */
-
-/* .content-business-coach h4 {
-    margin-bottom: 10px;
-}
-
-.content-business-coach h5 {
-    font-size: 0.8em;
-    line-height: 1.5;
-} */
-
-
 
 /************hero section amt****************/
 .hero-section {
@@ -5861,13 +5831,16 @@ section.sourses-section .right-content h3 {
 }
 
 .card-body h4 {
-    font-size: 1em;
+    font-size: 1.3em;
     margin-bottom: 5px;
     color: #32220b;
 }
 
+.rbt-card-top span {
+    font-size: 15px;
+}
+
 .card-body p {
-    font-size: 0.7em;
     margin-bottom: 10px;
 }
 
@@ -6633,7 +6606,6 @@ a.button.border-only {
 .post-meta .buttonsser a {
     color: #BBA056;
     text-decoration: underline;
-    font-size: 0.8em;
     font-weight: 500;
 }
 
@@ -6876,7 +6848,7 @@ a.button.border-only {
 
 @media (max-width: 1024px) {
     body {
-        font-size: 14px;
+        font-size: 19px;
     }
 
     .postcard-row {
@@ -7235,14 +7207,82 @@ a.button.border-only {
         grid-template-columns: 1fr;
     }
 
-    .course-heading h3 {
-        font-size: 2em;
+    .might-feel-row {
+        grid-template-columns: 1fr;
+        ;
     }
+
+    .healing-table tr {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .healing-table th {
+        width: 100%;
+        text-align: justify;
+    }
+.healing-table {
+    padding-top:  0;
+}
+
+    .healing-table td {
+        width: 100%;
+    }
+
+
+    .booklisting-img img {
+        min-height: auto;
+    }
+
+    li.mb4 {
+        margin-bottom: 20px;
+    }
+
+    .post-meta .buttonsser {
+        display: block;
+    }
+
 }
 
 
 
 @media (max-width: 767px) {
+
+    body {
+        font-size: 18px;
+    }
+
+    h3 {
+        font-size: 1.4em;
+    }
+
+    h4 {
+        font-size: 1.3em;
+    }
+
+    .trauma h4 {
+        font-size: 1.3em;
+    }
+ 
+
+    .progress-content h5 {
+        font-size: 1em;
+    }
+
+    .card-content h3 {
+        font-size: 1.4em;
+    }
+
+    .author-info,
+    .bookcardbody .info {
+        font-size: 0.8em;
+    }
+ 
+
+    .add-widget .add-image .add-size {
+        padding: 8px 25px;
+    }
+
     .healing-inner-content {
         width: 100%;
         padding: 0px 20px;
@@ -7280,7 +7320,13 @@ a.button.border-only {
     .progress-content h3 span.numbersd {
         font-size: 2rem;
     }
-
+.postcard-item2 {
+    padding: 15px;
+}
+.button {
+        padding: 10px;
+        min-width: 200px;
+    }
     .card-columns,
     .flexfield {
         grid-template-columns: 1fr;
@@ -7313,6 +7359,10 @@ a.button.border-only {
 
     }
 
+    section.book-section.podcast-banner .book-cintent {
+        padding: 50px 0%;
+    }
+
     .formleffieldds {
         order: 2;
     }
@@ -7335,12 +7385,9 @@ a.button.border-only {
     }
 
     .self-development-content h3 {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
     }
 
-    body {
-        font-size: 13.3px;
-    }
 
     .video-boxes {
         width: 155px;
@@ -7364,7 +7411,7 @@ a.button.border-only {
     }
 
     .services div {
-        font-size: 1.4em;
+        font-size: 1.1em;
     }
 
     .book-banner {
@@ -7374,6 +7421,12 @@ a.button.border-only {
     section.podcast-section .podcast-left {
         width: 100%;
         order: 2;
+        display: flex;
+        flex-direction: column;
+    }
+
+    section.podcast-section .podcast-left p.white {
+        order: 1;
     }
 
     .video-box-row,
@@ -7470,6 +7523,11 @@ a.button.border-only {
         top: 8%;
     }
 
+    .video-box-row ul li span.iconlist {
+        width: 25px;
+        margin-top: 5px;
+    }
+
     section.into-section {
         padding: 60px 0%;
         margin: 0px 2%;
@@ -7484,6 +7542,10 @@ a.button.border-only {
         margin-top: 20px;
     }
 
+    h4.price2 {
+        font-size: 1.2em;
+    }
+
     .podcast-right {
         width: 100%;
         margin-top: 0;
@@ -7495,6 +7557,14 @@ a.button.border-only {
     .button-row {
         margin-top: 20px;
         flex-wrap: wrap;
+    }
+
+    section.sourses-section .right-content h3 {
+        font-size: 1.4em;
+    }
+
+    section.podcast-section .podcast-left .button-row {
+        order: 3;
     }
 
     .blog-img {
@@ -7726,7 +7796,15 @@ a.button.border-only {
         justify-content: space-between;
     }
 
-   
+    .swiper-button-prev,
+    .swiper-button-next {
+        top: 30% !important;
+    }
+
+    .author img {
+        width: 3em;
+        height: 3em;
+    }
 
     .industry-card .button-row.left {
         display: none;
@@ -7767,7 +7845,8 @@ a.button.border-only {
         width: 100%;
         margin: 0 auto;
         padding: 75px 0px;
-        background-color: #000000;
+        background-color: #512570;
+        margin-top: -3px;
     }
 
     section.banner::after {
@@ -7849,23 +7928,9 @@ a.button.border-only {
         display: none;
     }
 
-    .card-body .stars,a.detail2 {
+    .card-body .stars,
+    a.detail2 {
         font-size: 1em;
-    }
-
-    p,
-    .read-more-btn,
-    .testimonial-message,
-    .card-body p,
-    .cta-box small,
-    .author-info,
-    .icon-item p,
-    .testimonial-role,
-    .boxlist-content p,
-    .description {
-        font-size: 1.4em;
-        margin: 10px 0px;
-        line-height: 1.5;
     }
 
     .cta-box.mobile-hide {
@@ -7901,22 +7966,12 @@ a.button.border-only {
         gap: 20px;
     }
 
-    .caption {
-        font-size: 1.1em;
-    }
-
-    .card-body h4 {
-        font-size: 1.8em;
-    }
 
     .price-row .price {
         font-size: 20px;
         margin-bottom: 20px;
     }
 
-    .pricing-set h4 {
-        font-size: 1.7em;
-    }
 
     .formleffieldds {
         padding: 40px 20px 40px 20px;
@@ -7933,18 +7988,34 @@ a.button.border-only {
     .wordsendsicyel .form {
         padding: 20px 20px;
     }
- 
 
-.video-box-row ul li p,.answer {
-    width: 100%; 
-}
+    .video-box-row ul li p,
+    .answer {
+        width: 100%;
+        margin-top: 0;
+    }
 
-.video-sec { 
-    border-radius: 10px; 
-}
+    .video-sec {
+        border-radius: 10px;
+    }
 
+    .vertyvery-contents h5 {
+        font-size: 1.2em;
+    }
 
+    .feature-text p {
+        margin-top: 0;
+    }
 
+    .feature {
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+
+    ul.navmenu li a,
+    ul.navmenu li i {
+        font-size: 1em;
+    }
 
 
 
@@ -7999,32 +8070,27 @@ a.button.border-only {
         width: 100%;
     }
 
-    
-
-    .podcast-left ul li::before {
-        top: 12px;
-        position: relative;
-    }
 
     .grid-3-7 {
         padding: 30px 0;
     }
 
     .icon-item span.icon {
-        width: 125px;
+        width: 100px;
     }
 
     .featurerd {
-        font-size: 1.5em;
+        font-size: 0.9em;
     }
 
     .icon-item span {
         font-size: 23px;
     }
 
-    .images .img2 {
-        width: 92px;
+    .featuresse .divider {
+        display: none;
     }
+
 
     .audible-button {
         max-width: 100%;
@@ -8182,19 +8248,12 @@ a.button.border-only {
 
     a.post-link,
     .meta span {
-        font-size: 1.2em;
+        font-size: 0.8em;
     }
 
-    h5.tag-line {
-        font-size: 1em;
-    }
 
     .doropmenu li {
         padding: 6px 13px;
-    }
-
-    h3 {
-        font-size: 1.7em;
     }
 
     .banner-content h1 {

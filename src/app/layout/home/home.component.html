@@ -49,7 +49,7 @@
                         The final unsolved piece isn’t in the latest strategy — it’s often buried in your childhood
                         experiences.
                     </p>
-                   
+
                     <h4>Let me explain:</h4>
                     <p>Think about it. As kids, we weren’t just growing physically.<br>
                         We were also absorbing emotional cues from our environment 24/7.</p>
@@ -71,7 +71,7 @@
                         adult life will reflect that missing foundation — no matter how hard you try to “think
                         positive” or “stay motivated.”
                     </p>
-            
+
                     <h4>For example — let’s talk about introversion.</h4>
 
                     <p>Some people are naturally introverted, and that’s beautiful.
@@ -122,7 +122,7 @@
                     <p>They realize: “Wait… that’s me.”</p>
                     <p>And that’s the beginning of healing.</p>
 
-                 
+
                     <h4>Here's the truth:</h4>
                     <p>You're not broken.<br>
                         You were just never taught how to:
@@ -139,7 +139,7 @@
                             <p>Or believe that you’re safe and worthy just as you are.</p>
                         </li>
                     </ul>
-          
+
                     <h4>The good news?</h4>
                     <p>Just like you learned those coping mechanisms, you can unlearn them.<br>
                         You can rewire your emotional patterns, feel secure in your relationships, and reconnect
@@ -149,7 +149,8 @@
                         To gently explore not what’s wrong with you — but what happened to you.<br>
                         And from there, start giving yourself the emotional safety and care you never got back then.
                     </p>
-                    <p><b>Because you're not broken. You're just unfinished. And that’s something you can change.</b></p>
+                    <p><b>Because you're not broken. You're just unfinished. And that’s something you can change.</b>
+                    </p>
                     <a href="book-session.html" class="button">Start Healing What Was Left Unfinished</a>
 
                 </div>
@@ -269,7 +270,7 @@
 
     </section>
 
-    <section class=" into-section">
+    <section class="into-section">
         <div class="container">
             <div class="wellness-header" data-aos="fade-up" data-aos-duration="100">
                 <h3>A Journey from Healing to Happiness</h3>
@@ -433,9 +434,9 @@
     <section class="courses-master-classes">
         <div class="course-heading" data-aos="fade-up" data-aos-duration="100">
             <div class="container">
-            <h5 class="tag-line">Learn from me</h5>
-            <h3 class="title">Courses and Master Classes</h3>
-        </div>
+                <h5 class="tag-line">Learn from me</h5>
+                <h3 class="title">Courses and Master Classes</h3>
+            </div>
         </div>
         <div class="container">
             <app-course-slider />
@@ -470,7 +471,7 @@
                         <h3>Kenny Weiss: Truth & Healing Advocate</h3>
                         <p>He specializes in helping people heal from their emotional hurts, co-dependence, and pain
                             from the past so they can once again love themselves. </p>
-                        <div class="button-row">
+                        <div class="button-row canter">
                             <a class="button" routerLink="/book-session">Let’s talk</a>
                         </div>
                         <div class="step"><small>All queries are replied within
@@ -526,7 +527,7 @@
                         <h3>Kenny Weiss: Truth & Healing Advocate</h3>
                         <p>He specializes in helping people heal from their emotional hurts, co-dependence, and pain
                             from the past so they can once again love themselves. </p>
-                        <div class="button-row">
+                        <div class="button-row canter">
                             <a class="button" routerLink="/book-session">Let’s talk</a>
                         </div>
                         <div class="step"><small>All queries are replied within
@@ -579,7 +580,8 @@
                         <a routerLink="/best-day-blog">
                             <h3>{{ post.title?.rendered }}</h3>
                         </a>
-                        <div class="" [innerHTML]="getShortContent(post.excerpt?.rendered || post.content?.rendered, 15) "></div>
+                        <div class=""
+                            [innerHTML]="getShortContent(post.excerpt?.rendered || post.content?.rendered, 15) "></div>
                         <a class="post-link" routerLink="/best-day-blog">View more <i
                                 class="fa-solid fa-arrow-up-right-from-square"></i></a>
                     </div>
@@ -593,11 +595,10 @@
         <div class="left-bg"></div>
         <div class="right-bg"></div>
         <div class="container">
-            <h5 class="tag-line">What we have</h5>
-           <h3>Heal The Hurt Podcast</h3>
             <div class="podcast-row">
                 <div class="podcast-left">
-                    
+                    <h5 class="tag-line">What we have</h5>
+                    <h3>Heal The Hurt Podcast</h3>
                     <ul>
                         <li>
                             <p>Proven strategies for emotional regulation and self-love
@@ -705,16 +706,9 @@
                         <a class="button border-only" target="_blank"
                             href="https://www.barnesandnoble.com/w/your-journey-to-success-kenny-weiss/1127688967?ean=9781981471010">Available
                             Now at Barnes &amp; Noble</a>
+
                     </div>
 
-                    <button class="audibleBtn audible-button" (click)="toggleAudio(0)">
-                        <img class="icon" [src]="
-      audios[0].isPlaying
-        ? 'https://m.media-amazon.com/images/G/01/Audible/Homestead/samplePlayer/Pause._CB655354636_.svg'
-        : 'https://m.media-amazon.com/images/G/01/Audible/Homestead/samplePlayer/Play._CB655354636_.svg'
-    " alt="Play/Pause" />
-                        <span>Audible sample</span>
-                    </button>
 
 
                     <div class="feature">

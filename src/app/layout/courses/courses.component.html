@@ -15,8 +15,9 @@
         </div>
 
         <div class="container ">
-
-     <div *ngFor="let service of services">
+<div class="courseslistitemsdd">
+     <div *ngFor="let service of services  let i = index; let odd = odd; let even = even"
+    [ngClass]="{ 'odd-class': odd, 'even-class': even }">
             <div class="flex-who-we-are mb-3">
                 <!-- Left Side Images -->
                 <div class="left-images">
@@ -44,7 +45,7 @@
                 </div>
             </div>
 </div>
-
+</div>
         </div>
 
     </section>

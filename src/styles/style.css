@@ -1278,7 +1278,7 @@ ul.doterd li {
 .vertyvery-contents ul li::after {
     position: absolute;
     content: "";
-    background-color: #BBA056;
+    background-color: #512570;
     height: 10px;
     width: 10px;
     left: -20px;
@@ -5797,11 +5797,7 @@ section.sourses-section .right-content h3 {
     padding: 1px;
     font-size: 0.8em;
 }
-
-.feature-text h4 {
-    font-weight: 600;
-    margin-bottom: 4px;
-}
+ 
 
 .discover-btn {
     background-color: #ff6243;
@@ -5819,9 +5815,9 @@ section.sourses-section .right-content h3 {
 }
 
 .sandstone-logo-blk {
-    margin-top: 20px;
-    width: 220px;
+    width: 150px;
 }
+
 
 
 /************hero section amt****************/
@@ -7020,7 +7016,9 @@ a.button.border-only {
         padding-left: 0px;
         margin-bottom: 25px;
     }
-
+.about-right-img .imagedesign { 
+    border-radius: 15px 15px 15px 70px;
+}
     .works-sections .right {
         padding-left: 0px;
     }
@@ -8056,6 +8054,16 @@ a.button.border-only {
         font-size: 1.4em;
     }
 
+.flex-inwrapper .content {
+    order: 2;
+}
+.flex-inwrapper .images {
+    order: 1;
+}
+    .flex-inwrapper .images .img2 {
+        width: 135px;
+    }
+
     h5 {
         font-size: 1.7em;
     }
@@ -8068,9 +8076,7 @@ a.button.border-only {
         padding: 25px;
         gap: 20px;
     }
-
-  
-
+ 
     .flex-inwrapper .button-row {
         order: 4;
     }
@@ -8146,10 +8152,7 @@ a.button.border-only {
     .flex-inwrapper .button {
         order: 6;
     }
-
-    a.culction {
-        font-size: 1.2em;
-    }
+ 
 
     .booklistcontent h5 {
         font-size: 1.7;
@@ -8164,6 +8167,11 @@ a.button.border-only {
     .notorder.flex-inwrapper .content p.desc {
         order: inherit;
     }
+
+.card-content-grey-bg  {
+        padding: 20px 20px 20px 20px;
+        order: 2;
+    }
 .healing-inner-pages.height-7 {
     height: auto;
     padding: 100px 0px;
@@ -8177,6 +8185,7 @@ a.button.border-only {
     
     .rightdesigncontent {
         bottom: 0;
+        right: 0;
     }
 
     .banner-content a.button.whitebt {
@@ -8186,9 +8195,6 @@ a.button.border-only {
         font-size: 1em;
     }
 
-    .card-content-grey-bg {
-        padding: 20px 20px 20px 20px;
-    }
 
     .bookcardbody .author {
         flex-wrap: wrap;
@@ -8288,7 +8294,11 @@ a.button.border-only {
     }
 
     section.who-we-are {
-        padding: 30px 0px;
+        padding: 30px 0px; 
+    }
+
+    section.who-we-are.bgg {
+        border-top: 2px solid #3333;
     }
 
     .right-content .button-row {

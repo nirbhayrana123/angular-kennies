@@ -1557,9 +1557,9 @@ section.into-section .wellness-col {
 .blogpagination .ngx-pagination li.pagination-next a {
     color: #fff;
 }
-.emonastiolser p{
+/* .emonastiolser p{
     margin: 15px 0px;
-}
+} */
 .listingdse li {
     position: relative;
     margin-bottom: 10px;
@@ -2087,9 +2087,9 @@ h5.tag-line.white::after {
     letter-spacing: 0.04em;
 }
 
-.wording p {
+/* .wording p {
     margin-bottom: 30px;
-}
+} */
 
 .wording p label {
     font-weight: 600;
@@ -8245,6 +8245,14 @@ section.replay-section.aos-init.aos-animate {
         height: auto;
         padding: 100px 0px;
     }
+        .healing-table tr {    border-bottom: 1px solid #ccc;   }
+            .healing-table td  {
+        padding: 25px;
+        border: none;
+    }
+   .healing-table  thead {
+    display: none;
+}
 }
 
 @media (max-width: 500px) {

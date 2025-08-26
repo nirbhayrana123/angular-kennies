@@ -37,7 +37,7 @@
           <div class="price-row">
             <div class="price">
               <span class="current-price">$ {{ service.acf?.price }}</span>
-              <span class="original-price">$ {{ service.acf?.price }}</span>
+              <span class="original-price">$ {{ service.acf?.cut_price }}</span>
             </div>
             <a [routerLink]="['/courses', service.slug]" class="button">
               Learn More <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>

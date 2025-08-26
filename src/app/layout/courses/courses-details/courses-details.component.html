@@ -1,4 +1,4 @@
-<div *ngIf="loading" class="loader-maim"> 
+<div *ngIf="loading" class="loader-maim">
 <div class="hm-spinner"></div>
 </div>
 <main *ngIf="!loading" class="pt-1 pt68px coressdetailes">
@@ -8,12 +8,10 @@
             <div class='courses-details-banner'>
                 <h3 [innerHTML]="service.title.rendered"> </h3>
                 <p>{{ service.acf?.banner_desc }}</p>
-
                 <a class="button whitebt" [href]="service.acf?.banner_btn_link?.url">Enroll Now !</a>
             </div>
         </div>
     </div>
-
     <div class="courses-details-section">
         <section class="who-we-are bookssection ">
             <div class="container ">
@@ -29,7 +27,6 @@
                                 alt="Background Image">
                         </div>
                     </div>
-
                     <!-- Right Side Content -->
                     <div class="right-content homesder aos-init aos-animate"
                         data-aos="fade-up"
@@ -38,29 +35,23 @@
                         <h3>{{ service.acf?.main_heading }}</h3>
                         <div [innerHTML]="service.acf?.paragraphs"></div>
                         <h4>{{ service.acf?.sub_heading_2 }}</h4>
-
                         <div class="button-row left">
-                            <a 
-                                [href]="service.acf?.cta_url?.url"
+                            <a [href]="service.acf?.cta_url?.url"
                                 class="button mt3">
                                 {{ service.acf?.cta_text }}
                             </a>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
-
         <div class="videosectionleft mb0">
             <div class="container">
-
                 <div class="grid-3-7">
                     <div class="box3">
                         <h3>{{ service.acf?.person_heading }}</h3>
                         <div [innerHTML]="service.acf?.person_quote"></div>
                     </div>
-
                     <div class="Player5">
                         <div>
                             <iframe
@@ -72,14 +63,10 @@
                                 allowfullscreen>
                             </iframe>
                         </div>
-
                     </div>
-
                 </div>
             </div>
-
         </div>
-
         <section class="who-we-are bookssection secondcard">
             <div class="container ">
                 <div class="flex-who-we-are">
@@ -91,13 +78,11 @@
                         <h4>{{ service.acf?.sub_heading_1 }}</h4>
                         <div [innerHTML]="service.acf?.right_para_1"></div>
                         <div class="button-row left">
-                            <a 
-                                [href]="service.acf?.right_button_link.url"
+                            <a [href]="service.acf?.right_button_link.url"
                                 class="button mt3"> {{
                                 service.acf?.right_button_text }}</a>
                         </div>
                     </div>
-
                     <!-- Left Side Images -->
                     <div class="left-images sticky6">
                         <div class="main-img">
@@ -114,7 +99,6 @@
                 </div>
             </div>
         </section>
-
         <div class="videosectionleft ">
             <div class="container">
                 <div class="grid-3-7 grid-7-3">
@@ -134,9 +118,7 @@
                     </div>
                 </div>
             </div>
-
         </div>
-
         <section class="journey-section">
             <div class="container">
                 <div class="journey-point">
@@ -144,7 +126,6 @@
                    <div class="left-box">
                         <h3>{{ service.acf?.left_title}}</h3>
                         <p>{{ service.acf?.left_paragraph}}</p>
-                       
                     </div>
                     <!-- Right benefits list -->
                     <div class="right-box">
@@ -153,20 +134,16 @@
                             <li *ngFor="let benefit of benefits">{{ benefit
                                 }}</li>
                         </ul>
-
                     </div>
  <div class="button-row">
-                            <a 
+                            <a target="_blank"
                                 [href]="service.acf?.button_link.url"
                                 class="button mt3"> {{
                                 service.acf?.button_text}}</a>
                         </div>
-
-                     
                 </div>
             </div>
         </section>
-
         <section class="Self-love">
             <div class="container">
                 <div class="your-journey-Self-love">
@@ -175,7 +152,6 @@
                         <div
                             [innerHTML]="service.acf?.journey_left_paragraphs"></div>
                     </div>
-
                     <div class="industry-grid" *ngIf="curriculum_list?.length">
                         <h4>{{ service.acf?.journey_right_title}}</h4>
                         <div class="industry-card"
@@ -183,8 +159,8 @@
                             <span class="icon"><i
                                     class="fa-solid fa-play"></i></span>
                             {{ curriculum }}
-                            <a
-                                [href]="service.acf?.lesson_link.url">Start</a>
+                            <a [href]="service.acf?.right_button_link.url"
+                                class="button mt3">Start</a>
                             <div class="button-row left">
                             </div>
                         </div>
@@ -192,8 +168,7 @@
                 </div>
             </div>
         </section>
-
-        <section class="who-we-are bookssection last">
+        <section class="who-we-are bookssection">
             <div class="container ">
                 <div class="flex-who-we-are">
                     <!-- Left Side Images -->
@@ -227,7 +202,6 @@
                 </div>
             </div>
         </section>
-
         <section class="self-development bg2"
             style="background-image: url(./images/22.jpg);">
             <div class="container">
@@ -238,19 +212,16 @@
                     <h3>What Are You Waiting For? </h3>
                     <p>Complete The Greatest Version Of Yourself by taking one
                         of our fantastic masterclasses today! </p>
-                    <a class="button whitebt" href="https://kennyweiss.net/cms/?direct-checkout=1&product_id=3089">Enroll Now
+                    <a class="button whitebt" [href]="service.acf?.ready_to_take_button_link.url">Enroll Now
                         !</a>
-
                 </div>
             </div>
         </section>
-
         <section class="Self-love faqbg">
             <div class="container">
                 <div class="your-journey-Self-love frequently">
                     <div class="positionsticky">
                         <h3>Frequently Asked Questions</h3>
-
                     </div>
 <div class="industry-grid">
   <div class="faq-wrapper blog-detailsdhidee" *ngIf="faqQ?.length">
@@ -266,11 +237,9 @@
     </div>
   </div>
 </div>
-
                 </div>
             </div>
         </section>
-
         <!-- <section class="courses-master-classes">
             <div class="course-heading aos-init aos-animate" data-aos="fade-up"
                 data-aos-duration="1500">
@@ -281,15 +250,11 @@
                 </p>
             </div>
             <div class="container">
-
                 <app-course-slider />
-
             </div>
             <div class="button-row canter">
                 <a routerLink="/courses" class="button">View All Products</a>
             </div>
-
         </section> -->
     </div>
-
 </main>

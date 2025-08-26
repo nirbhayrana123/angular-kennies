@@ -1,7 +1,7 @@
 <div *ngIf="loading" class="loader-maim">
     <div class="hm-spinner"></div>
 </div>
-<main class="mt " *ngIf="!loading">
+<main class="mt emonastiolser " *ngIf="!loading">
     <section id="top0" class="kanny-content">
         <div class="container">
             <div class="contentallkanny">
@@ -26,7 +26,7 @@
                     </div>
                 </div>
 
-                <div class="right-content" data-aos="fade-up" data-aos-duration="1500">
+                <div class="right-content listingdse" data-aos="fade-up" data-aos-duration="1500">
                     <h3>{{ service.acf?.healing__service_card_one_heading}}</h3>
                     <div class="b" [innerHTML]="service.acf?.real_people_content"></div>
 
@@ -150,21 +150,21 @@
                             <p class="b">📘 Read the Book</p>
                         </td>
                         <td>Learn how emotional cycles form and how to break them</td>
-                        <td><a class="button" href="#">Get the Book</a></td>
+                        <td><a class="button" routerLink="/book-session">Get the Book</a></td>
                     </tr>
                     <tr>
                         <td>
                             <p class="b">🎓 Take a Course</p>
                         </td>
                         <td>Step-by-step emotional healing from the comfort of your home</td>
-                        <td><a class="button" href="#">Explore Courses</a></td>
+                        <td><a class="button" routerLink="/Courses">Explore Courses</a></td>
                     </tr>
                     <tr>
                         <td>
                             <p class="b">🤝 Book a Free Call</p>
                         </td>
                         <td>Talk with Kenny directly to understand what’s right for you</td>
-                        <td><a class="button" href="#">Talk to Kenny</a></td>
+                        <td><a class="button" routerLink="book-session">Talk to Kenny</a></td>
                     </tr>
                 </tbody>
             </table>

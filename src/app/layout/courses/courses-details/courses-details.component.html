@@ -40,7 +40,7 @@
                         <h4>{{ service.acf?.sub_heading_2 }}</h4>
 
                         <div class="button-row left">
-                            <a target="_blank"
+                            <a 
                                 [href]="service.acf?.cta_url?.url"
                                 class="button mt3">
                                 {{ service.acf?.cta_text }}
@@ -91,7 +91,7 @@
                         <h4>{{ service.acf?.sub_heading_1 }}</h4>
                         <div [innerHTML]="service.acf?.right_para_1"></div>
                         <div class="button-row left">
-                            <a target="_blank"
+                            <a 
                                 [href]="service.acf?.right_button_link.url"
                                 class="button mt3"> {{
                                 service.acf?.right_button_text }}</a>
@@ -156,7 +156,7 @@
 
                     </div>
  <div class="button-row">
-                            <a target="_blank"
+                            <a 
                                 [href]="service.acf?.button_link.url"
                                 class="button mt3"> {{
                                 service.acf?.button_text}}</a>
@@ -183,8 +183,8 @@
                             <span class="icon"><i
                                     class="fa-solid fa-play"></i></span>
                             {{ curriculum }}
-                            <a target="_blank"
-                                href="https://thegreatnessu.com/courses/how-to-love-and-accept-your-perfect-imperfections/lectures/33186479">Start</a>
+                            <a
+                                [href]="service.acf?.lesson_link.url">Start</a>
                             <div class="button-row left">
                             </div>
                         </div>
@@ -238,7 +238,7 @@
                     <h3>What Are You Waiting For? </h3>
                     <p>Complete The Greatest Version Of Yourself by taking one
                         of our fantastic masterclasses today! </p>
-                    <a class="button whitebt" routerLink="/courses">Enroll Now
+                    <a class="button whitebt" href="https://kennyweiss.net/cms/?direct-checkout=1&product_id=3089">Enroll Now
                         !</a>
 
                 </div>

@@ -1557,6 +1557,27 @@ section.into-section .wellness-col {
 .blogpagination .ngx-pagination li.pagination-next a {
     color: #fff;
 }
+.emonastiolser p{
+    margin: 15px 0px;
+}
+.listingdse li {
+    position: relative;
+    margin-bottom: 10px;
+}
+.listingdse li::after 
+ {
+    content: "";
+    position: absolute;
+    left: -20px;
+    width: 10px;
+    height: 10px;
+    border-radius: 30px;
+    background-color: #512570;
+    top: 10px;
+}
+.listingdse ul {
+    padding-left: 20px;
+}
 
 .blogpagination .ngx-pagination li.pagination-previous a:hover,
 .blogpagination .ngx-pagination li.pagination-next a:hover {
@@ -7287,6 +7308,13 @@ a.button.border-only {
 
 
 @media (max-width: 767px) {
+.healing-table td {
+    padding: 25px;
+}
+.healing-table th {
+    padding: 25px;
+}
+
 
     body {
         font-size: 18px;
@@ -8518,6 +8546,14 @@ section.replay-section.aos-init.aos-animate {
 
     .who-we-are a.button {
         max-width: 100%;
+    }
+
+}
+@media (max-width: 400px) {
+    .flex-inwrapper .images .img2
+
+ {
+        width: 90px;
     }
 
 }

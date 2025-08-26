@@ -2619,6 +2619,8 @@ h5.info-title {
     text-transform: uppercase;
     position: absolute;
     right: 20px;
+    margin: 0;
+    min-width: 100px;
 }
 
 .industry-card a:hover {

@@ -92,7 +92,7 @@
                         <div [innerHTML]="service.acf?.right_para_1"></div>
                         <div class="button-row left">
                             <a 
-                                [href]="service.acf?.right_button_link.url"
+                                [href]="service.acf?.right_button_link?.url"
                                 class="button mt3"> {{
                                 service.acf?.right_button_text }}</a>
                         </div>
@@ -157,7 +157,7 @@
                     </div>
  <div class="button-row">
                             <a 
-                                [href]="service.acf?.button_link.url"
+                                [href]="service.acf?.button_link?.url"
                                 class="button mt3"> {{
                                 service.acf?.button_text}}</a>
                         </div>
@@ -184,7 +184,7 @@
                                     class="fa-solid fa-play"></i></span>
                             {{ curriculum }}
                             <a
-                                [href]="service.acf?.lesson_link.url">Start</a>
+                                [href]="service.acf?.lesson_link?.url">Start</a>
                             <div class="button-row left">
                             </div>
                         </div>
@@ -219,7 +219,7 @@
                             [innerHTML]="service.acf?.ready_to_take_paragraph"></div>
                         <div class="button-row left">
                             <a target="_blank"
-                                [href]="service.acf?.ready_to_take_button_link.url"
+                                [href]="service.acf?.ready_to_take_button_link?.url"
                                 class="button mt3"> {{
                                 service.acf?.ready_to_take_button_text}}</a>
                         </div>

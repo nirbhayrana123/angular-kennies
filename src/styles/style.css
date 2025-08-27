@@ -1562,7 +1562,10 @@ section.into-section .wellness-col {
 } */
 .listingdse li {
     position: relative;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+}
+.listingdse p {
+    margin-bottom: 15px;
 }
 .listingdse li::after 
  {
@@ -7378,6 +7381,8 @@ a.button.border-only {
 
     .banner0mobileview {
         display: block;
+        padding-top: 70px;
+        background-color: #512570;
     }
 
     .videotestiomonials,

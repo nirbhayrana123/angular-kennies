@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [FormsModule],
   templateUrl: './footer.component.html',
-  styleUrl: './footer.component.css'
+  styleUrls: ['./footer.component.css']
 })
 export class FooterComponent {
   email = '';
@@ -29,12 +29,13 @@ export class FooterComponent {
     body.append('_wpcf7', '607');
     body.append('_wpcf7_version', '6.1.1');
     body.append('_wpcf7_locale', 'en_US');
+    body.append('_wpcf7_unit_tag', 'wpcf7-f607-p574-o8');
     body.append('_wpcf7_container_post', '123');
 
     this.http.post(url, body).subscribe({
       next: (res: any) => {
         if (res.status === 'mail_sent') {
-          this.message = '✅ Subscribed successfully!';
+          this.message = ' Subscribed successfully!';
           this.messageType = 'success';
           this.email = '';
 
@@ -56,7 +57,7 @@ export class FooterComponent {
   }
 
   private validateEmail(email: string): boolean {
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailPattern.test(email);
   }
 }

@@ -26,7 +26,7 @@ isHomeOrBlog = false;
   @HostListener('window:scroll', [])
   onWindowScroll() {
     const scrollY = window.scrollY || document.documentElement.scrollTop;
-    this.bgcolor = scrollY > 100;
+    this.bgcolor = scrollY > 50;
   }
   constructor(private router: Router) {
     this.router.events.pipe(

@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { RouterModule ,ActivatedRoute } from '@angular/router';
 import { WpService } from '../../../services/wp.service';
 import { Title, Meta,DomSanitizer, SafeHtml } from '@angular/platform-browser'; 
+import { CourseSliderComponent } from '../../../components/course-slider/course-slider/course-slider.component';
 
 @Component({
   selector: 'app-wdc-details',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, CourseSliderComponent],
   templateUrl: './wdc-details.component.html',
   styleUrls: ['./wdc-details.component.css']
 })

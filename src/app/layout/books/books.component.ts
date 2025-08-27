@@ -1,5 +1,5 @@
 import { CommonModule, NgIf } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Title, Meta } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
@@ -11,7 +11,7 @@ import { WpService } from '../../services/wp.service';
   templateUrl: './books.component.html',
   styleUrls : ['./books.component.css']
 })
-export class BooksComponent {
+export class BooksComponent implements OnInit {
 
 formData = {
     name: '', 
@@ -57,7 +57,16 @@ submitFormBooks() {
 
 
 
-
+ ngOnInit() {
+    const scriptId = 'elfsight-script';
+    if (!document.getElementById(scriptId)) {
+      const script = document.createElement('script');
+      script.id = scriptId;
+      script.src = "https://elfsightcdn.com/platform.js";
+      script.async = true;
+      document.body.appendChild(script);
+    }
+  }
 
 
 }

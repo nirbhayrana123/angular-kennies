@@ -761,11 +761,10 @@ a.button.blockbutton:hover {
 }
 
 .button {
-    font-size: 15px;
+    font-size: 12px;
     font-weight: 500;
     color: #ffffff;
-    padding: 11px 20px;
-    min-width: 150px;
+    padding: 11px 11px;
     text-transform: uppercase;
     margin-top: 30px;
     text-decoration: none;
@@ -777,6 +776,7 @@ a.button.blockbutton:hover {
     text-align: center;
     border: none;
     font-family: "Poppins", sans-serif;
+    line-height: 1.5;
 }
 
 .button.while:hover {
@@ -3300,12 +3300,12 @@ section.abouts {
     padding: 60px 0;
 }
 
-.testimonia-row {
+/* .testimonia-row {
     display: grid;
     grid-template-columns: 30% 1fr;
     gap: 50px;
-}
-
+} */
+.testimonia-row {text-align: center;}
 
 .testimonial-navigation {
     display: flex;

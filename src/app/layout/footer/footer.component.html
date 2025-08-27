@@ -7,7 +7,9 @@
                     <input type="email" placeholder="Enter your e-mail" required />
                     <button type="submit">Subscribe!</button>
                 </form> -->
-
+<div *ngIf="messageType === 'success'" class="success-message">
+  {{ message }}
+</div>
         <form (ngSubmit)="submitSubscribe()" class="newsletter-form" #form="ngForm">
             <input type="email" name="email" [(ngModel)]="email" placeholder="Enter your e-mail" required />
             <button type="submit">Subscribe!</button>

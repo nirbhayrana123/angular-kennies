@@ -759,7 +759,10 @@ a.button.blockbutton:hover {
     color: #ffffff;
     box-shadow: 455px 0 0 0 #BBA056 inset;
 }
-
+.step.heightfgty 
+ {
+    padding: 40px;
+}
 .button {
     font-size: 12px;
     font-weight: 500;

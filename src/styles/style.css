@@ -2735,6 +2735,7 @@ section.Self-love.faqbg {
     display: flex;
     align-items: center;
     justify-content: center; 
+    background-color: #00000030;
 }
 
 .img-contant h5,
@@ -7381,8 +7382,6 @@ a.button.border-only {
 
     .banner0mobileview {
         display: block;
-        padding-top: 70px;
-        background-color: #512570;
     }
 
     .videotestiomonials,
@@ -7547,8 +7546,12 @@ a.button.border-only {
     .meta {
         display: block;
     }
-.img-contant h5, .img-contant p { 
-    font-size: 1.2em;
+.img-contant h5 { 
+    font-size: 1.3em;
+}
+ .img-contant p { 
+    font-size: 1em;
+    margin: 5px 0px;
 }
     .info {
         font-size: 1em;

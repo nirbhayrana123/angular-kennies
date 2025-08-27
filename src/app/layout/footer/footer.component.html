@@ -11,10 +11,14 @@
   {{ message }}
 </div>
         <form (ngSubmit)="submitSubscribe()" class="newsletter-form" #form="ngForm">
-            <input type="email" name="email" [(ngModel)]="email" placeholder="Enter your e-mail" required />
+            <input type="email" name="email" [(ngModel)]="email"     #emailInput="ngModel" placeholder="Enter your e-mail" required />
+         
             <button type="submit">Subscribe!</button>
+              
         </form>
-        
+        <div *ngIf="message" [ngClass]="messageType">
+  {{ message }}
+</div>
 
         <div class="social-icons">
             <a target="_blank" href="https://www.facebook.com/kennyweiss.net"><i

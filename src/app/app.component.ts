@@ -14,14 +14,14 @@ import * as AOS from 'aos';
 export class AppComponent {
   title = 'angular-headless-wp';
   
-    constructor(private router: Router) {
-    this.router.events
-      .pipe(filter(event => event instanceof NavigationEnd))
-      .subscribe(() => {
-        window.scrollTo({ top: 0, behavior: 'smooth' }); // ✅ Scroll to top
-      });
-      AOS.refresh();
-  }
+  //   constructor(private router: Router) {
+  //   this.router.events
+  //     .pipe(filter(event => event instanceof NavigationEnd))
+  //     .subscribe(() => {
+  //       window.scrollTo({ top: 0, behavior: 'smooth' }); // ✅ Scroll to top
+  //     });
+  //     AOS.refresh();
+  // }
 
 
    ngAfterViewInit(): void { 

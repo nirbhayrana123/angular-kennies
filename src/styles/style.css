@@ -763,6 +763,9 @@ a.button.blockbutton:hover {
  {
     padding: 40px;
 }
+.about-widget .social-box a {
+    color: #BBA056;
+}
 .button {
     font-size: 12px;
     font-weight: 500;

@@ -4644,7 +4644,7 @@ html {
 }
 
 .replay-section .highlight,
-span.bolder {
+a.bolder {
     font-weight: 600;
     color: #BBA056;
 }

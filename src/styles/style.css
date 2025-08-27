@@ -7382,6 +7382,7 @@ a.button.border-only {
 
     .banner0mobileview {
         display: block;
+        position: relative;
     }
 
     .videotestiomonials,
@@ -7617,6 +7618,15 @@ a.button.border-only {
         margin-top: 30px;
         padding: 20px;
     }
+.banner0mobileview::after {
+    content: "";
+    background-color: #0000002e;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+}
 
 
     .paddings {

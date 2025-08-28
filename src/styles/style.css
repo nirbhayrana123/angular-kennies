@@ -480,8 +480,10 @@ a.sociallink {
     font-size: 20px;
 }
 
-.iframe-row iframe {
-    height: 160px;
+.iframe-row iframe{
+    position: relative;
+    top: -85px;
+    height: 900px;
 }
 
 .flexsocial {
@@ -764,16 +766,15 @@ a.button.blockbutton:hover {
     box-shadow: 455px 0 0 0 #BBA056 inset;
 }
 
-.step.heightfgty {
-    padding: 40px;
-}
-
+ 
+ 
 .about-widget .social-box a {
     color: #BBA056;
+    font-size: 25px;
 }
 
 .button {
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 500;
     color: #ffffff;
     padding: 11px 20px;
@@ -3448,10 +3449,10 @@ a.button.w-7 {
     color: #ffffff;
 }
 
-.cta-box .step {
+/* .cta-box .step {
     padding: 0;
     margin-bottom: 0;
-}
+} */
 
 .cta-box:has(.step.active) .button {
     box-shadow: 360px 0 0 0 #ffffff inset;
@@ -4006,6 +4007,9 @@ a.cta-block h4 {
 
 .podcast-butt {
     padding-bottom: 30px;
+    background-color: #16586d;
+    position: relative;
+    z-index: 9;
 }
 
 .podcast-butt h3 {
@@ -6697,6 +6701,19 @@ a.button.border-only {
     display: none;
 }
 
+
+.cta-box.step.mobile-hide {
+    position: absolute;
+}
+.cta-box.step.mobile-hide.active {
+   background-color: #512570;
+}
+.cta-box.step.mobile-hide.active h3, .cta-box.step.mobile-hide.active p {
+    color: #fff;
+}    
+.cta-box.step.mobile-hide p{
+color: #000;
+}
 /*********************Mobile styles ************************/
 @media (max-width: 1300px) {
     ul.navmenu {
@@ -7255,9 +7272,7 @@ a.button.border-only {
         gap: 45px 6px;
     }
 
-    .cta-box .step.heightfgty {
-        padding: 40px 0px;
-    }
+  
 
     .box3 {
         order: 2;
@@ -7433,7 +7448,17 @@ a.button.border-only {
     .bannerflex {
         justify-content: center;
     }
-
+.podcast-butt::after {
+    content: "";
+    position: absolute;
+    background-color: #16586d;
+    width: 102%;
+    height: 116px;
+    top: -30px;
+    left: -8px;
+    z-index: -1;
+    right: 0;
+}
     .flex-who-we-are.mb-3 {
         padding: 45px 0px;
         margin-bottom: 0;
@@ -7881,9 +7906,7 @@ a.button.border-only {
         margin-top: 0;
     }
 
-    .iframe-row iframe {
-        height: 100px;
-    }
+   
 
     .button-row a.button {
         margin-top: 5px;
@@ -8127,11 +8150,21 @@ a.button.border-only {
     .cta-box.mobile-hide {
         display: none;
     }
-
+.cta-box.step.desktop-hide p{
+color: #000;
+}
     .cta-box.desktop-hide {
         display: block;
     }
-
+    .cta-box.step.desktop-hide.active {
+    background-color: #512570;
+}
+.cta-box.step.desktop-hide.active h3, .cta-box.step.desktop-hide.active p{
+    color: #fff;
+}
+.cta-box.step.desktop-hide.active a.button{
+    background-color: #bba056;
+}
     .contentallkanny {
         padding: 20px;
     }

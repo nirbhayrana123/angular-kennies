@@ -74,5 +74,22 @@ export class BlogDetailsComponent {
         this.loading = false;
       });
     }
+
+
+
+  const scriptId = 'elfsight-script';
+  if (!document.getElementById(scriptId)) {
+    const script = document.createElement('script');
+    script.id = scriptId;
+    script.src = "https://elfsightcdn.com/platform.js";
+    script.async = true;
+    document.body.appendChild(script);
+  }
+
+
+
+
+
+
   }
 }

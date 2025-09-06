@@ -156,7 +156,14 @@ if (this.service.acf?.faq_repeater) {
          this.loading = false;
     });
   }
-  
+   const scriptId = 'elfsight-script';
+  if (!document.getElementById(scriptId)) {
+    const script = document.createElement('script');
+    script.id = scriptId;
+    script.src = "https://elfsightcdn.com/platform.js";
+    script.async = true;
+    document.body.appendChild(script);
+  }
 }
 toggleFaq(index: number) {
   this.faqQ[index].open = !this.faqQ[index].open;

@@ -50,11 +50,11 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy  {
     this.isBrowser = isPlatformBrowser(platformId);
 
     // Set title and meta description
-    this.titleService.setTitle('Journey to Emotional Authenticity | Emotional Authenticity Coach');
-    this.metaService.updateTag({
-      name: 'description',
-      content: `This journey to Emotional Authenticity is for those who have looked everywhere and are desperate for a solution. If that's you, you're ready. Best Emotional Authenticity coach.`,
-    });
+    // this.titleService.setTitle('Trauma Recovery and Relationship Life Coach | Kenny Weiss');
+    // this.metaService.updateTag({
+    //   name: 'description',
+    //   content: `Struggling with emotions or repeating relationship patterns? Kenny Weiss offers deep rooted help you heal emotional pain and create authentic love.`,
+    // });
   }
   ngOnDestroy(): void {
   if (this.isBrowser) {
@@ -102,7 +102,16 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy  {
     }
   }
 
-
+if (this.isBrowser) {
+    this.titleService.setTitle('Trauma Recovery and Relationship Life Coach | Kenny Weiss');
+    this.metaService.updateTag(
+      {
+        name: 'description',
+        content: `Struggling with emotions or repeating relationship patterns? Kenny Weiss offers deep rooted help you heal emotional pain and create authentic love.`,
+      },
+      "name='description'"
+    );
+  }
  
   }
 

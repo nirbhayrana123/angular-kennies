@@ -1,5 +1,5 @@
-import { CommonModule } from '@angular/common';
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { Component, OnInit, OnDestroy, Inject, PLATFORM_ID } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 import { CourseSliderComponent } from '../../components/course-slider/course-slider/course-slider.component';
 import { RouterModule } from '@angular/router';
@@ -13,7 +13,7 @@ import { RouterModule } from '@angular/router';
 })
 export class MeetKennyComponent  implements OnInit, OnDestroy {
   isExpanded = false;
-
+ isBrowser: boolean;  
   audios = [
     {
       url: 'https://samples.audible.com/bk/acx0/105161/bk_acx0_105161_sample.mp3',
@@ -28,12 +28,8 @@ export class MeetKennyComponent  implements OnInit, OnDestroy {
   ];
 
   
-  constructor(private titleService: Title, private metaService: Meta) {
-    this.titleService.setTitle('About Kenny Weiss | Top Life Coaches | Life and Relationship Coach');
-    this.metaService.updateTag({
-      name: 'description',
-      content: 'Kenny Weiss is an Emotional Authenticity Coach, Leading Personal Development Speaker, and The Author of Your Journey to Success.'
-    });
+  constructor(private titleService: Title, private metaService: Meta, @Inject(PLATFORM_ID) private platformId: Object) {
+    this.isBrowser = isPlatformBrowser(this.platformId);  // 👈 set value
   }
   ngOnDestroy(): void {
      this.audios.forEach(a => {
@@ -44,14 +40,23 @@ export class MeetKennyComponent  implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+if (this.isBrowser) {
+    this.titleService.setTitle('Meet Kenny Weiss | Coach for Relationship, Narcissistic Patterns & Self-Sabotage');
+    this.metaService.updateTag(
+      {
+        name: 'description',
+        content: `Struggling with childhood wounds, codependency, or self-sabotage? Meet Kenny Weiss, a coach who helps you break cycles and build emotional strength.`,
+      },
+      "name='description'"
+    );
+  }
     this.audios.forEach((a, i) => {
       a.player.src = a.url;
       // Jab audio khatam ho, icon reset ho jaye
       a.player.addEventListener('ended', () => {
         this.audios[i].isPlaying = false;
       });
-    });
-  }
+    }); }
 
   toggleKannyContent() {
     this.isExpanded = !this.isExpanded;

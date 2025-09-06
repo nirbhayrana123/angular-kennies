@@ -746,7 +746,7 @@ img.logos-people7 {
     color: #000;
 }
 
-.trauma h4 {
+.trauma h2 {
     margin-bottom: 10px;
     font-size: 1.6em;
     color: #32220b;
@@ -4372,7 +4372,7 @@ section.recommended-readinglist {
     justify-content: space-between;
 }
 
-.left-wordsendcycal h3 {
+.left-wordsendcycal h1 {
     color: #512570;
     font-size: 3em;
 }
@@ -5724,8 +5724,9 @@ section.who-we-are {
     padding-right: 30px;
 }
 
-section.sourses-section .right-content h3 {
+section.sourses-section .right-content h2 {
     font-size: 1.7em;
+    color: #000;
 }
 
 .main-img {
@@ -7406,7 +7407,7 @@ color: #000;
         padding-top: 0;
     }
 
-    .trauma h4 {
+    .trauma h2 {
         font-size: 1.3em;
     }
  .contentallkanny {
@@ -7785,7 +7786,7 @@ color: #000;
         justify-content: center;
     }
 
-    section.sourses-section .right-content h3 {
+    section.sourses-section .right-content h2 {
         font-size: 1.4em;
     }
 

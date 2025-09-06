@@ -1,9 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { WpService } from '../../services/wp.service';
 import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common'; // 👈 Import this
+import { CommonModule, isPlatformBrowser } from '@angular/common'; // 👈 Import this
 import { NgIf } from '@angular/common'; // 👈 Optional if you prefer individual directive
 
 @Component({
@@ -14,6 +14,7 @@ import { NgIf } from '@angular/common'; // 👈 Optional if you prefer individua
   styleUrl: './resources.component.css'
 })
 export class ResourcesComponent {
+   isBrowser: boolean;  
 formData = {
     name: '', 
     email: '', 
@@ -25,14 +26,28 @@ formSuccessconquerconfrontation = false;
 formSuccessboundaries = false;
 formSuccessCodependenceGiving = false;
 formSuccessFeelingsWheel = false;
-constructor(private titleService: Title, private metaService: Meta,  private wpService: WpService) {
-    this.titleService.setTitle('Resources | Emotional Authenticity Coach | Emotion Coaching');
-    this.metaService.updateTag({
-      name: 'description',
-      content: 'The Greatness Movement helps you understand “why” things aren’t working, but more importantly, “how” to change them.',
-    });
+constructor(private titleService: Title, private metaService: Meta,  private wpService: WpService, @Inject(PLATFORM_ID) private platformId: Object) {
+  this.isBrowser = isPlatformBrowser(this.platformId);
+    // this.titleService.setTitle('Resources | Emotional Authenticity Coach | Emotion Coaching');
+    // this.metaService.updateTag({
+    //   name: 'description',
+    //   content: 'The Greatness Movement helps you understand “why” things aren’t working, but more importantly, “how” to change them.',
+    // });
   }
+   ngOnInit() { 
+    if (this.isBrowser) {
+    this.titleService.setTitle(' Free Resources By Kenny Weiss To Strengthen Relationships & Self');
+    this.metaService.updateTag(
+      {
+        name: 'description',
+        content: ` Struggling with toxic relationships, childhood wounds, or self-sabotage? Use Kenny Weiss’s free resources to strengthen self, love, and confidence.`,
+      },
+      "name='description'"
+    );
+  }
+ 
 
+  }
   submitFormresource() {
      this.formSubmitted = true;
       if (!this.formData.name || !this.formData.email) {
@@ -106,12 +121,6 @@ constructor(private titleService: Title, private metaService: Meta,  private wpS
       }
     });
   }
-
-
-
-
-
-
   submitFormConquerConfrontation() {
      this.formSubmitted = true;
       if (!this.formData.name || !this.formData.email) {
@@ -136,13 +145,6 @@ constructor(private titleService: Title, private metaService: Meta,  private wpS
       }
     });
   }
-
-
-
-
-
-
-
  submitFormConfrontation() {
      this.formSubmitted = true;
       if (!this.formData.name || !this.formData.email) {
@@ -167,7 +169,6 @@ constructor(private titleService: Title, private metaService: Meta,  private wpS
       }
     });
   }
-
 
 submitFormFeelingsWheel() {
      this.formSubmitted = true;

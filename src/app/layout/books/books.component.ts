@@ -1,5 +1,5 @@
-import { CommonModule, NgIf } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { CommonModule, isPlatformBrowser, NgIf } from '@angular/common';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Title, Meta } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
@@ -12,7 +12,7 @@ import { WpService } from '../../services/wp.service';
   styleUrls : ['./books.component.css']
 })
 export class BooksComponent implements OnInit {
-
+isBrowser: boolean;
 formData = {
     name: '', 
     email: '', 
@@ -20,12 +20,13 @@ formData = {
 formSubmitted = false; 
   formSuccessBooks = false;
 
-constructor(private titleService: Title, private metaService: Meta, private wpService: WpService) {
-    this.titleService.setTitle('books');
-    this.metaService.updateTag({
-      name: 'description',
-      content: 'This journey to Emotional Authenticity is for those who have looked everywhere and are desperate for a solution. If that&#039;s you, you&#039;re ready. Best Emotional Authenticity coach.',
-    });
+constructor(private titleService: Title, private metaService: Meta, private wpService: WpService,  @Inject(PLATFORM_ID) private platformId: Object) {
+    // this.titleService.setTitle('books');
+    // this.metaService.updateTag({
+    //   name: 'description',
+    //   content: 'This journey to Emotional Authenticity is for those who have looked everywhere and are desperate for a solution. If that&#039;s you, you&#039;re ready. Best Emotional Authenticity coach.',
+    // });
+    this.isBrowser = isPlatformBrowser(this.platformId);
   }
 
 
@@ -58,6 +59,26 @@ submitFormBooks() {
 
 
 ngOnInit() {
+
+
+if (this.isBrowser) {
+      this.titleService.setTitle('Break Toxic Patterns & Reclaim Love | Kenny Weiss Books');
+      this.metaService.updateTag(
+        {
+          name: 'description',
+          content: ` Struggling with codependency, narcissistic patterns, or self-sabotage? Discover Kenny Weiss’s books to reclaim your voice, love, and emotional freedom.`,
+        },
+        "name='description'"
+      );
+    }
+
+
+
+
+
+
+
+
   const scriptId = 'elfsight-script';
   if (!document.getElementById(scriptId)) {
     const script = document.createElement('script');

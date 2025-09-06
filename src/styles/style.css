@@ -1323,12 +1323,15 @@ ul.doterd li {
 .read-more-btn {
     margin-top: 20px;
     display: block;
-    color: #BBA056;
+    color: #ffffff;
     font-size: 0.9em;
     cursor: pointer;
     font-family: 'Poppins';
     border: none;
-    background-color: transparent;
+
+}
+.healing-table p.b {
+    text-align: left;
 }
 
 .vertyvery-contents.expanded {
@@ -5380,7 +5383,14 @@ ul.breadcrumbs a {
     color: #991a34;
     font-weight: 900;
 }
-
+.emonastiolser .right-content p
+ {
+    margin-bottom: 15px;
+}
+.emonastiolser .left-images {
+    position: sticky;
+    top: 100px;
+}
 section.postcard {
     background-color: rgb(241 241 240);
     padding: 80px 0;
@@ -7024,11 +7034,16 @@ color: #000;
     .flex-who-we-are {
         gap: 50px;
     }
+    .emonastiolser .left-images {
+    position: relative;
+    top: 0px;
+}
 
     .flex-who-we-are.sticky .left-images {
         position: relative;
         top: auto;
     }
+   
 
 
     .left-realpandemic {
@@ -7393,7 +7408,9 @@ color: #000;
     .trauma h4 {
         font-size: 1.3em;
     }
-
+ .contentallkanny {
+    background-size: contain !important;
+}
 
     .progress-content h5 {
         font-size: 1em;

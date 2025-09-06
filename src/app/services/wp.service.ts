@@ -110,7 +110,7 @@ getMediaById(id: number) {
 /////////pdf
 /////////Boundaries
   sendFormboundaries (data: any) {
-   const url = `${this.contactUrl}//contact-forms/582/feedback`;
+   const url = `${this.contactUrl}/contact-forms/582/feedback`;
   const body = new FormData();
   body.append('your-name', data.name);
   body.append('your-email', data.email);

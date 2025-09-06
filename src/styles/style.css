@@ -1321,13 +1321,14 @@ ul.doterd li {
 }
 
 .read-more-btn {
-    margin-top: 20px;
+     margin-top: 20px;
     display: block;
-    color: #ffffff;
+    color: rgb(187, 160, 86);
     font-size: 0.9em;
     cursor: pointer;
-    font-family: 'Poppins';
+    font-family: "Poppins";
     border: none;
+    background-color: transparent;
 
 }
 .healing-table p.b {

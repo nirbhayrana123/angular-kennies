@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
@@ -10,13 +11,17 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./book-session.component.css']   
 })
 export class BookSessionComponent  implements OnInit {
-  isBrowser: any;
-  constructor(private titleService: Title, private metaService: Meta) {
-    this.titleService.setTitle('Book a Session');
-    this.metaService.updateTag({
-      name: 'description',
-      content: '',
-    });
+  isBrowser:boolean;
+  constructor(private titleService: Title, private metaService: Meta,
+@Inject(PLATFORM_ID) private platformId: Object
+
+  ) {
+     this.isBrowser = isPlatformBrowser(this.platformId);
+    // this.titleService.setTitle('Book a Session');
+    // this.metaService.updateTag({
+    //   name: 'description',
+    //   content: '',
+    // });
   }
 
  ngOnInit(): void {
@@ -37,6 +42,25 @@ export class BookSessionComponent  implements OnInit {
       document.body.appendChild(script);
     }
   }
+
+if (this.isBrowser) {
+    this.titleService.setTitle('Book a Session with Kenny Weiss | Overcome Emotional Struggles & Toxic Patterns');
+    this.metaService.updateTag(
+      {
+        name: 'description',
+        content: ` Struggling with childhood wounds, toxic patterns, or narcissistic relationships? Book a session with Kenny Weiss to strengthen yourself and your relationships.`,
+      },
+      "name='description'"
+    );
+  }
+
+
+
+
+
+
+
+
   }
 
 

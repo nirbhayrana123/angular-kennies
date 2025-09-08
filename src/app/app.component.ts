@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { filter } from 'rxjs';
 import * as AOS from 'aos';
+import { GoogleTagManagerService } from './services/google-tag-manager.service.ts';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -11,8 +12,8 @@ import * as AOS from 'aos';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
-  title = 'angular-headless-wp';
+export class AppComponent implements OnInit{
+  title = 'Kenny Weiss';
   
   //   constructor(private router: Router) {
   //   this.router.events
@@ -23,10 +24,12 @@ export class AppComponent {
   //     AOS.refresh();
   // }
 
-
+  constructor(private gtmService: GoogleTagManagerService) {}
    ngAfterViewInit(): void { 
       AOS.init(); 
     }
-  
+   ngOnInit(): void {
+    this.gtmService.init();
+  }
 
 }

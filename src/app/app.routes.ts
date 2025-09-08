@@ -68,12 +68,12 @@ export const routes: Routes = [
 },
 
  {
-  path: 'services/:slug',
+  path: 'services',
   loadComponent: () =>
     import('./layout/healing-services/services-details/childhood-trauma.component').then(m => m.ChildhoodTraumaComponent)
 },
 {
-  path: 'courses/:slug',
+  path: 'courses',
   loadComponent: () =>
     import('./layout/courses/courses-details/courses-details.component').then(m => m.CoursesDetailsComponent)
 } 
@@ -85,17 +85,16 @@ export const routes: Routes = [
 } 
 ,
 {
-  path: 'worst-day-cycle/:slug',
+  path: 'worst-day-cycle',
   loadComponent: () =>
     import('./layout/worst-day-cycle/wdc-details/wdc-details.component').then(m => m.WdcDetailsComponent)
 } ,
 {
   path: ':slug',
   loadComponent: () =>
-    import('./layout/blog/blog-details/blog-details.component').then(m => m.BlogDetailsComponent)
+    import('./layout/blog/blog-details/blog-details.component').then(m => m.BlogDetailsComponent),
 } ,
-
-  {
+ {
     path: '**',
     loadComponent: () =>
       import('./layout/not-found/not-found.component').then(m => m.NotFoundComponent)

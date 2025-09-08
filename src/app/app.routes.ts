@@ -1,4 +1,4 @@
-import { Routes  } from '@angular/router';
+import { Routes } from '@angular/router';
 
 export const routes: Routes = [
   {
@@ -16,7 +16,8 @@ export const routes: Routes = [
   path: 'meet-kenny',
   loadComponent: () =>
     import('./layout/meet-kenny/meet-kenny.component').then(m => m.MeetKennyComponent)
-},
+}
+,
 
    {
   path: 'books-by-kenny-weiss',
@@ -68,12 +69,12 @@ export const routes: Routes = [
 },
 
  {
-  path: 'services',
+  path: 'services/:slug',
   loadComponent: () =>
     import('./layout/healing-services/services-details/childhood-trauma.component').then(m => m.ChildhoodTraumaComponent)
 },
 {
-  path: 'courses',
+  path: 'courses/:slug',
   loadComponent: () =>
     import('./layout/courses/courses-details/courses-details.component').then(m => m.CoursesDetailsComponent)
 } 
@@ -85,20 +86,18 @@ export const routes: Routes = [
 } 
 ,
 {
-  path: 'worst-day-cycle',
+  path: 'worst-day-cycle/:slug',
   loadComponent: () =>
     import('./layout/worst-day-cycle/wdc-details/wdc-details.component').then(m => m.WdcDetailsComponent)
 } ,
 {
   path: ':slug',
   loadComponent: () =>
-    import('./layout/blog/blog-details/blog-details.component').then(m => m.BlogDetailsComponent),
+    import('./layout/blog/blog-details/blog-details.component').then(m => m.BlogDetailsComponent)
 } ,
- {
-    path: '**',
-    loadComponent: () =>
-      import('./layout/not-found/not-found.component').then(m => m.NotFoundComponent)
-  }
-
-
+{
+  path: '**',
+  loadComponent: () =>
+    import('./layout/not-found/not-found.component').then(m => m.NotFoundComponent)
+} ,
 ];

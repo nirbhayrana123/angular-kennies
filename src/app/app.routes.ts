@@ -1,4 +1,4 @@
-import { Routes } from '@angular/router';
+import { Routes  } from '@angular/router';
 
 export const routes: Routes = [
   {
@@ -16,11 +16,10 @@ export const routes: Routes = [
   path: 'meet-kenny',
   loadComponent: () =>
     import('./layout/meet-kenny/meet-kenny.component').then(m => m.MeetKennyComponent)
-}
-,
+},
 
    {
-  path: 'books',
+  path: 'books-by-kenny-weiss',
   loadComponent: () =>
     import('./layout/books/books.component').then(m => m.BooksComponent)
 },
@@ -63,7 +62,7 @@ export const routes: Routes = [
 },
 
 {
-  path: 'book-session',
+  path: 'book-a-session-with-kenny-weiss',
   loadComponent: () =>
     import('./layout/book-session/book-session.component').then(m => m.BookSessionComponent)
 },
@@ -95,5 +94,12 @@ export const routes: Routes = [
   loadComponent: () =>
     import('./layout/blog/blog-details/blog-details.component').then(m => m.BlogDetailsComponent)
 } ,
+
+  {
+    path: '**',
+    loadComponent: () =>
+      import('./layout/not-found/not-found.component').then(m => m.NotFoundComponent)
+  }
+
 
 ];

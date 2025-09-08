@@ -5,7 +5,7 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Title, Meta } from '@angular/platform-browser';
 import { ActivatedRoute, RouterModule } from '@angular/router'; 
 import { WpService } from '../../services/wp.service'; 
-
+ 
 
 @Component({
    selector: 'app-emotionalswiper',
@@ -44,6 +44,8 @@ export class EmotionalswiperComponent implements OnInit {
           featuredImage: service._embedded?.['wp:featuredmedia']?.[0]?.source_url || '',
         };
       });
+
+
     if (isPlatformBrowser(this.platformId)) {
         setTimeout(() => {
           new Swiper('.emotional-swiper', {
@@ -69,3 +71,5 @@ export class EmotionalswiperComponent implements OnInit {
     });
   }
 }
+ 
+

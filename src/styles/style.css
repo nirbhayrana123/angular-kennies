@@ -1335,14 +1335,16 @@ ul.doterd li {
 }
 
 .read-more-btn {
-     margin-top: 20px;
+    margin-top: 20px;
     display: block;
-    color: rgb(187, 160, 86);
+    color: rgb(255 255 255);
     font-size: 0.9em;
     cursor: pointer;
     font-family: "Poppins";
-    border: none;
-    background-color: transparent;
+    border: 1px solid #ccc;
+    background-color: #512570;
+    padding: 8px 20px;
+    border-radius: 50px;
 
 }
 .healing-table p.b {
@@ -5357,7 +5359,8 @@ article.post {
 
 /********healing-inner-pages*************/
 .healing-inner-pages.height-7 {
-    height: 75vh;
+    height: auto;
+    padding: 100px 0px;
 }
 
 .healing-inner-pages {

@@ -27,10 +27,6 @@ export class ChildhoodTraumaComponent {
   postcardImage2 = '';
   postcardicfImage = '';
 
-
-
-
-
     constructor(
       private titleService: Title, 
       private metaService: Meta, 

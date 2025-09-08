@@ -6,7 +6,7 @@
         <div class="container">
             <div class="contentallkanny">
                   <img class="form-bac" src="images/form-bac.png" loading="lazy" alt=""> 
-                <h3>{{ service.acf?.as_parent_heading }}</h3>
+                <h1>{{ service.acf?.as_parent_heading }}</h1>
                 <div [innerHTML]="service.acf?.intro_discription"></div>
 
                 <a class="button" routerLink="/book-session">{{ service.acf?.intro_button }}</a>
@@ -27,7 +27,7 @@
                 </div>
 
                 <div class="right-content listingdse" data-aos="fade-up" data-aos-duration="1500">
-                    <h3>{{ service.acf?.healing__service_card_one_heading}}</h3>
+                    <h1 class="h3">{{ service.acf?.healing__service_card_one_heading}}</h1>
                     <div class="b" [innerHTML]="service.acf?.real_people_content"></div>
 
 
@@ -184,7 +184,7 @@
                     <img *ngIf="postcardImage1" [src]="postcardImage1" />
                 </div>
                 <div class="postcard-item2 wording">
-                    <h3>{{ service.acf?.post_card_one_heading }}</h3>
+                    <h2>{{ service.acf?.post_card_one_heading }}</h2>
                     <div [innerHTML]="service.acf?.post_card_one_content"></div>
                 </div>
             </div>

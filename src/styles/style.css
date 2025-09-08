@@ -38,6 +38,12 @@ h2 {
     line-height: 1.1;
     margin-bottom: 20px;
 }
+.contentallkanny h1 {
+    font-size: 2.2em;
+}
+.courses-details-banner h1 {
+    color: #ffffff;
+}
 
 .mt-3 {
     margin-top: 30px !important;
@@ -46,6 +52,14 @@ h2 {
 bold {
     font-weight: 600;
 }
+
+
+h1.h3 {
+    font-size: 2em;
+}
+
+
+
 
 b {
     font-weight: 600;

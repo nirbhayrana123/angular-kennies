@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component, inject} from '@angular/core';
 import { RouterModule,ActivatedRoute } from '@angular/router'; 
 import { SafeUrlPipe } from '../../../pipes/safe-url.pipe'; // pipe ka import
 import { Title, Meta } from '@angular/platform-browser'; 
@@ -14,7 +14,10 @@ import { CommonModule } from '@angular/common';
 })
 export class CoursesDetailsComponent {
   service: any = { acf: {} };
-
+  private route = inject(ActivatedRoute);
+  private wp = inject(WpService);
+  private titleService = inject(Title);
+  private metaService = inject(Meta);
 
   loading = true;
   bannerHeading = '';
@@ -37,17 +40,9 @@ export class CoursesDetailsComponent {
   
 
 
-  constructor(
-    private titleService: Title, 
-    private metaService: Meta, 
-    private wp: WpService,
-    private route: ActivatedRoute
+  constructor( 
   ) {
-    this.titleService.setTitle('Begin Your Journey Course - Kenny Weiss');
-    this.metaService.updateTag({
-      name: 'description',
-      content: 'This journey to Emotional Authenticity is for those who have looked everywhere and are desperate for a solution. If that&#039;s you, you&#039;re ready. Best Emotional Authenticity coach.',
-    });
+    
   }
 
 ngOnInit() {
@@ -61,6 +56,20 @@ ngOnInit() {
     this.wp.getServiceBySlug(slug).subscribe((res) => {
       if (res.length > 0) {
         this.service = res[0];
+
+            // ✅ Yoast SEO data
+          const yoast = this.service.yoast_head_json;
+          if (yoast) {
+            this.titleService.setTitle(yoast.title || this.service.title.rendered);
+            this.metaService.updateTag({
+              name: 'description',
+              content: yoast.description || this.service.excerpt.rendered
+            });
+            this.metaService.updateTag({
+              property: 'og:image',
+              content: yoast.og_image?.[0]?.url || ''
+            });
+          }
 
         // Banner Heading
         this.bannerHeading = this.service.acf?.banner_heading || ''; 

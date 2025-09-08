@@ -17,13 +17,12 @@ import { EmbedYoutubePipe } from '../../../pipes/embed-youtube.pipe';
 })
 export class BlogDetailsComponent {
 
+  private route = inject(ActivatedRoute);
+  private wp = inject(WpService);
+  private titleService = inject(Title);
+  private metaService = inject(Meta);
 
-
-  @Input() post: any;
-  route = inject(ActivatedRoute);
-  wp = inject(WpService);
-  titleService = inject(Title);
-  metaService = inject(Meta);
+ post: any; 
 
   loading = true;
   courseImage = '';
@@ -38,58 +37,32 @@ export class BlogDetailsComponent {
       this.wp.getpostSlug(slug).subscribe((res) => {
         if (res.length > 0) {
           this.post = res[0];
+ 
+            // ✅ Yoast SEO data
+          const yoast = this.post.yoast_head_json;
+          if (yoast) {
+            this.titleService.setTitle(yoast.title || this.post.title.rendered);
+            this.metaService.updateTag({
+              name: 'description',
+              content: yoast.description || this.post.excerpt.rendered
+            });
+            this.metaService.updateTag({
+              property: 'og:image',
+              content: yoast.og_image?.[0]?.url || ''
+            });
+            console.log('Yoast JSON:', this.post.yoast_head_json);
+
+          }
 
           this.courseImage = this.post.acf?.postimage || '';
 
           this.featuredImage =
             this.post._embedded?.['wp:featuredmedia']?.[0]?.source_url || '';
-
-         const rawTitle = this.post.title.rendered || '';
-          const blogTitle = rawTitle
-            .replace(/<[^>]+>/g, '') // remove HTML tags
-            .replace(/ - Kenny Weiss$/, '') // remove suffix if already there
-            .trim();
-
-          // ✅ Set dynamic <title>
-          this.titleService.setTitle(blogTitle + ' - Kenny Weiss');
-
-         // ✅ Meta description
-          const description =
-            this.post.acf?.meta_description || // prefer custom ACF meta description
-            this.post.excerpt?.rendered?.replace(/<[^>]+>/g, '') || // fallback to excerpt
-            '';
-
-          this.metaService.updateTag({
-            name: 'description',
-            content: description
-          });
-
-          console.log('Dynamic Title:', blogTitle + ' - Kenny Weiss');
-          console.log('Meta Description:', description);
-        
-
-          console.log('Post:', this.post);
         }
 
         this.loading = false;
       });
     }
-
-
-
-  const scriptId = 'elfsight-script';
-  if (!document.getElementById(scriptId)) {
-    const script = document.createElement('script');
-    script.id = scriptId;
-    script.src = "https://elfsightcdn.com/platform.js";
-    script.async = true;
-    document.body.appendChild(script);
-  }
-
-
-
-
-
 
   }
 }

@@ -37,28 +37,37 @@ isBrowser:boolean
     this.isBrowser = isPlatformBrowser(this.platformId);
   }
 
-  submitForm(contactForm :any) {
-     this.formSubmitted = true;
+ submitForm(contactForm: any) {
+    this.formSubmitted = true;
+
+    // Prevent form submission if invalid
+    if (contactForm.invalid) {
+        console.log('⚠️ Form is invalid');
+        return;
+    }
+
     this.wpService.sendForm(this.formData).subscribe({
-      next: (res) => {
-        console.log('✅ Success:', res);
-         this.formSuccess = true; 
-        // alert('Message sent successfully!');
-        this.formData = {
-          name: '',
-          lastname: '',
-          email: '',
-          phone: '',
-          message: ''
-        };
-        this.formSubmitted = false;
-      },
-      error: (err) => {
-        console.error('❌ Error:', err);
-        alert('Failed to send message. Please try again.');
-      }
+        next: (res) => {
+            console.log('✅ Success:', res);
+            this.formSuccess = true;
+
+            // Reset form
+            this.formData = {
+                name: '',
+                lastname: '',
+                email: '',
+                phone: '',
+                message: ''
+            };
+            this.formSubmitted = false;
+        },
+        error: (err) => {
+            console.error('❌ Error:', err);
+            alert('Failed to send message. Please try again.');
+        }
     });
-  }
+}
+
 
  ngOnInit() {
 if (this.isBrowser) {

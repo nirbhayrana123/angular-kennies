@@ -5357,7 +5357,12 @@ article.post {
     background-color: #512570;
     font-family: "Poppins", sans-serif;
 }
-
+.contactfiled {
+    width: 100%;
+}
+.buttoncontactcenter {
+    text-align: center;
+}
 /********healing-inner-pages*************/
 .healing-inner-pages.height-7 {
     height: auto;
@@ -6965,7 +6970,9 @@ color: #000;
         color: #000;
     }
 
-
+.about-row { 
+    flex-wrap: wrap;
+}
 
 }
 
@@ -7025,7 +7032,9 @@ color: #000;
         grid-template-columns: 1fr;
         grid-row-gap: 10px;
     }
-
+ .cta-box.mobile-hide {
+        display: none;
+    }
     .left-images {
         padding-right: 0px;
     }
@@ -7103,7 +7112,9 @@ color: #000;
     .flex-inwrapper .content {
         flex: auto;
     }
-
+.cta-box.desktop-hide {
+        display: block;
+    }
     .works-sections {
         display: inline-block;
     }
@@ -7125,6 +7136,7 @@ color: #000;
 
     .works-sections .right {
         padding-left: 0px;
+        margin-top: 25px;
     }
 
     .video-boxes {
@@ -7297,6 +7309,28 @@ color: #000;
         display: block;
         margin: 0 auto;
     }
+    .shine-effect { 
+    width: auto;
+}
+
+   .cta-box.step.desktop-hide.active {
+    background-color: #512570;
+}
+.cta-box.step.desktop-hide.active h3, .cta-box.step.desktop-hide.active p{
+    color: #fff;
+}
+.cta-box.step.desktop-hide.active a.button{
+    background-color: #bba056;
+}
+ .cta-box h3 {
+        font-size: 1.4em;
+    }
+
+    .cta-box {
+        position: static;
+        margin-top: 30px;
+        padding: 20px;
+    }
 }
 
 
@@ -7308,7 +7342,7 @@ color: #000;
         gap: 45px 6px;
     }
 
-  
+   
 
     .box3 {
         order: 2;
@@ -7391,6 +7425,14 @@ color: #000;
     .post-meta .buttonsser {
         display: block;
     }
+.video-box-row { 
+    flex-wrap: wrap;
+}
+
+
+
+
+
 
 }
 
@@ -7718,15 +7760,7 @@ color: #000;
         margin-top: 4px;
     }
 
-    .cta-box h3 {
-        font-size: 1.4em;
-    }
-
-    .cta-box {
-        position: static;
-        margin-top: 30px;
-        padding: 20px;
-    }
+   
 
     .banner0mobileview::after {
         content: "";
@@ -8185,24 +8219,12 @@ color: #000;
         font-size: 1em;
     }
 
-    .cta-box.mobile-hide {
-        display: none;
-    }
+   
 .cta-box.step.desktop-hide p{
 color: #000;
 }
-    .cta-box.desktop-hide {
-        display: block;
-    }
-    .cta-box.step.desktop-hide.active {
-    background-color: #512570;
-}
-.cta-box.step.desktop-hide.active h3, .cta-box.step.desktop-hide.active p{
-    color: #fff;
-}
-.cta-box.step.desktop-hide.active a.button{
-    background-color: #bba056;
-}
+   
+ 
     .contentallkanny {
         padding: 20px;
     }

@@ -255,17 +255,17 @@ a.button.mt3 {
 
 
 .audible-button {
-    font-size: 15px;
+      font-size: 15px;
     font-weight: 500;
-    color: #991a34;
+    color: #991A34;
     padding: 11px 20px;
     text-transform: uppercase;
     text-decoration: none;
     border-radius: 200px;
     transition: 0.6s;
-    box-shadow: 0 0 0 0 #bba056 inset;
+    box-shadow: 0 0 0 0 #BBA056 inset;
     text-align: center;
-    border: 1px solid #991a34;
+    border: 1px solid #991A34;
     font-family: "Poppins", sans-serif;
     display: flex;
     align-items: center;
@@ -274,6 +274,7 @@ a.button.mt3 {
     max-width: 200px;
     justify-content: center;
     cursor: pointer;
+    gap: 10px;
 
 }
 
@@ -448,27 +449,34 @@ main.pt-1.blogdetailspage {
 
 
 
-@media (max-width: 1300px) {
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
     .container {
-        max-width: 1170px;
+        max-width: 720px;
     }
 }
 
-@media (max-width: 1024px) {
+@media (min-width: 1024px) {
     .container {
-        max-width: 900px;
+        max-width: 960px;
     }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 1200px) {
     .container {
-        max-width: 700px;
+        max-width: 1140px;
     }
 }
 
-@media (max-width: 480px) {
+
+
+@media (min-width: 1350px) {
     .container {
-        max-width: 100%;
+        max-width: 1320px;
     }
 }
 
@@ -6751,11 +6759,18 @@ a.button.border-only {
 color: #000;
 }
 /*********************Mobile styles ************************/
-@media (max-width: 1300px) {
+@media (max-width: 1355px) {
     ul.navmenu {
         gap: 20px;
     }
+a.logo-brand {
+    min-width: 200px;
+}
 
+ul.navmenu
+ {
+    width: 70%;
+}
     ul.navmenu li a,
     ul.navmenu li i {
         font-size: 0.7em;
@@ -6774,7 +6789,10 @@ color: #000;
     .book-banner {
         grid-template-columns: 1fr;
     }
-
+.price-row
+ {
+    flex-wrap: wrap;
+}
     .progress-content {
         grid-template-columns: repeat(2, 1fr);
         gap: 60px 0px;
@@ -6973,21 +6991,32 @@ color: #000;
 .about-row { 
     flex-wrap: wrap;
 }
+.left { 
+    flex: 100%;
+}
 
+.shine-effect 
+ { 
+    width: auto;
+}
 }
 
 
-@media (max-width: 1100px) {
-    .blog-grid {
+
+
+@media (max-width: 1199px) {
+   .blog-grid {
         grid-template-columns: 1fr;
     }
-}
 
-@media (max-width: 1024px) {
+
+
     body {
         font-size: 19px;
     }
-
+ .benefits-list {
+        grid-template-columns: 1fr;
+    }
     .postcard-row {
         grid-template-columns: 1fr;
     }
@@ -7297,8 +7326,6 @@ color: #000;
 
     .who-we-are a.button {
         margin-top: 0;
-        margin-left: auto;
-        margin-right: auto;
         text-align: center;
         display: block;
         max-width: 270px;
@@ -7331,6 +7358,10 @@ color: #000;
         margin-top: 30px;
         padding: 20px;
     }
+ .right-content .button-row {
+        padding-left: 30px;
+    }
+
 }
 
 
@@ -7342,7 +7373,10 @@ color: #000;
         gap: 45px 6px;
     }
 
-   
+   .who-we-are a.button {
+        margin-left: auto;
+        margin-right: auto;
+    }
 
     .box3 {
         order: 2;
@@ -7442,7 +7476,9 @@ color: #000;
     .healing-table td {
         padding: 25px;
     }
-
+.left-wordsendcycal h1 {
+    font-size: 2em;
+}
     .healing-table th {
         padding: 25px;
     }
@@ -8062,9 +8098,7 @@ color: #000;
         width: auto;
     }
 
-    .right-content .button-row {
-        padding-left: 30px;
-    }
+   
 
     .formcontainer {
         flex-wrap: wrap;
@@ -8201,9 +8235,7 @@ color: #000;
         font-size: 1.5em;
     }
 
-    .benefits-list {
-        grid-template-columns: 1fr;
-    }
+   
 
     .img2 {
         bottom: 0;

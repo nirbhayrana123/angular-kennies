@@ -35,7 +35,9 @@ export class EmotionalswiperComponent implements OnInit {
     });
 
 }
+
  ngOnInit() {
+  
     this.wp.gethealingServices().subscribe((data) => {
       this.healservices = data.map((service: any) => {
         return {
@@ -44,7 +46,12 @@ export class EmotionalswiperComponent implements OnInit {
           featuredImage: service._embedded?.['wp:featuredmedia']?.[0]?.source_url || '',
         };
       });
-
+      const slugOrder = ['childhood-trauma', 'relationship-issues-coach', 'narcissistic-abuse', 'depression', 'parenting-issues'];
+this.healservices = this.healservices.sort((a, b) => {
+  const indexA = slugOrder.indexOf(a.slug);
+  const indexB = slugOrder.indexOf(b.slug);
+  return (indexA === -1 ? 999 : indexA) - (indexB === -1 ? 999 : indexB);
+});
 
     if (isPlatformBrowser(this.platformId)) {
         setTimeout(() => {

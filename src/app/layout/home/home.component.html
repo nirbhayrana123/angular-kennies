@@ -138,83 +138,8 @@
                     <p><b>Because you’re not broken. You’re just unfinished. And healing those unfinished parts can
                             change everything about how you love and connect.</b></p>
 
-                    <a href="book-session.html" class="button">Start Healing What Was Left Unfinished</a>
-               
-
-
-                <p>If you grew up in a home where:</p>
-
-                <ul>
-                    <li>
-                        <p>You were criticized or judged a lot,</p>
-                    </li>
-                    <li>
-                        <p>Expressing feelings led to punishment or being ignored,</p>
-                    </li>
-                    <li>
-                        <p>You felt unsafe or emotionally unsupported,</p>
-                    </li>
-                </ul>
-
-
-                <p>…then you might’ve learned to withdraw, stay quiet, and live more in your head than in your
-                    heart.</p>
-                <p>Not because you're “introverted by nature,” but because you had to protect yourself.
-                </p>
-
-
-                <h4>And this is just one example.</h4>
-                <p>There are dozens of patterns like this — and once you see it, you can’t unsee it.</p>
-
-                <ul>
-                    <li>
-                        <p>The overachiever who’s terrified of disappointing others because love was conditional
-                            growing up.</p>
-                    </li>
-                    <li>
-                        <p>The people pleaser who learned to stay small to avoid conflict in a chaotic home.</p>
-                    </li>
-                    <li>
-                        <p>The emotionally unavailable adult who was never shown how to sit with their own
-                            feelings, let alone someone else’s.
-                        </p>
-                    </li>
-                </ul>
-                <p>When people hear these examples, something clicks.</p>
-                <p>They realize: “Wait… that’s me.”</p>
-                <p>And that’s the beginning of healing.</p>
-
-
-                <h4>Here's the truth:</h4>
-                <p>You're not broken.<br>
-                    You were just never taught how to:
-                </p>
-
-                <ul>
-                    <li>
-                        <p>Feel your emotions without shame,</p>
-                    </li>
-                    <li>
-                        <p>Trust others with your vulnerability,</p>
-                    </li>
-                    <li>
-                        <p>Or believe that you’re safe and worthy just as you are.</p>
-                    </li>
-                </ul>
-
-                <h4>The good news?</h4>
-                <p>Just like you learned those coping mechanisms, you can unlearn them.<br>
-                    You can rewire your emotional patterns, feel secure in your relationships, and reconnect
-                    with your authentic self.</p>
-                <p><b>Healing isn’t about fixing what’s broken. It’s about nurturing what was neglected.</b></p>
-                <p>So if you've done all the "outer work" and still feel stuck, maybe it's time to go inward.
-                    To gently explore not what’s wrong with you — but what happened to you.<br>
-                    And from there, start giving yourself the emotional safety and care you never got back then.
-                </p>
-                <p><b>Because you're not broken. You're just unfinished. And that’s something you can change.</b>
-                </p> 
-
-
+                    <a href="/book-a-session-with-kenny-weiss" class="button">Start Healing What Was Left Unfinished</a>
+ 
 </div>
                 <button (click)="toggleContent()" class="read-more-btn" id="toggleBtn"> {{ isExpanded ? 'Read Less' :
                     'Read More..' }}</button>
@@ -303,7 +228,7 @@
                                 <p class="content">Featured in 100+ speaking events, 10,000+ sessions </p>
                             </li>
                             <div class="button-row" data-aos="fade-up" data-aos-duration="600">
-                                <a class="button" routerLink="/meet-kenny">Read Kenny’s Story</a>
+                                <a class="button" routerLink="/about-kenny-weiss">Read Kenny’s Story</a>
                                 <a class="button" routerLink="/book-a-session-with-kenny-weiss">Book a Session With Kenny</a>
                             </div>
                         </ul>
@@ -570,7 +495,7 @@
                 <!-- <div class="blog-post" *ngFor="let post of posts"> -->
                 <div class="blog-post" *ngFor="let post of posts | slice:0:2">
                     <div class="blog-img shine-effect">
-                        <a [routerLink]="['/post', post.id]">
+                        <a [routerLink]="['/', post.slug]">
                             <!-- Agar featured image ho -->
                             <img *ngIf="!post.courseImage && post.featuredImage" [src]="post.featuredImage"
                                 alt="{{ post.title?.rendered }}" loading="lazy">
@@ -582,12 +507,12 @@
                                     [innerHTML]="post._embedded?.author[0]?.name"></b></span>
                             <span><i class="fa-solid fa-book-open-reader"></i>Motivation</span>
                         </div>
-                        <a routerLink="/best-day-blog">
+                        <a [routerLink]="['/', post.slug]">
                             <h3>{{ post.title?.rendered }}</h3>
                         </a>
                         <div class=""
                             [innerHTML]="getShortContent(post.excerpt?.rendered || post.content?.rendered, 15) "></div>
-                        <a class="post-link" routerLink="/best-day-blog">View more <i
+                       <a class="post-link" [routerLink]="['/', post.slug]"> View more <i
                                 class="fa-solid fa-arrow-up-right-from-square"></i></a>
                     </div>
                 </div>

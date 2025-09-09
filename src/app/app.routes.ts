@@ -13,7 +13,7 @@ export const routes: Routes = [
   },
 
    {
-  path: 'meet-kenny',
+  path: 'about-kenny-weiss',
   loadComponent: () =>
     import('./layout/meet-kenny/meet-kenny.component').then(m => m.MeetKennyComponent)
 }
@@ -100,4 +100,6 @@ export const routes: Routes = [
   loadComponent: () =>
     import('./layout/not-found/not-found.component').then(m => m.NotFoundComponent)
 } ,
+ 
+ 
 ];

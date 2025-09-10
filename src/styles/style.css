@@ -4748,7 +4748,7 @@ a.bolder {
 /*********************Reclaim Your Best Life**********************/
 .footer {
     /* background-color: #e3ecde; */
-    padding-top: 80px;
+    padding-top: 0px;
     text-align: center;
     background-color: #f8f1ed;
 }
@@ -6780,7 +6780,7 @@ a.button.border-only {
 color: #000;
 }
 .courses-master-classess{
-    padding: 50px 0 100px;
+    padding: 50px 0 0px;
 }
 .courses-master-classess .flex-row {
     margin-bottom: 10px;

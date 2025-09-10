@@ -28,12 +28,7 @@ export class EmotionalswiperComponent implements OnInit {
     private wp: WpService,
     private route: ActivatedRoute
 ) {
-  this.titleService.setTitle('Begin Your Journey Course - Kenny Weiss');
-    this.metaService.updateTag({
-      name: 'description',
-      content: 'This journey to Emotional Authenticity is for those who have looked everywhere and are desperate for a solution. If that&#039;s you, you&#039;re ready. Best Emotional Authenticity coach.',
-    });
-
+ 
 }
 
  ngOnInit() {

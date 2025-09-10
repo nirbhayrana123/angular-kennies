@@ -21,11 +21,6 @@ formSubmitted = false;
   formSuccessBooks = false;
 
 constructor(private titleService: Title, private metaService: Meta, private wpService: WpService,  @Inject(PLATFORM_ID) private platformId: Object) {
-    // this.titleService.setTitle('books');
-    // this.metaService.updateTag({
-    //   name: 'description',
-    //   content: 'This journey to Emotional Authenticity is for those who have looked everywhere and are desperate for a solution. If that&#039;s you, you&#039;re ready. Best Emotional Authenticity coach.',
-    // });
     this.isBrowser = isPlatformBrowser(this.platformId);
   }
 

@@ -7,22 +7,23 @@ import { WpService } from '../../../services/wp.service';
 import { Title, Meta } from '@angular/platform-browser';
 import { CourseSliderComponent } from '../../../components/course-slider/course-slider/course-slider.component';
 import { EmbedYoutubePipe } from '../../../pipes/embed-youtube.pipe';
+import { SafeUrlPipe } from '../../../pipes/safe-url.pipe'; // pipe ka import
 
 @Component({
   selector: 'app-blog-details',
   standalone: true,
-  imports: [CommonModule, RouterModule, CourseSliderComponent, EmbedYoutubePipe],
+  imports: [CommonModule, RouterModule,SafeUrlPipe, CourseSliderComponent, EmbedYoutubePipe],
   templateUrl: './blog-details.component.html',
   styleUrls: ['./blog-details.component.css']
 })
 export class BlogDetailsComponent {
-
+post: any; 
   private route = inject(ActivatedRoute);
   private wp = inject(WpService);
   private titleService = inject(Title);
   private metaService = inject(Meta);
 
- post: any; 
+ 
 
   loading = true;
   courseImage = '';

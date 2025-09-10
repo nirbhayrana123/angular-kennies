@@ -18,16 +18,13 @@ export class WdcDetailsComponent {
   private titleService = inject(Title);
   private metaService = inject(Meta);
 
-
 @Input() posting: any;
   loading = true; 
   wdcpost: any = { acf: {} };
-
   courseImage = '';
   featuredImage = '';
 safeContent!: SafeHtml;  
-  sanitizer: any;
-  constructor( ) {   }
+  constructor( private sanitizer: DomSanitizer ) {   }
   ngOnInit() {
   this.courseImage = ''; 
   this.featuredImage = ''; 

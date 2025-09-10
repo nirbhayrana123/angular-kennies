@@ -29,8 +29,9 @@ export class WpService {
     return this.http.get(`${this.baseUrl}/posts/${id}?_embed`);
   }
   getpostSlug(slug: string): Observable<any> {
-  return this.http.get<any[]>(`${this.baseUrl}/posts/?slug=${slug}&_embed`);
+  return this.http.get<any[]>(`${this.baseUrl}/posts?slug=${slug}&_embed`);
 }
+
  getServices(): Observable<any> {
   return this.http.get<any>(`${this.baseUrl}/services?_embed`);
 }

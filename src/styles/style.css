@@ -52,18 +52,18 @@ h6 {
 }
 
 h1 {
-    font-size: 2.6em;
+    font-size: 2em;
     line-height: 1.1;
     margin-bottom: 20px;
 }
 
 h2 {
-    font-size: 2.2em;
+    font-size: 2em;
     line-height: 1.1;
     margin-bottom: 20px;
 }
 .contentallkanny h1 {
-    font-size: 2.2em;
+    font-size: 2em;
 }
 .courses-details-banner h1 {
     color: #ffffff;
@@ -495,7 +495,7 @@ main.pt-1.blogdetailspage {
 
 @media (min-width: 1350px) {
     .container {
-        max-width: 1340px;
+        max-width: 1350px;
     }
 }
 
@@ -1835,7 +1835,7 @@ section.aboutus {
     width: 60%;
     height: 100%;
     right: 0;
-    top: 11%;
+    top: 10%;
     z-index: -1;
 }
 
@@ -4419,7 +4419,7 @@ section.recommended-readinglist {
 
 .left-wordsendcycal h1 {
     color: #512570;
-    font-size: 3em;
+    font-size: 2em;
 }
 
 .right-wordsendcycal {

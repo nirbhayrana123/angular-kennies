@@ -13,10 +13,12 @@ import { CourseSliderComponent } from '../../../components/course-slider/course-
   styleUrls: ['./wdc-details.component.css']
 })
 export class WdcDetailsComponent {
-  // route = inject(ActivatedRoute);
-  // wp = inject(WpService);
-  // titleService = inject(Title);
-  // metaService = inject(Meta);
+  private route = inject(ActivatedRoute);
+  private wp = inject(WpService);
+  private titleService = inject(Title);
+  private metaService = inject(Meta);
+
+
 @Input() posting: any;
   loading = true; 
   wdcpost: any = { acf: {} };
@@ -24,17 +26,8 @@ export class WdcDetailsComponent {
   courseImage = '';
   featuredImage = '';
 safeContent!: SafeHtml;  
-  constructor(  private titleService: Title, 
-    private metaService: Meta, 
-    private wp: WpService,
-    private sanitizer: DomSanitizer,
-    private route: ActivatedRoute) { 
-       this.titleService.setTitle('Begin Your Journey Course - Kenny Weiss');
-    this.metaService.updateTag({
-      name: 'description',
-      content: 'This journey to Emotional Authenticity is for those who have looked everywhere and are desperate for a solution. If that&#039;s you, you&#039;re ready. Best Emotional Authenticity coach.',
-    });
-     }
+  sanitizer: any;
+  constructor( ) {   }
   ngOnInit() {
   this.courseImage = ''; 
   this.featuredImage = ''; 
@@ -47,6 +40,21 @@ console.log('Slug:', slug);  // ✅ add this
     this.wp.getwdcSlug(slug).subscribe((res: any) => {
       if (res.length > 0) {
         this.wdcpost = res[0];
+     // ✅ Yoast SEO data
+          const yoast = this.wdcpost.yoast_head_json;
+          if (yoast) {
+            this.titleService.setTitle(yoast.title || this.wdcpost.title.rendered);
+            this.metaService.updateTag({
+              name: 'description',
+              content: yoast.description || this.wdcpost.excerpt.rendered
+            });
+            this.metaService.updateTag({
+              property: 'og:image',
+              content: yoast.og_image?.[0]?.url || ''
+            });
+          }
+
+
         let content = this.wdcpost.content.rendered;
 
 

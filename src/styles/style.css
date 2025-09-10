@@ -1887,7 +1887,7 @@ img.award-star {
     display: flex;
     align-items: center;
     gap: 20px;
-    width: 60%;
+    width: auto;
     line-height: 1.2em;
     background-color: #ffffff;
     backdrop-filter: blur(5px);

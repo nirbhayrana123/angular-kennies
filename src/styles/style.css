@@ -3372,7 +3372,7 @@ section.abouts {
 
 /*******************testimonial* new***************/
 .testimonial-section {
-    background-color: #fafafa;
+    background-color: #f9f6f1;
     padding: 60px 0;
 }
 
@@ -6778,6 +6778,12 @@ a.button.border-only {
 }    
 .cta-box.step.mobile-hide p{
 color: #000;
+}
+.courses-master-classess{
+    padding: 50px 0 100px;
+}
+.courses-master-classess .flex-row {
+    margin-bottom: 10px;
 }
 /*********************Mobile styles ************************/
 @media (max-width: 1355px) {

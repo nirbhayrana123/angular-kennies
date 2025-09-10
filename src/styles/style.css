@@ -135,9 +135,8 @@ header.header.blacktext .navmenu li.active>a {
 
 }
 
-.header.bgcolor .flexsocial.whitei i,
-header.header.blacktext.homenav.bgcolor .flexsocial.whitei i {
-    color: #000000;
+.header.bgcolor .flexsocial.whitei i, header.header.blacktext.homenav.bgcolor .flexsocial.whitei i {
+    color: #512570;
 }
 
 .flexsocial.whitei i {
@@ -162,7 +161,7 @@ header.header.blacktext.homenav ul.navmenu li a {
 }
 
 header.header.blacktext.homenav.bgcolor a.logo-brand img {
-    filter: brightness(0) saturate(100%);
+    filter: none;
 }
 
 header.header.blacktext.homenav.bgcolor ul.navmenu a,

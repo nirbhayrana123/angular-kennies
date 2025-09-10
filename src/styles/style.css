@@ -139,10 +139,10 @@ header.header.blacktext .navmenu li.active>a {
     color: #512570;
 }
 
+ 
 .flexsocial.whitei i {
-    color: #000000;
+    color: rgb(81 37 112);
 }
-
 .contentsocialserd h2.wp-block-heading strong {
     font-size: 0.7em;
     font-weight: 600;
@@ -312,9 +312,7 @@ a.button.mt3 {
 }
 
 
-header.header.blacktext a.logo-brand img {
-    filter: brightness(0) saturate(100%);
-}
+
 
 .st-row i.fa-solid.fa-star {
     color: #ffbc00;
@@ -509,10 +507,12 @@ main.pt-1.blogdetailspage {
     width: 30%;
 }
 
-a.logo-brand img {
+/* a.logo-brand img {
     filter: brightness(0) invert(1);
-}
-
+} */
+/* header.header.blacktext a.logo-brand img {
+    filter: brightness(0) saturate(100%);
+} */
 
 
 .iframe-row {

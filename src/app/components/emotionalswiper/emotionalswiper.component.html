@@ -3,7 +3,7 @@
     <div class="swiper-slide" *ngFor="let hservice of healservices">
       <div class="wellness-col bb-1">
         <div class="childhoodimg">
-                                     <a [routerLink]="['/services', hservice.slug]"> 
+                                     <a [routerLink]="['/coaching', hservice.slug]"> 
   <!-- Agar featured image ho -->
   <img *ngIf="!hservice.courseImage && hservice.featuredImage" 
        [src]="hservice.featuredImage" 
@@ -13,7 +13,7 @@
         <div class="trauma">
           <h2 [innerHTML]="hservice.title.rendered"></h2> 
            <div [innerHTML]="hservice.excerpt.rendered"></div>
-          <a class="more-link button" [routerLink]="['/services', hservice.slug]">Read more</a>
+          <a class="more-link button" [routerLink]="['/coaching', hservice.slug]">Read more</a>
         </div>
       </div>
     </div>

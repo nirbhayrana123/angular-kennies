@@ -7388,6 +7388,15 @@ ul.navmenu
  .right-content .button-row {
         padding-left: 30px;
     }
+      .podcast-row {
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+        gap: 40px;
+    }
+.podcast-left {
+    width: 100%;
+}
+
 
 }
 
@@ -7733,8 +7742,7 @@ ul.navmenu
     }
 
     section.podcast-section .podcast-left {
-        width: 100%;
-        order: 2;
+        width: 100%; 
         display: flex;
         flex-direction: column;
     }

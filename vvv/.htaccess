@@ -1,0 +1,28 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # 🔹 Case-insensitive redirects for important routes
+   RewriteRule ^contact$ contact [R=301,L,NC]
+   RewriteRule ^courses$ courses [R=301,L,NC]
+
+  # 🔹 Redirect old URLs to new ones (case-insensitive)
+  RewriteRule ^authentic-self-cycle/?$ worst-day-cycle [R=301,L,NC]
+  RewriteRule ^emotional-authenticity/?$ courses [R=301,L,NC]
+  RewriteRule ^my-mentor-mike-pinkston/?$ about-kenny-weiss [R=301,L,NC]
+  RewriteRule ^sandstone-care/?$ about-kenny-weiss [R=301,L,NC]
+  RewriteRule ^coaching/?$ book-a-session-with-kenny-weiss [R=301,L,NC]
+  RewriteRule ^your-journey-to-being-yourself/?$ books-by-kenny-weiss [R=301,L,NC]
+  RewriteRule ^your-journey-to-success-exercises/?$ books-by-kenny-weiss [R=301,L,NC]
+  RewriteRule ^recommended-reading/?$ books-by-kenny-weiss [R=301,L,NC]
+  RewriteRule ^speaker/?$ about-kenny-weiss [R=301,L,NC]
+  RewriteRule ^contact-kenny-weiss/?$ contact [R=301,L,NC]
+
+  # agar file/folder exist kare to wahi serve karo
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  
+
+  # otherwise Angular ko bhej do
+  RewriteRule . /index.html [L]
+</IfModule>

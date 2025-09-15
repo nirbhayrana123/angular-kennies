@@ -69,7 +69,7 @@ export const routes: Routes = [
 },
 
  {
-  path: 'services/:slug',
+  path: 'coaching/:slug',
   loadComponent: () =>
     import('./layout/healing-services/services-details/childhood-trauma.component').then(m => m.ChildhoodTraumaComponent)
 },

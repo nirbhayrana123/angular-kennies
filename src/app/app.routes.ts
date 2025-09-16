@@ -55,7 +55,16 @@ export const routes: Routes = [
   loadComponent: () =>
     import('./layout/worst-day-cycle/worst-day-cycle.component').then(m => m.WorstDayCycleComponent)
 }
-, 
+,
+{
+  path: 'thank-you',
+  loadComponent: () =>
+    import('./layout/thank-you/thank-you.component').then(m => m.ThankYouComponent)
+}
+,
+
+
+
 {
   path: 'contact',
   loadComponent: () =>

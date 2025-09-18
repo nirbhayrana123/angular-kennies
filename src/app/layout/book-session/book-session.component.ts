@@ -1,12 +1,13 @@
-import { isPlatformBrowser } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
+
 @Component({
   selector: 'app-book-session',
   standalone: true,
-  imports: [RouterModule],
+  imports: [RouterModule, CommonModule],
   templateUrl: './book-session.component.html',
   styleUrls: ['./book-session.component.css']   
 })
@@ -32,7 +33,7 @@ export class BookSessionComponent  implements OnInit {
     script.async = true;
     document.body.appendChild(script);
 
-this.loading = false;
+
      if (this.isBrowser) {
     const scriptId = 'elfsight-script';
     if (!document.getElementById(scriptId)) {
@@ -65,5 +66,12 @@ if (this.isBrowser) {
 
   }
 
-
+ngAfterViewInit(): void {
+    if (this.isBrowser) {
+      // jab tak sara page (images, iframes etc.) load na ho
+      window.addEventListener('load', () => {
+        this.loading = false;
+      });
+    }
+  }
 }

@@ -12,7 +12,7 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./book-session.component.css']   
 })
 export class BookSessionComponent  implements OnInit {
-   loading = true;
+  isLoading = true;
   isBrowser:boolean;
   constructor(private titleService: Title, private metaService: Meta,
 @Inject(PLATFORM_ID) private platformId: Object
@@ -27,24 +27,8 @@ export class BookSessionComponent  implements OnInit {
   }
 
  ngOnInit(): void {
-    // Calendly script load karna
-    const script = document.createElement('script');
-    script.src = 'https://assets.calendly.com/assets/external/widget.js';
-    script.async = true;
-    document.body.appendChild(script);
-
-
-     if (this.isBrowser) {
-    const scriptId = 'elfsight-script';
-    if (!document.getElementById(scriptId)) {
-      const script = document.createElement('script');
-      script.id = scriptId;
-      script.src = 'https://elfsightcdn.com/platform.js';
-      script.async = true;
-      document.body.appendChild(script);
-      
-    }
-  }
+ 
+ 
 
 if (this.isBrowser) {
     this.titleService.setTitle('Book a Session with Kenny Weiss | Overcome Emotional Struggles & Toxic Patterns');
@@ -57,21 +41,29 @@ if (this.isBrowser) {
     );
   }
 
-
-
-
-
-
-
-
+  }
+ 
+ ngAfterViewInit(): void {
+    // Step 1: Calendly script inject karo
+    const script = document.createElement('script');
+    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    script.async = true;
+    script.onload = () => {
+      // Step 2: Jab script load ho jaye, iframe ke load hone ka wait karo
+      this.waitForIframeAndHideLoader();
+    };
+    document.body.appendChild(script);
   }
 
-ngAfterViewInit(): void {
-    if (this.isBrowser) {
-      // jab tak sara page (images, iframes etc.) load na ho
-      window.addEventListener('load', () => {
-        this.loading = false;
-      });
-    }
+  private waitForIframeAndHideLoader() {
+    const checkIframe = setInterval(() => {
+      const iframe = document.querySelector<HTMLIFrameElement>('.calendly-inline-widget iframe');
+      if (iframe) {
+        iframe.addEventListener('load', () => {
+          this.isLoading = false;
+        });
+        clearInterval(checkIframe);
+      }
+    }, 200);
   }
 }

@@ -11,6 +11,7 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./book-session.component.css']   
 })
 export class BookSessionComponent  implements OnInit {
+   loading = true;
   isBrowser:boolean;
   constructor(private titleService: Title, private metaService: Meta,
 @Inject(PLATFORM_ID) private platformId: Object
@@ -31,7 +32,7 @@ export class BookSessionComponent  implements OnInit {
     script.async = true;
     document.body.appendChild(script);
 
-
+this.loading = false;
      if (this.isBrowser) {
     const scriptId = 'elfsight-script';
     if (!document.getElementById(scriptId)) {
@@ -40,6 +41,7 @@ export class BookSessionComponent  implements OnInit {
       script.src = 'https://elfsightcdn.com/platform.js';
       script.async = true;
       document.body.appendChild(script);
+      
     }
   }
 

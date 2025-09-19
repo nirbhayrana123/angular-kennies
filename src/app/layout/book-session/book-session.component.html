@@ -4,10 +4,8 @@
 <div class="hm-spinner"></div>
 </div>
 
-
-
-<main class="mt bookasectionage">
-  
+<main class="mt bookasectionage" [class.hidden-until-load]="isLoading">
+    
     <div class="event-details-setion">
         <div class="container">
             <div class="event-details">
@@ -58,20 +56,14 @@
             </div>
         </div>
     </div>
-
     <section id="clendly" class="clendly">
         <h3>Book a Session Now</h3>
-        <div class="calendly-inline-widget"
+        <div class="calendly-inline-widget" data-auto-load="false"
             data-url="https://calendly.com/kennyweiss/single-session-350?hide_gdpr_banner=1"
             style="min-width:320px; height:700px;">
         </div>  
  
     </section>
-
-
-
-
-
     <section class="resourcesmain-section">
         <div class="container">
             <div class="resourcsertymain">
@@ -144,8 +136,6 @@
             </div>
         </div>
     </section>
-
-
     <div class="section-wrapper">
         <div class="container">
             <div class="flex-inwrapper">
@@ -229,11 +219,6 @@
             </div>
         </div>
     </div>
-
-
-
-
-
     <section class="podcastvideos">
         <div class="container">
             <div class="videotestiomonials">
@@ -259,11 +244,4 @@
         </div>
 
     </section>
-
-
-
-
-
-
-
 </main>

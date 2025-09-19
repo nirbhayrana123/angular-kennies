@@ -2,6 +2,7 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+declare var Calendly: any;
 
 
 @Component({
@@ -13,7 +14,10 @@ import { RouterModule } from '@angular/router';
 })
 export class BookSessionComponent  implements OnInit {
   isLoading = true;
+  
   isBrowser:boolean;
+      private iframeChecker: any;
+  private maxWaitTimeout: any;
   constructor(private titleService: Title, private metaService: Meta,
 @Inject(PLATFORM_ID) private platformId: Object
 
@@ -43,27 +47,42 @@ if (this.isBrowser) {
 
   }
  
+
+
  ngAfterViewInit(): void {
-    // Step 1: Calendly script inject karo
     const script = document.createElement('script');
     script.src = 'https://assets.calendly.com/assets/external/widget.js';
     script.async = true;
     script.onload = () => {
-      // Step 2: Jab script load ho jaye, iframe ke load hone ka wait karo
-      this.waitForIframeAndHideLoader();
+      // Force Calendly to load immediately
+      Calendly.initInlineWidget({
+        url: 'https://calendly.com/kennyweiss/single-session-350?hide_gdpr_banner=1',
+        parentElement: document.querySelector('.calendly-inline-widget'),
+        prefill: {},
+        utm: {}
+      });
+
+      // Wait for iframe to load
+      this.waitForIframe();
     };
     document.body.appendChild(script);
   }
 
-  private waitForIframeAndHideLoader() {
+  private waitForIframe() {
+    const maxWait = setTimeout(() => {
+      this.isLoading = false; // fallback after 10s
+    }, 10000);
+
     const checkIframe = setInterval(() => {
       const iframe = document.querySelector<HTMLIFrameElement>('.calendly-inline-widget iframe');
       if (iframe) {
         iframe.addEventListener('load', () => {
           this.isLoading = false;
+          clearTimeout(maxWait);
         });
         clearInterval(checkIframe);
       }
     }, 200);
   }
+ 
 }

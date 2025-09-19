@@ -1,13 +1,11 @@
 <!-- Loader -->
  
-<div *ngIf="loading" class="loader-maim"> 
+<div *ngIf="isLoading" class="loader-maim"> 
 <div class="hm-spinner"></div>
 </div>
 
-
-
-<main class="mt bookasectionage" *ngIf="!loading">
-  
+<main class="mt bookasectionage" [class.hidden-until-load]="isLoading">
+    
     <div class="event-details-setion">
         <div class="container">
             <div class="event-details">
@@ -54,24 +52,18 @@
                             [routerLink]="[]" fragment="clendly">Schedual
                             Now</a>
                     </div>
-                </div>
+                </div> 
             </div>
         </div>
     </div>
-
     <section id="clendly" class="clendly">
         <h3>Book a Session Now</h3>
-        <div class="calendly-inline-widget"
+        <div class="calendly-inline-widget" data-auto-load="false"
             data-url="https://calendly.com/kennyweiss/single-session-350?hide_gdpr_banner=1"
             style="min-width:320px; height:700px;">
-        </div>
-        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+        </div>  
+ 
     </section>
-
-
-
-
-
     <section class="resourcesmain-section">
         <div class="container">
             <div class="resourcsertymain">
@@ -144,12 +136,10 @@
             </div>
         </div>
     </section>
-
-
     <div class="section-wrapper">
         <div class="container">
             <div class="flex-inwrapper">
-                <div class="content aos-init aos-animate" data-aos="fade-up" data-aos-duration="100">
+                <div class="content aos-init aos-animate">
                     <h5 class="tag-line">What we have</h5>
                     <h3>How Can Kenny Help You?</h3>
 
@@ -229,11 +219,6 @@
             </div>
         </div>
     </div>
-
-
-
-
-
     <section class="podcastvideos">
         <div class="container">
             <div class="videotestiomonials">
@@ -259,11 +244,4 @@
         </div>
 
     </section>
-
-
-
-
-
-
-
 </main>

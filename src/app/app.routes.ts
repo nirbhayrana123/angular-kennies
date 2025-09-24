@@ -6,7 +6,7 @@ export function blogSlugMatcher(segments: UrlSegment[]) {
     const slug = segments[0].path.toLowerCase();
 
     const reservedRoutes = [
-      '', '404', 'about-kenny-weiss', 'books-by-kenny-weiss',
+      '', 'page-not-found', 'about-kenny-weiss', 'books-by-kenny-weiss',
       'courses', 'resources', 'podcast', 'feelings-wheel',
       'worst-day-cycle', 'thank-you', 'contact',
       'book-a-session-with-kenny-weiss', 'coaching',

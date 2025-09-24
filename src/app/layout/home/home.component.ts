@@ -17,112 +17,109 @@ import { SafeUrlPipe } from "../../pipes/safe-url.pipe";
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit, AfterViewInit, OnDestroy  {
-
-
   isExpanded = false;
-
+    posts: any[] = []; 
 
   audios = [
-    {
-      url: 'https://samples.audible.com/bk/acx0/105161/bk_acx0_105161_sample.mp3',
-      player: new Audio(),
-      isPlaying: false
-    },
-    {
-      url: 'https://samples.audible.com/bk/acx0/385990/bk_acx0_385990_sample.mp3',
-      player: new Audio(),
-      isPlaying: false
-    }
+    { url: 'https://samples.audible.com/bk/acx0/105161/bk_acx0_105161_sample.mp3', player: null as HTMLAudioElement | null, isPlaying: false },
+    { url: 'https://samples.audible.com/bk/acx0/385990/bk_acx0_385990_sample.mp3', player: null as HTMLAudioElement | null, isPlaying: false }
   ];
+  isLightboxOpen = false;
+  videoUrl = 'https://www.youtube.com/embed/SKqP2K0R1z4';
 
-
-
-  isBrowser: boolean;
-   posts: any[] = []; 
+  private steps: HTMLElement[] = [];
+ 
+ 
    acfData: any; 
-  constructor(
+   constructor(
     private el: ElementRef,
     private titleService: Title,
     private metaService: Meta,
-     private wp: WpService, 
+    private wp: WpService,
     @Inject(PLATFORM_ID) private platformId: Object
-  ) {
-    this.isBrowser = isPlatformBrowser(platformId);
-
-    // Set title and meta description
-    // this.titleService.setTitle('Trauma Recovery and Relationship Life Coach | Kenny Weiss');
-    // this.metaService.updateTag({
-    //   name: 'description',
-    //   content: `Struggling with emotions or repeating relationship patterns? Kenny Weiss offers deep rooted help you heal emotional pain and create authentic love.`,
-    // });
-  }
-  ngOnDestroy(): void {
-  if (this.isBrowser) {
-      this.audios.forEach(a => {
-        a.player.pause();
-        a.isPlaying = false;
-        a.player.currentTime = 0;
-      });
-    }
-  }
-
-
-
-   ngOnInit() {
-
-  this.audios.forEach((a, i) => {
-      a.player.src = a.url;
-      // Jab audio khatam ho, icon reset ho jaye
-      a.player.addEventListener('ended', () => {
-        this.audios[i].isPlaying = false;
-      });
-    }); 
-
-    this.wp.getPosts().subscribe((data: any) => {
-      this.posts = data; 
-       this.posts = data.map((post: any) => {
-      return {
-        ...post,
-        courseImage: post.acf?.postimage || '',
-        featuredImage:
-          post._embedded?.['wp:featuredmedia']?.[0]?.source_url || '',
-      };
-    });
-    });
-
-
-  if (this.isBrowser) {
-    const scriptId = 'elfsight-script';
-    if (!document.getElementById(scriptId)) {
-      const script = document.createElement('script');
-      script.id = scriptId;
-      script.src = 'https://elfsightcdn.com/platform.js';
-      script.async = true;
-      document.body.appendChild(script);
-    }
-  }
-
-if (this.isBrowser) {
-    this.titleService.setTitle('Trauma Recovery and Relationship Life Coach | Kenny Weiss');
-    this.metaService.updateTag(
-      {
-        name: 'description',
-        content: `Struggling with emotions or repeating relationship patterns? Kenny Weiss offers deep rooted help you heal emotional pain and create authentic love.`,
-      },
-      "name='description'"
-    );
-  }
+  ) {}
  
+
+ ngOnInit() {
+    // ===== SSR Ready Meta & Title =====
+    this.titleService.setTitle(
+      'Trauma Recovery and Relationship Life Coach | Kenny Weiss'
+    );
+    this.metaService.updateTag({
+      name: 'description',
+      content:
+        'Struggling with emotions or repeating relationship patterns? Kenny Weiss offers deep rooted help you heal emotional pain and create authentic love.',
+    });
+
+    if (isPlatformBrowser(this.platformId)) {
+      // Initialize audios
+      this.audios.forEach((a, i) => {
+        a.player = new Audio();
+        a.player.src = a.url;
+        a.player.addEventListener('ended', () => (this.audios[i].isPlaying = false));
+      });
+
+      // Load external script dynamically
+      const scriptId = 'elfsight-script';
+      if (!document.getElementById(scriptId)) {
+        const script = document.createElement('script');
+        script.id = scriptId;
+        script.src = 'https://elfsightcdn.com/platform.js';
+        script.async = true;
+        document.body.appendChild(script);
+      }
+
+      // Fetch WP posts dynamically
+      this.wp.getPosts().subscribe((data: any) => {
+        this.posts = data.map((post: any) => ({
+          ...post,
+          courseImage: post.acf?.postimage || '',
+          featuredImage:
+            post._embedded?.['wp:featuredmedia']?.[0]?.source_url || '',
+        }));
+      });
+    }
   }
 
 
- toggleKannyContent() {
+
+    ngAfterViewInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      this.steps = Array.from(
+        this.el.nativeElement.querySelectorAll('.step')
+      );
+    }
+  }
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    if (!isPlatformBrowser(this.platformId)) return;
+
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const windowHeight = window.innerHeight;
+    const scrollMiddle = scrollTop + windowHeight / 2;
+
+    this.steps.forEach((step) => {
+      const rect = step.getBoundingClientRect();
+      const offsetTop = rect.top + window.scrollY;
+      const offsetBottom = offsetTop + rect.height;
+
+      if (scrollMiddle >= offsetTop && scrollMiddle < offsetBottom) {
+        this.steps.forEach((s) => s.classList.remove('active'));
+        step.classList.add('active');
+      }
+    });
+  }
+
+  toggleKannyContent() {
     this.isExpanded = !this.isExpanded;
   }
 
-  toggleAudio(index: number) { 
+  toggleAudio(index: number) {
+    if (!isPlatformBrowser(this.platformId)) return;
+
     this.audios.forEach((a, i) => {
-      if (i !== index) {
+      if (i !== index && a.player) {
         a.player.pause();
         a.isPlaying = false;
         a.player.currentTime = 0;
@@ -130,6 +127,8 @@ if (this.isBrowser) {
     });
 
     const audioItem = this.audios[index];
+    if (!audioItem.player) return;
+
     if (audioItem.isPlaying) {
       audioItem.player.pause();
     } else {
@@ -138,77 +137,39 @@ if (this.isBrowser) {
     audioItem.isPlaying = !audioItem.isPlaying;
   }
 
-
-
-getShortContent(htmlContent: string, wordLimit: number = 30): string {
-  if (!htmlContent) return '';
-
-  // HTML tags hatao
-  const text = htmlContent.replace(/<[^>]+>/g, '');
-
-  // Words me split karke limit lagao
-  const words = text.split(/\s+/).slice(0, wordLimit);
-
-  return words.join(' ') + (words.length >= wordLimit ? '...' : '');
-}
-
- 
-
   toggleContent(): void {
     this.isExpanded = !this.isExpanded;
   }
 
- 
-  
-
-isLightboxOpen = false;
-videoUrl = 'https://www.youtube.com/embed/SKqP2K0R1z4';
-
-openLightbox() {
-  this.isLightboxOpen = true;
-}
-
-closeLightbox() {
-  this.isLightboxOpen = false;
-
-  // Stop video by removing src temporarily
-  const temp = this.videoUrl;
-  this.videoUrl = ''; // iframe ka src empty kardo
-  setTimeout(() => {
-    this.videoUrl = temp; // dobara set kardo jab next time open hoga
-  });
-}
-
-  
-
-private steps!: HTMLElement[];
- 
-
-
-  ngAfterViewInit(): void {
-    // Collect all elements with class 'step' after the view is loaded
-    this.steps = Array.from(this.el.nativeElement.querySelectorAll('.step'));
+  openLightbox() {
+    this.isLightboxOpen = true;
   }
 
-  @HostListener('window:scroll', [])
-  onWindowScroll() {
-    const scrollTop = window.scrollY || document.documentElement.scrollTop;
-    const windowHeight = window.innerHeight;
-    const scrollMiddle = scrollTop + windowHeight / 2;
-
-    this.steps.forEach(step => {
-      const rect = step.getBoundingClientRect();
-      const offsetTop = rect.top + window.scrollY;
-      const offsetBottom = offsetTop + rect.height;
-
-      if (scrollMiddle >= offsetTop && scrollMiddle < offsetBottom) {
-        this.steps.forEach(s => s.classList.remove('active'));
-        step.classList.add('active');
-      }
-    });
+  closeLightbox() {
+    this.isLightboxOpen = false;
+    const temp = this.videoUrl;
+    this.videoUrl = '';
+    setTimeout(() => (this.videoUrl = temp));
   }
-
-
+  getShortContent(htmlContent: string, wordLimit: number = 30): string {
+    if (!htmlContent) return '';
+    const text = htmlContent.replace(/<[^>]+>/g, '');
+    const words = text.split(/\s+/).slice(0, wordLimit);
+    return (
+      words.join(' ') + (words.length >= wordLimit ? '...' : '')
+    );
+  }
+  ngOnDestroy(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      this.audios.forEach((a) => {
+        if (a.player) {
+          a.player.pause();
+          a.player.currentTime = 0;
+        }
+        a.isPlaying = false;
+      });
+    }
+  }
 
 
   }

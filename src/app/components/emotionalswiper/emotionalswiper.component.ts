@@ -8,11 +8,10 @@ import { WpService } from '../../services/wp.service';
  
 
 @Component({
-   selector: 'app-emotionalswiper',
-  standalone: true,
-  imports: [CommonModule, RouterModule],
-  templateUrl: './emotionalswiper.component.html',
-  styleUrls: ['./emotionalswiper.component.css'] 
+    selector: 'app-emotionalswiper',
+    imports: [CommonModule, RouterModule],
+    templateUrl: './emotionalswiper.component.html',
+    styleUrls: ['./emotionalswiper.component.css']
 })
 export class EmotionalswiperComponent implements OnInit {
     @ViewChild('emotionalSwiper', { static: false }) swiperRef!: ElementRef;

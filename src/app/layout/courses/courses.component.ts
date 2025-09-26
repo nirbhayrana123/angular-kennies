@@ -5,11 +5,10 @@ import { WpService } from '../../services/wp.service';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 
 @Component({
-  selector: 'app-courses',
-  standalone: true,
-  imports: [RouterModule, CommonModule ],
-  templateUrl: './courses.component.html',
-  styleUrl: './courses.component.css'
+    selector: 'app-courses',
+    imports: [RouterModule, CommonModule],
+    templateUrl: './courses.component.html',
+    styleUrl: './courses.component.css'
 })
 export class CoursesComponent {
   services: any = { acf: {} };

@@ -6,11 +6,10 @@ declare var Calendly: any;
 
 
 @Component({
-  selector: 'app-book-session',
-  standalone: true,
-  imports: [RouterModule, CommonModule],
-  templateUrl: './book-session.component.html',
-  styleUrls: ['./book-session.component.css']   
+    selector: 'app-book-session',
+    imports: [RouterModule, CommonModule],
+    templateUrl: './book-session.component.html',
+    styleUrls: ['./book-session.component.css']
 })
 export class BookSessionComponent  implements OnInit {
   isLoading = true;

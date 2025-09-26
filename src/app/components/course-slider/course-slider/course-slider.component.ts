@@ -9,11 +9,10 @@ import { WpService } from '../../../services/wp.service';
 
 
 @Component({
-  selector: 'app-course-slider',
-  standalone: true,
-  imports: [CommonModule, RouterModule],
-  templateUrl: './course-slider.component.html',
-  styleUrl: './course-slider.component.css'
+    selector: 'app-course-slider',
+    imports: [CommonModule, RouterModule],
+    templateUrl: './course-slider.component.html',
+    styleUrl: './course-slider.component.css'
 })
 export class CourseSliderComponent implements AfterViewInit {
     services: any[] = [];

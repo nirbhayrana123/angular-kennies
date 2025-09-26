@@ -6,11 +6,10 @@ import { WpService } from '../../../services/wp.service';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-courses-details',
-  standalone: true,
-  imports: [RouterModule, CommonModule, SafeUrlPipe],
-  templateUrl: './courses-details.component.html',
-  styleUrl: './courses-details.component.css' 
+    selector: 'app-courses-details',
+    imports: [RouterModule, CommonModule, SafeUrlPipe],
+    templateUrl: './courses-details.component.html',
+    styleUrl: './courses-details.component.css'
 })
 export class CoursesDetailsComponent {
   service: any = { acf: {} };

@@ -3,11 +3,10 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 @Component({
-  selector: 'app-footer',
-  standalone: true,
-  imports: [FormsModule, CommonModule ],
-  templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.css']
+    selector: 'app-footer',
+    imports: [FormsModule, CommonModule],
+    templateUrl: './footer.component.html',
+    styleUrls: ['./footer.component.css']
 })
 export class FooterComponent {
   email = '';

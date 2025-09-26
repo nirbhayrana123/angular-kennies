@@ -3,11 +3,10 @@ import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
-  selector: 'app-podcast',
-  standalone: true,
-  imports: [],
-  templateUrl: './podcast.component.html',
-  styleUrl: './podcast.component.css'
+    selector: 'app-podcast',
+    imports: [],
+    templateUrl: './podcast.component.html',
+    styleUrl: './podcast.component.css'
 })
 
 export class PodcastComponent {

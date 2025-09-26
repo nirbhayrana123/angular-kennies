@@ -7,11 +7,10 @@ import { CommonModule } from '@angular/common';
  
 
 @Component({
-  selector: 'app-healing-services',
-  standalone: true,
-  imports: [CommonModule, RouterModule],
-  templateUrl: './healing-services.component.html',
-  styleUrl: './healing-services.component.css'
+    selector: 'app-healing-services',
+    imports: [CommonModule, RouterModule],
+    templateUrl: './healing-services.component.html',
+    styleUrl: './healing-services.component.css'
 })
 export class HealingServicesComponent {
    healservices: any[] = [];

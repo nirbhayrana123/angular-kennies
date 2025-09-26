@@ -6,11 +6,10 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule, isPlatformBrowser } from '@angular/common'; // 👈 Import this
 import { NgIf } from '@angular/common'; //
 @Component({
-  selector: 'app-feelings-wheel',
-  standalone: true,
-  imports: [RouterModule, FormsModule,CommonModule,NgIf ],
-  templateUrl: './feelings-wheel.component.html',
-  styleUrls: ['./feelings-wheel.component.css']
+    selector: 'app-feelings-wheel',
+    imports: [RouterModule, FormsModule, CommonModule, NgIf],
+    templateUrl: './feelings-wheel.component.html',
+    styleUrls: ['./feelings-wheel.component.css']
 })
 export class FeelingsWheelComponent {
 [x: string]: any;

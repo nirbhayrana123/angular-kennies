@@ -9,11 +9,10 @@ import { EmbedYoutubePipe } from '../../../pipes/embed-youtube.pipe';
 import { SafeUrlPipe } from '../../../pipes/safe-url.pipe'; // pipe ka import
 
 @Component({
-  selector: 'app-blog-details',
-  standalone: true,
-  imports: [CommonModule, RouterModule, SafeUrlPipe, CourseSliderComponent, EmbedYoutubePipe],
-  templateUrl: './blog-details.component.html',
-  styleUrls: ['./blog-details.component.css']
+    selector: 'app-blog-details',
+    imports: [CommonModule, RouterModule, SafeUrlPipe, CourseSliderComponent, EmbedYoutubePipe],
+    templateUrl: './blog-details.component.html',
+    styleUrls: ['./blog-details.component.css']
 })
 export class BlogDetailsComponent {
   post: any;

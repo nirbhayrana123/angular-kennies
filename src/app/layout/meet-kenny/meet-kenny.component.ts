@@ -5,11 +5,10 @@ import { CourseSliderComponent } from '../../components/course-slider/course-sli
 import { ActivatedRoute, RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-meet-kenny',
-  standalone: true,
-  imports: [CommonModule, CourseSliderComponent, RouterModule],
-  templateUrl: './meet-kenny.component.html',
-  styleUrl: './meet-kenny.component.css'
+    selector: 'app-meet-kenny',
+    imports: [CommonModule, CourseSliderComponent, RouterModule],
+    templateUrl: './meet-kenny.component.html',
+    styleUrl: './meet-kenny.component.css'
 })
 export class MeetKennyComponent  implements OnInit, OnDestroy {
   isExpanded = false; 

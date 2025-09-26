@@ -10,11 +10,10 @@ import { WpService } from '../../services/wp.service';
 import { SafeUrlPipe } from "../../pipes/safe-url.pipe";  
 
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [EmotionalswiperComponent, CourseSliderComponent,   ExercisesWorkbookComponent,  RouterModule, CommonModule, SafeUrlPipe],
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css'],
+    selector: 'app-home',
+    imports: [EmotionalswiperComponent, CourseSliderComponent, ExercisesWorkbookComponent, RouterModule, CommonModule, SafeUrlPipe],
+    templateUrl: './home.component.html',
+    styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit, AfterViewInit, OnDestroy  {
   isExpanded = false;

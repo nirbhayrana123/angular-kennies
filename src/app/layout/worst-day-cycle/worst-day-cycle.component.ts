@@ -6,11 +6,10 @@ import { WpService } from '../../services/wp.service';
 
 
 @Component({
-  selector: 'app-worst-day-cycle',
-  standalone: true,
-  imports: [RouterModule,CommonModule],
-  templateUrl: './worst-day-cycle.component.html',
-  styleUrls: ['./worst-day-cycle.component.css']   
+    selector: 'app-worst-day-cycle',
+    imports: [RouterModule, CommonModule],
+    templateUrl: './worst-day-cycle.component.html',
+    styleUrls: ['./worst-day-cycle.component.css']
 })
 export class WorstDayCycleComponent {
 

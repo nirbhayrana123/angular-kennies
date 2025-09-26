@@ -7,11 +7,10 @@ import { Title, Meta } from '@angular/platform-browser';
 import { NgxPaginationModule } from 'ngx-pagination'; 
 
 @Component({
-  selector: 'app-blog',
-  standalone: true,
-  imports: [CommonModule, RouterModule, NgxPaginationModule ],
-  templateUrl: './blog.component.html',
-  styleUrl: './blog.component.css'
+    selector: 'app-blog',
+    imports: [CommonModule, RouterModule, NgxPaginationModule],
+    templateUrl: './blog.component.html',
+    styleUrl: './blog.component.css'
 })
 export class BlogComponent implements OnInit{
   posts: any[] = []; 

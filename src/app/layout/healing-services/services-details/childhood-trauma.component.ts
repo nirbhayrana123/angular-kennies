@@ -8,11 +8,10 @@ import { CommonModule } from '@angular/common';
 
 
 @Component({
-  selector: 'app-childhood-trauma',
-  standalone: true,
-  imports: [RouterModule, EmotionalswiperComponent,CommonModule],
-  templateUrl: './childhood-trauma.component.html',
-  styleUrl: './childhood-trauma.component.css'
+    selector: 'app-childhood-trauma',
+    imports: [RouterModule, EmotionalswiperComponent, CommonModule],
+    templateUrl: './childhood-trauma.component.html',
+    styleUrl: './childhood-trauma.component.css'
 })
 export class ChildhoodTraumaComponent {
 

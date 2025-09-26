@@ -6,11 +6,10 @@ import { CommonModule, isPlatformBrowser } from '@angular/common'; // 👈 Impor
 import { NgIf } from '@angular/common'; // 👈 Optional if you prefer individual directive
 
 @Component({
-  selector: 'app-contact',
-  standalone: true,
-  imports: [FormsModule,CommonModule, NgIf],
-  templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.css']
+    selector: 'app-contact',
+    imports: [FormsModule, CommonModule, NgIf],
+    templateUrl: './contact.component.html',
+    styleUrls: ['./contact.component.css']
 })
 export class ContactComponent {
   formData = {

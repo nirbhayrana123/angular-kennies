@@ -7,11 +7,10 @@ import { CommonModule, isPlatformBrowser } from '@angular/common'; // 👈 Impor
 import { NgIf } from '@angular/common'; // 👈 Optional if you prefer individual directive
 
 @Component({
-  selector: 'app-resources',
-  standalone: true,
-  imports: [RouterModule,FormsModule,CommonModule,NgIf],
-  templateUrl: './resources.component.html',
-  styleUrl: './resources.component.css'
+    selector: 'app-resources',
+    imports: [RouterModule, FormsModule, CommonModule, NgIf],
+    templateUrl: './resources.component.html',
+    styleUrl: './resources.component.css'
 })
 export class ResourcesComponent {
    isBrowser: boolean;  

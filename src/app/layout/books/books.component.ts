@@ -5,11 +5,10 @@ import { Title, Meta } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { WpService } from '../../services/wp.service';
 @Component({
-  selector: 'app-books',
-  standalone: true,
-  imports: [RouterModule, FormsModule, CommonModule, NgIf ],
-  templateUrl: './books.component.html',
-  styleUrls : ['./books.component.css']
+    selector: 'app-books',
+    imports: [RouterModule, FormsModule, CommonModule, NgIf],
+    templateUrl: './books.component.html',
+    styleUrls: ['./books.component.css']
 })
 export class BooksComponent implements OnInit {
 isBrowser: boolean;

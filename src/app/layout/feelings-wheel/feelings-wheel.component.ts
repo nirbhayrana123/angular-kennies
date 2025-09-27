@@ -5,6 +5,7 @@ import { WpService } from '../../services/wp.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule, isPlatformBrowser } from '@angular/common'; // 👈 Import this
 import { NgIf } from '@angular/common'; //
+
 @Component({
     selector: 'app-feelings-wheel',
     imports: [RouterModule, FormsModule, CommonModule, NgIf],

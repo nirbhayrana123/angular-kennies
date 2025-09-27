@@ -69,7 +69,6 @@ isBrowser:boolean
 
 
  ngOnInit() {
-if (this.isBrowser) {
     this.titleService.setTitle('Contact Kenny Weiss | Begin Your Healing Journey Today');
     this.metaService.updateTag(
       {
@@ -78,7 +77,6 @@ if (this.isBrowser) {
       },
       "name='description'"
     );
-  }
 
 
  }

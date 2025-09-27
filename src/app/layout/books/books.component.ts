@@ -53,9 +53,6 @@ submitFormBooks() {
 
 
 ngOnInit() {
-
-
-if (this.isBrowser) {
       this.titleService.setTitle('Break Toxic Patterns & Reclaim Love | Kenny Weiss Books');
       this.metaService.updateTag(
         {
@@ -64,15 +61,6 @@ if (this.isBrowser) {
         },
         "name='description'"
       );
-    }
-
-
-
-
-
-
-
-
   const scriptId = 'elfsight-script';
   if (!document.getElementById(scriptId)) {
     const script = document.createElement('script');

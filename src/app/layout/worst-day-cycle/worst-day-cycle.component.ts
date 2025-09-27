@@ -19,13 +19,7 @@ export class WorstDayCycleComponent {
    bannerHeading = '';  
     loading = true;
   constructor(private titleService: Title, private metaService: Meta, private wp: WpService, @Inject(PLATFORM_ID) private platformId: Object) {
-    // this.titleService.setTitle('Worst Day Cycle | Life Coach | Personal Development Coach');
-    // this.metaService.updateTag({
-    //   name: 'description',
-    //   content: 'Absorbing childhood trauma leads to self-destructive behavior. Learn about breaking The Worst Day Cycle. Hire a personal development coach...',
-    // });
-
-this.isBrowser = isPlatformBrowser(this.platformId);
+ this.isBrowser = isPlatformBrowser(this.platformId);
 
   }
   getShortContent(htmlContent: string, wordLimit: number = 30): string {
@@ -40,6 +34,14 @@ this.isBrowser = isPlatformBrowser(this.platformId);
   return words.join(' ') + (words.length >= wordLimit ? '...' : '');
 }
   ngOnInit() {
+    this.titleService.setTitle('Worst Day Cycle: Break Free from Self-Sabotage | Kenny Weiss');
+    this.metaService.updateTag(
+      {
+        name: 'description',
+        content: ` Discover Kenny Weiss's Worst Day Cycle—a 4-stage pattern of trauma, fear, shame, and denial—and learn how to heal and reclaim your authentic self.`,
+      },
+      "name='description'"
+    );
     this.wp.getwdc().subscribe((data) => {
       this.wdcposts = data;
       console.log(data);
@@ -64,19 +66,6 @@ this.isBrowser = isPlatformBrowser(this.platformId);
     this.loading = false;
     });
   
-
-
- if (this.isBrowser) {
-    this.titleService.setTitle('Worst Day Cycle: Break Free from Self-Sabotage | Kenny Weiss');
-    this.metaService.updateTag(
-      {
-        name: 'description',
-        content: ` Discover Kenny Weiss's Worst Day Cycle—a 4-stage pattern of trauma, fear, shame, and denial—and learn how to heal and reclaim your authentic self.`,
-      },
-      "name='description'"
-    );
-  }
-
 
   }
 

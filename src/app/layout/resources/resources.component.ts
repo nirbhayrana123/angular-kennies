@@ -27,15 +27,10 @@ formSuccessCodependenceGiving = false;
 formSuccessFeelingsWheel = false;
 constructor(private titleService: Title, private metaService: Meta,  private wpService: WpService, @Inject(PLATFORM_ID) private platformId: Object) {
   this.isBrowser = isPlatformBrowser(this.platformId);
-    // this.titleService.setTitle('Resources | Emotional Authenticity Coach | Emotion Coaching');
-    // this.metaService.updateTag({
-    //   name: 'description',
-    //   content: 'The Greatness Movement helps you understand “why” things aren’t working, but more importantly, “how” to change them.',
-    // });
   }
-   ngOnInit() { 
-    if (this.isBrowser) {
-    this.titleService.setTitle(' Free Resources By Kenny Weiss To Strengthen Relationships & Self');
+   ngOnInit() {  
+
+    this.titleService.setTitle('Free Resources By Kenny Weiss To Strengthen Relationships & Self');
     this.metaService.updateTag(
       {
         name: 'description',
@@ -43,9 +38,6 @@ constructor(private titleService: Title, private metaService: Meta,  private wpS
       },
       "name='description'"
     );
-  }
- 
-
   }
   submitFormresource() {
      this.formSubmitted = true;

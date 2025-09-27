@@ -30,6 +30,19 @@ constructor(private titleService: Title, private metaService: Meta, private wp: 
  
  
   ngOnInit() { 
+    this.titleService.setTitle('Online Courses to Strengthen Love, Boundaries & Self | Kenny Weiss');
+    this.metaService.updateTag(
+      {
+        name: 'description',
+        content: `Tired of repeating toxic cycles in love and life? Discover Kenny Weiss’s online courses to overcome narcissists, self-sabotage, and codependency.`,
+      },
+      "name='description'"
+    );
+
+
+
+
+
     this.wp.getServices().subscribe((data) => {
       this.services = data;
       console.log(data);
@@ -53,26 +66,5 @@ constructor(private titleService: Title, private metaService: Meta, private wp: 
       
     this.loading = false;
     });
-
-
-
-
-if (this.isBrowser) {
-    this.titleService.setTitle(' Online Courses to Strengthen Love, Boundaries & Self | Kenny Weiss');
-    this.metaService.updateTag(
-      {
-        name: 'description',
-        content: `Tired of repeating toxic cycles in love and life? Discover Kenny Weiss’s online courses to overcome narcissists, self-sabotage, and codependency.`,
-      },
-      "name='description'"
-    );
-  }
-
-
-
-
-
-
-
   }
 } 

@@ -22,12 +22,6 @@ formSubmitted = false;
   formSuccessFeelingsWheel2 = false;
 
   constructor(private titleService: Title, private metaService: Meta, private wpService: WpService, @Inject(PLATFORM_ID) private platformId: Object) {
-    // this.titleService.setTitle('Feelings Wheel - Kenny Weiss');
-    // this.metaService.updateTag({
-    //   name: 'description',
-    //   content: 'The Feelings Wheel will help you identify how you are feeling so you can recognize how the unhealed pain from the past is being relived...',
-    // });
-
     this.isBrowser = isPlatformBrowser(this.platformId);
   }
 
@@ -62,8 +56,7 @@ submitFormFeelingsWheel2() {
 
 
  ngOnInit() { 
-    if (this.isBrowser) {
-    this.titleService.setTitle('Feelings Wheel: Identify & Understand Your Emotions | Kenny Weiss');
+      this.titleService.setTitle('Feelings Wheel: Identify & Understand Your Emotions | Kenny Weiss');
     this.metaService.updateTag(
       {
         name: 'description',
@@ -71,7 +64,6 @@ submitFormFeelingsWheel2() {
       },
       "name='description'"
     );
-  }
 }
 
 

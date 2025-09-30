@@ -1,8 +1,8 @@
 <div *ngIf="loading" class="loader-maim"> 
 <div class="hm-spinner"></div>
 </div>    
-
-<div *ngIf="!loading" class="newblog-post">
+<app-not-found *ngIf="showNotFound"></app-not-found>
+<div *ngIf="!loading && !showNotFound" class="newblog-post">
     <div *ngFor="let hservice of healservices">
         <div class="news-block-two">
             <div class="inner-box">

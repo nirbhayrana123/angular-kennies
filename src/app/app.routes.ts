@@ -74,15 +74,9 @@ export const routes: Routes = [
   { path: 'contact', loadComponent: () => import('./layout/contact/contact.component').then(m => m.ContactComponent) },
   { path: 'book-a-session-with-kenny-weiss', loadComponent: () => import('./layout/book-session/book-session.component').then(m => m.BookSessionComponent) },
   { path: 'healing-services', loadComponent: () => import('./layout/healing-services/healing-services.component').then(m => m.HealingServicesComponent) },
-
-  
   { matcher: coachingSlugMatcher, loadComponent: () => import('./layout/healing-services/services-details/childhood-trauma.component').then(m => m.ChildhoodTraumaComponent) },
   { matcher: coursesSlugMatcher, loadComponent: () => import('./layout/courses/courses-details/courses-details.component').then(m => m.CoursesDetailsComponent) },
   { matcher: wdcSlugMatcher, loadComponent: () => import('./layout/worst-day-cycle/wdc-details/wdc-details.component').then(m => m.WdcDetailsComponent) },
-
- 
   { matcher: blogSlugMatcher, loadComponent: () => import('./layout/blog/blog-details/blog-details.component').then(m => m.BlogDetailsComponent) },
-
- 
   { path: '**', loadComponent: () => import('./layout/not-found/not-found.component').then(m => m.NotFoundComponent) },
 ];

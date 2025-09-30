@@ -4,6 +4,7 @@ import { WpService } from '../../services/wp.service';
 import { RouterModule, ActivatedRoute } from '@angular/router';
 import { Title, Meta } from '@angular/platform-browser';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { CanonicalService } from '../../services/canonical.service';
 
 
 const POSTS_KEY: StateKey<any> = makeStateKey<any>('blog-posts');
@@ -32,7 +33,8 @@ export class BlogComponent implements OnInit {
     private metaService: Meta,
     private route: ActivatedRoute,
     @Inject(PLATFORM_ID) private platformId: Object,
-    private transferState: TransferState
+    private transferState: TransferState,
+    private canonical: CanonicalService
   ) {
     this.isBrowser = isPlatformBrowser(this.platformId);
     this.isServer = isPlatformServer(this.platformId);
@@ -67,5 +69,6 @@ export class BlogComponent implements OnInit {
         }
       });
     }
+     this.canonical.setCanonical('https://kennyweiss.net/best-day-blog/');
   }
 }

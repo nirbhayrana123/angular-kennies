@@ -3,6 +3,7 @@ import { Title, Meta } from '@angular/platform-browser';
 import { ActivatedRoute, RouterModule } from '@angular/router'; 
 import { WpService } from '../../services/wp.service';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { CanonicalService } from '../../services/canonical.service';
 
 @Component({
     selector: 'app-courses',
@@ -19,7 +20,13 @@ export class CoursesComponent {
    loading = true;
  isBrowser: boolean;  
 
-constructor(private titleService: Title, private metaService: Meta, private wp: WpService,private route: ActivatedRoute, @Inject(PLATFORM_ID) private platformId: Object) {
+constructor(private titleService: Title, 
+  private metaService: Meta,
+  private wp: WpService,
+  private route: ActivatedRoute, 
+  @Inject(PLATFORM_ID) private platformId: Object,
+  private canonical: CanonicalService
+) {
   this.isBrowser = isPlatformBrowser(this.platformId);
     // this.titleService.setTitle('Begin Your Journey Course - Kenny Weiss');
     // this.metaService.updateTag({
@@ -66,5 +73,6 @@ constructor(private titleService: Title, private metaService: Meta, private wp: 
       
     this.loading = false;
     });
+    this.canonical.setCanonical('https://kennyweiss.net/courses/');
   }
 } 

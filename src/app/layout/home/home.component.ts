@@ -8,6 +8,7 @@ import { ExercisesWorkbookComponent } from '../../components/exercises-workbook/
 import { RouterModule } from '@angular/router';  
 import { WpService } from '../../services/wp.service';
 import { SafeUrlPipe } from "../../pipes/safe-url.pipe";  
+import { CanonicalService } from '../../services/canonical.service';
 
 @Component({
     selector: 'app-home',
@@ -35,7 +36,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy  {
     private titleService: Title,
     private metaService: Meta,
     private wp: WpService,
-    @Inject(PLATFORM_ID) private platformId: Object
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private canonical: CanonicalService
   ) {}
  
 
@@ -78,6 +80,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy  {
         }));
       });
     }
+    this.canonical.setCanonical('https://kennyweiss.net/');
   }
 
 

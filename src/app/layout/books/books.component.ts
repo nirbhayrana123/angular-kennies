@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { Title, Meta } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { WpService } from '../../services/wp.service';
+import { CanonicalService } from '../../services/canonical.service';
 @Component({
     selector: 'app-books',
     imports: [RouterModule, FormsModule, CommonModule, NgIf],
@@ -19,7 +20,12 @@ formData = {
 formSubmitted = false; 
   formSuccessBooks = false;
 
-constructor(private titleService: Title, private metaService: Meta, private wpService: WpService,  @Inject(PLATFORM_ID) private platformId: Object) {
+constructor(private titleService: Title, 
+  private metaService: Meta, 
+  private wpService: WpService, 
+   @Inject(PLATFORM_ID) private platformId: Object,
+   private canonical: CanonicalService
+  ) {
     this.isBrowser = isPlatformBrowser(this.platformId);
   }
 
@@ -69,7 +75,9 @@ ngOnInit() {
     script.async = true;
     document.body.appendChild(script);
   }
+  this.canonical.setCanonical('https://kennyweiss.net/books-by-kenny-weiss/');
 }
 
 
 }
+ 

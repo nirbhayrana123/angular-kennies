@@ -17,29 +17,37 @@ export function app(): express.Express {
   server.set('view engine', 'html');
   server.set('views', browserDistFolder);
 
-  // Example Express Rest API endpoints
-  // server.get('/api/**', (req, res) => { });
-  // Serve static files from /browser
-  server.get('**', express.static(browserDistFolder, {
+  // Serve static files ONLY for assets (*.js, *.css, images etc.)
+  server.get('**.*', express.static(browserDistFolder, {
     maxAge: '1y',
-    index: 'index.html',
   }));
 
-  // All regular routes use the Angular engine
-  server.get('**', (req, res, next) => {
+// Angular routes
+server.get('**', async (req, res, next) => {
+  try {
+    // 👇 Reset status for every new request
+    (global as any).ngStatusCode = 200;
+
     const { protocol, originalUrl, baseUrl, headers } = req;
 
-    commonEngine
-      .render({
-        bootstrap,
-        documentFilePath: indexHtml,
-        url: `${protocol}://${headers.host}${originalUrl}`,
-        publicPath: browserDistFolder,
-        providers: [{ provide: APP_BASE_HREF, useValue: baseUrl }],
-      })
-      .then((html) => res.send(html))
-      .catch((err) => next(err));
-  });
+    const html = await commonEngine.render({
+      bootstrap,
+      documentFilePath: indexHtml,
+      url: `${protocol}://${headers.host}${originalUrl}`,
+      publicPath: browserDistFolder,
+      providers: [
+        { provide: APP_BASE_HREF, useValue: baseUrl },
+      ],
+    });
+
+    const statusCode = (global as any).ngStatusCode || 200;
+    res.status(statusCode).send(html);
+
+  } catch (err) {
+    next(err);
+  }
+});
+
 
   return server;
 }
@@ -50,7 +58,7 @@ function run(): void {
   // Start up the Node server
   const server = app();
   server.listen(port, () => {
-    console.log(`Node Express server listening on http://localhost:${port}`);
+    console.log(`✅ Node Express server listening on http://localhost:${port}`);
   });
 }
 

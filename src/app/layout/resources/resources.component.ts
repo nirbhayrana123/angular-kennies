@@ -5,6 +5,7 @@ import { WpService } from '../../services/wp.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule, isPlatformBrowser } from '@angular/common'; // 👈 Import this
 import { NgIf } from '@angular/common'; // 👈 Optional if you prefer individual directive
+import { CanonicalService } from '../../services/canonical.service';
 
 @Component({
     selector: 'app-resources',
@@ -25,7 +26,12 @@ formSuccessconquerconfrontation = false;
 formSuccessboundaries = false;
 formSuccessCodependenceGiving = false;
 formSuccessFeelingsWheel = false;
-constructor(private titleService: Title, private metaService: Meta,  private wpService: WpService, @Inject(PLATFORM_ID) private platformId: Object) {
+constructor(private titleService: Title, 
+  private metaService: Meta,  
+  private wpService: WpService, 
+  @Inject(PLATFORM_ID) private platformId: Object,
+  private canonical: CanonicalService
+) {
   this.isBrowser = isPlatformBrowser(this.platformId);
   }
    ngOnInit() {  
@@ -38,6 +44,7 @@ constructor(private titleService: Title, private metaService: Meta,  private wpS
       },
       "name='description'"
     );
+       this.canonical.setCanonical('https://kennyweiss.net/resources/');
   }
   submitFormresource() {
      this.formSubmitted = true;

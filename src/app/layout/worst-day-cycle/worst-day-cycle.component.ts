@@ -3,6 +3,7 @@ import { Title, Meta } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { WpService } from '../../services/wp.service';  
+import { CanonicalService } from '../../services/canonical.service';
 
 
 @Component({
@@ -18,7 +19,12 @@ export class WorstDayCycleComponent {
    acfData: any;
    bannerHeading = '';  
     loading = true;
-  constructor(private titleService: Title, private metaService: Meta, private wp: WpService, @Inject(PLATFORM_ID) private platformId: Object) {
+  constructor(private titleService: Title, 
+    private metaService: Meta,
+    private wp: WpService, 
+    @Inject(PLATFORM_ID) private platformId: Object,
+  private canonical: CanonicalService
+  ) {
  this.isBrowser = isPlatformBrowser(this.platformId);
 
   }
@@ -66,7 +72,7 @@ export class WorstDayCycleComponent {
     this.loading = false;
     });
   
-
+this.canonical.setCanonical('https://kennyweiss.net/worst-day-cycle/');
   }
 
 

@@ -4,6 +4,7 @@ import { WpService } from '../../services/wp.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule, isPlatformBrowser } from '@angular/common'; // 👈 Import this
 import { NgIf } from '@angular/common'; // 👈 Optional if you prefer individual directive
+import { CanonicalService } from '../../services/canonical.service';
 
 @Component({
     selector: 'app-contact',
@@ -26,7 +27,8 @@ isBrowser:boolean
     private titleService: Title,
     private metaService: Meta,
     private wpService: WpService,
-     @Inject(PLATFORM_ID) private platformId: Object
+     @Inject(PLATFORM_ID) private platformId: Object,
+     private canonical: CanonicalService
   ) {
     // this.titleService.setTitle('Contact Kenny Weiss - Kenny Weiss');
     // this.metaService.updateTag({
@@ -78,6 +80,7 @@ isBrowser:boolean
       "name='description'"
     );
 
+this.canonical.setCanonical('https://kennyweiss.net/contact/');
 
  }
 

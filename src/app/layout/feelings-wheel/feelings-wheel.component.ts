@@ -5,6 +5,7 @@ import { WpService } from '../../services/wp.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule, isPlatformBrowser } from '@angular/common'; // 👈 Import this
 import { NgIf } from '@angular/common'; //
+import { CanonicalService } from '../../services/canonical.service';
 
 @Component({
     selector: 'app-feelings-wheel',
@@ -22,7 +23,12 @@ formData = {
 formSubmitted = false; 
   formSuccessFeelingsWheel2 = false;
 
-  constructor(private titleService: Title, private metaService: Meta, private wpService: WpService, @Inject(PLATFORM_ID) private platformId: Object) {
+  constructor(private titleService: Title, 
+    private metaService: Meta, 
+    private wpService: WpService,
+     @Inject(PLATFORM_ID) private platformId: Object,
+     private canonical: CanonicalService
+    ) {
     this.isBrowser = isPlatformBrowser(this.platformId);
   }
 
@@ -65,7 +71,8 @@ submitFormFeelingsWheel2() {
       },
       "name='description'"
     );
+    this.canonical.setCanonical('https://kennyweiss.net/feelings-wheel/');
 }
-
+ 
 
 }

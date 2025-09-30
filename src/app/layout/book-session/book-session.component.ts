@@ -2,6 +2,7 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+import { CanonicalService } from '../../services/canonical.service';
 declare var Calendly: any;
 
 
@@ -18,8 +19,8 @@ export class BookSessionComponent  implements OnInit {
       private iframeChecker: any;
   private maxWaitTimeout: any;
   constructor(private titleService: Title, private metaService: Meta,
-@Inject(PLATFORM_ID) private platformId: Object
-
+@Inject(PLATFORM_ID) private platformId: Object,
+private canonical: CanonicalService
   ) {
      this.isBrowser = isPlatformBrowser(this.platformId);
     // this.titleService.setTitle('Book a Session');
@@ -43,7 +44,7 @@ if (this.isBrowser) {
       "name='description'"
     );
   }
-
+this.canonical.setCanonical('https://kennyweiss.net/book-a-session-with-kenny-weiss/');
   }
  
 

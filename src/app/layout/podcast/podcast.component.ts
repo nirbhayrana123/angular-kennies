@@ -2,6 +2,7 @@ import { isPlatformBrowser,CommonModule } from '@angular/common';
 import { Component, Inject, PLATFORM_ID,  } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 import { ActivatedRoute, RouterModule } from '@angular/router';
+import { CanonicalService } from '../../services/canonical.service';
 
 @Component({
     selector: 'app-podcast',
@@ -12,7 +13,7 @@ import { ActivatedRoute, RouterModule } from '@angular/router';
 
 export class PodcastComponent {
   isBrowser:boolean
-  constructor(private titleService: Title, private metaService: Meta, @Inject(PLATFORM_ID) private platformId: Object) {
+  constructor(private titleService: Title, private metaService: Meta, @Inject(PLATFORM_ID) private platformId: Object,private canonical: CanonicalService) {
     this.isBrowser = isPlatformBrowser(this.platformId);
 
   }
@@ -27,7 +28,7 @@ export class PodcastComponent {
       "name='description'"
     );
  
-
+   this.canonical.setCanonical('https://kennyweiss.net/podcast/');
   }
 
 

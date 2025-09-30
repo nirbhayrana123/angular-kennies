@@ -4,6 +4,7 @@ import { SafeUrlPipe } from '../../../pipes/safe-url.pipe'; // pipe ka import
 import { Title, Meta } from '@angular/platform-browser'; 
 import { WpService } from '../../../services/wp.service';
 import { CommonModule } from '@angular/common';
+import { CanonicalService } from '../../../services/canonical.service';
 
 @Component({
     selector: 'app-courses-details',
@@ -17,6 +18,7 @@ export class CoursesDetailsComponent {
   private wp = inject(WpService);
   private titleService = inject(Title);
   private metaService = inject(Meta);
+  
 
   loading = true;
   bannerHeading = '';
@@ -39,7 +41,7 @@ export class CoursesDetailsComponent {
   
 
 
-  constructor( 
+  constructor( private canonical: CanonicalService
   ) {
     
   }
@@ -49,9 +51,9 @@ ngOnInit() {
   this.backgroundImage = '';
   this.featuredImage = ''; 
   
-  const slug = this.route.snapshot.paramMap.get('slug');
-  
+  const slug = this.route.snapshot.paramMap.get('slug');   
   if (slug) {
+    this.canonical.setCanonical(`https://kennyweiss.net/courses/${slug}/`);
     this.wp.getServiceBySlug(slug).subscribe((res) => {
       if (res.length > 0) {
         this.service = res[0];

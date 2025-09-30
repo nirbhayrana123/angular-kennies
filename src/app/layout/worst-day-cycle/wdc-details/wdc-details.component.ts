@@ -4,6 +4,7 @@ import { RouterModule ,ActivatedRoute } from '@angular/router';
 import { WpService } from '../../../services/wp.service';
 import { Title, Meta,DomSanitizer, SafeHtml } from '@angular/platform-browser'; 
 import { CourseSliderComponent } from '../../../components/course-slider/course-slider/course-slider.component';
+import { CanonicalService } from '../../../services/canonical.service';
 
 @Component({
     selector: 'app-wdc-details',
@@ -23,7 +24,7 @@ export class WdcDetailsComponent {
   courseImage = '';
   featuredImage = '';
 safeContent!: SafeHtml;  
-  constructor( private sanitizer: DomSanitizer ) {   }
+  constructor( private sanitizer: DomSanitizer,private canonical: CanonicalService ) {   }
   ngOnInit() {
   this.courseImage = ''; 
   this.featuredImage = ''; 
@@ -33,6 +34,7 @@ console.log('Slug:', slug);  // ✅ add this
 
   
   if (slug) {
+    this.canonical.setCanonical(`https://kennyweiss.net/worst-day-cycle/${slug}/`);
     this.wp.getwdcSlug(slug).subscribe((res: any) => {
       if (res.length > 0) {
         this.wdcpost = res[0];

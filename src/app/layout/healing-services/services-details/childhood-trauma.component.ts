@@ -4,6 +4,7 @@ import { EmotionalswiperComponent } from '../../../components/emotionalswiper/em
 import { Title, Meta } from '@angular/platform-browser'; 
 import { WpService } from '../../../services/wp.service';
 import { CommonModule } from '@angular/common'; 
+import { CanonicalService } from '../../../services/canonical.service';
 
 
 
@@ -33,7 +34,7 @@ export class ChildhoodTraumaComponent {
   postcardImage2 = '';
   postcardicfImage = '';
 
-    constructor( ) {
+    constructor( private canonical: CanonicalService) {
      
     }
 
@@ -49,6 +50,7 @@ ngOnInit() {
   const slug = this.route.snapshot.paramMap.get('slug');
   
   if (slug) {
+    this.canonical.setCanonical(`https://kennyweiss.net/coaching/${slug}/`);
     this.wp.gethealingServicesSlug(slug).subscribe((res) => {
       if (res.length > 0) {
         this.service = res[0];

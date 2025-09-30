@@ -3,6 +3,7 @@ import { Component, OnInit, OnDestroy, Inject, PLATFORM_ID } from '@angular/core
 import { Title, Meta } from '@angular/platform-browser';
 import { CourseSliderComponent } from '../../components/course-slider/course-slider/course-slider.component';
 import { ActivatedRoute, RouterModule } from '@angular/router';
+import { CanonicalService } from '../../services/canonical.service';
 
 @Component({
     selector: 'app-meet-kenny',
@@ -16,13 +17,15 @@ export class MeetKennyComponent  implements OnInit, OnDestroy {
   { url: 'https://samples.audible.com/bk/acx0/105161/bk_acx0_105161_sample.mp3', player: null as HTMLAudioElement | null, isPlaying: false },
     { url: 'https://samples.audible.com/bk/acx0/385990/bk_acx0_385990_sample.mp3', player: null as HTMLAudioElement | null, isPlaying: false }
   ];
+ 
 
  
     constructor(
     private titleService: Title,
     private metaService: Meta,
     private route: ActivatedRoute,
-    @Inject(PLATFORM_ID) private platformId: Object
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private canonical: CanonicalService
   ) {}
  
 
@@ -47,6 +50,7 @@ export class MeetKennyComponent  implements OnInit, OnDestroy {
         });
       });
     }
+     this.canonical.setCanonical('https://kennyweiss.net/about-kenny-weiss/');
   }
   ngOnDestroy(): void {
     if (isPlatformBrowser(this.platformId)) {

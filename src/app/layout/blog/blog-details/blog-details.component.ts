@@ -7,6 +7,7 @@ import { CourseSliderComponent } from '../../../components/course-slider/course-
 import { EmbedYoutubePipe } from '../../../pipes/embed-youtube.pipe';
 import { SafeUrlPipe } from '../../../pipes/safe-url.pipe'; 
 import { NotFoundComponent } from '../../not-found/not-found.component';
+import { CanonicalService } from '../../../services/canonical.service';
 
 @Component({
   selector: 'app-blog-details',
@@ -25,6 +26,10 @@ export class BlogDetailsComponent {
   private wp = inject(WpService);
   private titleService = inject(Title);
   private metaService = inject(Meta);
+  
+  constructor(private canonical: CanonicalService) {
+    
+  }
 
   ngOnInit() {
     const slug = this.route.snapshot.paramMap.get('slug');
@@ -33,7 +38,8 @@ export class BlogDetailsComponent {
       this.setNotFound();
       return;
     }
-
+  if (slug) {
+    this.canonical.setCanonical(`https://kennyweiss.net/${slug}/`);
     this.wp.getpostSlug(slug).subscribe((res) => {
       if (!res || res.length === 0) {
         this.setNotFound();
@@ -60,6 +66,7 @@ export class BlogDetailsComponent {
       this.featuredImage = this.post._embedded?.['wp:featuredmedia']?.[0]?.source_url || '';
       this.loading = false;
     });
+  }
   }
 
   private setNotFound() {

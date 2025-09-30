@@ -1,7 +1,8 @@
 <div *ngIf="loading" class="loader-maim">
 <div class="hm-spinner"></div>
 </div>
-<main *ngIf="!loading" class="pt-1 pt68px coressdetailes">
+<app-not-found *ngIf="!loading && showNotFound"></app-not-found>
+<main *ngIf="!loading && !showNotFound" class="pt-1 pt68px coressdetailes">
     <div class="healing-inner-pages height-7"
         [style.background-image]="'url(' + backgroundImage + ')'">
         <div class="container">

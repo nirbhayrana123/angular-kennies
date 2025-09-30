@@ -1,7 +1,8 @@
 <div *ngIf="loading" class="loader-maim">
     <div class="hm-spinner"></div>
 </div>
-<main class="pt-1 blogdetailspage" *ngIf="wdcpost">
+<app-not-found *ngIf="!loading && showNotFound"></app-not-found>
+<main class="pt-1 blogdetailspage" *ngIf="!loading && !showNotFound && wdcpost">
     <div class="bg-gry colorlink">
         <div class="container">
             <div class="grid2">

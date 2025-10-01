@@ -24,37 +24,29 @@ export function app(): express.Express {
   }));
 
   // Angular SSR routes
-  server.get('**', async (req, res, next) => {
-    try {
-      // reset status code before render
-      (globalThis as any).ngStatusCode = 200;
+server.get('**', async (req, res, next) => {
+  try {
+    // Reset default status
+    (globalThis as any).ngStatusCode = 200;
 
-      const html = await commonEngine.render({
-        bootstrap,
-        documentFilePath: indexHtml,
-        url: req.originalUrl,
-        publicPath: browserDistFolder,
-        providers: [
-          { provide: APP_BASE_HREF, useValue: req.baseUrl }
-        ],
-      });
+    const html = await commonEngine.render({
+      bootstrap,
+      documentFilePath: indexHtml,
+      url: req.originalUrl,
+      publicPath: browserDistFolder,
+      providers: [
+        { provide: APP_BASE_HREF, useValue: req.baseUrl },
+      ],
+    });
 
-      const statusCode = (globalThis as any).ngStatusCode || 200;
+    const statusCode = (globalThis as any).ngStatusCode || 200;
+    res.status(statusCode).send(html);
 
-      // Prevent caching
-      res.removeHeader('ETag');
-      res.removeHeader('Last-Modified');
-      res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
-      res.setHeader('Pragma', 'no-cache');
-      res.setHeader('Expires', '0');
-      res.setHeader('Surrogate-Control', 'no-store');
+  } catch (err) {
+    next(err);
+  }
+});
 
-      // Send response with correct status
-      res.status(statusCode).send(html);
-    } catch (err) {
-      next(err);
-    }
-  });
 
   return server;
 }

@@ -13,17 +13,16 @@ export class NotFoundComponent implements OnInit {
     @Optional() @Inject(RESPONSE) private response: Response,
     private meta: Meta
   ) {
-    // SSR only
+    // SSR: Express response
     if (this.response) {
-      this.response.status(404); // set HTTP 404 status for SSR
-    } else {
-      // fallback for CommonEngine SSR
-      (globalThis as any).ngStatusCode = 404;
+      this.response.status(404);
     }
+
+    // SSR: CommonEngine fallback
+    (globalThis as any).ngStatusCode = 404;
   }
 
-  ngOnInit(): void { 
-    // Prevent SEO indexing
+  ngOnInit(): void {
     this.meta.updateTag({ name: 'robots', content: 'noindex, nofollow' });
   }
 }

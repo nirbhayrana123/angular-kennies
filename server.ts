@@ -17,34 +17,31 @@ export function app(): express.Express {
   server.set('view engine', 'html');
   server.set('views', browserDistFolder);
 
-  // ✅ Serve static files ONLY for assets (*.js, *.css, images etc.)
+  // Serve static files (assets)
   server.get('*.*', express.static(browserDistFolder, {
     maxAge: '1y',
-    fallthrough: false   // ❌ don't fallback to index.html if file not found
+    fallthrough: false
   }));
 
-  // ✅ Angular routes with SSR
+  // Angular SSR routes
   server.get('**', async (req, res, next) => {
     try {
       // reset status code before render
       (globalThis as any).ngStatusCode = 200;
 
-      const { protocol, originalUrl, baseUrl, headers } = req;
-
       const html = await commonEngine.render({
         bootstrap,
         documentFilePath: indexHtml,
-        url: `${protocol}://${headers.host}${originalUrl}`,
+        url: req.originalUrl,
         publicPath: browserDistFolder,
         providers: [
-          { provide: APP_BASE_HREF, useValue: baseUrl },
+          { provide: APP_BASE_HREF, useValue: req.baseUrl }
         ],
       });
 
       const statusCode = (globalThis as any).ngStatusCode || 200;
-      console.log(`SSR => ${originalUrl} [${statusCode}]`);
 
-      // prevent caching (important for 404 pages)
+      // Prevent caching
       res.removeHeader('ETag');
       res.removeHeader('Last-Modified');
       res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
@@ -52,9 +49,8 @@ export function app(): express.Express {
       res.setHeader('Expires', '0');
       res.setHeader('Surrogate-Control', 'no-store');
 
-      // ✅ send correct status code
+      // Send response with correct status
       res.status(statusCode).send(html);
-
     } catch (err) {
       next(err);
     }
@@ -66,10 +62,9 @@ export function app(): express.Express {
 function run(): void {
   const port = process.env['PORT'] || 4000;
 
-  // Start up the Node server
   const server = app();
   server.listen(port, () => {
-    console.log(`✅ Node Express server listening on http://localhost:${port}`);
+    console.log(`✅ Angular SSR server running at http://localhost:${port}`);
   });
 }
 

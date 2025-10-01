@@ -18,15 +18,13 @@ export function app(): express.Express {
   server.set('views', browserDistFolder);
 
   // Serve static files ONLY for assets (*.js, *.css, images etc.)
-  server.get('**.*', express.static(browserDistFolder, {
-    maxAge: '1y',
-  }));
+server.get('*.*', express.static(browserDistFolder, {
+  maxAge: '1y',
+}));
 
-// Angular routes
 server.get('**', async (req, res, next) => {
   try {
-    // 👇 Reset status for every new request
-    (global as any).ngStatusCode = 200;
+    (global as any).ngStatusCode = 200; // reset before render
 
     const { protocol, originalUrl, baseUrl, headers } = req;
 
@@ -41,12 +39,25 @@ server.get('**', async (req, res, next) => {
     });
 
     const statusCode = (global as any).ngStatusCode || 200;
+
+    // prevent caching
+    res.removeHeader('ETag');
+    res.removeHeader('Last-Modified');
+    res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
+    res.setHeader('Pragma', 'no-cache');
+    res.setHeader('Expires', '0');
+    res.setHeader('Surrogate-Control', 'no-store');
+
+    // ✅ Send correct status code here
     res.status(statusCode).send(html);
 
   } catch (err) {
     next(err);
   }
 });
+
+
+
 
 
   return server;

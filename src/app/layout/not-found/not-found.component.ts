@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { Meta } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { StatusCodeService } from '../../services/status-code.service';
+import { isPlatformServer } from '@angular/common';
 
 
 @Component({
@@ -11,11 +12,13 @@ import { StatusCodeService } from '../../services/status-code.service';
     styleUrls: ['./not-found.component.css']
 })
 export class NotFoundComponent {
-constructor(private meta: Meta, private status: StatusCodeService) {}
+constructor(private meta: Meta, private status: StatusCodeService) {
+
+
+}
 
   ngOnInit(): void {
-    this.status.setStatus(404); 
-    // 404 page ke liye meta noindex, nofollow lagana
+     this.status.setStatus(404); 
     this.meta.updateTag({ name: 'robots', content: 'noindex, nofollow' });
   }
 }

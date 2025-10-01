@@ -39,17 +39,11 @@ export function app(): express.Express {
       });
 
       const statusCode = (globalThis as any).ngStatusCode || 200;
-      res.status(statusCode).send(html);
+      res.status(statusCode).send(html); 
 
     } catch (err) {
       next(err);
     }
-  });
-
-  // ✅ Fallback for anything that SSR cannot handle
-  // This is where your suggested code goes
-  server.use((req, res) => {
-    res.status(404).sendFile(join(browserDistFolder, 'index.html'));
   });
 
   return server;

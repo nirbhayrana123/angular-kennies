@@ -13,13 +13,12 @@ export class NotFoundComponent implements OnInit {
     @Optional() @Inject(RESPONSE) private response: Response,
     private meta: Meta
   ) {
-    // SSR: Express response
+ 
+    if (typeof window === 'undefined') { (globalThis as any).ngStatusCode = 404; }
+       // SSR: Express response
     if (this.response) {
       this.response.status(404);
-    }
-
-    // SSR: CommonEngine fallback
-    (globalThis as any).ngStatusCode = 404;
+    } 
   }
 
   ngOnInit(): void {

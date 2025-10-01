@@ -13,15 +13,19 @@ export function blogSlugMatcher(segments: UrlSegment[]) {
       'healing-services'
     ];
 
-    if (reservedRoutes.includes(slug)) return null;
+    // reservedRoutes me hai to blog ke liye consume mat karo
+    if (reservedRoutes.includes(slug)) {
+      return null; 
+    }
 
-    return { 
-      consumed: segments, 
-      posParams: { slug: segments[0] } 
-    };
+    // ✅ agar slug sirf 1 word hai aur reserved nahi hai tabhi blog treat karo
+    return { consumed: segments, posParams: { slug: segments[0] } };
   }
+
+  // ✅ aur koi case ho → NotFoundComponent
   return null;
 }
+
 
 // Coaching slug matcher
 export function coachingSlugMatcher(segments: UrlSegment[]) {

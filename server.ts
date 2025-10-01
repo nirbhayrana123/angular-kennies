@@ -17,48 +17,48 @@ export function app(): express.Express {
   server.set('view engine', 'html');
   server.set('views', browserDistFolder);
 
-  // Serve static files ONLY for assets (*.js, *.css, images etc.)
-server.get('*.*', express.static(browserDistFolder, {
-  maxAge: '1y',
-}));
+  // ✅ Serve static files ONLY for assets (*.js, *.css, images etc.)
+  server.get('*.*', express.static(browserDistFolder, {
+    maxAge: '1y',
+    fallthrough: false   // ❌ don't fallback to index.html if file not found
+  }));
 
-server.get('**', async (req, res, next) => {
-  try {
-    (global as any).ngStatusCode = 200; // reset before render
+  // ✅ Angular routes with SSR
+  server.get('**', async (req, res, next) => {
+    try {
+      // reset status code before render
+      (globalThis as any).ngStatusCode = 200;
 
-    const { protocol, originalUrl, baseUrl, headers } = req;
+      const { protocol, originalUrl, baseUrl, headers } = req;
 
-    const html = await commonEngine.render({
-      bootstrap,
-      documentFilePath: indexHtml,
-      url: `${protocol}://${headers.host}${originalUrl}`,
-      publicPath: browserDistFolder,
-      providers: [
-        { provide: APP_BASE_HREF, useValue: baseUrl },
-      ],
-    });
+      const html = await commonEngine.render({
+        bootstrap,
+        documentFilePath: indexHtml,
+        url: `${protocol}://${headers.host}${originalUrl}`,
+        publicPath: browserDistFolder,
+        providers: [
+          { provide: APP_BASE_HREF, useValue: baseUrl },
+        ],
+      });
 
-    const statusCode = (global as any).ngStatusCode || 200;
+      const statusCode = (globalThis as any).ngStatusCode || 200;
+      console.log(`SSR => ${originalUrl} [${statusCode}]`);
 
-    // prevent caching
-    res.removeHeader('ETag');
-    res.removeHeader('Last-Modified');
-    res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
-    res.setHeader('Pragma', 'no-cache');
-    res.setHeader('Expires', '0');
-    res.setHeader('Surrogate-Control', 'no-store');
+      // prevent caching (important for 404 pages)
+      res.removeHeader('ETag');
+      res.removeHeader('Last-Modified');
+      res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
+      res.setHeader('Pragma', 'no-cache');
+      res.setHeader('Expires', '0');
+      res.setHeader('Surrogate-Control', 'no-store');
 
-    // ✅ Send correct status code here
-    res.status(statusCode).send(html);
+      // ✅ send correct status code
+      res.status(statusCode).send(html);
 
-  } catch (err) {
-    next(err);
-  }
-});
-
-
-
-
+    } catch (err) {
+      next(err);
+    }
+  });
 
   return server;
 }

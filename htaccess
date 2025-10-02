@@ -1,0 +1,74 @@
+<IfModule mod_rewrite.c>
+# ============================
+# Canonical redirects — single-hop
+# ============================
+RewriteEngine On
+RewriteBase /
+
+# 1) Redirect only exact /cms (no subpaths) to homepage
+RewriteRule ^cms$ / [R=301,L]
+
+# 2) If request is for an existing file or an obvious asset (jpg, css, js, etc.), stop here
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_URI} \.[a-zA-Z0-9]{2,5}$ 
+RewriteRule ^ - [L]
+
+# 3A) If host is www OR scheme is not HTTPS,
+#     and URI is directory-like (no extension, no trailing slash) — add slash in same redirect
+RewriteCond %{HTTP_HOST} ^www\.kennyweiss\.net$ [NC,OR]
+RewriteCond %{HTTPS} !=on
+RewriteCond %{REQUEST_URI} !\.[a-zA-Z0-9]{2,5}$ 
+RewriteCond %{REQUEST_URI} !(.*)/$
+RewriteRule ^(.*)$ https://kennyweiss.net/$1/ [R=301,L]
+
+# 3B) If host is www OR scheme is not HTTPS (other cases) — preserve URI as-is
+RewriteCond %{HTTP_HOST} ^www\.kennyweiss\.net$ [NC,OR]
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://kennyweiss.net%{REQUEST_URI} [R=301,L]
+
+# 4) If already https + correct host, ensure trailing slash for directory-like URIs
+RewriteCond %{HTTPS} =on
+RewriteCond %{HTTP_HOST} ^kennyweiss\.net$ [NC]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !\.[a-zA-Z0-9]{2,5}$ 
+RewriteCond %{REQUEST_URI} !(.*)/$
+RewriteRule ^(.*)$ https://kennyweiss.net/$1/ [R=301,L]
+
+
+
+  # 🔹 3. Case-insensitive redirects for important routes
+  RewriteRule ^contact/?$ contact/ [R=301,L,NC]
+  RewriteRule ^courses/?$ courses/ [R=301,L,NC]
+   RewriteRule ^worst-day-cycle/?$ worst-day-cycle/ [R=301,L,NC]
+   RewriteRule ^about-kenny-weiss/?$ about-kenny-weiss/ [R=301,L,NC]
+   RewriteRule ^book-a-session-with-kenny-weiss/?$ book-a-session-with-kenny-weiss/ [R=301,L,NC]
+   RewriteRule ^books-by-kenny-weiss/?$ books-by-kenny-weiss/ [R=301,L,NC] 
+   RewriteRule ^resources/?$ resources/ [R=301,L,NC] 
+   RewriteRule ^best-day-blog/?$ best-day-blog/ [R=301,L,NC] 
+   RewriteRule ^podcast/?$ podcast/ [R=301,L,NC] 
+   RewriteRule ^feelings-wheel/?$ feelings-wheel/ [R=301,L,NC] 
+    
+
+  # 🔹 4. Redirect old URLs to new ones (case-insensitive)
+  RewriteRule ^authentic-self-cycle/?$ worst-day-cycle/ [R=301,L,NC]
+  RewriteRule ^emotional-authenticity/?$ courses/ [R=301,L,NC]
+  RewriteRule ^my-mentor-mike-pinkston/?$ about-kenny-weiss/ [R=301,L,NC]
+  RewriteRule ^sandstone-care/?$ about-kenny-weiss/ [R=301,L,NC]
+  RewriteRule ^coaching/?$ book-a-session-with-kenny-weiss/ [R=301,L,NC]
+  RewriteRule ^your-journey-to-being-yourself/?$ books-by-kenny-weiss/ [R=301,L,NC]
+  RewriteRule ^your-journey-to-success-exercises/?$ books-by-kenny-weiss/ [R=301,L,NC]
+  RewriteRule ^recommended-reading/?$ books-by-kenny-weiss/ [R=301,L,NC]
+  RewriteRule ^speaker/?$ about-kenny-weiss/ [R=301,L,NC]
+  RewriteRule ^contact-kenny-weiss/?$ contact/ [R=301,L,NC]
+  RewriteRule ^esources/?$ resources/ [R=301,L,NC]
+  RewriteRule ^blog/?$ best-day-blog/ [R=301,L,NC]
+  RewriteRule ^podcast-kenny-weiss/?$ podcast/ [R=301,L,NC]
+  RewriteRule ^feelings-wheel-kenny-weiss/?$ feelings-wheel/ [R=301,L,NC]
+
+  # 🔹 5. Agar file/folder exist kare to wahi serve karo
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+
+  # 🔹 6. Otherwise Angular ko bhej do
+  RewriteRule . /index.html [L]
+</IfModule>

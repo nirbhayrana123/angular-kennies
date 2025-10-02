@@ -17,33 +17,25 @@ export function app(): express.Express {
   server.set('views', browserDistFolder);
 
   // Serve static files (assets like JS, CSS, images)
-  server.get('*.*', express.static(browserDistFolder, {
+  server.get('**', express.static(browserDistFolder, {
     maxAge: '1y',
-    fallthrough: false
+    index: 'index.html',
   }));
 
   // Angular SSR routes
-  server.get('**', async (req, res, next) => {
-    try {
-      // Reset default status
-      (globalThis as any).ngStatusCode = 200;
+ server.get('**', (req, res, next) => {
+    const { protocol, originalUrl, baseUrl, headers } = req;
 
-      const html = await commonEngine.render({
+    commonEngine
+      .render({
         bootstrap,
         documentFilePath: indexHtml,
-        url: req.originalUrl,
+        url: `${protocol}://${headers.host}${originalUrl}`,
         publicPath: browserDistFolder,
-        providers: [
-          { provide: APP_BASE_HREF, useValue: req.baseUrl },
-        ],
-      });
-
-      const statusCode = (globalThis as any).ngStatusCode || 200;
-      res.status(statusCode).send(html); 
-
-    } catch (err) {
-      next(err);
-    }
+        providers: [{ provide: APP_BASE_HREF, useValue: baseUrl }],
+      })
+      .then((html) => res.send(html))
+      .catch((err) => next(err));
   });
 
   return server;

@@ -17,26 +17,23 @@ export function app(): express.Express {
   server.set('views', browserDistFolder);
 
   // ✅ Serve static files first
-  server.use(express.static(browserDistFolder, {
-    maxAge: '1y',
-    index: false, // JS/CSS files should not return index.html
-  }));
+ server.use(express.static(browserDistFolder, {
+  maxAge: '1y',
+  index: false, // don't serve index.html for JS/CSS requests
+}));
 
   // ✅ SSR for all other routes
-  server.get('*', (req, res, next) => {
-    const { protocol, originalUrl, baseUrl, headers } = req;
-
-    commonEngine
-      .render({
-        bootstrap,
-        documentFilePath: indexHtml,
-        url: `${protocol}://${headers.host}${originalUrl}`,
-        publicPath: browserDistFolder,
-        providers: [{ provide: APP_BASE_HREF, useValue: baseUrl }],
-      })
-      .then((html) => res.send(html))
-      .catch((err) => next(err));
-  });
+server.get('*', (req, res, next) => {
+  commonEngine.render({
+    bootstrap,
+    documentFilePath: indexHtml,
+    url: `${req.protocol}://${req.headers.host}${req.originalUrl}`,
+    publicPath: browserDistFolder,
+    providers: [{ provide: APP_BASE_HREF, useValue: req.baseUrl }],
+  })
+  .then(html => res.send(html))
+  .catch(err => next(err));
+});
 
   return server;
 }

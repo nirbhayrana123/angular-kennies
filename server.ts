@@ -16,14 +16,14 @@ export function app(): express.Express {
   server.set('view engine', 'html');
   server.set('views', browserDistFolder);
 
-  // Serve static files (assets like JS, CSS, images)
-  server.get('**', express.static(browserDistFolder, {
+  // ✅ Serve static files first
+  server.use(express.static(browserDistFolder, {
     maxAge: '1y',
-    index: 'index.html',
+    index: false, // JS/CSS files should not return index.html
   }));
 
-  // Angular SSR routes
- server.get('**', (req, res, next) => {
+  // ✅ SSR for all other routes
+  server.get('*', (req, res, next) => {
     const { protocol, originalUrl, baseUrl, headers } = req;
 
     commonEngine

@@ -50,7 +50,7 @@ export class MeetKennyComponent  implements OnInit, OnDestroy {
         });
       });
     }
-     this.canonical.setCanonical('https://kennyweiss.net/about-kenny-weiss/');
+     this.canonical.setCanonical('https://kennyweiss.net/about-kenny-weiss');
   }
   ngOnDestroy(): void {
     if (isPlatformBrowser(this.platformId)) {

@@ -69,6 +69,6 @@ export class BlogComponent implements OnInit {
         }
       });
     }
-     this.canonical.setCanonical('https://kennyweiss.net/best-day-blog/');
+     this.canonical.setCanonical('https://kennyweiss.net/best-day-blog');
   }
 }

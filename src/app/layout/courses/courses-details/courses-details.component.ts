@@ -53,7 +53,7 @@ ngOnInit() {
   
   const slug = this.route.snapshot.paramMap.get('slug');   
   if (slug) {
-    this.canonical.setCanonical(`https://kennyweiss.net/courses/${slug}/`);
+    this.canonical.setCanonical(`https://kennyweiss.net/courses/${slug}`);
     this.wp.getServiceBySlug(slug).subscribe((res) => {
       if (res.length > 0) {
         this.service = res[0];

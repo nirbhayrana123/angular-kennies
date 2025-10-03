@@ -80,7 +80,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy  {
         }));
       });
     }
-    this.canonical.setCanonical('https://kennyweiss.net/');
+    this.canonical.setCanonical('https://kennyweiss.net');
   }
 
 

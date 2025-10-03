@@ -80,7 +80,7 @@ isBrowser:boolean
       "name='description'"
     );
 
-this.canonical.setCanonical('https://kennyweiss.net/contact/');
+this.canonical.setCanonical('https://kennyweiss.net/contact');
 
  }
 

@@ -71,7 +71,7 @@ submitFormFeelingsWheel2() {
       },
       "name='description'"
     );
-    this.canonical.setCanonical('https://kennyweiss.net/feelings-wheel/');
+    this.canonical.setCanonical('https://kennyweiss.net/feelings-wheel');
 }
  
 

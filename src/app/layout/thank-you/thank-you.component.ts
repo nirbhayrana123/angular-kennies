@@ -28,6 +28,6 @@ constructor(private titleService: Title,
       },
       "name='description'"
     );
-       this.canonical.setCanonical('https://kennyweiss.net/thank-you/');
+       this.canonical.setCanonical('https://kennyweiss.net/thank-you');
   }
 }

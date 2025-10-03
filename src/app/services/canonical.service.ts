@@ -27,7 +27,6 @@ export class CanonicalService {
       link.setAttribute('rel', 'canonical');
       this.doc.head.appendChild(link);
     }
-
     link.setAttribute('href', canonicalUrl);
   }
 

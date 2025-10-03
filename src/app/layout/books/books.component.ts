@@ -75,7 +75,7 @@ ngOnInit() {
     script.async = true;
     document.body.appendChild(script);
   }
-  this.canonical.setCanonical('https://kennyweiss.net/books-by-kenny-weiss/');
+  this.canonical.setCanonical('https://kennyweiss.net/books-by-kenny-weiss');
 }
 
 

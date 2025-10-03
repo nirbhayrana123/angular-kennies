@@ -28,7 +28,7 @@ export class PodcastComponent {
       "name='description'"
     );
  
-   this.canonical.setCanonical('https://kennyweiss.net/podcast/');
+   this.canonical.setCanonical('https://kennyweiss.net/podcast');
   }
 
 

@@ -34,7 +34,7 @@ console.log('Slug:', slug);  // ✅ add this
 
   
   if (slug) {
-    this.canonical.setCanonical(`https://kennyweiss.net/worst-day-cycle/${slug}/`);
+    this.canonical.setCanonical(`https://kennyweiss.net/worst-day-cycle/${slug}`);
     this.wp.getwdcSlug(slug).subscribe((res: any) => {
       if (res.length > 0) {
         this.wdcpost = res[0];

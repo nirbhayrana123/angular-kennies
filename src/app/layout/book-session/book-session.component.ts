@@ -44,7 +44,7 @@ if (this.isBrowser) {
       "name='description'"
     );
   }
-this.canonical.setCanonical('https://kennyweiss.net/book-a-session-with-kenny-weiss/');
+this.canonical.setCanonical('https://kennyweiss.net/book-a-session-with-kenny-weiss');
   }
  
 

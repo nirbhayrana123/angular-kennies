@@ -44,7 +44,7 @@ constructor(private titleService: Title,
       },
       "name='description'"
     );
-       this.canonical.setCanonical('https://kennyweiss.net/resources/');
+       this.canonical.setCanonical('https://kennyweiss.net/resources');
   }
   submitFormresource() {
      this.formSubmitted = true;

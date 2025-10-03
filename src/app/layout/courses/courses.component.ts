@@ -73,6 +73,6 @@ constructor(private titleService: Title,
       
     this.loading = false;
     });
-    this.canonical.setCanonical('https://kennyweiss.net/courses/');
+    this.canonical.setCanonical('https://kennyweiss.net/courses');
   }
 } 

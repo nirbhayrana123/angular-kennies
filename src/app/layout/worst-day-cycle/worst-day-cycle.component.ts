@@ -72,7 +72,7 @@ export class WorstDayCycleComponent {
     this.loading = false;
     });
   
-this.canonical.setCanonical('https://kennyweiss.net/worst-day-cycle/');
+this.canonical.setCanonical('https://kennyweiss.net/worst-day-cycle');
   }
 
 

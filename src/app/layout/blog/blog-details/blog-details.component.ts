@@ -39,7 +39,7 @@ export class BlogDetailsComponent {
       return;
     }
   if (slug) {
-    this.canonical.setCanonical(`https://kennyweiss.net/${slug}/`);
+    this.canonical.setCanonical(`https://kennyweiss.net/${slug}`);
     this.wp.getpostSlug(slug).subscribe((res) => {
       if (!res || res.length === 0) {
         this.setNotFound();

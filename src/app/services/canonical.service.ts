@@ -18,7 +18,9 @@ export class CanonicalService {
     let canonicalUrl = url || 'https://kennyweiss.net/';
 
     // Ensure trailing slash
-    if (!canonicalUrl.endsWith('/')) canonicalUrl += '/';
+        if (canonicalUrl.endsWith('/')) {
+      canonicalUrl = canonicalUrl.slice(0, -1);
+    }
 
     // Get or create <link rel="canonical">
     let link: HTMLLinkElement = this.doc.querySelector("link[rel='canonical']") as HTMLLinkElement;

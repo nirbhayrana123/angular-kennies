@@ -82,6 +82,7 @@ export const routes: Routes = [
   { matcher: coursesSlugMatcher, loadComponent: () => import('./layout/courses/courses-details/courses-details.component').then(m => m.CoursesDetailsComponent) },
   { matcher: wdcSlugMatcher, loadComponent: () => import('./layout/worst-day-cycle/wdc-details/wdc-details.component').then(m => m.WdcDetailsComponent) },
   { matcher: blogSlugMatcher, loadComponent: () => import('./layout/blog/blog-details/blog-details.component').then(m => m.BlogDetailsComponent) },
+ { path: '', loadComponent: () => import('./layout/home/home.component').then(m => m.HomeComponent) , pathMatch: 'full' },
   { path: '**', loadComponent: () => import('./layout/not-found/not-found.component').then(m => m.NotFoundComponent) },
-  { path: '', loadComponent: () => import('./layout/home/home.component').then(m => m.HomeComponent) , pathMatch: 'full' },
+  
 ];

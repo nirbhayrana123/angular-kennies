@@ -13,15 +13,20 @@ export class NotFoundComponent implements OnInit {
     @Optional() @Inject(RESPONSE) private response: Response,
     private meta: Meta
   ) {
- 
-    if (typeof window === 'undefined') { (globalThis as any).ngStatusCode = 404; }
-       // SSR: Express response
-    if (this.response) {
-      this.response.status(404);
-    } 
+    // ✅ This runs only on server-side render
+    if (typeof window === 'undefined') {
+      // Flag for Angular Universal → Express bridge
+      (globalThis as any).ngStatusCode = 404;
+
+      // Directly set response status if Express response available
+      if (this.response) {
+        this.response.status(404);
+      }
+    }
   }
 
   ngOnInit(): void {
+    // ✅ Prevents Google from indexing this "soft 404"
     this.meta.updateTag({ name: 'robots', content: 'noindex, nofollow' });
   }
 }

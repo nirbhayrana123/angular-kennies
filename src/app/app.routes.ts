@@ -65,7 +65,7 @@ export function wdcSlugMatcher(segments: UrlSegment[]) {
 
 
 export const routes: Routes = [
-  { path: '', loadComponent: () => import('./layout/home/home.component').then(m => m.HomeComponent) , pathMatch: 'full' },
+  
   { path: 'best-day-blog', loadComponent: () => import('./layout/blog/blog.component').then(m => m.BlogComponent) },
   { path: 'about-kenny-weiss', loadComponent: () => import('./layout/meet-kenny/meet-kenny.component').then(m => m.MeetKennyComponent) },
   { path: 'books-by-kenny-weiss', loadComponent: () => import('./layout/books/books.component').then(m => m.BooksComponent) },
@@ -83,4 +83,5 @@ export const routes: Routes = [
   { matcher: wdcSlugMatcher, loadComponent: () => import('./layout/worst-day-cycle/wdc-details/wdc-details.component').then(m => m.WdcDetailsComponent) },
   { matcher: blogSlugMatcher, loadComponent: () => import('./layout/blog/blog-details/blog-details.component').then(m => m.BlogDetailsComponent) },
   { path: '**', loadComponent: () => import('./layout/not-found/not-found.component').then(m => m.NotFoundComponent) },
+  { path: '', loadComponent: () => import('./layout/home/home.component').then(m => m.HomeComponent) , pathMatch: 'full' },
 ];

@@ -23,27 +23,46 @@ export function app(): express.Express {
   }));
 
   // ✅ SSR for all other routes 
-server.get('*', (req, res, next) => {
-  const { protocol, originalUrl, baseUrl, headers } = req;
+  // server.get('*', (req, res, next) => {
+  //   const { protocol, originalUrl, baseUrl, headers } = req;
 
-  commonEngine
-    .render({
-      bootstrap,
-      documentFilePath: indexHtml,
-      url: `${protocol}://${headers.host}${originalUrl}`,
-      publicPath: browserDistFolder,
-      providers: [{ provide: APP_BASE_HREF, useValue: baseUrl }],
-    })
-    .then((html) => {
-      // Agar NotFoundComponent render hua to 404 bhejo
-      if (html.includes('<app-not-found')) {
-        res.status(404).send(html);
-      } else {
-        res.status(200).send(html);
-      }
-    })
-    .catch((err) => next(err));
-});
+  //   commonEngine
+  //     .render({
+  //       bootstrap,
+  //       documentFilePath: indexHtml,
+  //       url: `${protocol}://${headers.host}${originalUrl}`,
+  //       publicPath: browserDistFolder,
+  //       providers: [{ provide: APP_BASE_HREF, useValue: baseUrl }],
+  //     })
+  //     .then((html) => {
+  //       // Agar NotFoundComponent render hua to 404 bhejo
+  //       if (html.includes('<app-not-found')) {
+  //         res.status(404).send(html);
+  //       } else {
+  //         res.status(200).send(html);
+  //       }
+  //     })
+  //     .catch((err) => next(err));
+  // });
+  server.get('*', (req, res, next) => {
+    const { protocol, originalUrl, baseUrl, headers } = req;
+
+    commonEngine
+      .render({
+        bootstrap,
+        documentFilePath: indexHtml,
+        url: `${protocol}://${headers.host}${originalUrl}`,
+        publicPath: browserDistFolder,
+        providers: [{ provide: APP_BASE_HREF, useValue: baseUrl }],
+      })
+      .then((html) => {
+        // ✅ Angular already sets res.status in NotFoundComponent
+        if (!res.headersSent) {
+          res.send(html);
+        }
+      })
+      .catch((err) => next(err));
+  });
 
 
   return server;
